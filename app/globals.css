@@ -1,0 +1,207 @@
+@import "tailwindcss";
+
+@theme {
+  --font-family-sans: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  --font-family-serif: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  --font-family-mono: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+  --font-family-zh: Helvetica, "Helvetica Neue", Arial, sans-serif;
+
+  --breakpoint-text: 1220px;
+  --breakpoint-mobile: 420px;
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+}
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --primary: 240 5.9% 10%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 4.8% 95.9%;
+  --secondary-foreground: 240 5.9% 10%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --ring: 240 5.9% 10%;
+  --radius: 0.5rem;
+}
+
+body {
+  font-synthesis: none;
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  text-rendering: geometricPrecision;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-optical-sizing: auto;
+  letter-spacing: 0.0085em;
+  word-spacing: -0.04em;
+}
+
+i,
+em,
+blockquote,
+nav {
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-style: initial;
+  font-weight: 400;
+  letter-spacing: -0.006em;
+}
+
+blockquote {
+  box-shadow: 1px 0 0 var(--color-neutral-500) inset;
+}
+@media screen and (max-width: 420px) {
+  blockquote {
+    /* Make it wider on mobile with a lighter color */
+    box-shadow: 2px 0 0 var(--color-neutral-300) inset;
+  }
+}
+
+blockquote + blockquote {
+  display: flow-root;
+}
+
+main {
+  hanging-punctuation: first allow-end last;
+  hyphens: auto;
+  hyphenate-limit-chars: 10 6 6;
+}
+
+pre {
+  background-color: #f7f7f7;
+  contain: paint;
+  overflow-x: auto;
+  padding: 0.875rem 1.25rem;
+  -webkit-font-smoothing: auto;
+}
+
+pre code {
+  display: inline-block;
+  padding: 0;
+  line-height: 1.45rem;
+}
+
+article {
+  figure {
+    margin-top: 1.75rem;
+    line-height: 0;
+  }
+  .no-padding {
+    --frame-padding: 0;
+  }
+  .framed > img,
+  .framed > figure > span:first-child {
+    padding: var(--frame-padding, 0.875rem);
+    background: var(--frame-background, #fff);
+    border: 1px solid var(--color-neutral-200);
+  }
+  iframe {
+    width: 100%;
+    border: 1px solid var(--color-neutral-200);
+    background-color: #fff;
+  }
+  details {
+    margin-top: 1.75rem;
+    padding: 0.5rem 0;
+    border-top: 1px solid var(--color-neutral-200);
+    border-bottom: 1px solid var(--color-neutral-200);
+  }
+  details summary {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  details summary::marker {
+    content: "";
+  }
+  details p:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.content-fade-out {
+  background: linear-gradient(
+    180deg,
+    hsla(0, 0%, 100%, 1) 0%,
+    hsla(0, 0%, 100%, 0.63) 14%,
+    hsla(0, 0%, 100%, 0.36) 29%,
+    hsla(0, 0%, 100%, 0.19) 43%,
+    hsla(0, 0%, 100%, 0.08) 57%,
+    hsla(0, 0%, 100%, 0.02) 71%,
+    hsla(0, 0%, 100%, 0) 86%,
+    hsla(0, 0%, 100%, 0) 100%
+  );
+}
+
+@supports (view-transition-name: none) {
+  @media not (prefers-reduced-motion: reduce) {
+    ::view-transition-old(crossfade) {
+      animation: hide 0.6s cubic-bezier(0.5, 0, 0.25, 1) forwards;
+    }
+
+    ::view-transition-new(crossfade) {
+      opacity: 0;
+      animation: appear 0.8s cubic-bezier(0.5, 0, 0.25, 1) 0.1s forwards;
+    }
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(12px);
+    transform: scale(0.97) translateY(5px);
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    filter: blur(12px);
+    transform: scale(0.97) translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1) translateY(0);
+  }
+}
