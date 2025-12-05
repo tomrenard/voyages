@@ -22,9 +22,9 @@
     "framer-motion": "^12.23.25",
     "lucide-react": "^0.555.0",
     "motion": "^12.23.25",
-    "next": "16.1.0-canary.10",
-    "react": "19.3.0-canary-fd524fe0-20251121",
-    "react-dom": "19.3.0-canary-fd524fe0-20251121",
+    "next": "16.1.0-canary.14",
+    "react": "19.3.0-canary-378973b3-20251205",
+    "react-dom": "19.3.0-canary-378973b3-20251205",
     "remark-gfm": "^4.0.0",
     "sharp": "^0.33.4",
     "simplex-noise": "^4.0.3"
