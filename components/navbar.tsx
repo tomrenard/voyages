@@ -68,7 +68,7 @@ export function Navbar() {
         </Link>
 
         <button
-          className="md:hidden p-2 text-gray-600"
+          className="xl:hidden p-2 text-gray-600"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
           aria-expanded={isOpen}
@@ -76,7 +76,7 @@ export function Navbar() {
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
 
-        <div className="hidden md:flex">
+        <div className="hidden xl:flex">
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
@@ -173,7 +173,7 @@ export function Navbar() {
           </NavigationMenu>
         </div>
 
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden xl:flex items-center gap-4">
           <Button variant="default" size="sm" asChild>
             <Link href="/contact">Devis gratuit</Link>
           </Button>
@@ -181,7 +181,7 @@ export function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="md:hidden absolute top-20 left-0 w-full bg-white border-b shadow-lg py-4 px-4 flex flex-col space-y-4">
+        <div className="xl:hidden absolute top-20 left-0 w-full bg-white border-b shadow-lg py-4 px-4 flex flex-col space-y-4">
           <Link
             href="/reves-de-voyages"
             className="text-lg font-medium py-2 border-b border-gray-100"
