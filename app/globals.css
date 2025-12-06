@@ -1,11 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --font-family-sans: Helvetica, "Helvetica Neue", Arial, sans-serif;
-  --font-family-serif: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  --font-family-sans: var(--font-sans), Helvetica, "Helvetica Neue", Arial, sans-serif;
+  --font-family-serif: var(--font-serif), Georgia, Cambria, "Times New Roman", Times, serif;
   --font-family-mono: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
     monospace;
-  --font-family-zh: Helvetica, "Helvetica Neue", Arial, sans-serif;
 
   --breakpoint-text: 1220px;
   --breakpoint-mobile: 420px;
@@ -40,36 +39,50 @@
 
 :root {
   --background: 0 0% 100%;
-  --foreground: 240 10% 3.9%;
-  --card: 0 0% 100%;
-  --card-foreground: 240 10% 3.9%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 240 10% 3.9%;
-  --primary: 240 5.9% 10%;
-  --primary-foreground: 0 0% 98%;
-  --secondary: 240 4.8% 95.9%;
-  --secondary-foreground: 240 5.9% 10%;
-  --muted: 240 4.8% 95.9%;
-  --muted-foreground: 240 3.8% 46.1%;
-  --accent: 240 4.8% 95.9%;
-  --accent-foreground: 240 5.9% 10%;
+  --foreground: 220 13% 18%; /* Darker charcoal */
+  
+  /* Gold / Bronze from logo */
+  --primary: 43 50% 56%; /* #C5A059 approx */
+  --primary-foreground: 0 0% 100%;
+  
+  --secondary: 220 14% 96%;
+  --secondary-foreground: 220 13% 18%;
+  
+  --muted: 220 14% 96%;
+  --muted-foreground: 215 16% 47%;
+  
+  --accent: 43 50% 96%; /* Very light gold */
+  --accent-foreground: 43 50% 36%;
+  
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 0 0% 98%;
-  --border: 240 5.9% 90%;
-  --input: 240 5.9% 90%;
-  --ring: 240 5.9% 10%;
+  
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --ring: 43 50% 56%;
+  
   --radius: 0.5rem;
+  
+  --card: 0 0% 100%;
+  --card-foreground: 220 13% 18%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 13% 18%;
 }
 
 body {
   font-synthesis: none;
-  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-sans), Helvetica, "Helvetica Neue", Arial, sans-serif;
   text-rendering: geometricPrecision;
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
   font-optical-sizing: auto;
   letter-spacing: 0.0085em;
   word-spacing: -0.04em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif), Georgia, serif;
 }
 
 i,
