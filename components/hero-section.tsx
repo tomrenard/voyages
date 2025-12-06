@@ -87,19 +87,19 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
-            className="max-w-4xl"
+            className="max-w-4xl px-4"
           >
-            <h1 className="text-4xl font-serif font-bold tracking-tight sm:text-6xl md:text-7xl text-white drop-shadow-md">
+            <h1 className="text-3xl font-serif font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-md">
               {slides[currentSlide].text}
             </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-100 sm:text-xl font-light drop-shadow-sm max-w-2xl mx-auto">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl leading-snug sm:leading-8 text-gray-100 font-light drop-shadow-sm max-w-2xl mx-auto">
               {slides[currentSlide].subtext}
             </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
+            <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto">
               <Button
                 asChild
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-full shadow-lg transition-all hover:scale-105"
+                className="w-full sm:w-auto h-auto bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-full shadow-lg transition-all hover:scale-105"
               >
                 <Link href="/reves-de-voyages">Je prépare mon voyage</Link>
               </Button>
@@ -107,7 +107,7 @@ export function HeroSection() {
                 variant="outline"
                 size="lg"
                 asChild
-                className="text-white border-white bg-white/10 hover:bg-white/20 px-8 py-6 text-lg rounded-full backdrop-blur-sm transition-all hover:scale-105"
+                className="w-full sm:w-auto h-auto text-white border-white bg-white/10 hover:bg-white/20 px-8 py-6 text-lg rounded-full backdrop-blur-sm transition-all hover:scale-105"
               >
                 <Link href="/contact">Nous contacter</Link>
               </Button>
