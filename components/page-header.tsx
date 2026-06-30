@@ -12,8 +12,8 @@ export function PageHeader({
   backgroundImage,
 }: PageHeaderProps) {
   return (
-    <div className="relative h-[300px] md:h-[400px] w-full flex items-center justify-center text-center text-white overflow-hidden">
-      <div className="absolute inset-0 bg-black/40 z-10" />
+    <div className="relative flex h-[300px] w-full items-center justify-center overflow-hidden text-center text-white md:h-[400px]">
+      <div className="absolute inset-0 z-10 bg-black/40" />
       {backgroundImage && (
         <div className="absolute inset-0 -z-0">
           <Image
@@ -26,14 +26,14 @@ export function PageHeader({
         </div>
       )}
       {/* Fallback pattern if no image */}
-      {!backgroundImage && <div className="absolute inset-0 -z-0 bg-primary" />}
+      {!backgroundImage && <div className="bg-primary absolute inset-0 -z-0" />}
 
       <div className="relative z-20 container mx-auto px-4">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 font-serif">
+        <h1 className="mb-4 font-serif text-4xl font-bold md:text-6xl">
           {title}
         </h1>
         {subtitle && (
-          <p className="text-lg md:text-xl max-w-2xl mx-auto font-light text-gray-100">
+          <p className="mx-auto max-w-2xl text-lg font-light text-gray-100 md:text-xl">
             {subtitle}
           </p>
         )}

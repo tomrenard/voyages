@@ -8,11 +8,12 @@ export const metadata: Metadata = {
   title: "Week-end & Courts Séjours",
   description:
     "Idées de week-ends en Europe et en France. City breaks, escapades romantiques et découvertes culturelles.",
+  alternates: { canonical: "/nos-coups-de-coeur/week-end" },
 };
 
 export default function Weekend() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col">
       <PageHeader
         title="Escapades Week-end"
         subtitle="Évadez-vous le temps de quelques jours"
@@ -20,18 +21,18 @@ export default function Weekend() {
       />
 
       <div className="container mx-auto px-4 py-16 md:py-24">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl font-serif font-bold text-primary mb-6">
+        <div className="mx-auto mb-16 max-w-3xl text-center">
+          <h2 className="text-primary mb-6 font-serif text-3xl font-bold">
             City Breaks & Courts Séjours
           </h2>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <p className="text-lg leading-relaxed text-gray-600">
             Découvrez nos destinations pour un week-end et profitez d’un voyage
             inoubliable. Londres, Rome, Barcelone, Prague... L'Europe est à
             portée de main pour une pause bien méritée.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        <div className="grid grid-cols-1 gap-8 text-center sm:grid-cols-2 lg:grid-cols-4">
           {[
             {
               icon: Landmark,
@@ -51,10 +52,10 @@ export default function Weekend() {
             { icon: Plane, title: "Proximité", text: "À moins de 2h de vol." },
           ].map((item, idx) => (
             <div key={idx} className="group">
-              <div className="w-16 h-16 mx-auto bg-gray-100 rounded-2xl flex items-center justify-center text-gray-600 mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                <item.icon className="w-8 h-8" />
+              <div className="group-hover:bg-primary mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gray-100 text-gray-600 transition-colors group-hover:text-white">
+                <item.icon className="h-8 w-8" />
               </div>
-              <h3 className="font-serif font-bold text-lg mb-2">
+              <h3 className="mb-2 font-serif text-lg font-bold">
                 {item.title}
               </h3>
               <p className="text-sm text-gray-600">{item.text}</p>

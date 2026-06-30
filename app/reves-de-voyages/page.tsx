@@ -1,37 +1,39 @@
 import { PageHeader } from "@/components/page-header";
-import { AboutSection } from "@/components/about-section";
 import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Qui sommes-nous ?",
   description:
-    "Découvrez Rêves de Voyages, votre agence de voyages sur mesure à Bruz depuis 2006. Véronique et son équipe vous accompagnent.",
+    "Découvrez Rêves de Voyages, votre agence de voyages sur mesure depuis 2006. Véronique vous accompagne avant, pendant et après votre voyage.",
+  alternates: { canonical: "/reves-de-voyages" },
 };
 
 export default function RevesDeVoyages() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col">
       <PageHeader
         title="Rêves de Voyages"
-        subtitle="Votre agence de voyages 100% personnalisés à Bruz"
+        subtitle="Votre agence de voyages 100% personnalisés, près de Rennes"
         backgroundImage="/images/hero-reves.jpg"
       />
 
       <div className="container mx-auto px-4 py-16 md:py-24">
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-3xl font-serif font-bold text-primary mb-6">
+        <div className="mx-auto mb-16 max-w-4xl text-center">
+          <h2 className="text-primary mb-6 font-serif text-3xl font-bold">
             Bienvenue chez Rêves de Voyages
           </h2>
-          <p className="text-lg text-gray-600 leading-relaxed mb-6">
-            Située à Bruz, près de Rennes (35), notre agence est spécialisée
-            dans la création de voyages sur mesure depuis 2006. Nous croyons que
-            chaque voyageur est unique, et que chaque voyage doit l'être aussi.
+          <p className="mb-6 text-lg leading-relaxed text-gray-600">
+            Implantée dans la région de Rennes (35), notre agence indépendante
+            est spécialisée dans la création de voyages sur mesure depuis 2006.
+            Nous vous recevons sur rendez-vous et restons disponibles par
+            téléphone ou en visioconférence. Parce que chaque voyageur est
+            unique, chaque voyage doit l'être aussi.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
-          <div className="relative h-[500px] rounded-xl overflow-hidden shadow-2xl">
+        <div className="mb-20 grid grid-cols-1 items-center gap-12 md:grid-cols-2">
+          <div className="relative h-[500px] overflow-hidden rounded-xl shadow-2xl">
             <Image
               src="/images/about-reves.jpg"
               alt="Véronique, votre conseillère voyages"
@@ -41,10 +43,10 @@ export default function RevesDeVoyages() {
             />
           </div>
           <div className="space-y-6">
-            <h3 className="text-2xl font-serif font-bold text-gray-900">
+            <h3 className="font-serif text-2xl font-bold text-gray-900">
               L'expertise de Véronique
             </h3>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="leading-relaxed text-gray-600">
               Que ce soit pour un <strong>week-end</strong>, un{" "}
               <strong>voyage de noces</strong> ou vos grandes vacances
               annuelles, Véronique vous accompagne avant, pendant et après votre
@@ -53,30 +55,30 @@ export default function RevesDeVoyages() {
             </p>
             <ul className="space-y-3 text-gray-700">
               <li className="flex items-center gap-3">
-                <span className="w-2 h-2 bg-primary rounded-full"></span>
+                <span className="bg-primary h-2 w-2 rounded-full"></span>
                 Conseils personnalisés et écoute attentive
               </li>
               <li className="flex items-center gap-3">
-                <span className="w-2 h-2 bg-primary rounded-full"></span>
+                <span className="bg-primary h-2 w-2 rounded-full"></span>
                 Sélection rigoureuse des partenaires locaux
               </li>
               <li className="flex items-center gap-3">
-                <span className="w-2 h-2 bg-primary rounded-full"></span>
+                <span className="bg-primary h-2 w-2 rounded-full"></span>
                 Assistance et suivi tout au long du voyage
               </li>
               <li className="flex items-center gap-3">
-                <span className="w-2 h-2 bg-primary rounded-full"></span>
+                <span className="bg-primary h-2 w-2 rounded-full"></span>
                 Devis sur mesure gratuit
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="bg-gray-50 rounded-2xl p-8 md:p-12 text-center">
-          <h3 className="text-2xl font-serif font-bold text-gray-900 mb-6">
+        <div className="rounded-2xl bg-gray-50 p-8 text-center md:p-12">
+          <h3 className="mb-6 font-serif text-2xl font-bold text-gray-900">
             Nos destinations phares
           </h3>
-          <p className="text-gray-600 max-w-3xl mx-auto mb-8">
+          <p className="mx-auto mb-8 max-w-3xl text-gray-600">
             Nous vous proposons une multitude de destinations pour assouvir
             votre soif de découverte :
           </p>
@@ -106,7 +108,7 @@ export default function RevesDeVoyages() {
             ].map((dest) => (
               <span
                 key={dest}
-                className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm text-gray-700 shadow-sm hover:border-primary hover:text-primary transition-colors cursor-default"
+                className="hover:border-primary hover:text-primary cursor-default rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700 shadow-sm transition-colors"
               >
                 {dest}
               </span>

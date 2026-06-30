@@ -1,12 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
-// @ts-expect-error
 import { ViewTransition } from "react";
 import cn from "clsx";
 import { Playfair_Display, Lato } from "next/font/google";
 import { Navbar } from "@/components/navbar";
 import Footer from "@/components/footer";
 import JsonLd from "@/components/json-ld";
+import { siteConfig, siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -23,12 +23,14 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     template: "%s - Rêves de Voyages",
-    default: "Rêves de Voyages | Agence de voyages sur mesure à Bruz (35)",
+    default:
+      "Rêves de Voyages | Agence de voyages sur mesure près de Rennes (35)",
   },
   description:
-    "RÊVES DE VOYAGES, votre agence de voyages à Bruz près de Rennes. Spécialiste des voyages sur mesure, séjours, circuits, croisières et week-ends personnalisés.",
+    "Rêves de Voyages, votre agence de voyages indépendante près de Rennes. Spécialiste du sur mesure : séjours, circuits, croisières, voyages de noces et week-ends, sur rendez-vous, par téléphone ou en visio.",
   keywords: [
     "agence de voyage",
     "Bruz",
@@ -40,20 +42,26 @@ export const metadata: Metadata = {
     "vacances personnalisées",
     "voyage de noces",
   ],
-  authors: [{ name: "Rêves de Voyages" }],
+  authors: [{ name: siteConfig.name }],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://www.revesdevoyages.com",
-    siteName: "Rêves de Voyages",
-    title: "Rêves de Voyages | Agence de voyages sur mesure à Bruz",
+    url: siteUrl,
+    siteName: siteConfig.name,
+    title: "Rêves de Voyages | Agence de voyages sur mesure près de Rennes",
     description:
-      "Créez le voyage de vos rêves avec Rêves de Voyages. Agence spécialiste du sur-mesure à Bruz (35).",
+      "Créez le voyage de vos rêves avec Rêves de Voyages. Agence indépendante spécialiste du sur-mesure, sur rendez-vous, par téléphone ou en visio.",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
 export const viewport: Viewport = {
-  maximumScale: 1,
   colorScheme: "only light",
   themeColor: "#fcfcfc",
 };
@@ -64,11 +72,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`overflow-x-hidden touch-manipulation ${playfair.variable} ${lato.variable}`}>
+    <html
+      lang="fr"
+      className={`touch-manipulation overflow-x-hidden ${playfair.variable} ${lato.variable}`}
+    >
       <body
         className={cn(
-          "w-full min-h-screen bg-background font-sans antialiased",
-          "text-neutral-900"
+          "bg-background min-h-screen w-full font-sans antialiased",
+          "text-neutral-900",
         )}
       >
         <JsonLd />

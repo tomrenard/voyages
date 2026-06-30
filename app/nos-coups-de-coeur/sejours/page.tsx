@@ -8,11 +8,12 @@ export const metadata: Metadata = {
   title: "Séjours",
   description:
     "Séjours tout compris, hôtels clubs, vacances farniente... Nos meilleures offres pour se détendre au soleil.",
+  alternates: { canonical: "/nos-coups-de-coeur/sejours" },
 };
 
 export default function Sejours() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col">
       <PageHeader
         title="Séjours"
         subtitle="Détente absolue et farniente"
@@ -20,11 +21,11 @@ export default function Sejours() {
       />
 
       <div className="container mx-auto px-4 py-16 md:py-24">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl font-serif font-bold text-primary mb-6">
+        <div className="mx-auto mb-16 max-w-3xl text-center">
+          <h2 className="text-primary mb-6 font-serif text-3xl font-bold">
             Vos vacances, à votre rythme
           </h2>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <p className="text-lg leading-relaxed text-gray-600">
             RÊVES DE VOYAGES vous propose une grande sélection de séjours longue
             ou courte durée dédiée à satisfaire tous les goûts et les budgets.
             Hôtels de charme, clubs tout inclus ou resorts de luxe, nous avons
@@ -32,7 +33,7 @@ export default function Sejours() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="mb-16 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           {[
             {
               icon: Sun,
@@ -57,12 +58,12 @@ export default function Sejours() {
           ].map((item, idx) => (
             <div
               key={idx}
-              className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center"
+              className="rounded-xl border border-gray-100 bg-white p-6 text-center shadow-sm"
             >
-              <div className="w-10 h-10 mx-auto bg-blue-50 rounded-full flex items-center justify-center text-blue-500 mb-4">
-                <item.icon className="w-5 h-5" />
+              <div className="bg-primary/10 text-primary mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full">
+                <item.icon className="h-5 w-5" />
               </div>
-              <h3 className="font-serif font-bold mb-2">{item.title}</h3>
+              <h3 className="mb-2 font-serif font-bold">{item.title}</h3>
               <p className="text-sm text-gray-600">{item.text}</p>
             </div>
           ))}

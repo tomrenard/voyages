@@ -4,55 +4,24 @@ import Link from "next/link";
 import Image from "next/image";
 import { Calendar, User } from "lucide-react";
 import { Metadata } from "next";
+import { articles } from "@/lib/articles";
 
 export const metadata: Metadata = {
   title: "Actualités & Blog",
   description:
-    "Suivez l'actualité du tourisme et découvrez nos conseils de voyage sur le blog de Rêves de Voyages.",
+    "Conseils de voyage, inspirations et guides pratiques par Rêves de Voyages : destinations, croisières, voyages de noces et week-ends.",
+  alternates: { canonical: "/actualites" },
 };
 
-export default function Actualites() {
-  const posts = [
-    {
-      id: 1,
-      title: "Réouverture des frontières : où partir cet été ?",
-      excerpt:
-        "Découvrez notre sélection de destinations ouvertes aux voyageurs français pour des vacances en toute sérénité.",
-      image: "/images/sejour.jpg",
-      date: "15 Juin 2025",
-      author: "Véronique",
-    },
-    {
-      id: 2,
-      title: "Les plus belles croisières fluviales d'Europe",
-      excerpt:
-        "Laissez-vous bercer au fil de l'eau et découvrez l'Europe sous un nouvel angle, du Danube au Rhin.",
-      image: "/images/croisiere.jpg",
-      date: "22 Mai 2025",
-      author: "Vanessa",
-    },
-    {
-      id: 3,
-      title: "Safari en Tanzanie : le guide ultime",
-      excerpt:
-        "Tout ce qu'il faut savoir pour préparer votre safari en Tanzanie : quand partir, quels parcs visiter, quel budget prévoir.",
-      image: "/images/circuit.jpg",
-      date: "10 Avril 2025",
-      author: "Véronique",
-    },
-    {
-      id: 4,
-      title: "Week-end à Londres : nos adresses secrètes",
-      excerpt:
-        "Sortez des sentiers battus et découvrez le Londres des locaux avec nos coups de cœur shopping et gastronomie.",
-      image: "/images/weekend.jpg",
-      date: "05 Mars 2025",
-      author: "Vanessa",
-    },
-  ];
+const dateFormatter = new Intl.DateTimeFormat("fr-FR", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+});
 
+export default function Actualites() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col">
       <PageHeader
         title="Actualités & Blog"
         subtitle="Inspirations, conseils et nouvelles du monde"
@@ -60,44 +29,54 @@ export default function Actualites() {
       />
 
       <div className="container mx-auto px-4 py-16 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {posts.map((post) => (
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
+          {articles.map((post) => (
             <article
-              key={post.id}
-              className="flex flex-col bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow border border-gray-100 group"
+              key={post.slug}
+              className="group flex flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition-shadow hover:shadow-lg"
             >
-              <div className="relative h-64 overflow-hidden">
+              <Link
+                href={`/actualites/${post.slug}`}
+                className="relative block h-64 overflow-hidden"
+              >
                 <Image
                   src={post.image}
-                  alt={post.title}
+                  alt={post.imageAlt}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-              </div>
-              <div className="p-8 flex flex-col flex-grow">
-                <div className="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                <span className="text-primary absolute top-4 left-4 z-10 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold">
+                  {post.category}
+                </span>
+              </Link>
+              <div className="flex flex-grow flex-col p-8">
+                <div className="mb-4 flex items-center gap-4 text-sm text-gray-400">
                   <div className="flex items-center gap-1">
-                    <Calendar className="w-4 h-4" />
-                    {post.date}
+                    <Calendar className="h-4 w-4" />
+                    <time dateTime={post.date}>
+                      {dateFormatter.format(new Date(post.date))}
+                    </time>
                   </div>
                   <div className="flex items-center gap-1">
-                    <User className="w-4 h-4" />
+                    <User className="h-4 w-4" />
                     {post.author}
                   </div>
                 </div>
-                <h3 className="text-2xl font-serif font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors">
-                  {post.title}
-                </h3>
-                <p className="text-gray-600 mb-6 flex-grow leading-relaxed">
+                <h2 className="group-hover:text-primary mb-4 font-serif text-2xl font-bold text-gray-900 transition-colors">
+                  <Link href={`/actualites/${post.slug}`}>{post.title}</Link>
+                </h2>
+                <p className="mb-6 flex-grow leading-relaxed text-gray-600">
                   {post.excerpt}
                 </p>
                 <Button
                   variant="link"
-                  className="p-0 h-auto font-bold text-primary hover:text-primary/80 justify-start"
+                  className="text-primary hover:text-primary/80 h-auto justify-start p-0 font-bold"
                   asChild
                 >
-                  <Link href="#">Lire la suite &rarr;</Link>
+                  <Link href={`/actualites/${post.slug}`}>
+                    Lire la suite &rarr;
+                  </Link>
                 </Button>
               </div>
             </article>

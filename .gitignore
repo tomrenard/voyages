@@ -1,2 +1,10 @@
 node_modules
 .next
+
+# env files
+.env
+.env*.local
+
+# os / editor
+.DS_Store
+*.pem

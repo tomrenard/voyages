@@ -1,68 +1,66 @@
-"use client";
-
 import Link from "next/link";
-import { Facebook, Instagram, MapPin, Phone, Clock } from "lucide-react";
+import { Phone, Mail, CalendarCheck } from "lucide-react";
+import { FacebookIcon, InstagramIcon } from "@/components/social-icons";
+import { siteConfig } from "@/lib/site";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 border-t border-gray-800">
-      <div className="container mx-auto px-4 md:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="border-t border-gray-800 bg-gray-900 text-gray-300">
+      <div className="container mx-auto px-4 py-12 md:px-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">Contactez-nous</h3>
-            <div className="flex items-start space-x-3">
-              <MapPin className="w-5 h-5 mt-1 shrink-0 text-indigo-400" />
-              <p>
-                7 rue Jean Mermoz,
-                <br />
-                35170 Bruz
-              </p>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Phone className="w-5 h-5 text-indigo-400" />
-              <p>02 23 50 18 52</p>
-            </div>
+            <h3 className="text-lg font-semibold text-white">
+              Rêves de Voyages
+            </h3>
+            <p className="text-sm leading-relaxed text-gray-400">
+              Votre agence de voyages indépendante, spécialiste du sur-mesure
+              depuis {siteConfig.foundedYear}. Un conseil personnalisé, où que
+              vous soyez.
+            </p>
             <div className="flex space-x-4 pt-2">
               <Link
-                href="https://facebook.com"
-                className="hover:text-white transition-colors"
+                href={siteConfig.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-white"
               >
-                <Facebook className="w-6 h-6" />
+                <FacebookIcon className="h-6 w-6" />
                 <span className="sr-only">Facebook</span>
               </Link>
               <Link
-                href="https://instagram.com"
-                className="hover:text-white transition-colors"
+                href={siteConfig.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-white"
               >
-                <Instagram className="w-6 h-6" />
+                <InstagramIcon className="h-6 w-6" />
                 <span className="sr-only">Instagram</span>
               </Link>
             </div>
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white flex items-center gap-2">
-              <Clock className="w-5 h-5 text-indigo-400" />
-              Horaires d'ouverture
-            </h3>
-            <ul className="space-y-2 text-sm">
-              <li className="flex justify-between">
-                <span>Lundi :</span>
-                <span>14:00 à 18:30</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Du mardi au vendredi :</span>
-                <span>9:30 - 12:30 / 14:00 - 18:30</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Le samedi :</span>
-                <span>10:00 à 12:30</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Le dimanche :</span>
-                <span>Fermé</span>
-              </li>
-            </ul>
+            <h3 className="text-lg font-semibold text-white">Nous joindre</h3>
+            <div className="flex items-start space-x-3">
+              <CalendarCheck className="text-primary mt-0.5 h-5 w-5 shrink-0" />
+              <p className="text-sm">
+                Sur rendez-vous, par téléphone ou en visioconférence.
+              </p>
+            </div>
+            <a
+              href={`tel:${siteConfig.phoneE164}`}
+              className="flex items-center space-x-3 transition-colors hover:text-white"
+            >
+              <Phone className="text-primary h-5 w-5" />
+              <span>{siteConfig.phone}</span>
+            </a>
+            <a
+              href={`mailto:${siteConfig.email}`}
+              className="flex items-center space-x-3 break-all transition-colors hover:text-white"
+            >
+              <Mail className="text-primary h-5 w-5 shrink-0" />
+              <span>{siteConfig.email}</span>
+            </a>
           </div>
 
           <div className="space-y-4">
@@ -70,25 +68,25 @@ export default function Footer() {
             <nav className="flex flex-col space-y-2 text-sm">
               <Link
                 href="/mentions-legales"
-                className="hover:text-white transition-colors"
+                className="transition-colors hover:text-white"
               >
                 Mentions légales
               </Link>
               <Link
                 href="/politique-de-confidentialite"
-                className="hover:text-white transition-colors"
+                className="transition-colors hover:text-white"
               >
                 Politique de confidentialité
               </Link>
               <Link
                 href="/plan-du-site"
-                className="hover:text-white transition-colors"
+                className="transition-colors hover:text-white"
               >
-                Plan de site
+                Plan du site
               </Link>
               <Link
                 href="/contact"
-                className="hover:text-white transition-colors"
+                className="transition-colors hover:text-white"
               >
                 Contact
               </Link>
@@ -96,7 +94,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+        <div className="mt-12 flex flex-col items-center justify-between border-t border-gray-800 pt-8 text-sm text-gray-500 md:flex-row">
           <p>
             © {new Date().getFullYear()} Rêves de Voyages. Tous droits réservés.
           </p>

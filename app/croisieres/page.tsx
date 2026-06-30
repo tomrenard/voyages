@@ -9,11 +9,12 @@ export const metadata: Metadata = {
   title: "Croisières",
   description:
     "Croisières maritimes, fluviales, tours du monde... Naviguez sur les plus belles mers avec Rêves de Voyages.",
+  alternates: { canonical: "/croisieres" },
 };
 
 export default function Croisieres() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col">
       <PageHeader
         title="Nos Croisières"
         subtitle="Naviguez sur les plus belles mers du monde"
@@ -21,19 +22,19 @@ export default function Croisieres() {
       />
 
       <div className="container mx-auto px-4 py-16 md:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+        <div className="mb-20 grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <div className="space-y-6">
-            <h2 className="text-3xl font-serif font-bold text-primary">
+            <h2 className="text-primary font-serif text-3xl font-bold">
               L'élégance au fil de l'eau
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-lg leading-relaxed text-gray-600">
               RÊVES DE VOYAGES organise tous types de croisière en tenant compte
               des envies, des conditions et du budget de ses clients. Que vous
               rêviez d'une traversée transatlantique, d'une exploration polaire
               ou d'une escapade en Méditerranée, nous trouvons le navire qui
               vous correspond.
             </p>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               {[
                 "Croisières maritimes",
                 "Croisières fluviales",
@@ -46,7 +47,7 @@ export default function Croisieres() {
                   key={item}
                   className="flex items-center gap-2 text-gray-700"
                 >
-                  <Anchor className="w-4 h-4 text-primary" />
+                  <Anchor className="text-primary h-4 w-4" />
                   {item}
                 </li>
               ))}
@@ -54,12 +55,12 @@ export default function Croisieres() {
             <Button
               asChild
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-white mt-4"
+              className="bg-primary hover:bg-primary/90 mt-4 text-white"
             >
               <Link href="/contact">Demander un devis croisière</Link>
             </Button>
           </div>
-          <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl">
+          <div className="relative h-[400px] overflow-hidden rounded-xl shadow-xl">
             <Image
               src="/images/content-croisiere.jpg"
               alt="Navire de croisière"
@@ -70,7 +71,7 @@ export default function Croisieres() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {[
             {
               icon: Ship,
@@ -88,11 +89,11 @@ export default function Croisieres() {
               text: "Découvrez chaque jour un nouveau port et une nouvelle culture.",
             },
           ].map((item, idx) => (
-            <div key={idx} className="bg-gray-50 p-8 rounded-xl text-center">
-              <div className="w-12 h-12 mx-auto bg-white rounded-full flex items-center justify-center text-primary mb-6 shadow-sm">
-                <item.icon className="w-6 h-6" />
+            <div key={idx} className="rounded-xl bg-gray-50 p-8 text-center">
+              <div className="text-primary mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-sm">
+                <item.icon className="h-6 w-6" />
               </div>
-              <h3 className="text-xl font-serif font-bold mb-3">
+              <h3 className="mb-3 font-serif text-xl font-bold">
                 {item.title}
               </h3>
               <p className="text-gray-600">{item.text}</p>

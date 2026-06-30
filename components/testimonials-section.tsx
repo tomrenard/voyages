@@ -1,4 +1,6 @@
-import { Star } from "lucide-react";
+import Link from "next/link";
+import { Star, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const testimonials = [
   {
@@ -25,36 +27,45 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-20 bg-white">
+    <section className="bg-white py-20">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-serif font-bold tracking-tight text-gray-900 sm:text-5xl">
+        <div className="mb-16 text-center">
+          <h2 className="font-serif text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
             Vos avis comptent
           </h2>
-          <p className="mt-4 text-xl text-gray-600 font-light">
+          <p className="mt-4 text-xl font-light text-gray-600">
             Ce que nos voyageurs disent de nous
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100"
+              className="rounded-2xl border border-gray-100 bg-gray-50 p-8 shadow-sm transition-shadow hover:shadow-md"
             >
-              <div className="flex mb-4">
+              <div className="mb-4 flex" aria-label="Note : 5 sur 5">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-primary fill-primary" />
+                  <Star key={i} className="text-primary fill-primary h-4 w-4" />
                 ))}
               </div>
-              <p className="text-gray-700 mb-6 italic leading-relaxed">
+              <p className="mb-6 leading-relaxed text-gray-700 italic">
                 "{testimonial.text}"
               </p>
-              <p className="font-serif font-bold text-gray-900 text-sm uppercase tracking-wider">
+              <p className="font-serif text-sm font-bold tracking-wider text-gray-900 uppercase">
                 {testimonial.name}
               </p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Button asChild variant="outline" size="lg">
+            <Link href="/avis">
+              Voir tous les avis
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

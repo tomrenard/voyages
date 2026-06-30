@@ -1,56 +1,64 @@
-import React from "react";
 import Link from "next/link";
 import { PageHeader } from "@/components/page-header";
-import { ArrowRight, Plane, Map, UserCheck, Ship, CalendarDays } from "lucide-react";
+import {
+  ArrowRight,
+  Plane,
+  Map,
+  UserCheck,
+  Ship,
+  CalendarDays,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Nos Coups de Cœur",
-  description: "Séjours, circuits, croisières, week-ends... Découvrez les coups de cœur de votre agence de voyages à Bruz.",
+  description:
+    "Séjours, circuits, croisières, voyages sur mesure et week-ends : explorez les sélections de Rêves de Voyages pour votre prochaine évasion.",
+  alternates: { canonical: "/nos-coups-de-coeur" },
 };
 
 const categories = [
   {
     title: "Séjours",
-    description: "RÊVES DE VOYAGES vous propose une grande sélection de séjours longue ou courte durée dédiée à satisfaire tous les goûts et les budgets.",
+    description:
+      "Hôtels-clubs, formules tout compris ou adresses de charme : la formule séjour qui vous ressemble, au meilleur rapport qualité-prix.",
     icon: Plane,
     href: "/nos-coups-de-coeur/sejours",
-    color: "bg-blue-100 text-blue-600",
   },
   {
     title: "Circuits",
-    description: "Découvrez le monde avec notre agence et profitez d’un service d’excellence à la hauteur de vos attentes. USA, Sri Lanka, Indonésie, Cuba…",
+    description:
+      "Des itinéraires accompagnés ou en liberté pour explorer un pays en profondeur, des États-Unis au Sri Lanka.",
     icon: Map,
     href: "/nos-coups-de-coeur/circuits",
-    color: "bg-green-100 text-green-600",
   },
   {
     title: "Sur-mesure",
-    description: "Parce que chacun a ses rêves, l’agence de voyage RÊVES DE VOYAGES est à l’écoute de vos envies pour créer un voyage personnalisé selon votre budget et vos désirs.",
+    description:
+      "Un voyage entièrement composé pour vous, étape par étape, à votre rythme et selon votre budget.",
     icon: UserCheck,
-    href: "/nos-coups-de-coeur/sur-mesure",
-    color: "bg-purple-100 text-purple-600",
+    href: "/voyage-sur-mesure",
   },
   {
     title: "Croisières",
-    description: "RÊVES DE VOYAGES organise tous types de croisière en tenant compte des envies, des conditions et du budget de ses clients.",
+    description:
+      "Maritimes, fluviales ou d'expédition : une seule valise, mille horizons à découvrir au fil de l'eau.",
     icon: Ship,
-    href: "/nos-coups-de-coeur/croisieres",
-    color: "bg-cyan-100 text-cyan-600",
+    href: "/croisieres",
   },
   {
     title: "Week-end",
-    description: "Découvrez nos destinations pour un week-end et profitez d’un voyage inoubliable. Nous vous assurons un accompagnement personnalisé et un service de qualité.",
+    description:
+      "Quelques jours suffisent pour changer d'air : nos plus belles escapades en France et en Europe.",
     icon: CalendarDays,
     href: "/nos-coups-de-coeur/week-end",
-    color: "bg-orange-100 text-orange-600",
   },
 ];
 
 export default function NosCoupsDeCoeur() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col">
       <PageHeader
         title="Nos coups de cœur"
         subtitle="Laissez-vous inspirer par nos sélections exclusives"
@@ -58,21 +66,29 @@ export default function NosCoupsDeCoeur() {
       />
 
       <div className="container mx-auto px-4 py-16 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {categories.map((category) => (
-            <div 
-              key={category.title} 
-              className="bg-white rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group"
+            <div
+              key={category.title}
+              className="group flex flex-col rounded-xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-xl"
             >
-              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 ${category.color} transform group-hover:scale-110 transition-transform`}>
-                <category.icon className="w-7 h-7" />
+              <div className="bg-primary/10 text-primary mb-6 flex h-14 w-14 transform items-center justify-center rounded-2xl transition-transform group-hover:scale-110">
+                <category.icon className="h-7 w-7" />
               </div>
-              <h3 className="text-2xl font-serif font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors">{category.title}</h3>
-              <p className="text-gray-600 mb-8 flex-grow leading-relaxed">{category.description}</p>
-              <Button variant="outline" className="w-full justify-between group-hover:bg-primary group-hover:text-white border-primary/20" asChild>
+              <h3 className="group-hover:text-primary mb-4 font-serif text-2xl font-bold text-gray-900 transition-colors">
+                {category.title}
+              </h3>
+              <p className="mb-8 flex-grow leading-relaxed text-gray-600">
+                {category.description}
+              </p>
+              <Button
+                variant="outline"
+                className="group-hover:bg-primary border-primary/20 w-full justify-between group-hover:text-white"
+                asChild
+              >
                 <Link href={category.href}>
                   Explorer
-                  <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
             </div>

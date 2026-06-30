@@ -4,17 +4,17 @@ import Image from "next/image";
 
 export function AboutSection() {
   return (
-    <section className="py-16 bg-white">
+    <section className="bg-white py-16">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <div className="space-y-6">
-            <h2 className="text-3xl font-serif font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <h2 className="font-serif text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               RÊVES DE VOYAGES, <br />
               <span className="text-primary italic">
                 votre agence de voyages à Bruz
               </span>
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed font-light">
+            <p className="text-lg leading-relaxed font-light text-gray-600">
               Spécialiste de{" "}
               <strong className="font-medium text-gray-900">
                 voyages personnalisés depuis 2006
@@ -22,31 +22,28 @@ export function AboutSection() {
               , l’agence RÊVES DE VOYAGES met à votre disposition divers
               programmes adaptés à toutes les envies et à tous les budgets.
             </p>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-lg leading-relaxed text-gray-600">
               Que ce soit pour un week-end, un <strong>voyage de noces</strong>{" "}
               ou des vacances, Véronique saura vous accompagner avant, pendant
               et après vos voyages et s’engage à vous assurer des prestations de
               qualité à la hauteur de vos exigences.
             </p>
             <p className="text-base text-gray-500">
-              Notre agence vous propose une multitude de destinations, notamment
-              : l’Australie, l’ile Maurice, les Seychelles, la République
-              dominicaine, les Antilles françaises, Cuba, la Thaïlande, les
-              Philippines, le Vietnam, Hong Kong, Taiwan, la Polynésie, la
-              Grèce, la Turquie, Chypre, le Maroc, la Tunisie, l’Espagne,
-              l’Italie, Londres, Cap Vert…
+              Des plages de l’océan Indien aux grandes capitales européennes, en
+              passant par l’Asie et les Caraïbes, nous façonnons chaque
+              itinéraire selon vos envies et votre budget.
             </p>
             <div className="pt-4">
               <Button
                 asChild
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-white rounded-full px-8"
+                className="bg-primary hover:bg-primary/90 rounded-full px-8 text-white"
               >
                 <Link href="/reves-de-voyages">En savoir plus</Link>
               </Button>
             </div>
           </div>
-          <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-xl">
+          <div className="relative h-[400px] overflow-hidden rounded-2xl shadow-xl lg:h-[500px]">
             <Image
               src="/images/about-img.jpg"
               alt="Voyageurs heureux"

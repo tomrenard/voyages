@@ -77,7 +77,7 @@ export function HeroSection() {
         </AnimatePresence>
       </div>
 
-      <div className="absolute inset-0 bg-black/20 z-10" />
+      <div className="absolute inset-0 z-10 bg-black/20" />
 
       <div className="relative z-20 flex h-full flex-col items-center justify-center px-4 text-center">
         <AnimatePresence mode="wait">
@@ -89,17 +89,17 @@ export function HeroSection() {
             transition={{ duration: 0.5 }}
             className="max-w-4xl px-4"
           >
-            <h1 className="text-3xl font-serif font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-md">
+            <h1 className="font-serif text-3xl font-bold tracking-tight text-white drop-shadow-md sm:text-5xl md:text-6xl lg:text-7xl">
               {slides[currentSlide].text}
             </h1>
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl leading-snug sm:leading-8 text-gray-100 font-light drop-shadow-sm max-w-2xl mx-auto">
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-snug font-light text-gray-100 drop-shadow-sm sm:mt-6 sm:text-lg sm:leading-8 md:text-xl">
               {slides[currentSlide].subtext}
             </p>
-            <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto">
+            <div className="mt-8 flex w-full flex-col items-center justify-center gap-4 sm:mt-10 sm:w-auto sm:flex-row sm:gap-6">
               <Button
                 asChild
                 size="lg"
-                className="w-full sm:w-auto h-auto bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-full shadow-lg transition-all hover:scale-105"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground h-auto w-full rounded-full px-8 py-6 text-lg shadow-lg transition-all hover:scale-105 sm:w-auto"
               >
                 <Link href="/reves-de-voyages">Je prépare mon voyage</Link>
               </Button>
@@ -107,7 +107,7 @@ export function HeroSection() {
                 variant="outline"
                 size="lg"
                 asChild
-                className="w-full sm:w-auto h-auto text-white border-white bg-white/10 hover:bg-white/20 px-8 py-6 text-lg rounded-full backdrop-blur-sm transition-all hover:scale-105"
+                className="h-auto w-full rounded-full border-white bg-white/10 px-8 py-6 text-lg text-white backdrop-blur-sm transition-all hover:scale-105 hover:bg-white/20 sm:w-auto"
               >
                 <Link href="/contact">Nous contacter</Link>
               </Button>
@@ -118,20 +118,20 @@ export function HeroSection() {
 
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 rounded-full bg-white/10 p-2 text-white hover:bg-white/20 focus:outline-none md:left-8 backdrop-blur-sm transition-colors"
-        aria-label="Previous slide"
+        className="absolute top-1/2 left-4 z-30 -translate-y-1/2 rounded-full bg-white/10 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/20 focus:outline-none md:left-8"
+        aria-label="Diapositive précédente"
       >
         <ChevronLeft className="h-8 w-8" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 rounded-full bg-white/10 p-2 text-white hover:bg-white/20 focus:outline-none md:right-8 backdrop-blur-sm transition-colors"
-        aria-label="Next slide"
+        className="absolute top-1/2 right-4 z-30 -translate-y-1/2 rounded-full bg-white/10 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/20 focus:outline-none md:right-8"
+        aria-label="Diapositive suivante"
       >
         <ChevronRight className="h-8 w-8" />
       </button>
 
-      <div className="absolute bottom-8 left-1/2 flex -translate-x-1/2 space-x-2 z-30">
+      <div className="absolute bottom-8 left-1/2 z-30 flex -translate-x-1/2 space-x-2">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -139,7 +139,7 @@ export function HeroSection() {
             className={`h-2.5 w-2.5 rounded-full transition-colors ${
               index === currentSlide ? "bg-white" : "bg-white/50"
             }`}
-            aria-label={`Go to slide ${index + 1}`}
+            aria-label={`Aller à la diapositive ${index + 1}`}
           />
         ))}
       </div>

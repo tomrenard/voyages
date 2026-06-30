@@ -1,54 +1,32 @@
+import { siteConfig, siteUrl } from "@/lib/site";
+
 export default function JsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "TravelAgency",
-    name: "Rêves de Voyages",
-    image: "https://www.revesdevoyages.com/images/logo.png",
-    url: "https://www.revesdevoyages.com",
-    telephone: "+33 2 23 50 18 52",
+    "@id": `${siteUrl}/#travelagency`,
+    name: siteConfig.name,
+    legalName: `${siteConfig.legalName} (Rêves de Voyages)`,
+    image: `${siteUrl}/images/logo.png`,
+    logo: `${siteUrl}/images/logo.png`,
+    url: siteUrl,
+    telephone: siteConfig.phoneE164,
+    email: siteConfig.email,
+    description: siteConfig.description,
+    foundingDate: String(siteConfig.foundedYear),
+    // Registered office only — the agency receives clients on appointment,
+    // by phone or by video, so no public opening hours are advertised.
     address: {
       "@type": "PostalAddress",
-      streetAddress: "7 rue Jean Mermoz",
-      addressLocality: "Bruz",
-      postalCode: "35170",
-      addressCountry: "FR",
+      streetAddress: siteConfig.legal.address,
+      addressLocality: siteConfig.legal.city,
+      postalCode: siteConfig.legal.postalCode,
+      addressCountry: siteConfig.legal.country,
     },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 48.0235,
-      longitude: -1.7589,
-    },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday"],
-        opens: "14:00",
-        closes: "18:30",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "09:30",
-        closes: "12:30",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "14:00",
-        closes: "18:30",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Saturday"],
-        opens: "10:00",
-        closes: "12:30",
-      },
-    ],
-    priceRange: "$$$",
-    sameAs: [
-      "https://www.facebook.com/revesdevoyagesbruz",
-      "https://www.instagram.com/revesdevoyagesbruz",
-    ],
+    areaServed: { "@type": "Country", name: "France" },
+    availableLanguage: "fr",
+    priceRange: "€€",
+    sameAs: [siteConfig.social.facebook, siteConfig.social.instagram],
   };
 
   return (

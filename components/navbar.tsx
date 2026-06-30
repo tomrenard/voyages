@@ -35,12 +35,12 @@ const components: { title: string; href: string; description: string }[] = [
   },
   {
     title: "Sur-mesure",
-    href: "/nos-coups-de-coeur/sur-mesure",
+    href: "/voyage-sur-mesure",
     description: "Créez le voyage de vos rêves, entièrement personnalisé.",
   },
   {
     title: "Croisières",
-    href: "/nos-coups-de-coeur/croisieres",
+    href: "/croisieres",
     description: "Naviguez sur les plus belles mers du monde.",
   },
   {
@@ -54,7 +54,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="w-full border-b bg-background relative z-50">
+    <header className="bg-background relative z-50 w-full border-b">
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
           <Image
@@ -68,9 +68,9 @@ export function Navbar() {
         </Link>
 
         <button
-          className="xl:hidden p-2 text-gray-600"
+          className="p-2 text-gray-600 xl:hidden"
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
+          aria-label="Ouvrir ou fermer le menu"
           aria-expanded={isOpen}
         >
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -173,7 +173,7 @@ export function Navbar() {
           </NavigationMenu>
         </div>
 
-        <div className="hidden xl:flex items-center gap-4">
+        <div className="hidden items-center gap-4 xl:flex">
           <Button variant="default" size="sm" asChild>
             <Link href="/contact">Devis gratuit</Link>
           </Button>
@@ -181,10 +181,10 @@ export function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="xl:hidden absolute top-20 left-0 w-full bg-white border-b shadow-lg py-4 px-4 flex flex-col space-y-4">
+        <div className="absolute top-20 left-0 flex w-full flex-col space-y-4 border-b bg-white px-4 py-4 shadow-lg xl:hidden">
           <Link
             href="/reves-de-voyages"
-            className="text-lg font-medium py-2 border-b border-gray-100"
+            className="border-b border-gray-100 py-2 text-lg font-medium"
             onClick={() => setIsOpen(false)}
           >
             Rêves de voyages
@@ -193,12 +193,12 @@ export function Navbar() {
             <p className="text-lg font-medium text-gray-900">
               Nos coups de cœur
             </p>
-            <div className="pl-4 flex flex-col space-y-2 border-l-2 border-gray-100">
+            <div className="flex flex-col space-y-2 border-l-2 border-gray-100 pl-4">
               {components.map((item) => (
                 <Link
                   key={item.title}
                   href={item.href}
-                  className="text-gray-600 py-1 block"
+                  className="block py-1 text-gray-600"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.title}
@@ -208,48 +208,48 @@ export function Navbar() {
           </div>
           <Link
             href="/voyage-sur-mesure"
-            className="text-lg font-medium py-2 border-b border-gray-100"
+            className="border-b border-gray-100 py-2 text-lg font-medium"
             onClick={() => setIsOpen(false)}
           >
             Voyage sur mesure
           </Link>
           <Link
             href="/croisieres"
-            className="text-lg font-medium py-2 border-b border-gray-100"
+            className="border-b border-gray-100 py-2 text-lg font-medium"
             onClick={() => setIsOpen(false)}
           >
             Croisières
           </Link>
           <Link
             href="/galerie"
-            className="text-lg font-medium py-2 border-b border-gray-100"
+            className="border-b border-gray-100 py-2 text-lg font-medium"
             onClick={() => setIsOpen(false)}
           >
             Galerie
           </Link>
           <Link
             href="/avis"
-            className="text-lg font-medium py-2 border-b border-gray-100"
+            className="border-b border-gray-100 py-2 text-lg font-medium"
             onClick={() => setIsOpen(false)}
           >
             Avis
           </Link>
           <Link
             href="/actualites"
-            className="text-lg font-medium py-2 border-b border-gray-100"
+            className="border-b border-gray-100 py-2 text-lg font-medium"
             onClick={() => setIsOpen(false)}
           >
             Actualités
           </Link>
           <Link
             href="/contact"
-            className="text-lg font-medium py-2 border-b border-gray-100"
+            className="border-b border-gray-100 py-2 text-lg font-medium"
             onClick={() => setIsOpen(false)}
           >
             Contact
           </Link>
           <Button
-            className="w-full mt-4"
+            className="mt-4 w-full"
             asChild
             onClick={() => setIsOpen(false)}
           >
@@ -269,19 +269,19 @@ const ListItem = forwardRef<ElementRef<"a">, ComponentPropsWithoutRef<"a">>(
           <a
             ref={ref}
             className={cn(
-              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-              className
+              "hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none",
+              className,
             )}
             {...props}
           >
-            <div className="text-sm font-medium leading-none">{title}</div>
-            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            <div className="text-sm leading-none font-medium">{title}</div>
+            <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
               {children}
             </p>
           </a>
         </NavigationMenuLink>
       </li>
     );
-  }
+  },
 );
 ListItem.displayName = "ListItem";

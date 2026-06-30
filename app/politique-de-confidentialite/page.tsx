@@ -1,147 +1,152 @@
 import { Metadata } from "next";
+import { siteConfig, siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Politique de Confidentialité",
   description:
-    "Politique de confidentialité et de protection des données de Rêves de Voyages.",
+    "Politique de confidentialité et de protection des données personnelles du site Rêves de Voyages, conformément au RGPD.",
+  alternates: { canonical: "/politique-de-confidentialite" },
 };
 
 export default function PolitiqueDeConfidentialite() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+    <div className="flex min-h-screen flex-col bg-gray-50">
       <div className="container mx-auto px-4 py-16 md:py-24">
-        <h1 className="text-4xl font-serif font-bold text-gray-900 mb-12 text-center">
+        <h1 className="mb-12 text-center font-serif text-4xl font-bold text-gray-900">
           Politique de Confidentialité
         </h1>
 
-        <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 space-y-10">
+        <div className="space-y-10 rounded-2xl border border-gray-100 bg-white p-8 shadow-sm md:p-12">
           <section>
-            <h2 className="text-2xl font-serif font-bold text-primary mb-4">
-              Qui sommes-nous ?
+            <h2 className="text-primary mb-4 font-serif text-2xl font-bold">
+              Responsable du traitement
             </h2>
-            <div className="text-gray-600 leading-relaxed space-y-2">
+            <div className="space-y-2 leading-relaxed text-gray-600">
               <p>
-                <strong>L’adresse de notre site Web est :</strong>{" "}
-                https://www.revesdevoyages.com/
+                Le responsable du traitement des données collectées sur le site{" "}
+                <a href={siteUrl} className="text-primary hover:underline">
+                  {siteUrl}
+                </a>{" "}
+                est Rêves de Voyages (SARL {siteConfig.legalName}),{" "}
+                {siteConfig.legal.address}, {siteConfig.legal.postalCode}{" "}
+                {siteConfig.legal.city}.
               </p>
               <p>
-                <strong>Propriétaire :</strong> Rêves de voyages – 10 avenue
-                Alphonse Legault 35170 Bruz
-              </p>
-              <p>
-                <strong>Responsable publication :</strong> Rêves de voyages – 02
-                23 50 18 52
-              </p>
-              <p>
-                <strong>Hébergeur :</strong> OVH – 2 rue Kellermann 59100
-                Roubaix
+                Pour toute question relative à vos données, vous pouvez nous
+                contacter à l’adresse{" "}
+                <a
+                  href={`mailto:${siteConfig.email}`}
+                  className="text-primary break-all hover:underline"
+                >
+                  {siteConfig.email}
+                </a>
+                .
               </p>
             </div>
           </section>
 
           <section>
-            <h2 className="text-2xl font-serif font-bold text-primary mb-4">
-              Utilisation des données personnelles collectées
+            <h2 className="text-primary mb-4 font-serif text-2xl font-bold">
+              Données collectées et finalités
             </h2>
-
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">
-                  Formulaires de contact
+                <h3 className="mb-2 text-xl font-bold text-gray-800">
+                  Formulaire de contact
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="leading-relaxed text-gray-600">
                   Lorsque vous utilisez notre formulaire de contact, nous
-                  collectons les données renseignées (nom, email, téléphone,
-                  message) afin de pouvoir traiter votre demande et vous
-                  recontacter. Ces données sont conservées pendant une durée
-                  nécessaire au traitement de votre dossier.
+                  collectons votre nom, votre prénom, votre adresse email, votre
+                  numéro de téléphone (facultatif) et le contenu de votre
+                  message. Ces données sont traitées dans le seul but de
+                  répondre à votre demande et de préparer votre projet de
+                  voyage. La base légale de ce traitement est votre consentement
+                  ainsi que les mesures précontractuelles prises à votre
+                  demande.
                 </p>
               </div>
-
               <div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">
-                  Cookies
+                <h3 className="mb-2 text-xl font-bold text-gray-800">
+                  Mesure d’audience
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Si vous déposez un commentaire sur notre site, il vous sera
-                  proposé d’enregistrer votre nom, adresse de messagerie et site
-                  web dans des cookies. C’est uniquement pour votre confort afin
-                  de ne pas avoir à saisir ces informations si vous déposez un
-                  autre commentaire plus tard. Ces cookies expirent au bout d’un
-                  an.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">
-                  Contenu embarqué depuis d’autres sites
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Les articles de ce site peuvent inclure des contenus intégrés
-                  (par exemple des vidéos, images, articles…). Le contenu
-                  intégré depuis d’autres sites se comporte de la même manière
-                  que si le visiteur se rendait sur cet autre site.
+                <p className="leading-relaxed text-gray-600">
+                  Nous utilisons une solution de mesure d’audience respectueuse
+                  de la vie privée (Vercel Analytics), qui ne dépose pas de
+                  cookie d’identification et ne collecte pas de données
+                  personnelles directement identifiantes.
                 </p>
               </div>
             </div>
           </section>
 
           <section>
-            <h2 className="text-2xl font-serif font-bold text-primary mb-4">
-              Utilisation et transmission de vos données personnelles
+            <h2 className="text-primary mb-4 font-serif text-2xl font-bold">
+              Destinataires et sous-traitants
             </h2>
-            <div className="text-gray-600 leading-relaxed">
+            <div className="space-y-2 leading-relaxed text-gray-600">
               <p>
-                Rêves de voyages ne commercialise pas vos données personnelles.
-                Elles sont uniquement utilisées par nécessité pour le bon
-                fonctionnement de nos services (demandes de devis,
-                réservations).
+                Vos données ne sont jamais vendues ni cédées à des tiers à des
+                fins commerciales. Elles sont uniquement accessibles à l’agence
+                Rêves de Voyages et, le cas échéant, à nos prestataires
+                techniques agissant en qualité de sous-traitants :
+              </p>
+              <ul className="mt-2 list-inside list-disc space-y-1 pl-4">
+                <li>
+                  <strong>Vercel Inc.</strong> — hébergement du site ;
+                </li>
+                <li>
+                  <strong>Resend</strong> — acheminement des messages envoyés
+                  via le formulaire de contact.
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-primary mb-4 font-serif text-2xl font-bold">
+              Durée de conservation
+            </h2>
+            <div className="leading-relaxed text-gray-600">
+              <p>
+                Les données issues du formulaire de contact sont conservées
+                pendant la durée nécessaire au traitement de votre demande, puis
+                archivées ou supprimées dans un délai maximum de trois ans à
+                compter de notre dernier échange.
               </p>
             </div>
           </section>
 
           <section>
-            <h2 className="text-2xl font-serif font-bold text-primary mb-4">
-              Durées de stockage de vos données
+            <h2 className="text-primary mb-4 font-serif text-2xl font-bold">
+              Vos droits
             </h2>
-            <div className="text-gray-600 leading-relaxed">
+            <div className="space-y-2 leading-relaxed text-gray-600">
               <p>
-                Pour les utilisateurs et utilisatrices qui s’enregistrent sur
-                notre site (si cela est possible), nous stockons également les
-                données personnelles indiquées dans leur profil. Tous les
-                utilisateurs et utilisatrices peuvent voir, modifier ou
-                supprimer leurs informations personnelles à tout moment.
+                Conformément au Règlement général sur la protection des données
+                (RGPD) et à la loi « Informatique et Libertés », vous disposez
+                d’un droit d’accès, de rectification, d’effacement, de
+                limitation et d’opposition au traitement de vos données, ainsi
+                que d’un droit à la portabilité.
               </p>
-            </div>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-serif font-bold text-primary mb-4">
-              Les droits que vous avez sur vos données
-            </h2>
-            <div className="text-gray-600 leading-relaxed">
               <p>
-                Si vous avez un compte ou si vous avez laissé des commentaires
-                sur le site, vous pouvez demander à recevoir un fichier
-                contenant toutes les données personnelles que nous possédons à
-                votre sujet, incluant celles que vous nous avez fournies. Vous
-                pouvez également demander la suppression des données
-                personnelles vous concernant. Cela ne prend pas en compte les
-                données stockées à des fins administratives, légales ou pour des
-                raisons de sécurité.
-              </p>
-            </div>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-serif font-bold text-primary mb-4">
-              Transmission de vos données personnelles
-            </h2>
-            <div className="text-gray-600 leading-relaxed">
-              <p>
-                Les commentaires des visiteurs peuvent être vérifiés à l’aide
-                d’un service automatisé de détection des commentaires
-                indésirables.
+                Vous pouvez exercer ces droits en nous écrivant à{" "}
+                <a
+                  href={`mailto:${siteConfig.email}`}
+                  className="text-primary break-all hover:underline"
+                >
+                  {siteConfig.email}
+                </a>
+                . Vous disposez également du droit d’introduire une réclamation
+                auprès de la CNIL (
+                <a
+                  href="https://www.cnil.fr"
+                  className="text-primary hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  www.cnil.fr
+                </a>
+                ).
               </p>
             </div>
           </section>

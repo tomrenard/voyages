@@ -6,11 +6,12 @@ export const metadata: Metadata = {
   title: "Plan du Site",
   description:
     "Plan du site de Rêves de Voyages pour naviguer facilement vers toutes nos pages.",
+  alternates: { canonical: "/plan-du-site" },
 };
 
 export default function PlanDuSite() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col">
       <PageHeader
         title="Plan du site"
         subtitle="Retrouvez toutes les pages de notre site"
@@ -18,12 +19,12 @@ export default function PlanDuSite() {
       />
 
       <div className="container mx-auto px-4 py-16 md:py-24">
-        <div className="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+        <div className="mx-auto max-w-3xl rounded-xl border border-gray-100 bg-white p-8 shadow-sm">
           <ul className="space-y-4 text-lg">
             <li>
               <Link
                 href="/"
-                className="font-serif font-bold text-gray-900 hover:text-primary transition-colors"
+                className="hover:text-primary font-serif font-bold text-gray-900 transition-colors"
               >
                 Accueil
               </Link>
@@ -31,7 +32,7 @@ export default function PlanDuSite() {
             <li>
               <Link
                 href="/reves-de-voyages"
-                className="font-serif font-bold text-gray-900 hover:text-primary transition-colors"
+                className="hover:text-primary font-serif font-bold text-gray-900 transition-colors"
               >
                 Rêves de voyages
               </Link>
@@ -39,15 +40,15 @@ export default function PlanDuSite() {
             <li>
               <Link
                 href="/nos-coups-de-coeur"
-                className="font-serif font-bold text-gray-900 hover:text-primary transition-colors"
+                className="hover:text-primary font-serif font-bold text-gray-900 transition-colors"
               >
                 Nos coups de cœur
               </Link>
-              <ul className="ml-6 mt-2 space-y-2 border-l-2 border-gray-100 pl-4">
+              <ul className="mt-2 ml-6 space-y-2 border-l-2 border-gray-100 pl-4">
                 <li>
                   <Link
                     href="/nos-coups-de-coeur/sejours"
-                    className="text-gray-600 hover:text-primary transition-colors"
+                    className="hover:text-primary text-gray-600 transition-colors"
                   >
                     Séjours
                   </Link>
@@ -55,31 +56,15 @@ export default function PlanDuSite() {
                 <li>
                   <Link
                     href="/nos-coups-de-coeur/circuits"
-                    className="text-gray-600 hover:text-primary transition-colors"
+                    className="hover:text-primary text-gray-600 transition-colors"
                   >
                     Circuits
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/nos-coups-de-coeur/sur-mesure"
-                    className="text-gray-600 hover:text-primary transition-colors"
-                  >
-                    Sur-mesure
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/nos-coups-de-coeur/croisieres"
-                    className="text-gray-600 hover:text-primary transition-colors"
-                  >
-                    Croisières
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     href="/nos-coups-de-coeur/week-end"
-                    className="text-gray-600 hover:text-primary transition-colors"
+                    className="hover:text-primary text-gray-600 transition-colors"
                   >
                     Week-end
                   </Link>
@@ -89,7 +74,7 @@ export default function PlanDuSite() {
             <li>
               <Link
                 href="/voyage-sur-mesure"
-                className="font-serif font-bold text-gray-900 hover:text-primary transition-colors"
+                className="hover:text-primary font-serif font-bold text-gray-900 transition-colors"
               >
                 Voyage sur mesure
               </Link>
@@ -97,7 +82,7 @@ export default function PlanDuSite() {
             <li>
               <Link
                 href="/croisieres"
-                className="font-serif font-bold text-gray-900 hover:text-primary transition-colors"
+                className="hover:text-primary font-serif font-bold text-gray-900 transition-colors"
               >
                 Croisières
               </Link>
@@ -105,7 +90,7 @@ export default function PlanDuSite() {
             <li>
               <Link
                 href="/galerie"
-                className="font-serif font-bold text-gray-900 hover:text-primary transition-colors"
+                className="hover:text-primary font-serif font-bold text-gray-900 transition-colors"
               >
                 Galerie
               </Link>
@@ -113,7 +98,7 @@ export default function PlanDuSite() {
             <li>
               <Link
                 href="/avis"
-                className="font-serif font-bold text-gray-900 hover:text-primary transition-colors"
+                className="hover:text-primary font-serif font-bold text-gray-900 transition-colors"
               >
                 Avis
               </Link>
@@ -121,7 +106,7 @@ export default function PlanDuSite() {
             <li>
               <Link
                 href="/actualites"
-                className="font-serif font-bold text-gray-900 hover:text-primary transition-colors"
+                className="hover:text-primary font-serif font-bold text-gray-900 transition-colors"
               >
                 Actualités
               </Link>
@@ -129,21 +114,21 @@ export default function PlanDuSite() {
             <li>
               <Link
                 href="/contact"
-                className="font-serif font-bold text-gray-900 hover:text-primary transition-colors"
+                className="hover:text-primary font-serif font-bold text-gray-900 transition-colors"
               >
                 Contact
               </Link>
             </li>
 
-            <li className="pt-4 border-t border-gray-100 mt-4">
-              <h3 className="font-serif font-bold text-gray-900 mb-2">
+            <li className="mt-4 border-t border-gray-100 pt-4">
+              <h3 className="mb-2 font-serif font-bold text-gray-900">
                 Informations légales
               </h3>
               <ul className="ml-6 space-y-2 border-l-2 border-gray-100 pl-4">
                 <li>
                   <Link
                     href="/mentions-legales"
-                    className="text-gray-600 hover:text-primary transition-colors"
+                    className="hover:text-primary text-gray-600 transition-colors"
                   >
                     Mentions légales
                   </Link>
@@ -151,7 +136,7 @@ export default function PlanDuSite() {
                 <li>
                   <Link
                     href="/politique-de-confidentialite"
-                    className="text-gray-600 hover:text-primary transition-colors"
+                    className="hover:text-primary text-gray-600 transition-colors"
                   >
                     Politique de confidentialité
                   </Link>
