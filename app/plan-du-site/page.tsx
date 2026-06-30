@@ -44,10 +44,15 @@ export default function PlanDuSite() {
               >
                 Nos coups de cœur
               </Link>
+            </li>
+            <li>
+              <span className="font-serif font-bold text-gray-900">
+                Nos voyages
+              </span>
               <ul className="mt-2 ml-6 space-y-2 border-l-2 border-gray-100 pl-4">
                 <li>
                   <Link
-                    href="/nos-coups-de-coeur/sejours"
+                    href="/nos-voyages/sejours"
                     className="hover:text-primary text-gray-600 transition-colors"
                   >
                     Séjours
@@ -55,7 +60,7 @@ export default function PlanDuSite() {
                 </li>
                 <li>
                   <Link
-                    href="/nos-coups-de-coeur/circuits"
+                    href="/nos-voyages/circuits"
                     className="hover:text-primary text-gray-600 transition-colors"
                   >
                     Circuits
@@ -63,7 +68,15 @@ export default function PlanDuSite() {
                 </li>
                 <li>
                   <Link
-                    href="/nos-coups-de-coeur/week-end"
+                    href="/croisieres"
+                    className="hover:text-primary text-gray-600 transition-colors"
+                  >
+                    Croisières
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/nos-voyages/week-end"
                     className="hover:text-primary text-gray-600 transition-colors"
                   >
                     Week-end
@@ -77,14 +90,6 @@ export default function PlanDuSite() {
                 className="hover:text-primary font-serif font-bold text-gray-900 transition-colors"
               >
                 Voyage sur mesure
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/croisieres"
-                className="hover:text-primary font-serif font-bold text-gray-900 transition-colors"
-              >
-                Croisières
               </Link>
             </li>
             <li>
@@ -139,6 +144,14 @@ export default function PlanDuSite() {
                     className="hover:text-primary text-gray-600 transition-colors"
                   >
                     Politique de confidentialité
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/credits-photos"
+                    className="hover:text-primary text-gray-600 transition-colors"
+                  >
+                    Crédits photos
                   </Link>
                 </li>
               </ul>

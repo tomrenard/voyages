@@ -15,9 +15,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/voyage-sur-mesure": [0.9, "monthly"],
     "/croisieres": [0.8, "monthly"],
     "/nos-coups-de-coeur": [0.8, "monthly"],
-    "/nos-coups-de-coeur/sejours": [0.7, "monthly"],
-    "/nos-coups-de-coeur/circuits": [0.7, "monthly"],
-    "/nos-coups-de-coeur/week-end": [0.7, "monthly"],
+    "/nos-voyages/sejours": [0.7, "monthly"],
+    "/nos-voyages/circuits": [0.7, "monthly"],
+    "/nos-voyages/week-end": [0.7, "monthly"],
     "/galerie": [0.6, "monthly"],
     "/avis": [0.6, "monthly"],
     "/actualites": [0.7, "weekly"],
@@ -25,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/mentions-legales": [0.2, "yearly"],
     "/politique-de-confidentialite": [0.2, "yearly"],
     "/plan-du-site": [0.2, "yearly"],
+    "/credits-photos": [0.1, "yearly"],
   };
 
   const staticEntries: MetadataRoute.Sitemap = Object.entries(routes).map(

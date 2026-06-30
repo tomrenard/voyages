@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Week-end & Courts Séjours",
   description:
     "Idées de week-ends en Europe et en France. City breaks, escapades romantiques et découvertes culturelles.",
-  alternates: { canonical: "/nos-coups-de-coeur/week-end" },
+  alternates: { canonical: "/nos-voyages/week-end" },
 };
 
 export default function Weekend() {

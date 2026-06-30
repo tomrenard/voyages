@@ -85,6 +85,12 @@ export default function Footer() {
                 Plan du site
               </Link>
               <Link
+                href="/credits-photos"
+                className="transition-colors hover:text-white"
+              >
+                Crédits photos
+              </Link>
+              <Link
                 href="/contact"
                 className="transition-colors hover:text-white"
               >

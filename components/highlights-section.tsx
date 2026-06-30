@@ -1,46 +1,8 @@
 import Link from "next/link";
-import {
-  ArrowRight,
-  Plane,
-  Map,
-  UserCheck,
-  Ship,
-  CalendarDays,
-} from "lucide-react";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const categories = [
-  {
-    title: "Séjours",
-    description: "Farniente ou découverte, la bonne formule au bon prix.",
-    icon: Plane,
-    href: "/nos-coups-de-coeur/sejours",
-  },
-  {
-    title: "Circuits",
-    description: "Explorez un pays en profondeur, accompagné ou en liberté.",
-    icon: Map,
-    href: "/nos-coups-de-coeur/circuits",
-  },
-  {
-    title: "Sur-mesure",
-    description: "Un voyage composé pour vous, du premier au dernier jour.",
-    icon: UserCheck,
-    href: "/voyage-sur-mesure",
-  },
-  {
-    title: "Croisières",
-    description: "Une seule valise, mille horizons au fil de l'eau.",
-    icon: Ship,
-    href: "/croisieres",
-  },
-  {
-    title: "Week-end",
-    description: "Quelques jours pour s'évader, en France comme en Europe.",
-    icon: CalendarDays,
-    href: "/nos-coups-de-coeur/week-end",
-  },
-];
+import { coupsDeCoeur } from "@/lib/destinations";
 
 export function HighlightsSection() {
   return (
@@ -51,37 +13,49 @@ export function HighlightsSection() {
             Nos coups de cœur
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-xl font-light text-gray-600">
-            Découvrez nos sélections pour votre prochain voyage
+            Les destinations que nous aimons faire découvrir
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {categories.map((category) => (
-            <div
-              key={category.title}
-              className="group flex flex-col rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-xl"
+          {coupsDeCoeur.map((destination) => (
+            <Link
+              key={destination.slug}
+              href="/nos-coups-de-coeur"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:shadow-xl"
             >
-              <div className="bg-primary/10 text-primary mb-6 flex h-14 w-14 items-center justify-center rounded-2xl transition-transform group-hover:scale-110">
-                <category.icon className="h-7 w-7" />
+              <div className="relative h-52 overflow-hidden">
+                <Image
+                  src={destination.image}
+                  alt={destination.imageAlt}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
               </div>
-              <h3 className="group-hover:text-primary mb-4 font-serif text-2xl font-bold text-gray-900 transition-colors">
-                {category.title}
-              </h3>
-              <p className="mb-8 flex-grow leading-relaxed text-gray-600">
-                {category.description}
-              </p>
-              <Button
-                variant="ghost"
-                className="group hover:bg-primary w-full justify-between transition-colors hover:text-white"
-                asChild
-              >
-                <Link href={category.href}>
-                  En savoir plus
+              <div className="flex flex-grow flex-col p-8">
+                <h3 className="group-hover:text-primary mb-3 font-serif text-2xl font-bold text-gray-900 transition-colors">
+                  {destination.title}
+                </h3>
+                <p className="mb-6 flex-grow leading-relaxed text-gray-600">
+                  {destination.blurb}
+                </p>
+                <span className="text-primary inline-flex items-center text-sm font-semibold">
+                  Découvrir
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
-            </div>
+                </span>
+              </div>
+            </Link>
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Button asChild variant="outline" size="lg">
+            <Link href="/nos-coups-de-coeur">
+              Voir tous nos coups de cœur
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

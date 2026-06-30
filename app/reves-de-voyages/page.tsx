@@ -85,6 +85,8 @@ export default function RevesDeVoyages() {
           <div className="flex flex-wrap justify-center gap-3">
             {[
               "Australie",
+              "États-Unis",
+              "Canada",
               "Île Maurice",
               "Seychelles",
               "République Dominicaine",

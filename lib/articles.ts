@@ -28,9 +28,9 @@ export const articles: Article[] = [
     date: "2026-06-12",
     author: siteConfig.advisor,
     category: "Séjours",
-    image: "/images/sejour.jpg",
+    image: "/images/article-seychelles.jpg",
     imageAlt:
-      "Plage de sable blanc bordée de cocotiers et d'un lagon turquoise aux Seychelles",
+      "Rochers de granit, cocotiers et eaux turquoise sur une plage des Seychelles",
     readingTime: "5 min",
     content: [
       {
@@ -87,9 +87,8 @@ export const articles: Article[] = [
     date: "2026-05-28",
     author: siteConfig.advisor,
     category: "Croisières",
-    image: "/images/croisiere.jpg",
-    imageAlt:
-      "Navire de croisière naviguant au coucher du soleil sur une mer calme",
+    image: "/images/article-croisiere.jpg",
+    imageAlt: "Grand navire de croisière moderne naviguant en pleine mer",
     readingTime: "6 min",
     content: [
       {
@@ -142,9 +141,8 @@ export const articles: Article[] = [
     date: "2026-05-09",
     author: siteConfig.advisor,
     category: "Sur-mesure",
-    image: "/images/sur-mesure.jpg",
-    imageAlt:
-      "Couple admirant un paysage tropical depuis une terrasse au coucher du soleil",
+    image: "/images/article-noces.jpg",
+    imageAlt: "Coucher de soleil sur les maisons blanches d'Oia, à Santorin",
     readingTime: "5 min",
     content: [
       {
@@ -201,9 +199,8 @@ export const articles: Article[] = [
     date: "2026-04-22",
     author: siteConfig.advisor,
     category: "Week-end",
-    image: "/images/weekend.jpg",
-    imageAlt:
-      "Ruelle pittoresque d'une vieille ville européenne aux façades colorées",
+    image: "/images/article-europe.jpg",
+    imageAlt: "Le pont Charles et le château de Prague au coucher du soleil",
     readingTime: "4 min",
     content: [
       {

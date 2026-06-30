@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Séjours",
   description:
     "Séjours tout compris, hôtels clubs, vacances farniente... Nos meilleures offres pour se détendre au soleil.",
-  alternates: { canonical: "/nos-coups-de-coeur/sejours" },
+  alternates: { canonical: "/nos-voyages/sejours" },
 };
 
 export default function Sejours() {

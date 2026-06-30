@@ -22,21 +22,16 @@ import {
   useState,
 } from "react";
 
-const components: { title: string; href: string; description: string }[] = [
+const tripTypes: { title: string; href: string; description: string }[] = [
   {
     title: "Séjours",
-    href: "/nos-coups-de-coeur/sejours",
+    href: "/nos-voyages/sejours",
     description: "Nos meilleures offres de séjours tout compris ou à la carte.",
   },
   {
     title: "Circuits",
-    href: "/nos-coups-de-coeur/circuits",
+    href: "/nos-voyages/circuits",
     description: "Découvrez le monde avec nos circuits organisés.",
-  },
-  {
-    title: "Sur-mesure",
-    href: "/voyage-sur-mesure",
-    description: "Créez le voyage de vos rêves, entièrement personnalisé.",
   },
   {
     title: "Croisières",
@@ -45,7 +40,7 @@ const components: { title: string; href: string; description: string }[] = [
   },
   {
     title: "Week-end",
-    href: "/nos-coups-de-coeur/week-end",
+    href: "/nos-voyages/week-end",
     description: "Évadez-vous le temps d'un week-end inoubliable.",
   },
 ];
@@ -91,10 +86,21 @@ export function Navbar() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Nos coups de cœur</NavigationMenuTrigger>
+                <NavigationMenuLink asChild>
+                  <Link
+                    href="/nos-coups-de-coeur"
+                    className={navigationMenuTriggerStyle()}
+                  >
+                    Nos coups de cœur
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Nos voyages</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                    {components.map((component) => (
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+                    {tripTypes.map((component) => (
                       <ListItem
                         key={component.title}
                         title={component.title}
@@ -114,17 +120,6 @@ export function Navbar() {
                     className={navigationMenuTriggerStyle()}
                   >
                     Voyage sur mesure
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="/croisieres"
-                    className={navigationMenuTriggerStyle()}
-                  >
-                    Croisières
                   </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -189,12 +184,17 @@ export function Navbar() {
           >
             Rêves de voyages
           </Link>
+          <Link
+            href="/nos-coups-de-coeur"
+            className="border-b border-gray-100 py-2 text-lg font-medium"
+            onClick={() => setIsOpen(false)}
+          >
+            Nos coups de cœur
+          </Link>
           <div className="space-y-2">
-            <p className="text-lg font-medium text-gray-900">
-              Nos coups de cœur
-            </p>
+            <p className="text-lg font-medium text-gray-900">Nos voyages</p>
             <div className="flex flex-col space-y-2 border-l-2 border-gray-100 pl-4">
-              {components.map((item) => (
+              {tripTypes.map((item) => (
                 <Link
                   key={item.title}
                   href={item.href}
@@ -212,13 +212,6 @@ export function Navbar() {
             onClick={() => setIsOpen(false)}
           >
             Voyage sur mesure
-          </Link>
-          <Link
-            href="/croisieres"
-            className="border-b border-gray-100 py-2 text-lg font-medium"
-            onClick={() => setIsOpen(false)}
-          >
-            Croisières
           </Link>
           <Link
             href="/galerie"

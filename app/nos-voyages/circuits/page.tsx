@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Circuits",
   description:
     "Circuits organisés, autotours, voyages itinérants... Explorez le monde avec nos circuits découverte.",
-  alternates: { canonical: "/nos-coups-de-coeur/circuits" },
+  alternates: { canonical: "/nos-voyages/circuits" },
 };
 
 export default function Circuits() {

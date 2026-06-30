@@ -11,26 +11,29 @@ export const metadata: Metadata = {
 
 export default function Galerie() {
   const images = [
-    { src: "/images/gallery-1.jpg", alt: "Plage tropicale aux eaux turquoise" },
+    {
+      src: "/images/gallery-1.jpg",
+      alt: "Plage tropicale aux eaux turquoise au coucher du soleil",
+    },
     {
       src: "/images/gallery-2.jpg",
-      alt: "Ville historique européenne au crépuscule",
+      alt: "Lac de montagne aux eaux turquoise dans les Rocheuses",
     },
     {
       src: "/images/gallery-3.jpg",
-      alt: "Paysage de montagne sous un ciel dégagé",
+      alt: "Vue aérienne du front de mer de Dubaï et du Burj Al Arab",
     },
     {
       src: "/images/gallery-4.jpg",
-      alt: "Ruelle pittoresque et façades colorées",
+      alt: "Vue aérienne d'une plage et de barques colorées sur un lagon turquoise",
     },
     {
-      src: "/images/content-sur-mesure.jpg",
-      alt: "Voyageur contemplant un panorama lointain",
+      src: "/images/galerie-safari.jpg",
+      alt: "Éléphants dans la savane du Serengeti, en Tanzanie",
     },
     {
-      src: "/images/content-croisiere.jpg",
-      alt: "Navire de croisière voguant au coucher du soleil",
+      src: "/images/galerie-machu.jpg",
+      alt: "Le site inca du Machu Picchu perché dans les Andes",
     },
   ];
 
@@ -39,7 +42,7 @@ export default function Galerie() {
       <PageHeader
         title="Galerie Photos"
         subtitle="Instants volés aux quatre coins du monde"
-        backgroundImage="/images/gallery-1.jpg"
+        backgroundImage="/images/hero-new.jpg"
       />
 
       <div className="container mx-auto px-4 py-16 md:py-24">
