@@ -13,6 +13,7 @@ export default withMDX()({
   },
   transpilePackages: [],
   images: {
+    qualities: [75, 90],
     contentDispositionType: "inline",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },

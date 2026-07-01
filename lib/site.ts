@@ -24,15 +24,14 @@ export const siteConfig = {
     postalCode: "35170",
     city: "Bruz",
     country: "FR",
+    capital: "7 000 €",
     siren: "484 575 998",
     siret: "484 575 998 00022",
     rcs: "RCS Rennes 484 575 998",
     ape: "79.11Z",
-    // TODO(Véronique): immatriculation Atout France obligatoire pour une agence de voyages.
-    atoutFrance: "IM035XXXXXX",
-    // TODO(Véronique): garantie financière et RC professionnelle.
-    guarantee: "TODO — garantie financière (APST ou équivalent)",
-    insurance: "TODO — assurance responsabilité civile professionnelle",
+    atoutFrance: "IM035100033",
+    guarantee: "APST (Association Professionnelle de Solidarité du Tourisme), Paris",
+    insurance: "MMA — contrat n° 129590224",
   },
   social: {
     instagram: "https://www.instagram.com/revesdevoyages_bruz/",

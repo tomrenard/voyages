@@ -22,13 +22,16 @@ export function AboutSection() {
               , l’agence RÊVES DE VOYAGES met à votre disposition divers
               programmes adaptés à toutes les envies et à tous les budgets.
             </p>
-            <p className="text-lg leading-relaxed text-gray-600">
-              Que ce soit pour un week-end, un <strong>voyage de noces</strong>{" "}
+            <p className="text-lg leading-relaxed font-light text-gray-600">
+              Que ce soit pour un week-end, un{" "}
+              <strong className="font-medium text-gray-900">
+                voyage de noces
+              </strong>{" "}
               ou des vacances, Véronique saura vous accompagner avant, pendant
               et après vos voyages et s’engage à vous assurer des prestations de
               qualité à la hauteur de vos exigences.
             </p>
-            <p className="text-base text-gray-500">
+            <p className="text-lg leading-relaxed font-light text-gray-600">
               Des plages de l’océan Indien aux grandes capitales européennes, en
               passant par l’Asie et les Caraïbes, nous façonnons chaque
               itinéraire selon vos envies et votre budget.

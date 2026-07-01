@@ -27,7 +27,7 @@ export default function PolitiqueDeConfidentialite() {
                 <a href={siteUrl} className="text-primary hover:underline">
                   {siteUrl}
                 </a>{" "}
-                est Rêves de Voyages (SARL {siteConfig.legalName}),{" "}
+                est Rêves de Voyages (EURL {siteConfig.legalName}),{" "}
                 {siteConfig.legal.address}, {siteConfig.legal.postalCode}{" "}
                 {siteConfig.legal.city}.
               </p>

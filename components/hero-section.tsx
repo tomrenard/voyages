@@ -107,7 +107,7 @@ export function HeroSection() {
                 variant="outline"
                 size="lg"
                 asChild
-                className="h-auto w-full rounded-full border-white bg-white/10 px-8 py-6 text-lg text-white backdrop-blur-sm transition-all hover:scale-105 hover:bg-white/20 sm:w-auto"
+                className="h-auto w-full rounded-full border-white bg-white/10 px-8 py-6 text-lg text-white backdrop-blur-sm transition-all hover:scale-105 hover:bg-white/20 hover:text-white sm:w-auto"
               >
                 <Link href="/contact">Nous contacter</Link>
               </Button>

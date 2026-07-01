@@ -36,12 +36,12 @@ export default function MentionsLegales() {
               </p>
               <ul className="mt-2 list-inside list-disc space-y-1 pl-4">
                 <li>
-                  <strong>Dénomination</strong> : Rêves de Voyages — SARL{" "}
+                  <strong>Dénomination</strong> : Rêves de Voyages — EURL{" "}
                   {siteConfig.legalName}
                 </li>
                 <li>
-                  <strong>Forme juridique</strong> : Société à responsabilité
-                  limitée (SARL)
+                  <strong>Forme juridique</strong> : Entreprise unipersonnelle à
+                  responsabilité limitée (EURL) au capital de {legal.capital}
                 </li>
                 <li>
                   <strong>Siège social</strong> : {legal.address},{" "}
@@ -98,10 +98,6 @@ export default function MentionsLegales() {
                   : {legal.insurance}
                 </li>
               </ul>
-              <p className="mt-2 text-sm text-gray-400">
-                (Informations à compléter avec les références officielles de
-                l’agence.)
-              </p>
             </div>
           </section>
 
