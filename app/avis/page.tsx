@@ -1,6 +1,8 @@
 import { PageHeader } from "@/components/page-header";
+import { Button } from "@/components/ui/button";
 import { Star, Quote } from "lucide-react";
 import { Metadata } from "next";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Avis Clients",
@@ -82,6 +84,29 @@ export default function Avis() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mx-auto mt-16 max-w-2xl rounded-2xl bg-gray-50 p-8 text-center md:p-12">
+          <h2 className="mb-3 font-serif text-2xl font-bold text-gray-900">
+            Vous avez voyagé avec nous ?
+          </h2>
+          <p className="mb-6 text-gray-600">
+            Votre expérience compte : partagez-la avec les futurs voyageurs en
+            laissant un avis sur Google. Merci pour votre confiance !
+          </p>
+          <Button
+            asChild
+            size="lg"
+            className="bg-primary hover:bg-primary/90 text-white"
+          >
+            <a
+              href={siteConfig.social.googleReviews}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ★ Laisser un avis Google
+            </a>
+          </Button>
         </div>
       </div>
     </div>

@@ -55,6 +55,12 @@ export const metadata: Metadata = {
     description:
       "Créez le voyage de vos rêves avec Rêves de Voyages. Agence indépendante spécialiste du sur-mesure, sur rendez-vous, par téléphone ou en visio.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rêves de Voyages | Agence de voyages sur mesure près de Rennes",
+    description:
+      "Créez le voyage de vos rêves avec Rêves de Voyages. Agence indépendante spécialiste du sur-mesure, sur rendez-vous, par téléphone ou en visio.",
+  },
   robots: {
     index: true,
     follow: true,

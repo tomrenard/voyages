@@ -100,11 +100,33 @@ export default async function ArticlePage({
     mainEntityOfPage: `${siteUrl}/actualites/${article.slug}`,
   };
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: siteUrl },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Actualités",
+        item: `${siteUrl}/actualites`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: article.title,
+        item: `${siteUrl}/actualites/${article.slug}`,
+      },
+    ],
+  };
+
   return (
     <article className="flex min-h-screen flex-col">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([jsonLd, breadcrumbJsonLd]),
+        }}
       />
 
       <div className="relative h-[320px] w-full overflow-hidden md:h-[440px]">

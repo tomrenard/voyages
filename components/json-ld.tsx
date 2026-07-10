@@ -23,9 +23,25 @@ export default function JsonLd() {
       postalCode: siteConfig.legal.postalCode,
       addressCountry: siteConfig.legal.country,
     },
-    areaServed: { "@type": "Country", name: "France" },
+    // Service-area business: advice by phone/video everywhere in France,
+    // with a strong local anchor in the Rennes metropolitan area.
+    areaServed: [
+      { "@type": "City", name: "Rennes" },
+      { "@type": "City", name: "Bruz" },
+      { "@type": "AdministrativeArea", name: "Ille-et-Vilaine" },
+      { "@type": "AdministrativeArea", name: "Bretagne" },
+      { "@type": "Country", name: "France" },
+    ],
     availableLanguage: "fr",
-    priceRange: "€€",
+    priceRange: "€€€",
+    knowsAbout: [
+      "Voyages sur mesure",
+      "Voyages de noces",
+      "Croisières",
+      "Séjours",
+      "Circuits",
+      "Week-ends en Europe",
+    ],
     sameAs: [siteConfig.social.facebook, siteConfig.social.instagram],
   };
 

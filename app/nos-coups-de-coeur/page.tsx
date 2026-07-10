@@ -48,7 +48,9 @@ export default function NosCoupsDeCoeur() {
               </div>
               <div className="flex flex-grow flex-col p-8">
                 <h2 className="group-hover:text-primary mb-3 font-serif text-2xl font-bold text-gray-900 transition-colors">
-                  {destination.title}
+                  <Link href={`/destinations/${destination.slug}`}>
+                    {destination.title}
+                  </Link>
                 </h2>
                 <p className="mb-8 flex-grow leading-relaxed text-gray-600">
                   {destination.blurb}
@@ -58,8 +60,8 @@ export default function NosCoupsDeCoeur() {
                   className="group-hover:bg-primary border-primary/20 w-full justify-between group-hover:text-white"
                   asChild
                 >
-                  <Link href="/contact">
-                    Demander un devis
+                  <Link href={`/destinations/${destination.slug}`}>
+                    Découvrir la destination
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>

@@ -11,7 +11,7 @@ export function AboutSection() {
             <h2 className="font-serif text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               RÊVES DE VOYAGES, <br />
               <span className="text-primary italic">
-                votre agence de voyages à Bruz
+                votre agence de voyages à Bruz, près de Rennes
               </span>
             </h2>
             <p className="text-lg leading-relaxed font-light text-gray-600">

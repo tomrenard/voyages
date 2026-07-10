@@ -39,6 +39,14 @@ export default function PlanDuSite() {
             </li>
             <li>
               <Link
+                href="/agence-de-voyages-rennes"
+                className="hover:text-primary font-serif font-bold text-gray-900 transition-colors"
+              >
+                Votre agence près de Rennes
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/nos-coups-de-coeur"
                 className="hover:text-primary font-serif font-bold text-gray-900 transition-colors"
               >
@@ -118,10 +126,26 @@ export default function PlanDuSite() {
             </li>
             <li>
               <Link
+                href="/faq"
+                className="hover:text-primary font-serif font-bold text-gray-900 transition-colors"
+              >
+                Questions fréquentes
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/contact"
                 className="hover:text-primary font-serif font-bold text-gray-900 transition-colors"
               >
                 Contact
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/devis"
+                className="hover:text-primary font-serif font-bold text-gray-900 transition-colors"
+              >
+                Devis gratuit
               </Link>
             </li>
 
@@ -144,6 +168,14 @@ export default function PlanDuSite() {
                     className="hover:text-primary text-gray-600 transition-colors"
                   >
                     Politique de confidentialité
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/conditions-de-vente"
+                    className="hover:text-primary text-gray-600 transition-colors"
+                  >
+                    Conditions de vente
                   </Link>
                 </li>
                 <li>

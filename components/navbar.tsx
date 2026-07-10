@@ -170,7 +170,7 @@ export function Navbar() {
 
         <div className="hidden items-center gap-4 xl:flex">
           <Button variant="default" size="sm" asChild>
-            <Link href="/contact">Devis gratuit</Link>
+            <Link href="/devis">Devis gratuit</Link>
           </Button>
         </div>
       </div>
@@ -246,7 +246,7 @@ export function Navbar() {
             asChild
             onClick={() => setIsOpen(false)}
           >
-            <Link href="/contact">Devis gratuit</Link>
+            <Link href="/devis">Devis gratuit</Link>
           </Button>
         </div>
       )}

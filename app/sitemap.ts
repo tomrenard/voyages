@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { siteUrl } from "@/lib/site";
 import { articles } from "@/lib/articles";
+import { destinationContent } from "@/lib/destination-content";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -11,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     [number, MetadataRoute.Sitemap[number]["changeFrequency"]]
   > = {
     "": [1, "weekly"],
+    "/agence-de-voyages-rennes": [0.9, "monthly"],
     "/reves-de-voyages": [0.9, "monthly"],
     "/voyage-sur-mesure": [0.9, "monthly"],
     "/croisieres": [0.8, "monthly"],
@@ -21,8 +23,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/galerie": [0.6, "monthly"],
     "/avis": [0.6, "monthly"],
     "/actualites": [0.7, "weekly"],
+    "/faq": [0.6, "monthly"],
     "/contact": [0.8, "yearly"],
+    "/devis": [0.9, "yearly"],
     "/mentions-legales": [0.2, "yearly"],
+    "/conditions-de-vente": [0.2, "yearly"],
     "/politique-de-confidentialite": [0.2, "yearly"],
     "/plan-du-site": [0.2, "yearly"],
     "/credits-photos": [0.1, "yearly"],
@@ -44,5 +49,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...staticEntries, ...articleEntries];
+  const destinationEntries: MetadataRoute.Sitemap = Object.keys(
+    destinationContent,
+  ).map((slug) => ({
+    url: `${siteUrl}/destinations/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
+  return [...staticEntries, ...destinationEntries, ...articleEntries];
 }
