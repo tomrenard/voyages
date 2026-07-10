@@ -67,18 +67,6 @@ export default function PolitiqueDeConfidentialite() {
               </div>
               <div>
                 <h3 className="mb-2 text-xl font-bold text-gray-800">
-                  Newsletter
-                </h3>
-                <p className="leading-relaxed text-gray-600">
-                  Si vous vous inscrivez à notre newsletter, nous collectons
-                  votre adresse email dans le seul but de vous envoyer nos
-                  idées et actualités de voyages. La base légale est votre
-                  consentement ; vous pouvez vous désinscrire à tout moment via
-                  le lien présent dans chaque email, ou en nous contactant.
-                </p>
-              </div>
-              <div>
-                <h3 className="mb-2 text-xl font-bold text-gray-800">
                   Mesure d’audience
                 </h3>
                 <p className="leading-relaxed text-gray-600">

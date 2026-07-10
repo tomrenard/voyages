@@ -1,6 +1,5 @@
 import { PageHeader } from "@/components/page-header";
 import { ContactForm } from "@/components/contact-form";
-import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/lib/site";
 import { Phone, Mail, CalendarCheck, Video, Clock } from "lucide-react";
 import { Metadata } from "next";
@@ -82,8 +81,7 @@ export default function Contact() {
             </div>
 
             <div className="space-y-4 border-t border-gray-200 pt-8">
-              <TrackedLink
-                event="phone_click"
+              <a
                 href={`tel:${siteConfig.phoneE164}`}
                 className="group flex items-center gap-4"
               >
@@ -96,9 +94,8 @@ export default function Contact() {
                     {siteConfig.phone}
                   </p>
                 </div>
-              </TrackedLink>
-              <TrackedLink
-                event="email_click"
+              </a>
+              <a
                 href={`mailto:${siteConfig.email}`}
                 className="group flex items-center gap-4"
               >
@@ -111,7 +108,7 @@ export default function Contact() {
                     {siteConfig.email}
                   </p>
                 </div>
-              </TrackedLink>
+              </a>
             </div>
 
             <div className="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 text-sm text-gray-500">

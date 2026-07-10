@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { Phone, Mail, CalendarCheck } from "lucide-react";
 import { FacebookIcon, InstagramIcon } from "@/components/social-icons";
-import { TrackedLink } from "@/components/tracked-link";
-import { NewsletterForm } from "@/components/newsletter-form";
 import { siteConfig } from "@/lib/site";
 
 export default function Footer() {
@@ -57,23 +55,20 @@ export default function Footer() {
                 Sur rendez-vous, par téléphone ou en visioconférence.
               </p>
             </div>
-            <TrackedLink
-              event="phone_click"
+            <a
               href={`tel:${siteConfig.phoneE164}`}
               className="flex items-center space-x-3 transition-colors hover:text-white"
             >
               <Phone className="text-primary h-5 w-5" />
               <span>{siteConfig.phone}</span>
-            </TrackedLink>
-            <TrackedLink
-              event="email_click"
+            </a>
+            <a
               href={`mailto:${siteConfig.email}`}
               className="flex items-center space-x-3 break-all transition-colors hover:text-white"
             >
               <Mail className="text-primary h-5 w-5 shrink-0" />
               <span>{siteConfig.email}</span>
-            </TrackedLink>
-            <NewsletterForm />
+            </a>
           </div>
 
           <div className="space-y-4">

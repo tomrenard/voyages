@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { track } from "@vercel/analytics";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Loader2 } from "lucide-react";
 
@@ -37,7 +36,6 @@ export function ContactForm() {
 
       form.reset();
       setStatus("success");
-      track("contact_submitted");
     } catch (err) {
       setStatus("error");
       setErrorMessage(
