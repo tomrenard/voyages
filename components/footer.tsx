@@ -41,7 +41,7 @@ export default function Footer() {
               href={siteConfig.social.googleReviews}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-primary inline-block text-sm text-gray-400 underline underline-offset-4 transition-colors"
+              className="inline-block text-sm text-gray-400 underline underline-offset-4 transition-colors hover:text-[#C5A059]"
             >
               ★ Laissez-nous un avis Google
             </a>
@@ -50,7 +50,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-white">Nous joindre</h3>
             <div className="flex items-start space-x-3">
-              <CalendarCheck className="text-primary mt-0.5 h-5 w-5 shrink-0" />
+              <CalendarCheck className="mt-0.5 h-5 w-5 shrink-0 text-[#C5A059]" />
               <p className="text-sm">
                 Sur rendez-vous, par téléphone ou en visioconférence.
               </p>
@@ -59,14 +59,14 @@ export default function Footer() {
               href={`tel:${siteConfig.phoneE164}`}
               className="flex items-center space-x-3 transition-colors hover:text-white"
             >
-              <Phone className="text-primary h-5 w-5" />
+              <Phone className="h-5 w-5 text-[#C5A059]" />
               <span>{siteConfig.phone}</span>
             </a>
             <a
               href={`mailto:${siteConfig.email}`}
               className="flex items-center space-x-3 break-all transition-colors hover:text-white"
             >
-              <Mail className="text-primary h-5 w-5 shrink-0" />
+              <Mail className="h-5 w-5 shrink-0 text-[#C5A059]" />
               <span>{siteConfig.email}</span>
             </a>
           </div>

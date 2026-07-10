@@ -43,8 +43,10 @@
   --background: hsl(0 0% 100%);
   --foreground: hsl(220 13% 18%); /* Darker charcoal */
 
-  /* Gold / Bronze from logo */
-  --primary: hsl(43 50% 56%); /* #C5A059 approx */
+  /* Gold / Bronze from logo, darkened for WCAG AA (4.75:1 on white).
+     The brighter logo gold (#C5A059) remains for decorative use on dark
+     backgrounds (OG image, manifest theme). */
+  --primary: hsl(43 50% 36%); /* #8A702E */
   --primary-foreground: hsl(0 0% 100%);
 
   --secondary: hsl(220 14% 96%);
@@ -61,7 +63,7 @@
 
   --border: hsl(220 13% 91%);
   --input: hsl(220 13% 91%);
-  --ring: hsl(43 50% 56%);
+  --ring: hsl(43 50% 36%);
 
   --radius: 0.5rem;
 
