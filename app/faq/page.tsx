@@ -4,6 +4,8 @@ import { PageHeader } from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site";
 
+const { legal } = siteConfig;
+
 export const metadata: Metadata = {
   title: "Questions Fréquentes (FAQ)",
   description:
@@ -15,7 +17,7 @@ const faq = [
   {
     question: "Comment fonctionne votre agence de voyages ?",
     answer:
-      "Rêves de Voyages est une agence indépendante basée près de Rennes, sans boutique : les rendez-vous se font par téléphone, en visioconférence ou sur rendez-vous. Vous décrivez votre projet, Véronique construit une proposition personnalisée, vous l'affinez ensemble jusqu'à ce qu'elle soit parfaite — puis vous partez l'esprit tranquille, avec une assistance avant, pendant et après le voyage.",
+      "Rêves de Voyages est une agence indépendante basée près de Rennes, sans boutique : les échanges se font par téléphone, en visioconférence ou en personne, sur rendez-vous. Vous décrivez votre projet, Véronique construit une proposition personnalisée, vous l'affinez ensemble jusqu'à ce qu'elle soit parfaite — puis vous partez l'esprit tranquille, avec une assistance avant, pendant et après le voyage.",
   },
   {
     question: "Le devis est-il vraiment gratuit ?",
@@ -29,8 +31,7 @@ const faq = [
   },
   {
     question: "Quelles garanties offre votre agence ?",
-    answer:
-      "Nous sommes immatriculés au registre des opérateurs de voyages d'Atout France (IM035100033), couverts par la garantie financière de l'APST — qui protège vos fonds et votre rapatriement même en cas de défaillance — et par une assurance responsabilité civile professionnelle MMA.",
+    answer: `Nous sommes immatriculés au registre des opérateurs de voyages d'Atout France (${legal.atoutFrance}), couverts par la garantie financière de l'APST — qui protège vos fonds et votre rapatriement même en cas de défaillance — et par une assurance responsabilité civile professionnelle MMA.`,
   },
   {
     question: "Comment se passe le paiement ?",

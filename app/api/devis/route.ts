@@ -35,20 +35,30 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Requête invalide." }, { status: 400 });
   }
 
-  const field = (key: string) => String(data[key] ?? "").trim();
+  // Cap lengths server-side (client validation is advisory only) and strip
+  // control characters so free text can never smuggle newlines into headers.
+  const field = (key: string, max = 200) =>
+    String(data[key] ?? "")
+      .replace(/[\r\n\t]+/g, " ")
+      .trim()
+      .slice(0, max);
 
   const firstName = field("firstName");
   const lastName = field("lastName");
   const email = field("email");
-  const phone = field("phone");
+  const phone = field("phone", 30);
   const destination = field("destination");
-  const tripType = field("tripType");
-  const period = field("period");
-  const duration = field("duration");
-  const adults = field("adults");
-  const children = field("children");
-  const budget = field("budget");
-  const message = field("message");
+  const tripType = field("tripType", 50);
+  const period = field("period", 100);
+  const duration = field("duration", 50);
+  const adults = String(Math.min(Math.max(Number(data.adults) || 0, 0), 99));
+  const children = String(
+    Math.min(Math.max(Number(data.children) || 0, 0), 99),
+  );
+  const budget = field("budget", 50);
+  const message = String(data.message ?? "")
+    .trim()
+    .slice(0, 5000);
   // Honeypot — bots fill hidden fields; humans leave it empty.
   const honeypot = field("company");
 
@@ -89,7 +99,7 @@ export async function POST(request: Request) {
     ["Durée", duration || "non précisée"],
     [
       "Voyageurs",
-      `${adults || "?"} adulte(s)${children && children !== "0" ? `, ${children} enfant(s)` : ""}`,
+      `${adults === "0" ? "?" : adults} adulte(s)${children !== "0" ? `, ${children} enfant(s)` : ""}`,
     ],
     ["Budget par personne", budget || "non précisé"],
   ];

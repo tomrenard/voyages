@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { CalendarDays, Clock, Wallet, ChevronRight } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 import { Button } from "@/components/ui/button";
-import { coupsDeCoeur } from "@/lib/destinations";
+import { allDestinations } from "@/lib/destinations";
 import {
   destinationContent,
   getDestinationContent,
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function DestinationPage({ params }: Props) {
   const { slug } = await params;
   const content = getDestinationContent(slug);
-  const card = coupsDeCoeur.find((d) => d.slug === slug);
+  const card = allDestinations.find((d) => d.slug === slug);
   if (!content || !card) notFound();
 
   const jsonLd = [
@@ -82,7 +82,11 @@ export default async function DestinationPage({ params }: Props) {
     },
   ];
 
-  const others = coupsDeCoeur.filter((d) => d.slug !== slug).slice(0, 3);
+  // Deterministic rotation: each page cross-links the next three destinations.
+  const idx = allDestinations.findIndex((d) => d.slug === slug);
+  const others = [1, 2, 3].map(
+    (offset) => allDestinations[(idx + offset) % allDestinations.length],
+  );
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -218,7 +222,7 @@ export default async function DestinationPage({ params }: Props) {
               asChild
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white/10"
+              className="border-white bg-transparent text-white hover:bg-white/10 hover:text-white"
             >
               <a href={`tel:${siteConfig.phoneE164}`}>{siteConfig.phone}</a>
             </Button>
@@ -248,7 +252,7 @@ export default async function DestinationPage({ params }: Props) {
         {/* Other destinations */}
         <div>
           <h2 className="mb-8 text-center font-serif text-2xl font-bold text-gray-900">
-            D&apos;autres coups de cœur à découvrir
+            D&apos;autres destinations à découvrir
           </h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
             {others.map((destination) => (

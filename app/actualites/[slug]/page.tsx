@@ -88,7 +88,13 @@ export default async function ArticlePage({
     image: `${siteUrl}${article.image}`,
     datePublished: article.date,
     dateModified: article.date,
-    author: { "@type": "Person", name: article.author },
+    author: {
+      "@type": "Person",
+      name: "Véronique Guyomard",
+      jobTitle: "Conseillère voyages",
+      url: `${siteUrl}/reves-de-voyages`,
+      worksFor: { "@id": `${siteUrl}/#travelagency` },
+    },
     publisher: {
       "@type": "Organization",
       name: siteConfig.name,
@@ -182,7 +188,34 @@ export default async function ArticlePage({
             ))}
           </div>
 
-          <div className="mt-14 rounded-2xl border border-gray-100 bg-gray-50 p-8 text-center">
+          <div className="mt-14 flex items-start gap-5 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm md:p-8">
+            <div className="bg-primary/10 text-primary flex h-14 w-14 shrink-0 items-center justify-center rounded-full font-serif text-xl font-bold">
+              V
+            </div>
+            <div>
+              <p className="mb-1 text-sm font-semibold tracking-wide text-gray-400 uppercase">
+                À propos de l&apos;auteure
+              </p>
+              <h2 className="mb-2 font-serif text-lg font-bold text-gray-900">
+                {article.author}, conseillère voyages
+              </h2>
+              <p className="text-sm leading-relaxed text-gray-600">
+                Fondatrice de Rêves de Voyages en {siteConfig.foundedYear},
+                Véronique conçoit des voyages sur mesure depuis la métropole
+                rennaise. Chaque conseil publié ici vient de son expérience du
+                terrain et de celle de ses voyageurs.{" "}
+                <Link
+                  href="/reves-de-voyages"
+                  className="text-primary hover:underline"
+                >
+                  En savoir plus sur l&apos;agence
+                </Link>
+                .
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-8 rounded-2xl border border-gray-100 bg-gray-50 p-8 text-center">
             <h2 className="mb-3 font-serif text-2xl font-bold text-gray-900">
               Envie de partir ?
             </h2>

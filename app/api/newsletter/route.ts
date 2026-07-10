@@ -43,8 +43,8 @@ export async function POST(request: Request) {
   }
 
   // Contacts land in a Resend Audience; create one in the Resend dashboard
-  // and set RESEND_AUDIENCE_ID. Double opt-in / unsubscribe are handled by
-  // Resend's broadcast tooling.
+  // and set RESEND_AUDIENCE_ID. Resend broadcasts include unsubscribe links
+  // (single opt-in — no confirmation email is sent to the subscriber).
   const audienceId = process.env.RESEND_AUDIENCE_ID;
   if (!process.env.RESEND_API_KEY || !audienceId) {
     console.error("RESEND_API_KEY or RESEND_AUDIENCE_ID is not configured.");

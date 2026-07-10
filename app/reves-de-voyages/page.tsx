@@ -10,6 +10,9 @@ const destinationLinks: Record<string, string> = {
   Australie: "/destinations/australie",
   Vietnam: "/destinations/vietnam",
   Polynésie: "/destinations/polynesie-francaise",
+  "Île Maurice": "/destinations/ile-maurice",
+  Seychelles: "/destinations/seychelles",
+  Thaïlande: "/destinations/thailande",
 };
 
 export const metadata: Metadata = {
@@ -159,7 +162,7 @@ export default function RevesDeVoyages() {
               asChild
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white/10"
+              className="border-white bg-transparent text-white hover:bg-white/10 hover:text-white"
             >
               <a href={`tel:${siteConfig.phoneE164}`}>{siteConfig.phone}</a>
             </Button>

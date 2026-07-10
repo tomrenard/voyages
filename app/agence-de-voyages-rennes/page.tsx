@@ -27,8 +27,7 @@ const faq = [
   },
   {
     question: "Quelles garanties offre votre agence ?",
-    answer:
-      "Nous sommes immatriculés Atout France (IM035100033), couverts par la garantie financière de l'APST et une assurance responsabilité civile professionnelle MMA. Vos fonds et votre rapatriement sont protégés, comme l'exige le Code du tourisme.",
+    answer: `Nous sommes immatriculés Atout France (${siteConfig.legal.atoutFrance}), couverts par la garantie financière de l'APST et une assurance responsabilité civile professionnelle MMA. Vos fonds et votre rapatriement sont protégés, comme l'exige le Code du tourisme.`,
   },
   {
     question: "Pourquoi passer par une agence plutôt que réserver en ligne ?",

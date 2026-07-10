@@ -19,7 +19,7 @@ export type DestinationContent = {
   faq: { question: string; answer: string }[];
 };
 
-export const destinationContent: Record<string, DestinationContent> = {
+const coupsDeCoeurContent: Record<string, DestinationContent> = {
   "new-york": {
     slug: "new-york",
     metaTitle: "Voyage à New York sur Mesure",
@@ -334,8 +334,175 @@ export const destinationContent: Record<string, DestinationContent> = {
   },
 };
 
+const autresDestinationsContent: Record<string, DestinationContent> = {
+  "ile-maurice": {
+    slug: "ile-maurice",
+    metaTitle: "Voyage à l'Île Maurice sur Mesure",
+    metaDescription:
+      "L'île Maurice avec Rêves de Voyages : plages, lagons, Morne Brabant et douceur créole. Séjour ou voyage de noces sur mesure, devis gratuit depuis Rennes.",
+    heroSubtitle:
+      "Lagons émeraude et douceur créole : l'île de l'hospitalité",
+    introTitle: "Pourquoi partir à l'île Maurice ?",
+    intro: [
+      "Maurice a ce don rare de plaire à tout le monde : plages de sable blanc ourlées de filaos, lagons paisibles, montagnes spectaculaires comme le Morne Brabant, terres aux sept couleurs de Chamarel — et surtout une hospitalité créole qui donne envie de revenir avant même d'être reparti.",
+      "Chaque côte a son caractère : le nord animé et ses grands hôtels, l'est et ses plages immaculées, le sud sauvage autour de Blue Bay, l'ouest et ses couchers de soleil face au Morne. Nous choisissons avec vous la région, l'hôtel et le rythme qui correspondent à votre projet — lune de miel, vacances en famille ou pur farniente.",
+    ],
+    highlights: [
+      {
+        title: "Le Morne Brabant",
+        text: "Montagne classée UNESCO plongeant dans l'un des plus beaux lagons de l'île : son ascension au lever du jour est un souvenir pour la vie.",
+      },
+      {
+        title: "Chamarel et le sud sauvage",
+        text: "Les terres aux sept couleurs, la cascade de Chamarel et le parc des gorges de Rivière Noire : le visage volcanique et verdoyant de Maurice.",
+      },
+      {
+        title: "Lagons et activités nautiques",
+        text: "Snorkeling à Blue Bay, sorties dauphins à Tamarin, catamaran vers les îlots du nord : le lagon mauricien se vit autant qu'il se contemple.",
+      },
+      {
+        title: "La culture créole",
+        text: "Marché de Port-Louis, maisons coloniales, street food indo-mauricienne et séga endiablé : une douceur de vivre métissée unique.",
+      },
+    ],
+    bestSeason:
+      "Avril-mai et septembre à novembre : saison douce et sèche, mer calme et tarifs plus doux qu'aux fêtes. L'île se visite toute l'année.",
+    idealDuration: "10 à 14 jours",
+    budgetFrom: 1800,
+    faq: [
+      {
+        question: "Quelle côte choisir à l'île Maurice ?",
+        answer:
+          "Le nord pour l'animation et les infrastructures, l'est pour les plus belles plages et les hôtels d'exception, l'ouest pour les couchers de soleil et les activités nautiques, le sud pour l'authenticité. Nous vous orientons selon la saison et votre style de voyage.",
+      },
+      {
+        question: "Quel budget pour un séjour à l'île Maurice ?",
+        answer:
+          "À partir de 1 800 € par personne pour 10 jours en hôtel 4★ avec petits-déjeuners, vols inclus. Les formules tout compris et les 5★ pieds dans l'eau se situent plutôt entre 2 500 et 4 000 € par personne.",
+      },
+      {
+        question: "Faut-il un visa pour l'île Maurice ?",
+        answer:
+          "Non : pour les ressortissants français, un passeport valide couvrant la durée du séjour et un billet retour suffisent pour un séjour touristique. L'anglais et le français sont parlés partout — un dépaysement sans barrière de langue.",
+      },
+    ],
+  },
+  seychelles: {
+    slug: "seychelles",
+    metaTitle: "Voyage aux Seychelles sur Mesure",
+    metaDescription:
+      "Les Seychelles avec Rêves de Voyages : Mahé, Praslin, La Digue et leurs plages de rêve. Combiné d'îles sur mesure, devis gratuit depuis Rennes.",
+    heroSubtitle:
+      "Granit sculpté, sable immaculé : l'archipel hors du temps",
+    introTitle: "Pourquoi partir aux Seychelles ?",
+    intro: [
+      "Les Seychelles ne ressemblent à aucune autre destination balnéaire : ici, les plages sont bordées de blocs de granit rose sculptés par les éléments, la végétation descend jusqu'au sable et les tortues géantes se promènent en liberté. Un paradis resté authentique, à 8 heures de vol sans décalage horaire épuisant.",
+      "Le combiné d'îles est la formule reine : Mahé la montagneuse, Praslin et sa Vallée de Mai classée UNESCO, La Digue et ses plages mythiques à parcourir à vélo. Nous composons votre itinéraire entre hôtels de charme, guesthouses créoles et adresses d'exception.",
+    ],
+    highlights: [
+      {
+        title: "Anse Source d'Argent",
+        text: "À La Digue, la plage la plus photographiée du monde : blocs de granit, eau turquoise peu profonde et lumière dorée en fin de journée.",
+      },
+      {
+        title: "La Vallée de Mai à Praslin",
+        text: "Forêt primaire classée UNESCO, royaume du coco de mer et du perroquet noir : une plongée dans un éden préhistorique.",
+      },
+      {
+        title: "Mahé et ses 65 plages",
+        text: "Entre le marché de Victoria, les routes de montagne du parc du Morne Seychellois et les criques secrètes du sud, l'île principale surprend.",
+      },
+      {
+        title: "Snorkeling et tortues",
+        text: "Les réserves marines de Sainte-Anne et de l'île Cocos regorgent de poissons tropicaux ; les tortues croisent régulièrement les nageurs.",
+      },
+    ],
+    bestSeason:
+      "Avril-mai et octobre-novembre, aux intersaisons : mer calme, lumière superbe et affluence modérée. Agréable toute l'année (27 °C en moyenne).",
+    idealDuration: "10 à 15 jours",
+    budgetFrom: 2500,
+    faq: [
+      {
+        question: "Quelles îles choisir pour un premier voyage aux Seychelles ?",
+        answer:
+          "Le trio Mahé – Praslin – La Digue est le combiné idéal : liaisons faciles en ferry, trois ambiances complémentaires et les plus belles plages de l'archipel. Comptez au moins trois nuits par île pour en profiter.",
+      },
+      {
+        question: "Quel budget pour un voyage aux Seychelles ?",
+        answer:
+          "À partir de 2 500 € par personne pour 10 jours en combiné 2-3 îles (vols, ferries, hôtels de charme avec petit-déjeuner). Les guesthouses créoles permettent de découvrir l'archipel à budget plus doux que sa réputation.",
+      },
+      {
+        question: "Quand partir aux Seychelles ?",
+        answer:
+          "Les intersaisons (avril-mai, octobre-novembre) offrent les meilleures conditions : mer d'huile et chaleur douce. Notre article « Quand partir aux Seychelles ? » détaille la météo saison par saison — demandez-nous conseil selon vos dates.",
+      },
+    ],
+  },
+  thailande: {
+    slug: "thailande",
+    metaTitle: "Voyage en Thaïlande sur Mesure",
+    metaDescription:
+      "La Thaïlande avec Rêves de Voyages : Bangkok, temples du nord, plages de Krabi et îles du sud. Circuit et séjour sur mesure, devis gratuit depuis Rennes.",
+    heroSubtitle:
+      "Temples dorés, sourires et plages de rêve : le royaume aux mille visages",
+    introTitle: "Pourquoi partir en Thaïlande ?",
+    intro: [
+      "La Thaïlande porte bien son surnom de pays du sourire : entre les temples étincelants de Bangkok, les montagnes du nord autour de Chiang Mai, les marchés flottants et les plages bordées de falaises karstiques du sud, elle offre l'un des plus beaux condensés d'Asie — accessible, accueillant et étonnamment doux pour le budget.",
+      "Circuit culturel au nord puis farniente dans les îles, ou séjour balnéaire ponctué d'escapades : nous construisons l'équilibre qui vous ressemble, avec nos guides francophones, nos hôtels testés et les étapes qui évitent les foules.",
+    ],
+    highlights: [
+      {
+        title: "Bangkok la foisonnante",
+        text: "Le Grand Palais et le Bouddha d'émeraude, les klongs en bateau-taxi, la street food de Chinatown : une capitale électrisante à apprivoiser en douceur.",
+      },
+      {
+        title: "Chiang Mai et le nord",
+        text: "Temples de teck, marchés nocturnes, rencontres avec les artisans et sanctuaires éthiques d'éléphants au cœur des montagnes.",
+      },
+      {
+        title: "Krabi et la mer d'Andaman",
+        text: "Railay et ses falaises légendaires, les îles Phi Phi, Koh Lanta la paisible : des paysages karstiques parmi les plus spectaculaires du monde.",
+      },
+      {
+        title: "La cuisine thaïe",
+        text: "Pad thaï au wok brûlant, curry vert, mangue au riz gluant : un voyage dans le voyage, du marché de rue au cours de cuisine.",
+      },
+    ],
+    bestSeason:
+      "Novembre à mars : saison sèche et chaleur agréable dans tout le pays. Le golfe de Thaïlande (Koh Samui) prend le relais d'avril à septembre.",
+    idealDuration: "12 à 16 jours",
+    budgetFrom: 1900,
+    faq: [
+      {
+        question: "Faut-il un visa pour la Thaïlande ?",
+        answer:
+          "Les ressortissants français sont exemptés de visa pour les séjours touristiques courts (passeport valide 6 mois après le retour). Nous confirmons les conditions en vigueur au moment de la réservation.",
+      },
+      {
+        question: "Quel budget pour un voyage en Thaïlande ?",
+        answer:
+          "À partir de 1 900 € par personne pour deux semaines combinant circuit au nord et plages au sud (vols internationaux et intérieurs, hôtels de charme, guides francophones). La Thaïlande offre un rapport qualité-prix exceptionnel.",
+      },
+      {
+        question: "Circuit organisé ou voyage en liberté ?",
+        answer:
+          "Les deux se font très bien : le pays est sûr et rodé au tourisme. Nous recommandons souvent un circuit privé avec guide au nord pour la richesse culturelle, puis la liberté totale dans les îles du sud.",
+      },
+    ],
+  },
+};
+
+/** Every destination landing page, keyed by slug (coups de cœur + autres). */
+export const destinationContent: Record<string, DestinationContent> = {
+  ...coupsDeCoeurContent,
+  ...autresDestinationsContent,
+};
+
 export function getDestinationContent(
   slug: string,
 ): DestinationContent | undefined {
-  return destinationContent[slug];
+  return Object.hasOwn(destinationContent, slug)
+    ? destinationContent[slug]
+    : undefined;
 }

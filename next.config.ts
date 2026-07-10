@@ -54,11 +54,10 @@ export default withMDX()({
         "/actualites/organiser-son-voyage-de-noces",
       // Océan Indien
       "organiser-un-sejour-en-ile-maurice-nos-conseils":
-        "/actualites/quand-partir-aux-seychelles",
+        "/destinations/ile-maurice",
       "sejour-a-lile-maurice-que-faire-pour-en-profiter-au-maximum":
-        "/actualites/quand-partir-aux-seychelles",
-      "4-endroits-a-visiter-a-praslin":
-        "/actualites/quand-partir-aux-seychelles",
+        "/destinations/ile-maurice",
+      "4-endroits-a-visiter-a-praslin": "/destinations/seychelles",
       "decouvrez-les-destinations-tropicales-incontournables-pour-vos-vacances":
         "/actualites/quand-partir-aux-seychelles",
       // Europe & week-ends

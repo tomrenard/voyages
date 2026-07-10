@@ -69,3 +69,44 @@ export const coupsDeCoeur: Destination[] = [
     imageAlt: "Felouque traditionnelle naviguant à la voile sur le Nil",
   },
 ];
+
+/**
+ * Additional destinations with a dedicated landing page, beyond the six
+ * curated coups de cœur. Same shape; not shown in the navbar/homepage
+ * highlights, but reachable via internal links, sitemap and redirects.
+ */
+export const autresDestinations: Destination[] = [
+  {
+    slug: "ile-maurice",
+    title: "Île Maurice",
+    blurb:
+      "Plages de sable blanc, lagons émeraude et douceur créole : l'île de l'hospitalité par excellence, idéale en séjour comme en voyage de noces.",
+    image: "/images/dest-maurice.jpg",
+    imageAlt:
+      "La plage du Morne et la montagne du Morne Brabant, à l'île Maurice",
+  },
+  {
+    slug: "seychelles",
+    title: "Seychelles",
+    blurb:
+      "Rochers de granit sculptés, eaux cristallines et nature préservée : un archipel hors du temps pour les amoureux de plages parfaites.",
+    image: "/images/dest-seychelles.jpg",
+    imageAlt:
+      "Les blocs de granit et le sable blanc de l'Anse Source d'Argent, à La Digue, aux Seychelles",
+  },
+  {
+    slug: "thailande",
+    title: "Thaïlande",
+    blurb:
+      "Temples dorés, cuisine de rue légendaire et plages bordées de falaises karstiques : le pays du sourire réunit culture et farniente.",
+    image: "/images/dest-thailande.jpg",
+    imageAlt:
+      "La plage de Railay bordée de falaises karstiques, dans la province de Krabi, en Thaïlande",
+  },
+];
+
+/** Every destination with a landing page (/destinations/[slug]). */
+export const allDestinations: Destination[] = [
+  ...coupsDeCoeur,
+  ...autresDestinations,
+];

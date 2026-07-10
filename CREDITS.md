@@ -18,6 +18,14 @@ suffit généralement à respecter ces conditions.
 | `public/images/coup-polynesie.jpg` | Polynésie française  | Daniel Julie (Paris) | CC BY 2.0    | [Wikimedia Commons](<https://commons.wikimedia.org/wiki/File:DSC00042_Polyn%C3%A9sia_Moor%C3%A9a_Island_Motu_Mo%C3%A9a_Lagoon_and_transportation_Boat_(8076082190).jpg>) |
 | `public/images/coup-nil.jpg`       | Croisière sur le Nil | Marc Ryckaert (MJJR) | CC BY 3.0    | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Felucca_R02.jpg)                                                                                             |
 
+## Destinations (pages dédiées)
+
+| Image                               | Destination | Auteur        | Licence      | Source                                                                                                                                                      |
+| ----------------------------------- | ----------- | ------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `public/images/dest-maurice.jpg`    | Île Maurice | dronepicr     | CC BY 2.0    | [Wikimedia Commons](<https://commons.wikimedia.org/wiki/File:Le_Morne_Beach_with_Le_Morne_Brabant_Mountain_in_the_background,_Mauritius_(53698223315).jpg>) |
+| `public/images/dest-seychelles.jpg` | Seychelles  | Norbert Nagel | CC BY-SA 4.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_02.jpg)                                        |
+| `public/images/dest-thailande.jpg`  | Thaïlande   | kallerna      | CC BY-SA 3.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Railay_Beach_5.jpg)                                                                             |
+
 ## Articles & galerie
 
 | Image                                  | Usage                       | Auteur         | Licence          | Source                                                                                                         |

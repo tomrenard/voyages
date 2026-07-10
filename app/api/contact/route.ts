@@ -35,11 +35,20 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Requête invalide." }, { status: 400 });
   }
 
-  const firstName = String(data.firstName ?? "").trim();
-  const lastName = String(data.lastName ?? "").trim();
-  const email = String(data.email ?? "").trim();
-  const phone = String(data.phone ?? "").trim();
-  const message = String(data.message ?? "").trim();
+  // Strip control characters from fields used in headers and cap lengths.
+  const scalar = (value: unknown, max = 200) =>
+    String(value ?? "")
+      .replace(/[\r\n\t]+/g, " ")
+      .trim()
+      .slice(0, max);
+
+  const firstName = scalar(data.firstName);
+  const lastName = scalar(data.lastName);
+  const email = scalar(data.email);
+  const phone = scalar(data.phone, 30);
+  const message = String(data.message ?? "")
+    .trim()
+    .slice(0, 5000);
   // Honeypot — bots fill hidden fields; humans leave it empty.
   const honeypot = String(data.company ?? "").trim();
 
