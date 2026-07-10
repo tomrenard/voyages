@@ -1,6 +1,16 @@
 import { PageHeader } from "@/components/page-header";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import { Metadata } from "next";
+import { siteConfig } from "@/lib/site";
+
+// Destinations with a dedicated landing page — chips become internal links.
+const destinationLinks: Record<string, string> = {
+  Australie: "/destinations/australie",
+  Vietnam: "/destinations/vietnam",
+  Polynésie: "/destinations/polynesie-francaise",
+};
 
 export const metadata: Metadata = {
   title: "Qui sommes-nous ?",
@@ -107,14 +117,52 @@ export default function RevesDeVoyages() {
               "Italie",
               "Londres",
               "Cap Vert",
-            ].map((dest) => (
-              <span
-                key={dest}
-                className="hover:border-primary hover:text-primary cursor-default rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700 shadow-sm transition-colors"
-              >
-                {dest}
-              </span>
-            ))}
+            ].map((dest) =>
+              destinationLinks[dest] ? (
+                <Link
+                  key={dest}
+                  href={destinationLinks[dest]}
+                  className="border-primary/40 text-primary hover:bg-primary rounded-full border bg-white px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:text-white"
+                >
+                  {dest}
+                </Link>
+              ) : (
+                <span
+                  key={dest}
+                  className="hover:border-primary hover:text-primary cursor-default rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700 shadow-sm transition-colors"
+                >
+                  {dest}
+                </span>
+              ),
+            )}
+          </div>
+        </div>
+
+        <div className="bg-primary mt-16 rounded-2xl p-10 text-center text-white md:p-14">
+          <h3 className="mb-4 font-serif text-3xl font-bold">
+            Et si on parlait de votre prochain voyage ?
+          </h3>
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-white/90">
+            Racontez vos envies à {siteConfig.advisor} : vous recevrez une
+            première proposition personnalisée, gratuite et sans engagement.
+          </p>
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Button
+              asChild
+              size="lg"
+              variant="secondary"
+              className="text-primary bg-white hover:bg-gray-100"
+            >
+              <Link href="/devis">Demander un devis gratuit</Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white/10"
+            >
+              <a href={`tel:${siteConfig.phoneE164}`}>{siteConfig.phone}</a>
+            </Button>
           </div>
         </div>
       </div>

@@ -13,24 +13,28 @@ const slides = [
     text: "Votre adresse pour des voyages 100 % personnalisables !",
     subtext: "Laissez-nous réaliser vos rêves d'évasion.",
     image: "/images/slide-1.jpg",
+    cta: { label: "Découvrir le sur-mesure", href: "/voyage-sur-mesure" },
   },
   {
     id: 2,
     text: "Vivez une expérience touristique en toute sérénité avec RÊVES DE VOYAGES !",
     subtext: "Nous nous occupons de tout, profitez de l'instant.",
     image: "/images/slide-2.jpg",
+    cta: { label: "Découvrir l'agence", href: "/reves-de-voyages" },
   },
   {
     id: 3,
     text: "Personnalisez vos vacances selon vos envies et votre budget !",
     subtext: "Un voyage unique qui vous ressemble.",
     image: "/images/slide-3.jpg",
+    cta: { label: "Voir nos coups de cœur", href: "/nos-coups-de-coeur" },
   },
   {
     id: 4,
     text: "Des conseils sur-mesure pour choisir la destination de vos rêves.",
     subtext: "Notre expertise à votre service.",
     image: "/images/slide-4.jpg",
+    cta: { label: "Prendre rendez-vous", href: "/contact" },
   },
 ];
 
@@ -101,7 +105,7 @@ export function HeroSection() {
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground h-auto w-full rounded-full px-8 py-6 text-lg shadow-lg transition-all hover:scale-105 sm:w-auto"
               >
-                <Link href="/reves-de-voyages">Je prépare mon voyage</Link>
+                <Link href="/devis">Demander un devis gratuit</Link>
               </Button>
               <Button
                 variant="outline"
@@ -109,7 +113,9 @@ export function HeroSection() {
                 asChild
                 className="h-auto w-full rounded-full border-white bg-white/10 px-8 py-6 text-lg text-white backdrop-blur-sm transition-all hover:scale-105 hover:bg-white/20 hover:text-white sm:w-auto"
               >
-                <Link href="/contact">Nous contacter</Link>
+                <Link href={slides[currentSlide].cta.href}>
+                  {slides[currentSlide].cta.label}
+                </Link>
               </Button>
             </div>
           </motion.div>
