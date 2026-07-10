@@ -64,11 +64,10 @@ export async function POST(request: Request) {
   }
 
   const to = process.env.CONTACT_EMAIL ?? siteConfig.email;
-  // Until revesdevoyages.fr is verified in Resend, falls back to the test sender
-  // (which only delivers to the Resend account owner). Set CONTACT_FROM to
-  // "Rêves de Voyages <contact@revesdevoyages.fr>" once the domain is verified.
+  // revesdevoyages.fr is verified in Resend — default to the branded sender;
+  // CONTACT_FROM can still override (e.g. for staging).
   const from =
-    process.env.CONTACT_FROM ?? "Rêves de Voyages <onboarding@resend.dev>";
+    process.env.CONTACT_FROM ?? "Rêves de Voyages <contact@revesdevoyages.fr>";
   const fullName = `${firstName} ${lastName}`;
 
   try {
