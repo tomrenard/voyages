@@ -21,7 +21,7 @@ export function HighlightsSection() {
           {coupsDeCoeur.map((destination) => (
             <Link
               key={destination.slug}
-              href="/nos-coups-de-coeur"
+              href={`/destinations/${destination.slug}`}
               className="group flex flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:shadow-xl"
             >
               <div className="relative h-52 overflow-hidden">

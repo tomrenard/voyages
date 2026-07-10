@@ -178,7 +178,52 @@ export default function MentionsLegales() {
 
           <section>
             <h2 className="text-primary mb-4 font-serif text-2xl font-bold">
-              7. Droit applicable
+              7. Médiation de la consommation
+            </h2>
+            <div className="space-y-4 leading-relaxed text-gray-600">
+              <p>
+                Conformément aux articles L612-1 et suivants du Code de la
+                consommation, après avoir saisi notre service client et à défaut
+                de réponse satisfaisante dans un délai de 60 jours, vous pouvez
+                saisir gratuitement le médiateur du Tourisme et du Voyage, dont
+                les coordonnées et modalités de saisine sont disponibles sur son
+                site :
+              </p>
+              <ul className="mt-2 list-inside list-disc space-y-1 pl-4">
+                <li>
+                  <strong>{legal.mediator.name}</strong>
+                </li>
+                <li>{legal.mediator.address}</li>
+                <li>
+                  <a
+                    href={legal.mediator.url}
+                    className="text-primary hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    www.mtv.travel
+                  </a>
+                </li>
+              </ul>
+              <p>
+                Vous pouvez également utiliser la plateforme européenne de
+                règlement en ligne des litiges :{" "}
+                <a
+                  href="https://ec.europa.eu/consumers/odr/"
+                  className="text-primary hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  ec.europa.eu/consumers/odr
+                </a>
+                .
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-primary mb-4 font-serif text-2xl font-bold">
+              8. Droit applicable
             </h2>
             <div className="leading-relaxed text-gray-600">
               <p>

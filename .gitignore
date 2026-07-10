@@ -8,3 +8,4 @@ node_modules
 # os / editor
 .DS_Store
 *.pem
+*.tsbuildinfo

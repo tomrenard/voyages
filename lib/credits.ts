@@ -15,6 +15,7 @@ export type PhotoCredit = {
 const CC_BY_2 = "https://creativecommons.org/licenses/by/2.0/";
 const CC_BY_3 = "https://creativecommons.org/licenses/by/3.0/";
 const CC_BY_4 = "https://creativecommons.org/licenses/by/4.0/";
+const CC_BY_SA_3 = "https://creativecommons.org/licenses/by-sa/3.0/";
 const CC_BY_SA_4 = "https://creativecommons.org/licenses/by-sa/4.0/";
 const FAL = "https://artlibre.org/licence/lal/en/";
 
@@ -64,6 +65,30 @@ export const photoCredits: PhotoCredit[] = [
     license: "CC BY 3.0",
     licenseUrl: CC_BY_3,
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Felucca_R02.jpg",
+  },
+  {
+    usage: "Destination — Île Maurice",
+    author: "dronepicr",
+    license: "CC BY 2.0",
+    licenseUrl: CC_BY_2,
+    sourceUrl:
+      "https://commons.wikimedia.org/wiki/File:Le_Morne_Beach_with_Le_Morne_Brabant_Mountain_in_the_background,_Mauritius_(53698223315).jpg",
+  },
+  {
+    usage: "Destination — Seychelles",
+    author: "Norbert Nagel",
+    license: "CC BY-SA 4.0",
+    licenseUrl: CC_BY_SA_4,
+    sourceUrl:
+      "https://commons.wikimedia.org/wiki/File:Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_02.jpg",
+  },
+  {
+    usage: "Destination — Thaïlande",
+    author: "kallerna",
+    license: "CC BY-SA 3.0",
+    licenseUrl: CC_BY_SA_3,
+    sourceUrl:
+      "https://commons.wikimedia.org/wiki/File:Railay_Beach_5.jpg",
   },
   {
     usage: "Article — Seychelles",

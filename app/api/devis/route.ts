@@ -15,12 +15,12 @@ const escapeHtml = (value: string) =>
     .replace(/"/g, "&quot;");
 
 export async function POST(request: Request) {
-  // Rate limit per client IP to curb spam (max 5 submissions / 10 min).
+  // Rate limit per client IP to curb spam (shared limiter with the contact form).
   const ip =
     request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
     request.headers.get("x-real-ip") ||
     "unknown";
-  const limit = rateLimit(`contact:${ip}`);
+  const limit = rateLimit(`devis:${ip}`);
   if (!limit.ok) {
     return NextResponse.json(
       { error: "Trop de demandes. Merci de réessayer dans quelques minutes." },
@@ -35,29 +35,39 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Requête invalide." }, { status: 400 });
   }
 
-  // Strip control characters from fields used in headers and cap lengths.
-  const scalar = (value: unknown, max = 200) =>
-    String(value ?? "")
+  // Cap lengths server-side (client validation is advisory only) and strip
+  // control characters so free text can never smuggle newlines into headers.
+  const field = (key: string, max = 200) =>
+    String(data[key] ?? "")
       .replace(/[\r\n\t]+/g, " ")
       .trim()
       .slice(0, max);
 
-  const firstName = scalar(data.firstName);
-  const lastName = scalar(data.lastName);
-  const email = scalar(data.email);
-  const phone = scalar(data.phone, 30);
+  const firstName = field("firstName");
+  const lastName = field("lastName");
+  const email = field("email");
+  const phone = field("phone", 30);
+  const destination = field("destination");
+  const tripType = field("tripType", 50);
+  const period = field("period", 100);
+  const duration = field("duration", 50);
+  const adults = String(Math.min(Math.max(Number(data.adults) || 0, 0), 99));
+  const children = String(
+    Math.min(Math.max(Number(data.children) || 0, 0), 99),
+  );
+  const budget = field("budget", 50);
   const message = String(data.message ?? "")
     .trim()
     .slice(0, 5000);
   // Honeypot — bots fill hidden fields; humans leave it empty.
-  const honeypot = String(data.company ?? "").trim();
+  const honeypot = field("company");
 
   if (honeypot) {
     // Silently accept to avoid signalling the trap to bots.
     return NextResponse.json({ ok: true });
   }
 
-  if (!firstName || !lastName || !message || !isEmail(email)) {
+  if (!firstName || !lastName || !destination || !isEmail(email)) {
     return NextResponse.json(
       { error: "Merci de renseigner les champs obligatoires." },
       { status: 422 },
@@ -79,27 +89,45 @@ export async function POST(request: Request) {
     process.env.CONTACT_FROM ?? "Rêves de Voyages <contact@revesdevoyages.fr>";
   const fullName = `${firstName} ${lastName}`;
 
+  const rows: [string, string][] = [
+    ["Nom", fullName],
+    ["Email", email],
+    ["Téléphone", phone || "non renseigné"],
+    ["Destination", destination],
+    ["Type de voyage", tripType || "non précisé"],
+    ["Période envisagée", period || "non précisée"],
+    ["Durée", duration || "non précisée"],
+    [
+      "Voyageurs",
+      `${adults === "0" ? "?" : adults} adulte(s)${children !== "0" ? `, ${children} enfant(s)` : ""}`,
+    ],
+    ["Budget par personne", budget || "non précisé"],
+  ];
+
   try {
     const { error } = await resend.emails.send({
       from,
       to,
       replyTo: email,
-      subject: `Nouvelle demande de voyage — ${fullName}`,
+      subject: `Demande de devis — ${destination} — ${fullName}`,
       text: [
-        `Nom : ${fullName}`,
-        `Email : ${email}`,
-        `Téléphone : ${phone || "non renseigné"}`,
+        ...rows.map(([label, value]) => `${label} : ${value}`),
         "",
-        "Projet :",
-        message,
+        "Envies / précisions :",
+        message || "—",
       ].join("\n"),
       html: `
-        <h2>Nouvelle demande depuis le site</h2>
-        <p><strong>Nom :</strong> ${escapeHtml(fullName)}</p>
-        <p><strong>Email :</strong> ${escapeHtml(email)}</p>
-        <p><strong>Téléphone :</strong> ${escapeHtml(phone || "non renseigné")}</p>
-        <p><strong>Projet :</strong></p>
-        <p>${escapeHtml(message).replace(/\n/g, "<br>")}</p>
+        <h2>Nouvelle demande de devis</h2>
+        <table cellpadding="6" style="border-collapse:collapse">
+          ${rows
+            .map(
+              ([label, value]) =>
+                `<tr><td style="border:1px solid #ddd"><strong>${escapeHtml(label)}</strong></td><td style="border:1px solid #ddd">${escapeHtml(value)}</td></tr>`,
+            )
+            .join("")}
+        </table>
+        <p><strong>Envies / précisions :</strong></p>
+        <p>${escapeHtml(message || "—").replace(/\n/g, "<br>")}</p>
       `,
     });
 
@@ -113,7 +141,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ ok: true });
   } catch (err) {
-    console.error("Contact form error:", err);
+    console.error("Devis form error:", err);
     return NextResponse.json(
       { error: "Une erreur est survenue. Merci de réessayer." },
       { status: 500 },
