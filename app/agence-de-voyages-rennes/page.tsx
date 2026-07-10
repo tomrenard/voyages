@@ -18,7 +18,7 @@ const faq = [
   {
     question: "Où se trouve votre agence de voyages ?",
     answer:
-      "Rêves de Voyages est une agence indépendante basée à Bruz, dans la métropole rennaise. Nous ne recevons pas dans une boutique : nous vous conseillons sur rendez-vous, par téléphone ou en visioconférence — un service plus souple, aux mêmes garanties qu'une agence de quartier.",
+      "Rêves de Voyages est une agence indépendante basée à Bruz, dans la métropole rennaise. Nous ne recevons pas dans une boutique : nous vous conseillons sur rendez-vous, par téléphone, en visioconférence ou en personne — Véronique peut se déplacer à votre domicile. Un service plus souple, aux mêmes garanties qu'une agence de quartier.",
   },
   {
     question: "Quels types de voyages organisez-vous depuis Rennes ?",
@@ -104,7 +104,7 @@ export default function AgenceDeVoyagesRennes() {
             {
               icon: Video,
               title: "Conseil flexible",
-              text: "Rendez-vous en visio, par téléphone ou en personne : votre projet avance à votre rythme, où que vous soyez.",
+              text: "Rendez-vous en visio, par téléphone ou en personne — Véronique se déplace à votre domicile : votre projet avance à votre rythme, où que vous soyez.",
             },
             {
               icon: ShieldCheck,

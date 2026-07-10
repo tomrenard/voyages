@@ -17,7 +17,7 @@ const faq = [
   {
     question: "Comment fonctionne votre agence de voyages ?",
     answer:
-      "Rêves de Voyages est une agence indépendante basée près de Rennes, sans boutique : les échanges se font par téléphone, en visioconférence ou en personne, sur rendez-vous. Vous décrivez votre projet, Véronique construit une proposition personnalisée, vous l'affinez ensemble jusqu'à ce qu'elle soit parfaite — puis vous partez l'esprit tranquille, avec une assistance avant, pendant et après le voyage.",
+      "Rêves de Voyages est une agence indépendante basée près de Rennes, sans boutique : les échanges se font par téléphone, en visioconférence ou en personne, sur rendez-vous — Véronique peut aussi se déplacer à votre domicile. Vous décrivez votre projet, Véronique construit une proposition personnalisée, vous l'affinez ensemble jusqu'à ce qu'elle soit parfaite — puis vous partez l'esprit tranquille, avec une assistance avant, pendant et après le voyage.",
   },
   {
     question: "Le devis est-il vraiment gratuit ?",

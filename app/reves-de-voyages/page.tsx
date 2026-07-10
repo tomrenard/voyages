@@ -40,8 +40,9 @@ export default function RevesDeVoyages() {
             Implantée dans la région de Rennes (35), notre agence indépendante
             est spécialisée dans la création de voyages sur mesure depuis 2006.
             Nous vous recevons sur rendez-vous et restons disponibles par
-            téléphone ou en visioconférence. Parce que chaque voyageur est
-            unique, chaque voyage doit l'être aussi.
+            téléphone ou en visioconférence ; Véronique peut aussi se déplacer à
+            votre domicile. Parce que chaque voyageur est unique, chaque voyage
+            doit l'être aussi.
           </p>
         </div>
 

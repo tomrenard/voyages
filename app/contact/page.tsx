@@ -1,7 +1,7 @@
 import { PageHeader } from "@/components/page-header";
 import { ContactForm } from "@/components/contact-form";
 import { siteConfig } from "@/lib/site";
-import { Phone, Mail, CalendarCheck, Video, Clock } from "lucide-react";
+import { Phone, Mail, CalendarCheck, Video, Clock, Home } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -26,6 +26,11 @@ const channels = [
     icon: Video,
     title: "En visioconférence",
     text: "Préparez votre voyage confortablement, depuis chez vous.",
+  },
+  {
+    icon: Home,
+    title: "À domicile",
+    text: "Sur rendez-vous, Véronique se déplace chez vous dans la région de Rennes.",
   },
 ];
 
@@ -62,8 +67,9 @@ export default function Contact() {
               </h3>
               <p className="mb-6 text-gray-600">
                 Agence indépendante, nous vous recevons sur rendez-vous et
-                restons disponibles par téléphone ou en visioconférence pour
-                préparer votre voyage en toute simplicité.
+                restons disponibles par téléphone ou en visioconférence — et
+                Véronique peut se déplacer à votre domicile — pour préparer
+                votre voyage en toute simplicité.
               </p>
               <div className="space-y-4">
                 {channels.map(({ icon: Icon, title, text }) => (
