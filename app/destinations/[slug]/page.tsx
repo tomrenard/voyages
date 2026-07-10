@@ -21,11 +21,17 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const content = getDestinationContent(slug);
-  if (!content) return {};
+  const card = allDestinations.find((d) => d.slug === slug);
+  if (!content || !card) return {};
   return {
     title: content.metaTitle,
     description: content.metaDescription,
     alternates: { canonical: `/destinations/${slug}` },
+    openGraph: {
+      title: content.metaTitle,
+      description: content.metaDescription,
+      images: [{ url: card.image, alt: card.imageAlt }],
+    },
   };
 }
 

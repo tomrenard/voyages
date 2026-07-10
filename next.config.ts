@@ -17,6 +17,26 @@ export default withMDX()({
     contentDispositionType: "inline",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
+  async headers() {
+    // Baseline security headers (HSTS is added by Vercel automatically).
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          {
+            key: "Referrer-Policy",
+            value: "strict-origin-when-cross-origin",
+          },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=()",
+          },
+        ],
+      },
+    ];
+  },
   async redirects() {
     // Legacy WordPress site (revesdevoyages.com pre-2026): every indexed URL
     // is 301-redirected to its closest equivalent to preserve ~19 years of
