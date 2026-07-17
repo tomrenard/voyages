@@ -11,10 +11,13 @@ export const metadata: Metadata = {
 const { legal } = siteConfig;
 
 /**
- * NOTE — points à valider avec l'agence avant mise en ligne (recherchez
- * "À COMPLÉTER") : barème des frais de modification/annulation, modalités
- * d'acompte et de solde. Le reste reflète le cadre légal standard d'un
- * détaillant immatriculé Atout France.
+ * NOTE — les barèmes ci-dessous (acompte, solde, frais de modification,
+ * barème d'annulation, sections 4 à 6) sont des VALEURS PAR DÉFAUT standard
+ * du secteur, à faire confirmer ou ajuster par Véronique avant la mise en
+ * ligne définitive (recherchez "À CONFIRMER"). Rappel : les conditions
+ * particulières de chaque organisateur (TO, croisiériste…) prévalent et sont
+ * remises au client avant la réservation. Le reste du texte reflète le cadre
+ * légal standard d'un détaillant immatriculé Atout France.
  */
 export default function ConditionsDeVente() {
   return (
@@ -117,18 +120,15 @@ export default function ConditionsDeVente() {
                 acompte. Sauf conditions particulières de l’organisateur :
               </p>
               <ul className="mt-2 list-inside list-disc space-y-1 pl-4">
+                {/* À CONFIRMER — acompte par défaut : 30 %. */}
                 <li>
                   Acompte à la réservation :{" "}
-                  <strong>
-                    [À COMPLÉTER — en général 30 % du montant total]
-                  </strong>
+                  <strong>30 % du montant total du voyage</strong>
                 </li>
+                {/* À CONFIRMER — délai de solde par défaut : 30 jours. */}
                 <li>
                   Solde :{" "}
-                  <strong>
-                    [À COMPLÉTER — en général au plus tard 30 jours avant le
-                    départ]
-                  </strong>
+                  <strong>au plus tard 30 jours avant le départ</strong>
                 </li>
                 <li>
                   Réservation à moins de 30 jours du départ : paiement intégral
@@ -153,12 +153,13 @@ export default function ConditionsDeVente() {
                 être formulée par écrit et reste soumise à disponibilité et à
                 l’accord de l’organisateur. Elle peut entraîner des frais,
                 selon le barème de l’organisateur concerné, communiqué avant la
-                réservation :{" "}
+                réservation. {/* À CONFIRMER — frais de dossier modification : 30 €/personne. */}
+                L’agence applique en outre des{" "}
                 <strong>
-                  [À COMPLÉTER — barème de frais de modification de l’agence,
-                  le cas échéant]
-                </strong>
-                .
+                  frais de dossier de 30 € par personne
+                </strong>{" "}
+                en cas de modification à la demande du client, en sus des
+                éventuels frais facturés par l’organisateur.
               </p>
               <p>
                 Conformément à l’article L211-11 du Code du tourisme, le client
@@ -181,14 +182,27 @@ export default function ConditionsDeVente() {
                 spécifique de l’organisateur (communiqué avant la réservation),
                 le barème indicatif suivant s’applique :
               </p>
+              {/* À CONFIRMER — barème d'annulation par défaut (frais de dossier + paliers). */}
               <ul className="mt-2 list-inside list-disc space-y-1 pl-4">
                 <li>
-                  <strong>
-                    [À COMPLÉTER — barème d’annulation, par exemple : plus de
-                    60 jours avant le départ : X € de frais fixes ; de 60 à 31
-                    jours : 25 % ; de 30 à 21 jours : 50 % ; de 20 à 8 jours :
-                    75 % ; moins de 8 jours : 100 %]
-                  </strong>
+                  Plus de 60 jours avant le départ :{" "}
+                  <strong>50 € de frais de dossier par personne</strong>
+                </li>
+                <li>
+                  De 60 à 31 jours avant le départ :{" "}
+                  <strong>25 % du montant total</strong>
+                </li>
+                <li>
+                  De 30 à 21 jours avant le départ :{" "}
+                  <strong>50 % du montant total</strong>
+                </li>
+                <li>
+                  De 20 à 8 jours avant le départ :{" "}
+                  <strong>75 % du montant total</strong>
+                </li>
+                <li>
+                  À 7 jours ou moins du départ, ou en cas de non-présentation :{" "}
+                  <strong>100 % du montant total</strong>
                 </li>
               </ul>
               <p>
