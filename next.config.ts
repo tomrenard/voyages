@@ -14,6 +14,10 @@ export default withMDX()({
   transpilePackages: [],
   images: {
     qualities: [75, 90],
+    // AVIF first (~20-30% smaller than WebP), WebP fallback for older clients.
+    formats: ["image/avif", "image/webp"],
+    // Keep optimized variants cached ~31 days so redeploys don't re-transform.
+    minimumCacheTTL: 2678400,
     contentDispositionType: "inline",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
@@ -32,6 +36,19 @@ export default withMDX()({
           {
             key: "Permissions-Policy",
             value: "camera=(), microphone=(), geolocation=()",
+          },
+        ],
+      },
+      {
+        // Images in public/images/ are served at literal (non-hashed) URLs, so
+        // this is a modest TTL with SWR rather than immutable — a replaced file
+        // propagates within a week. Scoped to /images/ so it never overrides
+        // Next's own immutable caching of /_next/static/* (fonts, JS, CSS).
+        source: "/images/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, stale-while-revalidate=604800",
           },
         ],
       },
