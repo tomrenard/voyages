@@ -3,8 +3,14 @@ import { siteUrl } from "@/lib/site";
 import { articles } from "@/lib/articles";
 import { destinationContent } from "@/lib/destination-content";
 
+// Last date the static pages / destination content meaningfully changed.
+// Hardcoded (not `new Date()`) so every build doesn't claim everything was
+// updated today — that erodes crawl-scheduling credibility. Bump when you
+// ship a real content change to these pages.
+const CONTENT_LAST_MODIFIED = new Date("2026-07-17");
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+  const lastModified = CONTENT_LAST_MODIFIED;
 
   // route -> [priority, changeFrequency]
   const routes: Record<
@@ -36,7 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticEntries: MetadataRoute.Sitemap = Object.entries(routes).map(
     ([route, [priority, changeFrequency]]) => ({
       url: `${siteUrl}${route}`,
-      lastModified: now,
+      lastModified,
       changeFrequency,
       priority,
     }),
@@ -53,7 +59,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     destinationContent,
   ).map((slug) => ({
     url: `${siteUrl}/destinations/${slug}`,
-    lastModified: now,
+    lastModified,
     changeFrequency: "monthly",
     priority: 0.8,
   }));

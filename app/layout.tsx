@@ -66,6 +66,11 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  // Rendered only when the env var is set (Google Search Console meta-tag
+  // verification). DNS TXT verification at Gandi is the alternative.
+  verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+    : undefined,
 };
 
 export const viewport: Viewport = {
