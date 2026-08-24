@@ -1,9 +1,10 @@
 import Image from "next/image";
+import type { StaticImageData } from "next/image";
 
 interface PageHeaderProps {
   title: string;
   subtitle?: string;
-  backgroundImage?: string;
+  backgroundImage?: StaticImageData;
 }
 
 export function PageHeader({
@@ -21,7 +22,9 @@ export function PageHeader({
             alt={title}
             fill
             className="object-cover"
-            priority
+            // `preload` supersedes `priority`, which 16.3 marks deprecated.
+            // Unconditional as before — this is the page's above-fold hero.
+            preload
           />
         </div>
       )}

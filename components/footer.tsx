@@ -110,10 +110,7 @@ export default function Footer() {
               >
                 Crédits photos
               </Link>
-              <Link
-                href="/faq"
-                className="transition-colors hover:text-white"
-              >
+              <Link href="/faq" className="transition-colors hover:text-white">
                 Questions fréquentes
               </Link>
               <Link

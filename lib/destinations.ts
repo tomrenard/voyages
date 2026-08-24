@@ -1,3 +1,13 @@
+import coupAustralie from "@/public/images/coup-australie.jpg";
+import coupNewYork from "@/public/images/coup-new-york.jpg";
+import coupNil from "@/public/images/coup-nil.jpg";
+import coupPolynesie from "@/public/images/coup-polynesie.jpg";
+import coupSicile from "@/public/images/coup-sicile.jpg";
+import coupVietnam from "@/public/images/coup-vietnam.jpg";
+import destMaurice from "@/public/images/dest-maurice.jpg";
+import destSeychelles from "@/public/images/dest-seychelles.jpg";
+import destThailande from "@/public/images/dest-thailande.jpg";
+import type { StaticImageData } from "next/image";
 /**
  * Véronique's hand-picked favourite destinations ("Nos coups de cœur").
  * Single source of truth — consumed by the navbar, the homepage section and
@@ -11,7 +21,7 @@ export type Destination = {
   slug: string;
   title: string;
   blurb: string;
-  image: string;
+  image: StaticImageData;
   imageAlt: string;
 };
 
@@ -21,7 +31,7 @@ export const coupsDeCoeur: Destination[] = [
     title: "New York",
     blurb:
       "La ville qui ne dort jamais : gratte-ciel vertigineux, quartiers bouillonnants et énergie unique. L'escapade urbaine par excellence.",
-    image: "/images/coup-new-york.jpg",
+    image: coupNewYork,
     imageAlt:
       "L'Empire State Building et les gratte-ciel de New York au coucher du soleil",
   },
@@ -30,7 +40,7 @@ export const coupsDeCoeur: Destination[] = [
     title: "Sicile orientale",
     blurb:
       "Entre l'Etna, les villages baroques de Taormine et Syracuse et une cuisine généreuse : la Méditerranée dans ce qu'elle a de plus authentique.",
-    image: "/images/coup-sicile.jpg",
+    image: coupSicile,
     imageAlt:
       "Vue aérienne de la côte de Taormine et de la mer, en Sicile orientale",
   },
@@ -39,7 +49,7 @@ export const coupsDeCoeur: Destination[] = [
     title: "Vietnam",
     blurb:
       "Des rizières en terrasse à la baie d'Halong, un voyage haut en couleurs au cœur de paysages spectaculaires et d'une culture chaleureuse.",
-    image: "/images/coup-vietnam.jpg",
+    image: coupVietnam,
     imageAlt:
       "Les pitons karstiques de la baie d'Halong émergeant des eaux émeraude, au Vietnam",
   },
@@ -48,7 +58,7 @@ export const coupsDeCoeur: Destination[] = [
     title: "Australie",
     blurb:
       "Grands espaces, faune fascinante et villes au bord de l'océan : un voyage au long cours pour les amoureux de nature et d'aventure.",
-    image: "/images/coup-australie.jpg",
+    image: coupAustralie,
     imageAlt: "Le monolithe d'Uluru au cœur du désert australien",
   },
   {
@@ -56,7 +66,7 @@ export const coupsDeCoeur: Destination[] = [
     title: "Polynésie française",
     blurb:
       "Lagons turquoise, bungalows sur pilotis et douceur de vivre : la destination de rêve pour un voyage de noces inoubliable.",
-    image: "/images/coup-polynesie.jpg",
+    image: coupPolynesie,
     imageAlt:
       "Lagon turquoise et pirogue traditionnelle devant les montagnes de Moorea, en Polynésie française",
   },
@@ -65,7 +75,7 @@ export const coupsDeCoeur: Destination[] = [
     title: "Croisière sur le Nil",
     blurb:
       "Remontez le fil de l'Histoire entre temples millénaires et felouques, au rythme paisible du plus célèbre fleuve d'Égypte.",
-    image: "/images/coup-nil.jpg",
+    image: coupNil,
     imageAlt: "Felouque traditionnelle naviguant à la voile sur le Nil",
   },
 ];
@@ -81,7 +91,7 @@ export const autresDestinations: Destination[] = [
     title: "Île Maurice",
     blurb:
       "Plages de sable blanc, lagons émeraude et douceur créole : l'île de l'hospitalité par excellence, idéale en séjour comme en voyage de noces.",
-    image: "/images/dest-maurice.jpg",
+    image: destMaurice,
     imageAlt:
       "La plage du Morne et la montagne du Morne Brabant, à l'île Maurice",
   },
@@ -90,7 +100,7 @@ export const autresDestinations: Destination[] = [
     title: "Seychelles",
     blurb:
       "Rochers de granit sculptés, eaux cristallines et nature préservée : un archipel hors du temps pour les amoureux de plages parfaites.",
-    image: "/images/dest-seychelles.jpg",
+    image: destSeychelles,
     imageAlt:
       "Les blocs de granit et le sable blanc de l'Anse Source d'Argent, à La Digue, aux Seychelles",
   },
@@ -99,7 +109,7 @@ export const autresDestinations: Destination[] = [
     title: "Thaïlande",
     blurb:
       "Temples dorés, cuisine de rue légendaire et plages bordées de falaises karstiques : le pays du sourire réunit culture et farniente.",
-    image: "/images/dest-thailande.jpg",
+    image: destThailande,
     imageAlt:
       "La plage de Railay bordée de falaises karstiques, dans la province de Krabi, en Thaïlande",
   },

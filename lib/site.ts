@@ -30,7 +30,8 @@ export const siteConfig = {
     rcs: "RCS Rennes 484 575 998",
     ape: "79.11Z",
     atoutFrance: "IM035100033",
-    guarantee: "APST (Association Professionnelle de Solidarité du Tourisme), Paris",
+    guarantee:
+      "APST (Association Professionnelle de Solidarité du Tourisme), Paris",
     insurance: "MMA — contrat n° 129590224",
     // Médiation de la consommation (art. L612-1 Code de la consommation).
     mediator: {

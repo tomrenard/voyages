@@ -189,6 +189,8 @@ article {
   );
 }
 
+/* Drives <ViewTransition name="crossfade"> in app/layout.tsx. Both sides of
+   that pairing depend on React's canary-only ViewTransition API. */
 @supports (view-transition-name: none) {
   @media not (prefers-reduced-motion: reduce) {
     ::view-transition-old(crossfade) {

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PageHeader } from "@/components/page-header";
 import { Metadata } from "next";
+import heroBg from "@/public/images/hero-bg.jpg";
 
 export const metadata: Metadata = {
   title: "Plan du Site",
@@ -15,7 +16,7 @@ export default function PlanDuSite() {
       <PageHeader
         title="Plan du site"
         subtitle="Retrouvez toutes les pages de notre site"
-        backgroundImage="/images/hero-bg.jpg"
+        backgroundImage={heroBg}
       />
 
       <div className="container mx-auto px-4 py-16 md:py-24">

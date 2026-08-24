@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+// Canary-only API — react/react-dom are intentionally pinned to a canary for
+// this, paired with the ::view-transition-*(crossfade) rules in globals.css.
 import { ViewTransition } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import cn from "clsx";
 import { Playfair_Display, Lato } from "next/font/google";
 import { Navbar } from "@/components/navbar";
@@ -17,7 +19,10 @@ const playfair = Playfair_Display({
 });
 
 const lato = Lato({
-  weight: ["300", "400", "700", "900"],
+  // 900 was loaded but never used (no font-black anywhere), costing an extra
+  // ~14 KB preloaded at High priority on the critical path. 300/400/700 cover
+  // every weight the UI actually asks for.
+  weight: ["300", "400", "700"],
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",

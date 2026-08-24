@@ -33,7 +33,7 @@ export async function generateMetadata({
       url: `${siteUrl}/actualites/${article.slug}`,
       publishedTime: article.date,
       authors: [article.author],
-      images: [{ url: article.image }],
+      images: [{ url: article.image.src }],
     },
   };
 }
@@ -85,7 +85,7 @@ export default async function ArticlePage({
     "@type": "Article",
     headline: article.title,
     description: article.excerpt,
-    image: `${siteUrl}${article.image}`,
+    image: `${siteUrl}${article.image.src}`,
     datePublished: article.date,
     dateModified: article.date,
     author: {

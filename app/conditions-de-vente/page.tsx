@@ -44,18 +44,17 @@ export default function ConditionsDeVente() {
               </p>
               <p>
                 La vente de voyages et de séjours est régie par le Code du
-                tourisme, notamment ses articles L211-1 et suivants et R211-3
-                à R211-11, ainsi que par la directive (UE) 2015/2302 relative
-                aux voyages à forfait et aux prestations de voyage liées.
+                tourisme, notamment ses articles L211-1 et suivants et R211-3 à
+                R211-11, ainsi que par la directive (UE) 2015/2302 relative aux
+                voyages à forfait et aux prestations de voyage liées.
               </p>
               <p>
-                Rêves de Voyages agit en qualité de{" "}
-                <strong>détaillant</strong> : elle commercialise des forfaits
-                touristiques et prestations conçus par des organisateurs
-                (tour-opérateurs, compagnies de croisière, réceptifs) dont les
-                conditions particulières de vente sont remises au client avant
-                la conclusion du contrat et prévalent pour l’exécution du
-                voyage.
+                Rêves de Voyages agit en qualité de <strong>détaillant</strong>{" "}
+                : elle commercialise des forfaits touristiques et prestations
+                conçus par des organisateurs (tour-opérateurs, compagnies de
+                croisière, réceptifs) dont les conditions particulières de vente
+                sont remises au client avant la conclusion du contrat et
+                prévalent pour l’exécution du voyage.
               </p>
             </div>
           </section>
@@ -91,17 +90,17 @@ export default function ConditionsDeVente() {
             <div className="space-y-4 leading-relaxed text-gray-600">
               <p>
                 Les prix sont indiqués en euros, toutes taxes comprises, par
-                personne sauf mention contraire. Ils comprennent les
-                prestations expressément mentionnées au contrat ; ne sont
-                jamais compris, sauf mention contraire : les frais de
-                formalités (passeport, visas, vaccins), les assurances
-                facultatives, les dépenses personnelles, les pourboires et les
-                excursions non prévues au programme.
+                personne sauf mention contraire. Ils comprennent les prestations
+                expressément mentionnées au contrat ; ne sont jamais compris,
+                sauf mention contraire : les frais de formalités (passeport,
+                visas, vaccins), les assurances facultatives, les dépenses
+                personnelles, les pourboires et les excursions non prévues au
+                programme.
               </p>
               <p>
                 Conformément à l’article L211-12 du Code du tourisme, le prix
-                peut être révisé après la conclusion du contrat, au plus tard
-                20 jours avant le départ, uniquement pour tenir compte de
+                peut être révisé après la conclusion du contrat, au plus tard 20
+                jours avant le départ, uniquement pour tenir compte de
                 l’évolution du coût du transport (carburant), des redevances et
                 taxes, ou des taux de change. Si la majoration dépasse 8 % du
                 prix total, le client peut résoudre le contrat sans frais.
@@ -115,9 +114,9 @@ export default function ConditionsDeVente() {
             </h2>
             <div className="space-y-4 leading-relaxed text-gray-600">
               <p>
-                La réservation devient ferme à la signature du contrat de
-                voyage (ou du bulletin d’inscription) et au versement d’un
-                acompte. Sauf conditions particulières de l’organisateur :
+                La réservation devient ferme à la signature du contrat de voyage
+                (ou du bulletin d’inscription) et au versement d’un acompte.
+                Sauf conditions particulières de l’organisateur :
               </p>
               <ul className="mt-2 list-inside list-disc space-y-1 pl-4">
                 {/* À CONFIRMER — acompte par défaut : 30 %. */}
@@ -127,8 +126,7 @@ export default function ConditionsDeVente() {
                 </li>
                 {/* À CONFIRMER — délai de solde par défaut : 30 jours. */}
                 <li>
-                  Solde :{" "}
-                  <strong>au plus tard 30 jours avant le départ</strong>
+                  Solde : <strong>au plus tard 30 jours avant le départ</strong>
                 </li>
                 <li>
                   Réservation à moins de 30 jours du départ : paiement intégral
@@ -137,8 +135,8 @@ export default function ConditionsDeVente() {
               </ul>
               <p>
                 À défaut de paiement du solde à la date convenue, l’agence peut
-                considérer le voyage comme annulé par le client et appliquer
-                les frais d’annulation prévus à l’article 6.
+                considérer le voyage comme annulé par le client et appliquer les
+                frais d’annulation prévus à l’article 6.
               </p>
             </div>
           </section>
@@ -151,15 +149,14 @@ export default function ConditionsDeVente() {
               <p>
                 Toute demande de modification (dates, noms, prestations) doit
                 être formulée par écrit et reste soumise à disponibilité et à
-                l’accord de l’organisateur. Elle peut entraîner des frais,
-                selon le barème de l’organisateur concerné, communiqué avant la
-                réservation. {/* À CONFIRMER — frais de dossier modification : 30 €/personne. */}
+                l’accord de l’organisateur. Elle peut entraîner des frais, selon
+                le barème de l’organisateur concerné, communiqué avant la
+                réservation.{" "}
+                {/* À CONFIRMER — frais de dossier modification : 30 €/personne. */}
                 L’agence applique en outre des{" "}
-                <strong>
-                  frais de dossier de 30 € par personne
-                </strong>{" "}
-                en cas de modification à la demande du client, en sus des
-                éventuels frais facturés par l’organisateur.
+                <strong>frais de dossier de 30 € par personne</strong> en cas de
+                modification à la demande du client, en sus des éventuels frais
+                facturés par l’organisateur.
               </p>
               <p>
                 Conformément à l’article L211-11 du Code du tourisme, le client
@@ -215,10 +212,10 @@ export default function ConditionsDeVente() {
                 indemnisation supplémentaire.
               </p>
               <p>
-                <strong>Important</strong> : conformément à l’article L221-28
-                du Code de la consommation, les prestations de voyage ne sont
-                pas soumises au droit de rétractation de 14 jours applicable à
-                la vente à distance.
+                <strong>Important</strong> : conformément à l’article L221-28 du
+                Code de la consommation, les prestations de voyage ne sont pas
+                soumises au droit de rétractation de 14 jours applicable à la
+                vente à distance.
               </p>
             </div>
           </section>
@@ -230,16 +227,16 @@ export default function ConditionsDeVente() {
             </h2>
             <div className="space-y-4 leading-relaxed text-gray-600">
               <p>
-                Si, avant le départ, un élément essentiel du contrat est
-                modifié de façon significative ou si le prix est majoré de plus
-                de 8 %, le client peut accepter la modification ou résoudre le
-                contrat sans frais et obtenir le remboursement des sommes
-                versées dans les 14 jours.
+                Si, avant le départ, un élément essentiel du contrat est modifié
+                de façon significative ou si le prix est majoré de plus de 8 %,
+                le client peut accepter la modification ou résoudre le contrat
+                sans frais et obtenir le remboursement des sommes versées dans
+                les 14 jours.
               </p>
               <p>
                 En cas d’annulation du voyage par l’organisateur, le client est
-                remboursé intégralement dans les 14 jours et peut prétendre à
-                un dédommagement, sauf si l’annulation résulte de circonstances
+                remboursé intégralement dans les 14 jours et peut prétendre à un
+                dédommagement, sauf si l’annulation résulte de circonstances
                 exceptionnelles et inévitables ou d’un nombre insuffisant de
                 participants signalé dans les délais légaux.
               </p>
@@ -284,12 +281,11 @@ export default function ConditionsDeVente() {
             <div className="space-y-4 leading-relaxed text-gray-600">
               <p>
                 Aucune assurance n’est incluse dans les prix, sauf mention
-                contraire. L’agence propose des contrats d’assurance
-                multirisque (annulation, bagages, assistance-rapatriement,
-                interruption de séjour) dont les conditions et tarifs sont
-                communiqués avant la réservation. La souscription est
-                facultative mais vivement recommandée, et doit intervenir au
-                moment de l’inscription.
+                contraire. L’agence propose des contrats d’assurance multirisque
+                (annulation, bagages, assistance-rapatriement, interruption de
+                séjour) dont les conditions et tarifs sont communiqués avant la
+                réservation. La souscription est facultative mais vivement
+                recommandée, et doit intervenir au moment de l’inscription.
               </p>
             </div>
           </section>
@@ -302,12 +298,12 @@ export default function ConditionsDeVente() {
               <p>
                 Conformément à l’article L211-16 du Code du tourisme, l’agence
                 est responsable de plein droit de la bonne exécution des
-                services de voyage prévus au contrat, qu’ils soient exécutés
-                par elle-même ou par d’autres prestataires, sans préjudice de
-                son droit de recours contre ceux-ci. Elle peut toutefois
-                s’exonérer de tout ou partie de sa responsabilité en apportant
-                la preuve que le dommage est imputable au voyageur, à un tiers
-                étranger à la fourniture des services, ou à des circonstances
+                services de voyage prévus au contrat, qu’ils soient exécutés par
+                elle-même ou par d’autres prestataires, sans préjudice de son
+                droit de recours contre ceux-ci. Elle peut toutefois s’exonérer
+                de tout ou partie de sa responsabilité en apportant la preuve
+                que le dommage est imputable au voyageur, à un tiers étranger à
+                la fourniture des services, ou à des circonstances
                 exceptionnelles et inévitables.
               </p>
               <p>
@@ -325,11 +321,10 @@ export default function ConditionsDeVente() {
             </h2>
             <div className="space-y-4 leading-relaxed text-gray-600">
               <p>
-                Toute non-conformité constatée sur place doit être signalée
-                sans retard afin de permettre sa résolution. Après le retour,
-                toute réclamation doit être adressée par écrit à l’agence
-                (courrier ou email à {siteConfig.email}), accompagnée des
-                justificatifs.
+                Toute non-conformité constatée sur place doit être signalée sans
+                retard afin de permettre sa résolution. Après le retour, toute
+                réclamation doit être adressée par écrit à l’agence (courrier ou
+                email à {siteConfig.email}), accompagnée des justificatifs.
               </p>
               <p>
                 À défaut de réponse satisfaisante dans un délai de 60 jours, le

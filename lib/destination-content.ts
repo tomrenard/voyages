@@ -25,8 +25,7 @@ const coupsDeCoeurContent: Record<string, DestinationContent> = {
     metaTitle: "Voyage à New York sur Mesure",
     metaDescription:
       "Partez à New York avec Rêves de Voyages : séjour sur mesure, hôtels bien situés, conseils d'experte et bonnes adresses. Devis gratuit depuis Rennes.",
-    heroSubtitle:
-      "La ville qui ne dort jamais, taillée à votre rythme",
+    heroSubtitle: "La ville qui ne dort jamais, taillée à votre rythme",
     introTitle: "Pourquoi partir à New York ?",
     intro: [
       "Première fois à Manhattan ou retour aux sources new-yorkaises : la ville se réinvente à chaque visite. Entre les classiques incontournables — Times Square, Central Park, la statue de la Liberté — et les quartiers qui montent, Brooklyn en tête, New York récompense ceux qui savent où aller.",
@@ -181,8 +180,7 @@ const coupsDeCoeurContent: Record<string, DestinationContent> = {
     metaTitle: "Voyage en Australie sur Mesure",
     metaDescription:
       "L'Australie sur mesure avec Rêves de Voyages : Sydney, la Grande Barrière de corail, Uluru et la côte ouest. Autotour ou circuit privé, devis gratuit.",
-    heroSubtitle:
-      "Le voyage d'une vie, aux antipodes",
+    heroSubtitle: "Le voyage d'une vie, aux antipodes",
     introTitle: "Pourquoi partir en Australie ?",
     intro: [
       "L'Australie ne se visite pas, elle se vit : plonger sur la Grande Barrière de corail, veiller le coucher de soleil sur Uluru, longer la Great Ocean Road, croiser kangourous et koalas en liberté, vibrer à Sydney et Melbourne. Un continent entier à apprivoiser.",
@@ -340,8 +338,7 @@ const autresDestinationsContent: Record<string, DestinationContent> = {
     metaTitle: "Voyage à l'Île Maurice sur Mesure",
     metaDescription:
       "L'île Maurice avec Rêves de Voyages : plages, lagons, Morne Brabant et douceur créole. Séjour ou voyage de noces sur mesure, devis gratuit depuis Rennes.",
-    heroSubtitle:
-      "Lagons émeraude et douceur créole : l'île de l'hospitalité",
+    heroSubtitle: "Lagons émeraude et douceur créole : l'île de l'hospitalité",
     introTitle: "Pourquoi partir à l'île Maurice ?",
     intro: [
       "Maurice a ce don rare de plaire à tout le monde : plages de sable blanc ourlées de filaos, lagons paisibles, montagnes spectaculaires comme le Morne Brabant, terres aux sept couleurs de Chamarel — et surtout une hospitalité créole qui donne envie de revenir avant même d'être reparti.",
@@ -392,8 +389,7 @@ const autresDestinationsContent: Record<string, DestinationContent> = {
     metaTitle: "Voyage aux Seychelles sur Mesure",
     metaDescription:
       "Les Seychelles avec Rêves de Voyages : Mahé, Praslin, La Digue et leurs plages de rêve. Combiné d'îles sur mesure, devis gratuit depuis Rennes.",
-    heroSubtitle:
-      "Granit sculpté, sable immaculé : l'archipel hors du temps",
+    heroSubtitle: "Granit sculpté, sable immaculé : l'archipel hors du temps",
     introTitle: "Pourquoi partir aux Seychelles ?",
     intro: [
       "Les Seychelles ne ressemblent à aucune autre destination balnéaire : ici, les plages sont bordées de blocs de granit rose sculptés par les éléments, la végétation descend jusqu'au sable et les tortues géantes se promènent en liberté. Un paradis resté authentique, à 8 heures de vol sans décalage horaire épuisant.",
@@ -423,7 +419,8 @@ const autresDestinationsContent: Record<string, DestinationContent> = {
     budgetFrom: 2500,
     faq: [
       {
-        question: "Quelles îles choisir pour un premier voyage aux Seychelles ?",
+        question:
+          "Quelles îles choisir pour un premier voyage aux Seychelles ?",
         answer:
           "Le trio Mahé – Praslin – La Digue est le combiné idéal : liaisons faciles en ferry, trois ambiances complémentaires et les plus belles plages de l'archipel. Comptez au moins trois nuits par île pour en profiter.",
       },

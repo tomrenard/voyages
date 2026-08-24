@@ -87,8 +87,7 @@ export const photoCredits: PhotoCredit[] = [
     author: "kallerna",
     license: "CC BY-SA 3.0",
     licenseUrl: CC_BY_SA_3,
-    sourceUrl:
-      "https://commons.wikimedia.org/wiki/File:Railay_Beach_5.jpg",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Railay_Beach_5.jpg",
   },
   {
     usage: "Article — Seychelles",

@@ -13,6 +13,9 @@ export default withMDX()({
   },
   transpilePackages: [],
   images: {
+    // Nothing requests q=90 any more (the hero was the last caller). 90 stays
+    // allowed for one deploy so clients replaying a srcset cached from the
+    // previous build don't get a 400 from the optimizer; drop to [75] next.
     qualities: [75, 90],
     // AVIF first (~20-30% smaller than WebP), WebP fallback for older clients.
     formats: ["image/avif", "image/webp"],
@@ -40,15 +43,30 @@ export default withMDX()({
         ],
       },
       {
-        // Images in public/images/ are served at literal (non-hashed) URLs, so
-        // this is a modest TTL with SWR rather than immutable — a replaced file
-        // propagates within a week. Scoped to /images/ so it never overrides
-        // Next's own immutable caching of /_next/static/* (fonts, JS, CSS).
+        // Every *rendered* image is now a static import, so it is served from
+        // /_next/static/media/<contenthash> and inherits Next's immutable
+        // caching. What still resolves under /images/ is: the manifest icon
+        // (browsers fetch it on PWA install), the JSON-LD logo, the article
+        // publisher logo, and — importantly — the fallback for
+        // /_next/image?url=%2Fimages%2F… srcsets cached from a previous deploy.
+        // public/images/ must stay put regardless: it is the build input for
+        // the static imports, so deleting it fails the build.
+        //
+        // Keeping this bounded matters because of how the optimizer derives its
+        // own Cache-Control. Measured against production before the static
+        // imports: an upstream /images/ rule of max-age=86400 came back on
+        // /_next/image as `public, max-age=86400, stale-while-revalidate=604800`
+        // — the upstream value, NOT minimumCacheTTL (2678400). The self-hosted
+        // optimizer instead applies max(minimumCacheTTL, upstream), so that
+        // behaviour is Vercel-specific. Either way the fix is the same: the
+        // upstream is now an immutable /_next/static/media URL, so optimized
+        // responses inherit immutable without needing a long TTL on a literal,
+        // non-hashed path.
         source: "/images/:path*",
         headers: [
           {
             key: "Cache-Control",
-            value: "public, max-age=86400, stale-while-revalidate=604800",
+            value: "public, max-age=604800, stale-while-revalidate=604800",
           },
         ],
       },
@@ -190,13 +208,25 @@ export default withMDX()({
         permanent: true,
       },
       // Legacy WordPress pages with renamed paths.
-      { source: "/reves-de-voyage", destination: "/reves-de-voyages", permanent: true },
+      {
+        source: "/reves-de-voyage",
+        destination: "/reves-de-voyages",
+        permanent: true,
+      },
       { source: "/croisiere", destination: "/croisieres", permanent: true },
       { source: "/blog", destination: "/actualites", permanent: true },
-      { source: "/slide-anything-popup-preview", destination: "/", permanent: true },
+      {
+        source: "/slide-anything-popup-preview",
+        destination: "/",
+        permanent: true,
+      },
       // Legacy WordPress content types.
       { source: "/testimonial/:slug", destination: "/avis", permanent: true },
-      { source: "/category/:slug", destination: "/actualites", permanent: true },
+      {
+        source: "/category/:slug",
+        destination: "/actualites",
+        permanent: true,
+      },
       // Legacy WordPress blog posts (thematic mapping).
       ...Object.entries(legacyPosts).map(([slug, destination]) => ({
         source: `/${slug}`,

@@ -1,0 +1,62 @@
+name: CI
+
+# Runs on every PR into main, and on main itself so the branch protection
+# status has a baseline to compare against.
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+# A new push to the same PR cancels the in-flight run for it.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: format · lint · types · build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v5
+
+      # Reads the pinned version from package.json's `packageManager` field, so
+      # CI and local stay on the same pnpm.
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 26
+          cache: pnpm
+
+      # --frozen-lockfile fails the run if pnpm-lock.yaml is out of sync with
+      # package.json, which is the usual way a dependency bump goes wrong.
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      # Cheapest checks first so an obvious failure reports in seconds.
+      - name: Format
+        run: pnpm format:check
+
+      # --max-warnings=0 because several react-hooks rules (exhaustive-deps,
+      # incompatible-library, unsupported-syntax) are configured at warn level,
+      # and `eslint .` exits 0 on warnings — so without this a missing effect
+      # dependency would sail through CI. Clean at 0 today.
+      - name: Lint
+        run: pnpm exec eslint . --max-warnings=0
+
+      # `next build` does run tsc, but this fails in ~2s instead of after a full
+      # build, and covers files the build graph never reaches.
+      - name: Types
+        run: pnpm exec tsc --noEmit
+
+      # Needs no secrets: the Resend client is constructed per request, so
+      # route-data collection does not require RESEND_API_KEY. Keep it that way
+      # — a module-scope client would make this step fail on a fork PR.
+      - name: Build
+        run: pnpm build

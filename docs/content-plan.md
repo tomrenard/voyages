@@ -13,7 +13,7 @@ for. Every new page is a new door in from Google — and the technical plumbing
   `Article` + `BreadcrumbList` JSON-LD, and the sitemap entry are all generated.
 - **Destination** → add to `lib/destination-content.ts` (+ `lib/destinations.ts`
   for the card). The route `/destinations/[slug]` renders `TouristTrip` + `Offer`
-  + `FAQPage` + `BreadcrumbList` JSON-LD automatically.
+  - `FAQPage` + `BreadcrumbList` JSON-LD automatically.
 - Add a hero/card image to `public/images/` and **run it through the same
   compression** the existing images got (longest edge ≤1600px, mozjpeg q74) —
   see the note at the end.
@@ -33,15 +33,15 @@ ahead of the season (Google needs lead time to rank them).
 Pattern exists, each gets rich schema, and these match real buyer intent.
 Pick from what the agency genuinely sells:
 
-| Destination | Why | Target queries |
-| --- | --- | --- |
-| Japon | High-intent, high-margin, evergreen | *voyage sur mesure japon*, *circuit japon* |
-| Grèce / Cyclades | Huge FR summer demand | *séjour grèce*, *combiné cyclades* |
-| Canada / Ouest canadien | Popular circuit | *circuit canada*, *voyage ouest canadien* |
-| Portugal / Madère | Short-haul, year-round | *séjour madère*, *voyage portugal* |
-| Bali / Indonésie | Honeymoon + sur-mesure | *voyage de noces bali* |
-| Safari Tanzanie / Kenya | Premium, distinctive | *safari tanzanie sur mesure* |
-| Laponie / Finlande | Strong winter seasonal | *voyage laponie*, *aurores boréales* |
+| Destination             | Why                                 | Target queries                             |
+| ----------------------- | ----------------------------------- | ------------------------------------------ |
+| Japon                   | High-intent, high-margin, evergreen | _voyage sur mesure japon_, _circuit japon_ |
+| Grèce / Cyclades        | Huge FR summer demand               | _séjour grèce_, _combiné cyclades_         |
+| Canada / Ouest canadien | Popular circuit                     | _circuit canada_, _voyage ouest canadien_  |
+| Portugal / Madère       | Short-haul, year-round              | _séjour madère_, _voyage portugal_         |
+| Bali / Indonésie        | Honeymoon + sur-mesure              | _voyage de noces bali_                     |
+| Safari Tanzanie / Kenya | Premium, distinctive                | _safari tanzanie sur mesure_               |
+| Laponie / Finlande      | Strong winter seasonal              | _voyage laponie_, _aurores boréales_       |
 
 Start with 2–3 (Japon, Grèce, Portugal are safe high-volume bets).
 
@@ -51,15 +51,15 @@ Evergreen French queries with real volume and low competition for a small
 agency. Reuse the "guide saison par saison" format already proven in
 `quand-partir-aux-seychelles`. Publish ~2 months before the season peaks.
 
-| Article | Publish by | Target queries |
-| --- | --- | --- |
-| Où partir au soleil en hiver / février ? | Nov–Dec | *où partir au soleil en février* |
-| Où partir aux vacances de la Toussaint ? | Aug–Sep | *où partir toussaint* |
-| Croisière sur le Nil : prix, itinéraire, conseils | anytime | *croisière nil prix*, *croisière égypte* |
-| Quand partir en Polynésie ? | anytime | *quand partir polynésie* |
-| Voyage de noces : quel budget prévoir ? | anytime | *budget voyage de noces* |
-| Où partir en juillet / août sans la foule ? | Apr–May | *où partir en août* |
-| Combien coûte un voyage sur mesure ? | anytime | *prix voyage sur mesure* |
+| Article                                           | Publish by | Target queries                           |
+| ------------------------------------------------- | ---------- | ---------------------------------------- |
+| Où partir au soleil en hiver / février ?          | Nov–Dec    | _où partir au soleil en février_         |
+| Où partir aux vacances de la Toussaint ?          | Aug–Sep    | _où partir toussaint_                    |
+| Croisière sur le Nil : prix, itinéraire, conseils | anytime    | _croisière nil prix_, _croisière égypte_ |
+| Quand partir en Polynésie ?                       | anytime    | _quand partir polynésie_                 |
+| Voyage de noces : quel budget prévoir ?           | anytime    | _budget voyage de noces_                 |
+| Où partir en juillet / août sans la foule ?       | Apr–May    | _où partir en août_                      |
+| Combien coûte un voyage sur mesure ?              | anytime    | _prix voyage sur mesure_                 |
 
 Each article should internally link to the matching destination page and to a
 conversion page (`/devis` or `/contact`).
@@ -67,8 +67,8 @@ conversion page (`/devis` or `/contact`).
 ## C. Local-intent content
 
 One or two pages that reinforce the local angle already started by
-`/agence-de-voyages-rennes` — e.g. an article on *"Pourquoi passer par une
-agence de voyages près de Rennes"* or a short local-guide angle. These support
+`/agence-de-voyages-rennes` — e.g. an article on _"Pourquoi passer par une
+agence de voyages près de Rennes"_ or a short local-guide angle. These support
 the GBP / local-pack work in `seo-checklist.md`.
 
 ## Priority order (first 3 months)
@@ -76,7 +76,7 @@ the GBP / local-pack work in `seo-checklist.md`.
 1. Destination: **Japon** + **Grèce** (evergreen, high volume).
 2. Article: whichever season is ~2 months out.
 3. Destination: **Portugal/Madère**.
-4. Article: *"Combien coûte un voyage sur mesure ?"* (high commercial intent).
+4. Article: _"Combien coûte un voyage sur mesure ?"_ (high commercial intent).
 
 Then settle into 1 destination + 1 article per month.
 

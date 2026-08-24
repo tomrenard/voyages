@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Star, Quote } from "lucide-react";
 import { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
+import avisImg from "@/public/images/avis.jpg";
 
 export const metadata: Metadata = {
   title: "Avis Clients",
@@ -50,7 +51,7 @@ export default function Avis() {
       <PageHeader
         title="Avis Clients"
         subtitle="Ce que nos voyageurs disent de nous"
-        backgroundImage="/images/avis.jpg"
+        backgroundImage={avisImg}
       />
 
       <div className="container mx-auto px-4 py-16 md:py-24">

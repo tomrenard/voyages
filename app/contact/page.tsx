@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/contact-form";
 import { siteConfig } from "@/lib/site";
 import { Phone, Mail, CalendarCheck, Video, Clock, Home } from "lucide-react";
 import { Metadata } from "next";
+import heroContact from "@/public/images/hero-contact.jpg";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -40,7 +41,7 @@ export default function Contact() {
       <PageHeader
         title="Contactez-nous"
         subtitle="Prêt à réaliser votre rêve ? Discutons de votre projet."
-        backgroundImage="/images/hero-contact.jpg"
+        backgroundImage={heroContact}
       />
 
       <div className="container mx-auto px-4 py-16 md:py-24">

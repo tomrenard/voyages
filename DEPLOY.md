@@ -5,11 +5,11 @@ Le domaine canonique est piloté par une seule variable d'environnement — chan
 
 ## Variables d'environnement
 
-| Variable               | Rôle                                               | Valeur                                 |
-| ---------------------- | -------------------------------------------------- | -------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL` | URL canonique du site (metadata, sitemap, JSON-LD) | `https://www.revesdevoyages.com`       |
-| `CONTACT_EMAIL`        | Boîte qui reçoit les demandes du formulaire        | `veronique.guyomard@revesdevoyages.fr` |
-| `RESEND_API_KEY`       | Clé API Resend (envoi des emails)                  | _(secret — voir Resend)_               |
+| Variable               | Rôle                                               | Valeur                                                                  |
+| ---------------------- | -------------------------------------------------- | ----------------------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL` | URL canonique du site (metadata, sitemap, JSON-LD) | `https://www.revesdevoyages.com`                                        |
+| `CONTACT_EMAIL`        | Boîte qui reçoit les demandes du formulaire        | `veronique.guyomard@revesdevoyages.fr`                                  |
+| `RESEND_API_KEY`       | Clé API Resend (envoi des emails)                  | _(secret — voir Resend)_                                                |
 | `CONTACT_FROM`         | Expéditeur des emails du formulaire                | _(optionnel — défaut : `Rêves de Voyages <contact@revesdevoyages.fr>`)_ |
 
 > Ces variables sont dans `.env.local` en local (non versionné) et à reporter dans Vercel → Project → Settings → Environment Variables.

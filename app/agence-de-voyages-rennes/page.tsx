@@ -6,6 +6,7 @@ import { Metadata } from "next";
 import { MapPin, ShieldCheck, Video, Star } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 import { coupsDeCoeur } from "@/lib/destinations";
+import heroNew from "@/public/images/hero-new.jpg";
 
 export const metadata: Metadata = {
   title: "Agence de Voyages près de Rennes (Bruz) — Sur-Mesure & Premium",
@@ -57,7 +58,7 @@ export default function AgenceDeVoyagesRennes() {
       <PageHeader
         title="Votre agence de voyages près de Rennes"
         subtitle="Le sur-mesure d'une agence indépendante basée à Bruz, au service des voyageurs rennais depuis 2006"
-        backgroundImage="/images/hero-new.jpg"
+        backgroundImage={heroNew}
       />
 
       <div className="container mx-auto px-4 py-16 md:py-24">

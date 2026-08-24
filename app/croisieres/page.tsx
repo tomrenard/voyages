@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Ship, Anchor, Sun, Map } from "lucide-react";
 import Image from "next/image";
 import { Metadata } from "next";
+import contentCroisiere from "@/public/images/content-croisiere.jpg";
+import croisiereImg from "@/public/images/croisiere.jpg";
 
 export const metadata: Metadata = {
   title: "Croisières",
@@ -18,7 +20,7 @@ export default function Croisieres() {
       <PageHeader
         title="Nos Croisières"
         subtitle="Naviguez sur les plus belles mers du monde"
-        backgroundImage="/images/croisiere.jpg"
+        backgroundImage={croisiereImg}
       />
 
       <div className="container mx-auto px-4 py-16 md:py-24">
@@ -62,7 +64,7 @@ export default function Croisieres() {
           </div>
           <div className="relative h-[400px] overflow-hidden rounded-xl shadow-xl">
             <Image
-              src="/images/content-croisiere.jpg"
+              src={contentCroisiere}
               alt="Navire de croisière"
               fill
               className="object-cover"

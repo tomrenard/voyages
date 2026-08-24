@@ -3,7 +3,10 @@ import { Resend } from "resend";
 import { siteConfig } from "@/lib/site";
 import { rateLimit } from "@/lib/rate-limit";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Constructed per request rather than at module scope: Resend throws when
+// the key is absent, and Next evaluates this module while collecting route
+// data at build time — so a module-scope client made the *build* depend on a
+// runtime secret (and pre-empted the explicit guard in the handler below).
 
 const isEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
@@ -105,6 +108,7 @@ export async function POST(request: Request) {
   ];
 
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const { error } = await resend.emails.send({
       from,
       to,

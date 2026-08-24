@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { coupsDeCoeur, autresDestinations } from "@/lib/destinations";
 import { Metadata } from "next";
+import heroCoupsDeCoeur from "@/public/images/hero-coups-de-coeur.jpg";
 
 export const metadata: Metadata = {
   title: "Nos Coups de Cœur",
@@ -19,7 +20,7 @@ export default function NosCoupsDeCoeur() {
       <PageHeader
         title="Nos coups de cœur"
         subtitle="Les destinations que nous aimons par-dessus tout"
-        backgroundImage="/images/hero-coups-de-coeur.jpg"
+        backgroundImage={heroCoupsDeCoeur}
       />
 
       <div className="container mx-auto px-4 py-16 md:py-24">
