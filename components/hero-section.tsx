@@ -59,13 +59,6 @@ export function HeroSection() {
   // equivalent to AnimatePresence's own initial={false} for our purposes, but
   // keeps the flag local to the block whose first paint we care about instead
   // of changing presence behaviour for the whole group.
-  //
-  // NOTE: separately from this, exit animations in this component never
-  // complete — the image layers accumulate to 4 and the mode="wait" text
-  // queue deadlocks, so the headline stays on slide 1 while the photos keep
-  // cycling. That reproduces identically on main and on production, so it is
-  // pre-existing and not caused by the render-path work here. Suspected
-  // framer-motion 12 vs react 19 canary presence-tracking mismatch.
   const [hasAdvanced, setHasAdvanced] = useState(false);
 
   const goTo = (next: (prev: number) => number) => {

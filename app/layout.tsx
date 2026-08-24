@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { ViewTransition } from "react";
 import cn from "clsx";
 import { Playfair_Display, Lato } from "next/font/google";
 import { Navbar } from "@/components/navbar";
@@ -100,9 +99,7 @@ export default function RootLayout({
         <JsonLd />
         <div className="relative flex min-h-screen flex-col">
           <Navbar />
-          <main className="flex-1">
-            <ViewTransition name="crossfade">{children}</ViewTransition>
-          </main>
+          <main className="flex-1">{children}</main>
           <Footer />
         </div>
         <Analytics />

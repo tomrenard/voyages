@@ -189,6 +189,11 @@ article {
   );
 }
 
+/* Currently inert: these target the `crossfade` transition that React's
+   <ViewTransition> used to name, which is a canary-only API and went away
+   when react/react-dom moved to stable 19.2.x. Kept because it is the exact
+   styling to re-attach if/when ViewTransition lands in a stable React (or
+   Next's experimental.viewTransition is enabled on a canary again). */
 @supports (view-transition-name: none) {
   @media not (prefers-reduced-motion: reduce) {
     ::view-transition-old(crossfade) {
