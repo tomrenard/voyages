@@ -73,8 +73,16 @@ export function HeroSection() {
               alt="Paysage de voyage"
               fill
               className="object-cover brightness-[0.7]"
-              priority={true}
-              quality={90}
+              // Only the first slide belongs on the critical path; a preload
+              // hint injected for slide 2+ arrives too late to help anyway.
+              // Kept eager so slides 2-4 still fetch on mount rather than
+              // lazily mid-crossfade — `preload` replaces the deprecated
+              // `priority` here, and the two throw if combined.
+              preload={currentSlide === 0}
+              loading="eager"
+              // q=75 is plenty behind brightness-[0.7] + a black/20 overlay,
+              // and takes ~30% off the LCP image against q=90.
+              quality={75}
               sizes="100vw"
             />
           </motion.div>
@@ -84,7 +92,10 @@ export function HeroSection() {
       <div className="absolute inset-0 z-10 bg-black/20" />
 
       <div className="relative z-20 flex h-full flex-col items-center justify-center px-4 text-center">
-        <AnimatePresence mode="wait">
+        {/* initial={false} keeps the first slide's copy out of the enter
+            animation, so the <h1> is server-rendered at opacity 1 instead of
+            waiting on hydration to become visible. Slide changes still fade. */}
+        <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={currentSlide}
             initial={{ opacity: 0, y: 20 }}

@@ -40,15 +40,29 @@ export default withMDX()({
         ],
       },
       {
-        // Images in public/images/ are served at literal (non-hashed) URLs, so
-        // this is a modest TTL with SWR rather than immutable — a replaced file
-        // propagates within a week. Scoped to /images/ so it never overrides
-        // Next's own immutable caching of /_next/static/* (fonts, JS, CSS).
+        // Scoped to /images/ so it never overrides Next's own immutable
+        // caching of /_next/static/* (fonts, JS, CSS).
+        //
+        // This header also lands on /_next/image responses: Vercel's optimizer
+        // forwards the upstream Cache-Control verbatim instead of deriving it
+        // from minimumCacheTTL above (unlike the self-hosted path, which takes
+        // max(minimumCacheTTL, upstream)). So minimumCacheTTL was being
+        // ignored client-side and optimized images were capped at 24h, making
+        // repeat visitors re-download ~111 KiB per visit.
+        //
+        // 7 days is a compromise, not a free win: public/images/* are served
+        // at literal, non-hashed URLs, so this is also the worst-case window
+        // for a *replaced* photo to keep showing the old bytes. Note SWR does
+        // NOT mitigate that — it only applies once max-age has expired, so it
+        // extends the stale window rather than shortening it. Raising this
+        // further needs content-hashed URLs first: static-import the images
+        // (`import slide1 from "@/public/images/slide-1.jpg"`) and Next marks
+        // them immutable, which is both better-cached and instantly bustable.
         source: "/images/:path*",
         headers: [
           {
             key: "Cache-Control",
-            value: "public, max-age=86400, stale-while-revalidate=604800",
+            value: "public, max-age=604800, stale-while-revalidate=604800",
           },
         ],
       },

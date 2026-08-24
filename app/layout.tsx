@@ -17,7 +17,10 @@ const playfair = Playfair_Display({
 });
 
 const lato = Lato({
-  weight: ["300", "400", "700", "900"],
+  // 900 was loaded but never used (no font-black anywhere), costing an extra
+  // ~14 KB preloaded at High priority on the critical path. 300/400/700 cover
+  // every weight the UI actually asks for.
+  weight: ["300", "400", "700"],
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
