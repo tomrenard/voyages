@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Coffee, ShoppingBag, Landmark, Plane } from "lucide-react";
 import { Metadata } from "next";
+import weekendImg from "@/public/images/weekend.jpg";
 
 export const metadata: Metadata = {
   title: "Week-end & Courts Séjours",
@@ -17,7 +18,7 @@ export default function Weekend() {
       <PageHeader
         title="Escapades Week-end"
         subtitle="Évadez-vous le temps de quelques jours"
-        backgroundImage="/images/weekend.jpg"
+        backgroundImage={weekendImg}
       />
 
       <div className="container mx-auto px-4 py-16 md:py-24">

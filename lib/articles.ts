@@ -1,4 +1,9 @@
 import { siteConfig } from "@/lib/site";
+import articleCroisiere from "@/public/images/article-croisiere.jpg";
+import articleEurope from "@/public/images/article-europe.jpg";
+import articleNoces from "@/public/images/article-noces.jpg";
+import articleSeychelles from "@/public/images/article-seychelles.jpg";
+import type { StaticImageData } from "next/image";
 
 export type ArticleBlock =
   | { type: "p"; text: string }
@@ -13,7 +18,7 @@ export type Article = {
   date: string;
   author: string;
   category: string;
-  image: string;
+  image: StaticImageData;
   imageAlt: string;
   readingTime: string;
   content: ArticleBlock[];
@@ -28,7 +33,7 @@ export const articles: Article[] = [
     date: "2026-06-12",
     author: siteConfig.advisor,
     category: "Séjours",
-    image: "/images/article-seychelles.jpg",
+    image: articleSeychelles,
     imageAlt:
       "Rochers de granit, cocotiers et eaux turquoise sur une plage des Seychelles",
     readingTime: "5 min",
@@ -87,7 +92,7 @@ export const articles: Article[] = [
     date: "2026-05-28",
     author: siteConfig.advisor,
     category: "Croisières",
-    image: "/images/article-croisiere.jpg",
+    image: articleCroisiere,
     imageAlt: "Grand navire de croisière moderne naviguant en pleine mer",
     readingTime: "6 min",
     content: [
@@ -141,7 +146,7 @@ export const articles: Article[] = [
     date: "2026-05-09",
     author: siteConfig.advisor,
     category: "Sur-mesure",
-    image: "/images/article-noces.jpg",
+    image: articleNoces,
     imageAlt: "Coucher de soleil sur les maisons blanches d'Oia, à Santorin",
     readingTime: "5 min",
     content: [
@@ -199,7 +204,7 @@ export const articles: Article[] = [
     date: "2026-04-22",
     author: siteConfig.advisor,
     category: "Week-end",
-    image: "/images/article-europe.jpg",
+    image: articleEurope,
     imageAlt: "Le pont Charles et le château de Prague au coucher du soleil",
     readingTime: "4 min",
     content: [

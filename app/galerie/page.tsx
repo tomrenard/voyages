@@ -1,6 +1,13 @@
 import { PageHeader } from "@/components/page-header";
 import Image from "next/image";
 import { Metadata } from "next";
+import galerieMachu from "@/public/images/galerie-machu.jpg";
+import galerieSafari from "@/public/images/galerie-safari.jpg";
+import gallery1 from "@/public/images/gallery-1.jpg";
+import gallery2 from "@/public/images/gallery-2.jpg";
+import gallery3 from "@/public/images/gallery-3.jpg";
+import gallery4 from "@/public/images/gallery-4.jpg";
+import heroNew from "@/public/images/hero-new.jpg";
 
 export const metadata: Metadata = {
   title: "Galerie Photos",
@@ -12,27 +19,27 @@ export const metadata: Metadata = {
 export default function Galerie() {
   const images = [
     {
-      src: "/images/gallery-1.jpg",
+      src: gallery1,
       alt: "Plage tropicale aux eaux turquoise au coucher du soleil",
     },
     {
-      src: "/images/gallery-2.jpg",
+      src: gallery2,
       alt: "Lac de montagne aux eaux turquoise dans les Rocheuses",
     },
     {
-      src: "/images/gallery-3.jpg",
+      src: gallery3,
       alt: "Vue aérienne du front de mer de Dubaï et du Burj Al Arab",
     },
     {
-      src: "/images/gallery-4.jpg",
+      src: gallery4,
       alt: "Vue aérienne d'une plage et de barques colorées sur un lagon turquoise",
     },
     {
-      src: "/images/galerie-safari.jpg",
+      src: galerieSafari,
       alt: "Éléphants dans la savane du Serengeti, en Tanzanie",
     },
     {
-      src: "/images/galerie-machu.jpg",
+      src: galerieMachu,
       alt: "Le site inca du Machu Picchu perché dans les Andes",
     },
   ];
@@ -42,14 +49,14 @@ export default function Galerie() {
       <PageHeader
         title="Galerie Photos"
         subtitle="Instants volés aux quatre coins du monde"
-        backgroundImage="/images/hero-new.jpg"
+        backgroundImage={heroNew}
       />
 
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {images.map(({ src, alt }) => (
             <div
-              key={src}
+              key={src.src}
               className="group relative h-80 overflow-hidden rounded-xl shadow-md transition-all duration-300 hover:shadow-xl"
             >
               <Image

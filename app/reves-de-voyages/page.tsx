@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
+import aboutReves from "@/public/images/about-reves.jpg";
+import heroReves from "@/public/images/hero-reves.jpg";
 
 // Destinations with a dedicated landing page — chips become internal links.
 const destinationLinks: Record<string, string> = {
@@ -28,7 +30,7 @@ export default function RevesDeVoyages() {
       <PageHeader
         title="Rêves de Voyages"
         subtitle="Votre agence de voyages 100% personnalisés, près de Rennes"
-        backgroundImage="/images/hero-reves.jpg"
+        backgroundImage={heroReves}
       />
 
       <div className="container mx-auto px-4 py-16 md:py-24">
@@ -49,7 +51,7 @@ export default function RevesDeVoyages() {
         <div className="mb-20 grid grid-cols-1 items-center gap-12 md:grid-cols-2">
           <div className="relative h-[500px] overflow-hidden rounded-xl shadow-2xl">
             <Image
-              src="/images/about-reves.jpg"
+              src={aboutReves}
               alt="Véronique, votre conseillère voyages"
               fill
               className="object-cover"

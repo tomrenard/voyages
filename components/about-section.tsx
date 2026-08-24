@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import aboutImg from "@/public/images/about-img.jpg";
 
 export function AboutSection() {
   return (
@@ -48,7 +49,7 @@ export function AboutSection() {
           </div>
           <div className="relative h-[400px] overflow-hidden rounded-2xl shadow-xl lg:h-[500px]">
             <Image
-              src="/images/about-img.jpg"
+              src={aboutImg}
               alt="Voyageurs heureux"
               fill
               className="object-cover"

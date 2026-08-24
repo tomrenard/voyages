@@ -15,6 +15,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
+import logoImg from "@/public/images/logo.png";
 import {
   ComponentPropsWithoutRef,
   ElementRef,
@@ -53,7 +54,7 @@ export function Navbar() {
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/images/logo.png"
+            src={logoImg}
             alt="Rêves de Voyages"
             width={180}
             height={80}

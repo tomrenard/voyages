@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Compass, Heart, Globe } from "lucide-react";
 import Image from "next/image";
 import { Metadata } from "next";
+import contentSurMesure from "@/public/images/content-sur-mesure.jpg";
+import surMesure from "@/public/images/sur-mesure.jpg";
 
 export const metadata: Metadata = {
   title: "Voyage sur Mesure",
@@ -18,7 +20,7 @@ export default function VoyageSurMesure() {
       <PageHeader
         title="Voyage sur mesure"
         subtitle="Votre voyage ne ressemblera à aucun autre"
-        backgroundImage="/images/sur-mesure.jpg"
+        backgroundImage={surMesure}
       />
 
       <div className="container mx-auto px-4 py-16 md:py-24">
@@ -117,7 +119,7 @@ export default function VoyageSurMesure() {
           </div>
           <div className="relative h-[500px] overflow-hidden rounded-xl shadow-xl">
             <Image
-              src="/images/content-sur-mesure.jpg"
+              src={contentSurMesure}
               alt="Préparation voyage"
               fill
               className="object-cover"

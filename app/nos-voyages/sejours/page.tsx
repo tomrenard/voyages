@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Sun, Umbrella, Palmtree, Hotel } from "lucide-react";
 import { Metadata } from "next";
+import sejourImg from "@/public/images/sejour.jpg";
 
 export const metadata: Metadata = {
   title: "Séjours",
@@ -17,7 +18,7 @@ export default function Sejours() {
       <PageHeader
         title="Séjours"
         subtitle="Détente absolue et farniente"
-        backgroundImage="/images/sejour.jpg"
+        backgroundImage={sejourImg}
       />
 
       <div className="container mx-auto px-4 py-16 md:py-24">

@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: content.metaTitle,
       description: content.metaDescription,
-      images: [{ url: card.image, alt: card.imageAlt }],
+      images: [{ url: card.image.src, alt: card.imageAlt }],
     },
   };
 }
@@ -47,7 +47,7 @@ export default async function DestinationPage({ params }: Props) {
       "@type": "TouristTrip",
       name: content.metaTitle,
       description: content.metaDescription,
-      image: `${siteUrl}${card.image}`,
+      image: `${siteUrl}${card.image.src}`,
       touristType: "Voyage sur mesure",
       provider: { "@id": `${siteUrl}/#travelagency` },
       offers: {

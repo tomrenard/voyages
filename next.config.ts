@@ -13,6 +13,9 @@ export default withMDX()({
   },
   transpilePackages: [],
   images: {
+    // Nothing requests q=90 any more (the hero was the last caller). 90 stays
+    // allowed for one deploy so clients replaying a srcset cached from the
+    // previous build don't get a 400 from the optimizer; drop to [75] next.
     qualities: [75, 90],
     // AVIF first (~20-30% smaller than WebP), WebP fallback for older clients.
     formats: ["image/avif", "image/webp"],
@@ -40,24 +43,20 @@ export default withMDX()({
         ],
       },
       {
-        // Scoped to /images/ so it never overrides Next's own immutable
-        // caching of /_next/static/* (fonts, JS, CSS).
+        // Every *rendered* image is now a static import, so it is served from
+        // /_next/static/media/<contenthash> and inherits Next's immutable
+        // caching. This rule therefore only covers the handful of literal
+        // /images/ URLs left for non-browser consumers (the manifest icon and
+        // the JSON-LD logo), which crawlers refetch on their own schedule.
         //
-        // This header also lands on /_next/image responses: Vercel's optimizer
-        // forwards the upstream Cache-Control verbatim instead of deriving it
-        // from minimumCacheTTL above (unlike the self-hosted path, which takes
-        // max(minimumCacheTTL, upstream)). So minimumCacheTTL was being
-        // ignored client-side and optimized images were capped at 24h, making
-        // repeat visitors re-download ~111 KiB per visit.
-        //
-        // 7 days is a compromise, not a free win: public/images/* are served
-        // at literal, non-hashed URLs, so this is also the worst-case window
-        // for a *replaced* photo to keep showing the old bytes. Note SWR does
-        // NOT mitigate that — it only applies once max-age has expired, so it
-        // extends the stale window rather than shortening it. Raising this
-        // further needs content-hashed URLs first: static-import the images
-        // (`import slide1 from "@/public/images/slide-1.jpg"`) and Next marks
-        // them immutable, which is both better-cached and instantly bustable.
+        // Keeping it bounded matters because Vercel's image optimizer forwards
+        // the upstream Cache-Control verbatim onto /_next/image rather than
+        // deriving it from minimumCacheTTL above (unlike the self-hosted path,
+        // which takes max(minimumCacheTTL, upstream)). Before the static
+        // imports that capped every optimized image at 24h; now the upstream
+        // is an immutable /_next/static/media URL, so the optimized responses
+        // inherit immutable too — without the month-long staleness window a
+        // long TTL on a literal, non-hashed URL would have created.
         source: "/images/:path*",
         headers: [
           {

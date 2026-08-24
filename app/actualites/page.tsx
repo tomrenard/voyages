@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Calendar, User } from "lucide-react";
 import { Metadata } from "next";
 import { articles } from "@/lib/articles";
+import actualitesImg from "@/public/images/actualites.jpg";
 
 export const metadata: Metadata = {
   title: "Actualités & Blog",
@@ -25,7 +26,7 @@ export default function Actualites() {
       <PageHeader
         title="Actualités & Blog"
         subtitle="Inspirations, conseils et nouvelles du monde"
-        backgroundImage="/images/actualites.jpg"
+        backgroundImage={actualitesImg}
       />
 
       <div className="container mx-auto px-4 py-16 md:py-24">

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Compass, Bus } from "lucide-react";
 import { Metadata } from "next";
+import circuitImg from "@/public/images/circuit.jpg";
 
 export const metadata: Metadata = {
   title: "Circuits",
@@ -17,7 +18,7 @@ export default function Circuits() {
       <PageHeader
         title="Circuits Découverte"
         subtitle="Explorez le monde, étape par étape"
-        backgroundImage="/images/circuit.jpg"
+        backgroundImage={circuitImg}
       />
 
       <div className="container mx-auto px-4 py-16 md:py-24">

@@ -3,6 +3,7 @@ import { PageHeader } from "@/components/page-header";
 import { DevisForm } from "@/components/devis-form";
 import { ShieldCheck, Clock, Sparkles } from "lucide-react";
 import { siteConfig } from "@/lib/site";
+import heroContact from "@/public/images/hero-contact.jpg";
 
 export const metadata: Metadata = {
   title: "Devis Gratuit — Votre Voyage sur Mesure",
@@ -21,7 +22,7 @@ export default async function Devis({ searchParams }: Props) {
       <PageHeader
         title="Votre devis gratuit"
         subtitle="Racontez-nous votre projet : nous revenons vers vous avec une proposition sur mesure"
-        backgroundImage="/images/hero-contact.jpg"
+        backgroundImage={heroContact}
       />
 
       <div className="container mx-auto px-4 py-16 md:py-24">

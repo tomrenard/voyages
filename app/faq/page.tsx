@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PageHeader } from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site";
+import heroBg from "@/public/images/hero-bg.jpg";
 
 const { legal } = siteConfig;
 
@@ -81,7 +82,7 @@ export default function Faq() {
       <PageHeader
         title="Questions fréquentes"
         subtitle="Tout ce que vous devez savoir avant de nous confier votre voyage"
-        backgroundImage="/images/hero-bg.jpg"
+        backgroundImage={heroBg}
       />
 
       <div className="container mx-auto px-4 py-16 md:py-24">
