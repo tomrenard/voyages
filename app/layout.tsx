@@ -1,5 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
+// Canary-only API — react/react-dom are intentionally pinned to a canary for
+// this, paired with the ::view-transition-*(crossfade) rules in globals.css.
+import { ViewTransition } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import cn from "clsx";
 import { Playfair_Display, Lato } from "next/font/google";
@@ -99,7 +102,9 @@ export default function RootLayout({
         <JsonLd />
         <div className="relative flex min-h-screen flex-col">
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1">
+            <ViewTransition name="crossfade">{children}</ViewTransition>
+          </main>
           <Footer />
         </div>
         <Analytics />
