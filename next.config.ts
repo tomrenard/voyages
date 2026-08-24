@@ -203,13 +203,25 @@ export default withMDX()({
         permanent: true,
       },
       // Legacy WordPress pages with renamed paths.
-      { source: "/reves-de-voyage", destination: "/reves-de-voyages", permanent: true },
+      {
+        source: "/reves-de-voyage",
+        destination: "/reves-de-voyages",
+        permanent: true,
+      },
       { source: "/croisiere", destination: "/croisieres", permanent: true },
       { source: "/blog", destination: "/actualites", permanent: true },
-      { source: "/slide-anything-popup-preview", destination: "/", permanent: true },
+      {
+        source: "/slide-anything-popup-preview",
+        destination: "/",
+        permanent: true,
+      },
       // Legacy WordPress content types.
       { source: "/testimonial/:slug", destination: "/avis", permanent: true },
-      { source: "/category/:slug", destination: "/actualites", permanent: true },
+      {
+        source: "/category/:slug",
+        destination: "/actualites",
+        permanent: true,
+      },
       // Legacy WordPress blog posts (thematic mapping).
       ...Object.entries(legacyPosts).map(([slug, destination]) => ({
         source: `/${slug}`,

@@ -133,10 +133,7 @@ export default async function DestinationPage({ params }: Props) {
             {content.introTitle}
           </h2>
           {content.intro.map((paragraph, idx) => (
-            <p
-              key={idx}
-              className="mb-4 text-lg leading-relaxed text-gray-600"
-            >
+            <p key={idx} className="mb-4 text-lg leading-relaxed text-gray-600">
               {paragraph}
             </p>
           ))}

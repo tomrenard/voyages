@@ -11,12 +11,12 @@ the biggest levers for a local travel agency.
 
 ## 1. Google Business Profile (GBP) — highest impact ⭐
 
-The single biggest free lever for queries like *"agence de voyage rennes"*,
-*"agence de voyage bruz"*. Wins a spot in the Google local pack + Maps.
+The single biggest free lever for queries like _"agence de voyage rennes"_,
+_"agence de voyage bruz"_. Wins a spot in the Google local pack + Maps.
 
 - Go to https://business.google.com and claim/create **Rêves de Voyages**.
 - Category: **Agence de voyages** (primary). Add secondary categories if
-  offered (e.g. *Organisateur de circuits touristiques*).
+  offered (e.g. _Organisateur de circuits touristiques_).
 - Set it as a **service-area business** (no walk-in office — see `lib/site.ts`):
   hide the street address, set the service area to Rennes Métropole / Ille-et-Vilaine.
 - Hours: match reality (by appointment / sur rendez-vous).
@@ -34,7 +34,7 @@ agency has ~19 years of clients.
 - Once GBP is verified, Google gives a **review short-link** (`g.page/r/…/review`).
 - Email past clients asking for a Google review with that link.
 - **Then update the code:** replace the placeholder in `lib/site.ts`
-  (`social.googleReviews`, currently a Maps *search* URL — see the TODO there)
+  (`social.googleReviews`, currently a Maps _search_ URL — see the TODO there)
   with the real review short-link, so the site's "Avis" links point straight
   to the review form.
 - Aim for a steady trickle (a few/month) rather than a burst — looks organic.
@@ -72,7 +72,7 @@ file. Priorities for a French travel agency:
 - **Mappy** (mappy.com).
 - **Yelp France**.
 - **Apple Business Connect** (Apple Maps).
-- Local/tourism directories: *annuaire agences de voyages*, Rennes/Bruz
+- Local/tourism directories: _annuaire agences de voyages_, Rennes/Bruz
   chamber-of-commerce or city business listings, EDV (Entreprises du Voyage)
   member directory if applicable.
 
@@ -100,12 +100,12 @@ Also check `robots.txt` and `sitemap.xml` load in the browser.
 
 ### Recap by impact
 
-| Action | Effort | Impact |
-| --- | --- | --- |
-| Google Business Profile | Medium | ★★★★★ |
-| Review campaign | Medium | ★★★★★ |
-| Search Console + sitemap | Low | ★★★★ |
-| Publishing new content (see `content-plan.md`) | High | ★★★★★ |
-| Local citations | Medium | ★★★ |
-| Bing Webmaster | Low | ★★ |
-| Social backlinks | Low | ★★ |
+| Action                                         | Effort | Impact |
+| ---------------------------------------------- | ------ | ------ |
+| Google Business Profile                        | Medium | ★★★★★  |
+| Review campaign                                | Medium | ★★★★★  |
+| Search Console + sitemap                       | Low    | ★★★★   |
+| Publishing new content (see `content-plan.md`) | High   | ★★★★★  |
+| Local citations                                | Medium | ★★★    |
+| Bing Webmaster                                 | Low    | ★★     |
+| Social backlinks                               | Low    | ★★     |
