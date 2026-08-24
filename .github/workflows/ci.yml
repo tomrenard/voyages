@@ -8,10 +8,10 @@ on:
   push:
     branches: [main]
 
-# A new push to the same PR cancels the in-flight run for it.
 permissions:
   contents: read
 
+# A new push to the same PR cancels the in-flight run for it.
 concurrency:
   group: ci-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -43,10 +43,15 @@ jobs:
       - name: Format
         run: pnpm format:check
 
+      # --max-warnings=0 because several react-hooks rules (exhaustive-deps,
+      # incompatible-library, unsupported-syntax) are configured at warn level,
+      # and `eslint .` exits 0 on warnings — so without this a missing effect
+      # dependency would sail through CI. Clean at 0 today.
       - name: Lint
-        run: pnpm lint
+        run: pnpm exec eslint . --max-warnings=0
 
-      # `next build` does not typecheck the whole project on its own.
+      # `next build` does run tsc, but this fails in ~2s instead of after a full
+      # build, and covers files the build graph never reaches.
       - name: Types
         run: pnpm exec tsc --noEmit
 

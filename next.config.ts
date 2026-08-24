@@ -45,18 +45,23 @@ export default withMDX()({
       {
         // Every *rendered* image is now a static import, so it is served from
         // /_next/static/media/<contenthash> and inherits Next's immutable
-        // caching. This rule therefore only covers the handful of literal
-        // /images/ URLs left for non-browser consumers (the manifest icon and
-        // the JSON-LD logo), which crawlers refetch on their own schedule.
+        // caching. What still resolves under /images/ is: the manifest icon
+        // (browsers fetch it on PWA install), the JSON-LD logo, the article
+        // publisher logo, and — importantly — the fallback for
+        // /_next/image?url=%2Fimages%2F… srcsets cached from a previous deploy.
+        // public/images/ must stay put regardless: it is the build input for
+        // the static imports, so deleting it fails the build.
         //
-        // Keeping it bounded matters because Vercel's image optimizer forwards
-        // the upstream Cache-Control verbatim onto /_next/image rather than
-        // deriving it from minimumCacheTTL above (unlike the self-hosted path,
-        // which takes max(minimumCacheTTL, upstream)). Before the static
-        // imports that capped every optimized image at 24h; now the upstream
-        // is an immutable /_next/static/media URL, so the optimized responses
-        // inherit immutable too — without the month-long staleness window a
-        // long TTL on a literal, non-hashed URL would have created.
+        // Keeping this bounded matters because of how the optimizer derives its
+        // own Cache-Control. Measured against production before the static
+        // imports: an upstream /images/ rule of max-age=86400 came back on
+        // /_next/image as `public, max-age=86400, stale-while-revalidate=604800`
+        // — the upstream value, NOT minimumCacheTTL (2678400). The self-hosted
+        // optimizer instead applies max(minimumCacheTTL, upstream), so that
+        // behaviour is Vercel-specific. Either way the fix is the same: the
+        // upstream is now an immutable /_next/static/media URL, so optimized
+        // responses inherit immutable without needing a long TTL on a literal,
+        // non-hashed path.
         source: "/images/:path*",
         headers: [
           {

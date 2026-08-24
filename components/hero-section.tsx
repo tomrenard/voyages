@@ -50,7 +50,7 @@ export function HeroSection() {
 
   // The first slide's copy must be server-rendered at its animate state, or the
   // <h1> ships invisible and only appears once framer-motion has hydrated. Every
-  // slide change goes through goTo(), which flips this ref, so the initial
+  // slide change goes through goTo(), which sets this flag, so the initial
   // render gets initial={false} (paint immediately) and later changes animate.
   //
   // State rather than a ref because it is read during render (the React
@@ -99,8 +99,9 @@ export function HeroSection() {
                 // Only the first slide belongs on the critical path; a preload
                 // hint injected for slide 2+ arrives too late to help anyway.
                 // Kept eager so slides 2-4 still fetch on mount rather than
-                // lazily mid-crossfade — `preload` replaces the deprecated
-                // `priority` here, and the two throw if combined.
+                // lazily mid-crossfade. `preload` replaces the deprecated
+                // `priority`; setting both throws in dev only (the guard in
+                // get-img-props sits behind NODE_ENV !== 'production').
                 preload={currentSlide === 0}
                 loading="eager"
                 // q=75 is plenty behind brightness-[0.7] + a black/20 overlay,
