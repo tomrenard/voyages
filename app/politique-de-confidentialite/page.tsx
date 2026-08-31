@@ -52,17 +52,22 @@ export default function PolitiqueDeConfidentialite() {
             <div className="space-y-6">
               <div>
                 <h3 className="mb-2 text-xl font-bold text-gray-800">
-                  Formulaire de contact
+                  Formulaires de contact et de devis
                 </h3>
                 <p className="leading-relaxed text-gray-600">
-                  Lorsque vous utilisez notre formulaire de contact, nous
-                  collectons votre nom, votre prénom, votre adresse email, votre
-                  numéro de téléphone (facultatif) et le contenu de votre
-                  message. Ces données sont traitées dans le seul but de
-                  répondre à votre demande et de préparer votre projet de
-                  voyage. La base légale de ce traitement est votre consentement
-                  ainsi que les mesures précontractuelles prises à votre
-                  demande.
+                  Lorsque vous utilisez nos formulaires de contact ou de devis,
+                  nous collectons votre nom, votre prénom, votre adresse email,
+                  votre numéro de téléphone (facultatif), votre code postal
+                  (facultatif) et le contenu de votre message. Le formulaire de
+                  devis recueille en outre les éléments de votre projet :
+                  destination, type de voyage, période et durée envisagées,
+                  nombre de voyageurs et budget indicatif. Le code postal nous
+                  sert uniquement à situer votre demande, notamment pour vous
+                  proposer un rendez-vous à domicile. Ces données sont traitées
+                  dans le seul but de répondre à votre demande et de préparer
+                  votre projet de voyage. La base légale de ce traitement est
+                  votre consentement ainsi que les mesures précontractuelles
+                  prises à votre demande.
                 </p>
               </div>
               <div>
@@ -96,7 +101,7 @@ export default function PolitiqueDeConfidentialite() {
                 </li>
                 <li>
                   <strong>Resend</strong> — acheminement des messages envoyés
-                  via le formulaire de contact.
+                  via les formulaires du site.
                 </li>
               </ul>
             </div>
@@ -108,7 +113,7 @@ export default function PolitiqueDeConfidentialite() {
             </h2>
             <div className="leading-relaxed text-gray-600">
               <p>
-                Les données issues du formulaire de contact sont conservées
+                Les données issues des formulaires du site sont conservées
                 pendant la durée nécessaire au traitement de votre demande, puis
                 archivées ou supprimées dans un délai maximum de trois ans à
                 compter de notre dernier échange.

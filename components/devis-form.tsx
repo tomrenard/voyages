@@ -267,24 +267,22 @@ export function DevisForm({
           </div>
         </div>
 
+        <div className="space-y-2">
+          <label htmlFor="email" className="text-sm font-medium text-gray-700">
+            Email *
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autoComplete="email"
+            className={inputClass}
+            placeholder="jean.dupont@exemple.com"
+            required
+          />
+        </div>
+
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <div className="space-y-2">
-            <label
-              htmlFor="email"
-              className="text-sm font-medium text-gray-700"
-            >
-              Email *
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              autoComplete="email"
-              className={inputClass}
-              placeholder="jean.dupont@exemple.com"
-              required
-            />
-          </div>
           <div className="space-y-2">
             <label
               htmlFor="phone"
@@ -299,6 +297,25 @@ export function DevisForm({
               autoComplete="tel"
               className={inputClass}
               placeholder="06 12 34 56 78"
+            />
+          </div>
+          <div className="space-y-2">
+            <label
+              htmlFor="postalCode"
+              className="text-sm font-medium text-gray-700"
+            >
+              Code postal
+            </label>
+            <input
+              id="postalCode"
+              name="postalCode"
+              type="text"
+              inputMode="numeric"
+              autoComplete="postal-code"
+              pattern="[0-9]{5}"
+              maxLength={5}
+              className={inputClass}
+              placeholder="35170"
             />
           </div>
         </div>

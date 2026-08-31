@@ -10,6 +10,9 @@ import { rateLimit } from "@/lib/rate-limit";
 
 const isEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
+// French postal codes are exactly five digits.
+const isPostalCode = (value: string) => /^\d{5}$/.test(value);
+
 const escapeHtml = (value: string) =>
   value
     .replace(/&/g, "&amp;")
@@ -31,17 +34,24 @@ export async function POST(request: Request) {
     );
   }
 
-  let data: Record<string, unknown>;
+  // Parsed as `unknown` on purpose: a body of literal `null`, or a bare string
+  // or number, parses without throwing, and the property access below would
+  // then fail with an unhandled TypeError — a bare 500 instead of this 400.
+  let parsed: unknown;
   try {
-    data = await request.json();
+    parsed = await request.json();
   } catch {
     return NextResponse.json({ error: "Requête invalide." }, { status: 400 });
   }
+  if (typeof parsed !== "object" || parsed === null) {
+    return NextResponse.json({ error: "Requête invalide." }, { status: 400 });
+  }
+  const data = parsed as Record<string, unknown>;
 
   // Strip control characters from fields used in headers and cap lengths.
   const scalar = (value: unknown, max = 200) =>
     String(value ?? "")
-      .replace(/[\r\n\t]+/g, " ")
+      .replace(/[\r\n\t\v\f\u0085\u2028\u2029]+/g, " ")
       .trim()
       .slice(0, max);
 
@@ -49,6 +59,7 @@ export async function POST(request: Request) {
   const lastName = scalar(data.lastName);
   const email = scalar(data.email);
   const phone = scalar(data.phone, 30);
+  const postalCode = scalar(data.postalCode, 16);
   const message = String(data.message ?? "")
     .trim()
     .slice(0, 5000);
@@ -81,6 +92,14 @@ export async function POST(request: Request) {
   const from =
     process.env.CONTACT_FROM ?? "Rêves de Voyages <contact@revesdevoyages.fr>";
   const fullName = `${firstName} ${lastName}`;
+  // The postal code is only an internal lead-qualification hint, so a typo must
+  // never cost the agency a lead: an unexpected value is forwarded flagged
+  // rather than rejected. Escaped downstream like every other field.
+  const postalCodeLabel = !postalCode
+    ? "non renseigné"
+    : isPostalCode(postalCode)
+      ? postalCode
+      : `${postalCode} (à vérifier)`;
 
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
@@ -93,6 +112,7 @@ export async function POST(request: Request) {
         `Nom : ${fullName}`,
         `Email : ${email}`,
         `Téléphone : ${phone || "non renseigné"}`,
+        `Code postal : ${postalCodeLabel}`,
         "",
         "Projet :",
         message,
@@ -102,6 +122,7 @@ export async function POST(request: Request) {
         <p><strong>Nom :</strong> ${escapeHtml(fullName)}</p>
         <p><strong>Email :</strong> ${escapeHtml(email)}</p>
         <p><strong>Téléphone :</strong> ${escapeHtml(phone || "non renseigné")}</p>
+        <p><strong>Code postal :</strong> ${escapeHtml(postalCodeLabel)}</p>
         <p><strong>Projet :</strong></p>
         <p>${escapeHtml(message).replace(/\n/g, "<br>")}</p>
       `,
