@@ -3,6 +3,7 @@ import articleCroisiere from "@/public/images/article-croisiere.jpg";
 import articleEurope from "@/public/images/article-europe.jpg";
 import articleNoces from "@/public/images/article-noces.jpg";
 import articleSeychelles from "@/public/images/article-seychelles.jpg";
+import destThailande from "@/public/images/dest-thailande.jpg";
 import type { StaticImageData } from "next/image";
 
 export type ArticleBlock =
@@ -25,6 +26,87 @@ export type Article = {
 };
 
 export const articles: Article[] = [
+  {
+    slug: "quand-partir-en-thailande",
+    title: "Quand partir en Thaïlande ? Le guide par saison et par région",
+    excerpt:
+      "Côte andamane, îles du golfe, nord du pays : la Thaïlande ne se visite pas au même moment selon la région. Notre guide saison par saison.",
+    date: "2026-08-28",
+    author: siteConfig.advisor,
+    category: "Circuits",
+    image: destThailande,
+    imageAlt:
+      "La plage de Railay et ses falaises calcaires, dans la province de Krabi, en Thaïlande",
+    readingTime: "6 min",
+    content: [
+      {
+        type: "p",
+        text: "La Thaïlande se visite toute l'année, mais pas partout au même moment. Le pays s'étire sur plus de 1 600 kilomètres du nord au sud et connaît deux moussons qui n'arrivent pas en même temps sur ses deux façades maritimes. Résultat : un mois catastrophique pour Phuket peut être excellent pour Koh Samui, et une période idéale pour les plages du sud peut coïncider avec la saison des brûlis dans le nord. Voici comment choisir votre fenêtre de départ selon la région et le voyage que vous avez en tête.",
+      },
+      {
+        type: "h2",
+        text: "De novembre à février : la meilleure période, presque partout",
+      },
+      {
+        type: "p",
+        text: "C'est la saison sèche et « fraîche », et la fenêtre la plus sûre si vous ne partez qu'une fois. Les températures oscillent entre 25 et 32 °C, l'humidité retombe, le ciel est dégagé et la mer est calme sur la côte ouest. Bangkok devient beaucoup plus agréable à parcourir à pied, les temples d'Ayutthaya et de Sukhothai se visitent sans souffrir de la chaleur, et le nord affiche des matinées presque fraîches. C'est aussi la haute saison : vols, hôtels et transferts se réservent plusieurs mois à l'avance, en particulier pour les vacances de Noël et de février.",
+      },
+      {
+        type: "h2",
+        text: "De mars à mai : la saison chaude, à réserver aux amateurs",
+      },
+      {
+        type: "p",
+        text: "Le thermomètre grimpe franchement, souvent au-delà de 35 °C à Bangkok et dans les plaines centrales, avec une humidité lourde en fin de période. Les journées de visite intensive deviennent éprouvantes, surtout avec de jeunes enfants. En revanche, la mer est chaude, les tarifs baissent et les sites touristiques respirent — en gardant en tête que le mois de mai est déjà nettement arrosé sur la côte andamane. Deux points à connaître : le nord (Chiang Mai, Chiang Rai) subit de fin février à avril la saison des brûlis agricoles, qui dégrade nettement la qualité de l'air et les panoramas ; et Songkran, le nouvel an thaï célébré à la mi-avril, transforme le pays en gigantesque bataille d'eau — une expérience mémorable, mais qui perturbe les transports.",
+      },
+      {
+        type: "h2",
+        text: "De juin à octobre : la mousson, plus nuancée qu'on ne le croit",
+      },
+      {
+        type: "p",
+        text: "La mousson du sud-ouest arrose surtout la côte andamane — Phuket, Krabi, Khao Lak, Koh Lanta — avec un pic en septembre et octobre. Les averses sont souvent brèves et concentrées en fin de journée, mais la mer se creuse et certaines excursions en bateau sont annulées ; les îles Similan, par exemple, ferment une bonne partie de cette période. C'est aussi la saison la plus verte, la plus photogénique et la moins chère : pour un circuit culturel entre Bangkok, Chiang Mai et l'Isan, les mois de juin à août restent tout à fait praticables, à condition d'accepter une averse quotidienne.",
+      },
+      {
+        type: "h2",
+        text: "Le cas des îles du golfe : un calendrier décalé",
+      },
+      {
+        type: "p",
+        text: "Koh Samui, Koh Phangan et Koh Tao suivent un rythme différent du reste du pays. Elles restent belles et baignables une bonne partie de l'été, avec une météo souvent clémente de juin à août, alors que la côte ouest est sous la pluie. Leur véritable saison humide arrive plus tard, portée par la mousson du nord-est : octobre, novembre et début décembre y sont les mois les plus arrosés, novembre étant généralement le plus difficile. Une bonne raison de ne pas combiner Phuket et Koh Samui n'importe quand dans l'année.",
+      },
+      {
+        type: "h2",
+        text: "Combien de temps prévoir ?",
+      },
+      {
+        type: "ul",
+        items: [
+          "Dix jours : un premier aperçu, en se limitant à deux étapes — Bangkok et une île, ou Bangkok et le nord.",
+          "Deux semaines : le format le plus équilibré, avec un circuit culturel suivi d'une semaine de plage pour finir en douceur.",
+          "Trois semaines : de quoi ajouter l'Isan, le Triangle d'or ou une extension au Laos ou au Cambodge sans courir.",
+          "Comptez toujours un temps d'acclimatation à l'arrivée : le décalage horaire est de cinq à six heures, et le premier jour se passe rarement à visiter.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Nos conseils avant de réserver",
+      },
+      {
+        type: "ul",
+        items: [
+          "Choisissez d'abord la façade maritime, puis les dates : c'est la côte — andamane ou golfe — qui dicte le calendrier, pas l'inverse.",
+          "Évitez de finir un circuit par une île en pleine mousson locale : mieux vaut inverser l'ordre des étapes que subir cinq jours de pluie au moment de se reposer.",
+          "En haute saison, réservez les vols intérieurs en même temps que le vol international : ils se remplissent vite et leurs tarifs s'envolent.",
+          "Prévoyez une assurance couvrant les activités nautiques et une trousse adaptée à la chaleur humide ; une nuit d'hôtel avant le vol retour évite bien des imprévus.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Vous hésitez entre plusieurs périodes ou plusieurs régions ? C'est exactement le genre d'arbitrage que nous faisons avec vous : nous partons de vos dates et de vos envies pour construire un itinéraire qui tombe au bon moment, avec les bonnes étapes dans le bon ordre. Parlons-en, sans engagement.",
+      },
+    ],
+  },
   {
     slug: "quand-partir-aux-seychelles",
     title: "Quand partir aux Seychelles ? Le guide saison par saison",

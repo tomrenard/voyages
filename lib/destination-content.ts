@@ -467,7 +467,7 @@ const autresDestinationsContent: Record<string, DestinationContent> = {
       },
     ],
     bestSeason:
-      "Novembre à mars : saison sèche et chaleur agréable dans tout le pays. Le golfe de Thaïlande (Koh Samui) prend le relais d'avril à septembre.",
+      "Novembre à février : saison sèche et chaleur agréable sur la côte andamane (Phuket, Krabi) et dans le nord, où les brûlis dégradent l'air de fin février à avril. Les îles du golfe (Koh Samui) suivent un calendrier décalé, plus clément de février à août.",
     idealDuration: "12 à 16 jours",
     budgetFrom: 1900,
     faq: [
