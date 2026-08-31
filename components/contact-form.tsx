@@ -122,18 +122,39 @@ export function ContactForm() {
         />
       </div>
 
-      <div className="space-y-2">
-        <label htmlFor="phone" className="text-sm font-medium text-gray-700">
-          Téléphone
-        </label>
-        <input
-          id="phone"
-          name="phone"
-          type="tel"
-          autoComplete="tel"
-          className={inputClass}
-          placeholder="06 12 34 56 78"
-        />
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="space-y-2">
+          <label htmlFor="phone" className="text-sm font-medium text-gray-700">
+            Téléphone
+          </label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            autoComplete="tel"
+            className={inputClass}
+            placeholder="06 12 34 56 78"
+          />
+        </div>
+        <div className="space-y-2">
+          <label
+            htmlFor="postalCode"
+            className="text-sm font-medium text-gray-700"
+          >
+            Code postal
+          </label>
+          <input
+            id="postalCode"
+            name="postalCode"
+            type="text"
+            inputMode="numeric"
+            autoComplete="postal-code"
+            pattern="[0-9]{5}"
+            maxLength={5}
+            className={inputClass}
+            placeholder="35170"
+          />
+        </div>
       </div>
 
       <div className="space-y-2">

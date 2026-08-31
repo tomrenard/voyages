@@ -10,6 +10,9 @@ import { rateLimit } from "@/lib/rate-limit";
 
 const isEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
+// French postal codes are exactly five digits.
+const isPostalCode = (value: string) => /^\d{5}$/.test(value);
+
 const escapeHtml = (value: string) =>
   value
     .replace(/&/g, "&amp;")
@@ -50,6 +53,7 @@ export async function POST(request: Request) {
   const lastName = field("lastName");
   const email = field("email");
   const phone = field("phone", 30);
+  const postalCode = field("postalCode", 16);
   const destination = field("destination");
   const tripType = field("tripType", 50);
   const period = field("period", 100);
@@ -92,10 +96,19 @@ export async function POST(request: Request) {
     process.env.CONTACT_FROM ?? "Rêves de Voyages <contact@revesdevoyages.fr>";
   const fullName = `${firstName} ${lastName}`;
 
+  // Optional lead-qualification hint — a typo is forwarded flagged, never
+  // rejected (see the contact route for the same rule).
+  const postalCodeLabel = !postalCode
+    ? "non renseigné"
+    : isPostalCode(postalCode)
+      ? postalCode
+      : `${postalCode} (à vérifier)`;
+
   const rows: [string, string][] = [
     ["Nom", fullName],
     ["Email", email],
     ["Téléphone", phone || "non renseigné"],
+    ["Code postal", postalCodeLabel],
     ["Destination", destination],
     ["Type de voyage", tripType || "non précisé"],
     ["Période envisagée", period || "non précisée"],
