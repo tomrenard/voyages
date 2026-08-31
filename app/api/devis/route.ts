@@ -34,18 +34,25 @@ export async function POST(request: Request) {
     );
   }
 
-  let data: Record<string, unknown>;
+  // Parsed as `unknown` on purpose: a body of literal `null`, or a bare string
+  // or number, parses without throwing, and the property access below would
+  // then fail with an unhandled TypeError — a bare 500 instead of this 400.
+  let parsed: unknown;
   try {
-    data = await request.json();
+    parsed = await request.json();
   } catch {
     return NextResponse.json({ error: "Requête invalide." }, { status: 400 });
   }
+  if (typeof parsed !== "object" || parsed === null) {
+    return NextResponse.json({ error: "Requête invalide." }, { status: 400 });
+  }
+  const data = parsed as Record<string, unknown>;
 
   // Cap lengths server-side (client validation is advisory only) and strip
   // control characters so free text can never smuggle newlines into headers.
   const field = (key: string, max = 200) =>
     String(data[key] ?? "")
-      .replace(/[\r\n\t]+/g, " ")
+      .replace(/[\r\n\t\v\f\u0085\u2028\u2029]+/g, " ")
       .trim()
       .slice(0, max);
 
