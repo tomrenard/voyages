@@ -6,7 +6,7 @@ import { siteConfig } from "@/lib/site";
 import heroContact from "@/public/images/hero-contact.jpg";
 
 export const metadata: Metadata = {
-  title: "Devis Gratuit | Votre Voyage sur Mesure",
+  title: "Devis Gratuit pour un Voyage sur Mesure",
   description:
     "Demandez votre devis gratuit et sans engagement : destination, dates, budget. Rêves de Voyages construit une proposition personnalisée pour votre prochain voyage.",
   alternates: { canonical: "/devis" },

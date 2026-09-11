@@ -9,7 +9,7 @@ import { coupsDeCoeur } from "@/lib/destinations";
 import heroNew from "@/public/images/hero-new.jpg";
 
 export const metadata: Metadata = {
-  title: "Agence de Voyages près de Rennes (Bruz) | Sur-Mesure & Premium",
+  title: "Agence de Voyages Sur-Mesure et Premium près de Rennes (Bruz)",
   description:
     "Votre agence de voyages à Bruz, près de Rennes, depuis 2006 : voyages sur mesure, séjours, circuits et croisières. Conseil personnalisé en visio, par téléphone ou sur rendez-vous.",
   alternates: { canonical: "/agence-de-voyages-rennes" },

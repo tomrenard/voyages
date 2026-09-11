@@ -34,6 +34,15 @@ export async function POST(request: Request) {
     );
   }
 
+  // Require a JSON content type. Without it this route accepts a CORS *simple*
+  // request (text/plain), which crosses origins with no preflight and no CSRF
+  // guard, so any third-party page could make its visitors mail the agency —
+  // each from their own IP, and so past the rate limit above.
+  const contentType = request.headers.get("content-type") ?? "";
+  if (!contentType.toLowerCase().includes("application/json")) {
+    return NextResponse.json({ error: "Requête invalide." }, { status: 415 });
+  }
+
   // Parsed as `unknown` on purpose: a body of literal `null`, or a bare string
   // or number, parses without throwing, and the property access below would
   // then fail with an unhandled TypeError — a bare 500 instead of this 400.
@@ -43,7 +52,7 @@ export async function POST(request: Request) {
   } catch {
     return NextResponse.json({ error: "Requête invalide." }, { status: 400 });
   }
-  if (typeof parsed !== "object" || parsed === null) {
+  if (typeof parsed !== "object" || parsed === null || Array.isArray(parsed)) {
     return NextResponse.json({ error: "Requête invalide." }, { status: 400 });
   }
   const data = parsed as Record<string, unknown>;
@@ -52,7 +61,7 @@ export async function POST(request: Request) {
   // control characters so free text can never smuggle newlines into headers.
   const field = (key: string, max = 200) =>
     String(data[key] ?? "")
-      .replace(/[\r\n\t\v\f\u0085\u2028\u2029]+/g, " ")
+      .replace(/[\p{Cc}\p{Cf}\u2028\u2029]+/gu, " ")
       .trim()
       .slice(0, max);
 

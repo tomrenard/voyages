@@ -312,7 +312,6 @@ export function DevisForm({
               type="text"
               inputMode="numeric"
               autoComplete="postal-code"
-              pattern="[0-9]{5}"
               maxLength={5}
               className={inputClass}
               placeholder="35170"
