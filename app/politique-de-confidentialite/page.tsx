@@ -104,6 +104,15 @@ export default function PolitiqueDeConfidentialite() {
                   via les formulaires du site.
                 </li>
               </ul>
+              <p className="mt-2">
+                Ces deux prestataires sont établis aux États-Unis :
+                l’hébergement du site et l’acheminement de vos messages
+                impliquent donc un transfert de vos données hors de l’Union
+                européenne. Ces transferts sont encadrés par les clauses
+                contractuelles types de la Commission européenne et, le cas
+                échéant, par la certification de ces prestataires au cadre de
+                protection des données UE-États-Unis (Data Privacy Framework).
+              </p>
             </div>
           </section>
 
