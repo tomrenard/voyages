@@ -36,7 +36,7 @@ export default function MentionsLegales() {
               </p>
               <ul className="mt-2 list-inside list-disc space-y-1 pl-4">
                 <li>
-                  <strong>Dénomination</strong> : Rêves de Voyages — EURL{" "}
+                  <strong>Dénomination</strong> : Rêves de Voyages, EURL{" "}
                   {siteConfig.legalName}
                 </li>
                 <li>
@@ -108,7 +108,7 @@ export default function MentionsLegales() {
             <div className="leading-relaxed text-gray-600">
               <p>
                 Le site est hébergé par <strong>Vercel Inc.</strong>, 340 S
-                Lemon Ave #4133, Walnut, CA 91789, États-Unis —{" "}
+                Lemon Ave #4133, Walnut, CA 91789, États-Unis,{" "}
                 <a
                   href="https://vercel.com"
                   className="text-primary hover:underline"

@@ -133,12 +133,12 @@ export async function POST(request: Request) {
       from,
       to,
       replyTo: email,
-      subject: `Demande de devis — ${destination} — ${fullName}`,
+      subject: `Demande de devis : ${destination}, ${fullName}`,
       text: [
         ...rows.map(([label, value]) => `${label} : ${value}`),
         "",
         "Envies / précisions :",
-        message || "—",
+        message || "(non renseigné)",
       ].join("\n"),
       html: `
         <h2>Nouvelle demande de devis</h2>
@@ -151,7 +151,7 @@ export async function POST(request: Request) {
             .join("")}
         </table>
         <p><strong>Envies / précisions :</strong></p>
-        <p>${escapeHtml(message || "—").replace(/\n/g, "<br>")}</p>
+        <p>${escapeHtml(message || "(non renseigné)").replace(/\n/g, "<br>")}</p>
       `,
     });
 

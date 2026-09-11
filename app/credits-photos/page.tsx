@@ -33,7 +33,7 @@ export default function CreditsPhotos() {
                 <div>
                   <p className="font-medium text-gray-900">{credit.usage}</p>
                   <p className="text-sm text-gray-600">
-                    © {credit.author} —{" "}
+                    © {credit.author},{" "}
                     <a
                       href={credit.licenseUrl}
                       target="_blank"

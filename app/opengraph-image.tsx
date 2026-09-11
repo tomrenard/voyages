@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { siteConfig } from "@/lib/site";
 
 export const alt =
-  "Rêves de Voyages — agence de voyages indépendante, spécialiste du sur-mesure";
+  "Rêves de Voyages, agence de voyages indépendante, spécialiste du sur-mesure";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

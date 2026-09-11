@@ -57,7 +57,7 @@ export const articles: Article[] = [
       },
       {
         type: "p",
-        text: "Le thermomètre grimpe franchement, souvent au-delà de 35 °C à Bangkok et dans les plaines centrales, avec une humidité lourde en fin de période. Les journées de visite intensive deviennent éprouvantes, surtout avec de jeunes enfants. En revanche, la mer est chaude, les tarifs baissent et les sites touristiques respirent — en gardant en tête que le mois de mai est déjà nettement arrosé sur la côte andamane. Deux points à connaître : le nord (Chiang Mai, Chiang Rai) subit de fin février à avril la saison des brûlis agricoles, qui dégrade nettement la qualité de l'air et les panoramas ; et Songkran, le nouvel an thaï célébré à la mi-avril, transforme le pays en gigantesque bataille d'eau — une expérience mémorable, mais qui perturbe les transports.",
+        text: "Le thermomètre grimpe franchement, souvent au-delà de 35 °C à Bangkok et dans les plaines centrales, avec une humidité lourde en fin de période. Les journées de visite intensive deviennent éprouvantes, surtout avec de jeunes enfants. En revanche, la mer est chaude, les tarifs baissent et les sites touristiques respirent, en gardant en tête que le mois de mai est déjà nettement arrosé sur la côte andamane. Deux points à connaître : le nord (Chiang Mai, Chiang Rai) subit de fin février à avril la saison des brûlis agricoles, qui dégrade nettement la qualité de l'air et les panoramas ; et Songkran, le nouvel an thaï célébré à la mi-avril, transforme le pays en gigantesque bataille d'eau, une expérience mémorable, mais qui perturbe les transports.",
       },
       {
         type: "h2",
@@ -65,7 +65,7 @@ export const articles: Article[] = [
       },
       {
         type: "p",
-        text: "La mousson du sud-ouest arrose surtout la côte andamane — Phuket, Krabi, Khao Lak, Koh Lanta — avec un pic en septembre et octobre. Les averses sont souvent brèves et concentrées en fin de journée, mais la mer se creuse et certaines excursions en bateau sont annulées ; les îles Similan, par exemple, ferment une bonne partie de cette période. C'est aussi la saison la plus verte, la plus photogénique et la moins chère : pour un circuit culturel entre Bangkok, Chiang Mai et l'Isan, les mois de juin à août restent tout à fait praticables, à condition d'accepter une averse quotidienne.",
+        text: "La mousson du sud-ouest arrose surtout la côte andamane (Phuket, Krabi, Khao Lak, Koh Lanta), avec un pic en septembre et octobre. Les averses sont souvent brèves et concentrées en fin de journée, mais la mer se creuse et certaines excursions en bateau sont annulées ; les îles Similan, par exemple, ferment une bonne partie de cette période. C'est aussi la saison la plus verte, la plus photogénique et la moins chère : pour un circuit culturel entre Bangkok, Chiang Mai et l'Isan, les mois de juin à août restent tout à fait praticables, à condition d'accepter une averse quotidienne.",
       },
       {
         type: "h2",
@@ -82,7 +82,7 @@ export const articles: Article[] = [
       {
         type: "ul",
         items: [
-          "Dix jours : un premier aperçu, en se limitant à deux étapes — Bangkok et une île, ou Bangkok et le nord.",
+          "Dix jours : un premier aperçu, en se limitant à deux étapes (Bangkok et une île, ou Bangkok et le nord).",
           "Deux semaines : le format le plus équilibré, avec un circuit culturel suivi d'une semaine de plage pour finir en douceur.",
           "Trois semaines : de quoi ajouter l'Isan, le Triangle d'or ou une extension au Laos ou au Cambodge sans courir.",
           "Comptez toujours un temps d'acclimatation à l'arrivée : le décalage horaire est de cinq à six heures, et le premier jour se passe rarement à visiter.",
@@ -95,7 +95,7 @@ export const articles: Article[] = [
       {
         type: "ul",
         items: [
-          "Choisissez d'abord la façade maritime, puis les dates : c'est la côte — andamane ou golfe — qui dicte le calendrier, pas l'inverse.",
+          "Choisissez d'abord la façade maritime, puis les dates : c'est la côte, andamane ou golfe, qui dicte le calendrier, pas l'inverse.",
           "Évitez de finir un circuit par une île en pleine mousson locale : mieux vaut inverser l'ordre des étapes que subir cinq jours de pluie au moment de se reposer.",
           "En haute saison, réservez les vols intérieurs en même temps que le vol international : ils se remplissent vite et leurs tarifs s'envolent.",
           "Prévoyez une assurance couvrant les activités nautiques et une trousse adaptée à la chaleur humide ; une nuit d'hôtel avant le vol retour évite bien des imprévus.",
@@ -155,7 +155,7 @@ export const articles: Article[] = [
       {
         type: "ul",
         items: [
-          "Combinez plusieurs îles — Mahé, Praslin et La Digue — pour varier les paysages et les ambiances.",
+          "Combinez plusieurs îles (Mahé, Praslin et La Digue) pour varier les paysages et les ambiances.",
           "Réservez tôt pour les périodes de fêtes et les intersaisons, très demandées.",
           "Prévoyez au moins dix jours pour profiter sereinement, transferts inter-îles compris.",
         ],

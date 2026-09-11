@@ -68,8 +68,8 @@ export default function Contact() {
               </h3>
               <p className="mb-6 text-gray-600">
                 Agence indépendante, nous vous recevons sur rendez-vous et
-                restons disponibles par téléphone ou en visioconférence — et
-                Véronique peut se déplacer à votre domicile — pour préparer
+                restons disponibles par téléphone ou en visioconférence.
+                Véronique peut aussi se déplacer à votre domicile pour préparer
                 votre voyage en toute simplicité.
               </p>
               <div className="space-y-4">

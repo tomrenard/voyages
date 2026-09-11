@@ -206,7 +206,7 @@ export default async function DestinationPage({ params }: Props) {
           <p className="mx-auto mb-8 max-w-2xl text-lg text-white/90">
             Racontez-nous vos envies et vos dates : {siteConfig.advisor} vous
             prépare une proposition personnalisée, sans engagement. Prix
-            indicatifs — chaque voyage est unique, votre devis aussi.
+            indicatifs : chaque voyage est unique, votre devis aussi.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button

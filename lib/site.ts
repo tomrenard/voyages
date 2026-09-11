@@ -32,11 +32,11 @@ export const siteConfig = {
     atoutFrance: "IM035100033",
     guarantee:
       "APST (Association Professionnelle de Solidarité du Tourisme), Paris",
-    insurance: "MMA — contrat n° 129590224",
+    insurance: "MMA, contrat n° 129590224",
     // Médiation de la consommation (art. L612-1 Code de la consommation).
     mediator: {
       name: "MTV Médiation Tourisme Voyage",
-      address: "BP 80 303 — 75823 Paris Cedex 17",
+      address: "BP 80 303, 75823 Paris Cedex 17",
       url: "https://www.mtv.travel",
     },
   },

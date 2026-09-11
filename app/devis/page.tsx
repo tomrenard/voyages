@@ -6,9 +6,9 @@ import { siteConfig } from "@/lib/site";
 import heroContact from "@/public/images/hero-contact.jpg";
 
 export const metadata: Metadata = {
-  title: "Devis Gratuit — Votre Voyage sur Mesure",
+  title: "Devis Gratuit | Votre Voyage sur Mesure",
   description:
-    "Demandez votre devis gratuit et sans engagement : destination, dates, budget — Rêves de Voyages construit une proposition personnalisée pour votre prochain voyage.",
+    "Demandez votre devis gratuit et sans engagement : destination, dates, budget. Rêves de Voyages construit une proposition personnalisée pour votre prochain voyage.",
   alternates: { canonical: "/devis" },
 };
 
@@ -41,7 +41,7 @@ export default async function Devis({ searchParams }: Props) {
             {
               icon: ShieldCheck,
               title: "Sans engagement",
-              text: "Le devis est gratuit — vous décidez ensuite, librement.",
+              text: "Le devis est gratuit : vous décidez ensuite, librement.",
             },
           ].map((item, idx) => (
             <div
@@ -69,7 +69,7 @@ export default async function Devis({ searchParams }: Props) {
           >
             {siteConfig.phone}
           </a>{" "}
-          — {siteConfig.advisor} vous répond avec plaisir.
+          : {siteConfig.advisor} vous répond avec plaisir.
         </p>
       </div>
     </div>

@@ -330,7 +330,7 @@ export default function ConditionsDeVente() {
                 À défaut de réponse satisfaisante dans un délai de 60 jours, le
                 client peut saisir gratuitement le médiateur du Tourisme et du
                 Voyage : <strong>{legal.mediator.name}</strong>,{" "}
-                {legal.mediator.address} —{" "}
+                {legal.mediator.address},{" "}
                 <a
                   href={legal.mediator.url}
                   className="text-primary hover:underline"

@@ -107,7 +107,7 @@ export async function POST(request: Request) {
       from,
       to,
       replyTo: email,
-      subject: `Nouvelle demande de voyage — ${fullName}`,
+      subject: `Nouvelle demande de voyage : ${fullName}`,
       text: [
         `Nom : ${fullName}`,
         `Email : ${email}`,

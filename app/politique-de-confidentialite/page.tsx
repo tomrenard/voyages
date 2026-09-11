@@ -97,10 +97,10 @@ export default function PolitiqueDeConfidentialite() {
               </p>
               <ul className="mt-2 list-inside list-disc space-y-1 pl-4">
                 <li>
-                  <strong>Vercel Inc.</strong> — hébergement du site ;
+                  <strong>Vercel Inc.</strong> : hébergement du site ;
                 </li>
                 <li>
-                  <strong>Resend</strong> — acheminement des messages envoyés
+                  <strong>Resend</strong> : acheminement des messages envoyés
                   via les formulaires du site.
                 </li>
               </ul>

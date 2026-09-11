@@ -18,7 +18,7 @@ const faq = [
   {
     question: "Comment fonctionne votre agence de voyages ?",
     answer:
-      "Rêves de Voyages est une agence indépendante basée près de Rennes, sans boutique : les échanges se font par téléphone, en visioconférence ou en personne, sur rendez-vous — Véronique peut aussi se déplacer à votre domicile. Vous décrivez votre projet, Véronique construit une proposition personnalisée, vous l'affinez ensemble jusqu'à ce qu'elle soit parfaite — puis vous partez l'esprit tranquille, avec une assistance avant, pendant et après le voyage.",
+      "Rêves de Voyages est une agence indépendante basée près de Rennes, sans boutique : les échanges se font par téléphone, en visioconférence ou en personne, sur rendez-vous, et Véronique peut aussi se déplacer à votre domicile. Vous décrivez votre projet, Véronique construit une proposition personnalisée, vous l'affinez ensemble jusqu'à ce qu'elle soit parfaite, puis vous partez l'esprit tranquille, avec une assistance avant, pendant et après le voyage.",
   },
   {
     question: "Le devis est-il vraiment gratuit ?",
@@ -28,11 +28,11 @@ const faq = [
   {
     question: "Vos prix sont-ils plus chers qu'une réservation en ligne ?",
     answer:
-      "Rarement, et souvent l'inverse à prestations égales : nous travaillons avec les mêmes tour-opérateurs que les grandes enseignes et négocions les tarifs pour vous. Surtout, vous gagnez un conseil expert, un itinéraire réellement adapté et un interlocuteur unique en cas d'imprévu — ce qu'aucune plateforme n'offre.",
+      "Rarement, et souvent l'inverse à prestations égales : nous travaillons avec les mêmes tour-opérateurs que les grandes enseignes et négocions les tarifs pour vous. Surtout, vous gagnez un conseil expert, un itinéraire réellement adapté et un interlocuteur unique en cas d'imprévu, ce qu'aucune plateforme n'offre.",
   },
   {
     question: "Quelles garanties offre votre agence ?",
-    answer: `Nous sommes immatriculés au registre des opérateurs de voyages d'Atout France (${legal.atoutFrance}), couverts par la garantie financière de l'APST — qui protège vos fonds et votre rapatriement même en cas de défaillance — et par une assurance responsabilité civile professionnelle MMA.`,
+    answer: `Nous sommes immatriculés au registre des opérateurs de voyages d'Atout France (${legal.atoutFrance}), couverts par la garantie financière de l'APST (qui protège vos fonds et votre rapatriement même en cas de défaillance) et par une assurance responsabilité civile professionnelle MMA.`,
   },
   {
     question: "Comment se passe le paiement ?",
@@ -42,12 +42,12 @@ const faq = [
   {
     question: "Puis-je modifier ou annuler mon voyage ?",
     answer:
-      "Oui, selon les conditions de l'organisateur du voyage, communiquées avant la réservation. Des frais peuvent s'appliquer selon la date de la demande. Nous vous recommandons une assurance multirisque (annulation, bagages, rapatriement) — nous vous proposons systématiquement les options adaptées.",
+      "Oui, selon les conditions de l'organisateur du voyage, communiquées avant la réservation. Des frais peuvent s'appliquer selon la date de la demande. Nous vous recommandons une assurance multirisque (annulation, bagages, rapatriement) et vous proposons systématiquement les options adaptées.",
   },
   {
     question: "Qui s'occupe des formalités (passeport, visa, santé) ?",
     answer:
-      "Nous vous indiquons précisément les formalités nécessaires pour votre destination — passeport, visa, autorisations électroniques, recommandations sanitaires — et vous accompagnons dans les démarches avant le départ.",
+      "Nous vous indiquons précisément les formalités nécessaires pour votre destination (passeport, visa, autorisations électroniques, recommandations sanitaires) et vous accompagnons dans les démarches avant le départ.",
   },
   {
     question: "Que se passe-t-il en cas de problème pendant le voyage ?",

@@ -9,7 +9,7 @@ import { coupsDeCoeur } from "@/lib/destinations";
 import heroNew from "@/public/images/hero-new.jpg";
 
 export const metadata: Metadata = {
-  title: "Agence de Voyages près de Rennes (Bruz) — Sur-Mesure & Premium",
+  title: "Agence de Voyages près de Rennes (Bruz) | Sur-Mesure & Premium",
   description:
     "Votre agence de voyages à Bruz, près de Rennes, depuis 2006 : voyages sur mesure, séjours, circuits et croisières. Conseil personnalisé en visio, par téléphone ou sur rendez-vous.",
   alternates: { canonical: "/agence-de-voyages-rennes" },
@@ -19,7 +19,7 @@ const faq = [
   {
     question: "Où se trouve votre agence de voyages ?",
     answer:
-      "Rêves de Voyages est une agence indépendante basée à Bruz, dans la métropole rennaise. Nous ne recevons pas dans une boutique : nous vous conseillons sur rendez-vous, par téléphone, en visioconférence ou en personne — Véronique peut se déplacer à votre domicile. Un service plus souple, aux mêmes garanties qu'une agence de quartier.",
+      "Rêves de Voyages est une agence indépendante basée à Bruz, dans la métropole rennaise. Nous ne recevons pas dans une boutique : nous vous conseillons sur rendez-vous, par téléphone, en visioconférence ou en personne, et Véronique peut se déplacer à votre domicile. Un service plus souple, aux mêmes garanties qu'une agence de quartier.",
   },
   {
     question: "Quels types de voyages organisez-vous depuis Rennes ?",
@@ -33,7 +33,7 @@ const faq = [
   {
     question: "Pourquoi passer par une agence plutôt que réserver en ligne ?",
     answer:
-      "Un interlocuteur unique qui connaît vos envies, des itinéraires réellement personnalisés, une assistance avant, pendant et après le voyage — et la sécurité juridique et financière d'un professionnel immatriculé. En cas d'imprévu, vous n'êtes jamais seul.",
+      "Un interlocuteur unique qui connaît vos envies, des itinéraires réellement personnalisés, une assistance avant, pendant et après le voyage, et la sécurité juridique et financière d'un professionnel immatriculé. En cas d'imprévu, vous n'êtes jamais seul.",
   },
 ];
 
@@ -77,7 +77,7 @@ export default function AgenceDeVoyagesRennes() {
           </p>
           <p className="mb-8 text-lg leading-relaxed text-gray-600">
             {siteConfig.advisor}, votre conseillère dédiée, vous reçoit sur
-            rendez-vous, par téléphone ou en visioconférence — la proximité
+            rendez-vous, par téléphone ou en visioconférence : la proximité
             d&apos;une agence de quartier, la liberté en plus.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -100,12 +100,12 @@ export default function AgenceDeVoyagesRennes() {
             {
               icon: MapPin,
               title: "Ancrage local",
-              text: "Une agence indépendante de la métropole rennaise qui connaît ses clients par leur prénom — pas un centre d'appels.",
+              text: "Une agence indépendante de la métropole rennaise qui connaît ses clients par leur prénom, pas un centre d'appels.",
             },
             {
               icon: Video,
               title: "Conseil flexible",
-              text: "Rendez-vous en visio, par téléphone ou en personne — Véronique se déplace à votre domicile : votre projet avance à votre rythme, où que vous soyez.",
+              text: "Rendez-vous en visio, par téléphone ou en personne, et Véronique se déplace à votre domicile : votre projet avance à votre rythme, où que vous soyez.",
             },
             {
               icon: ShieldCheck,
@@ -180,7 +180,7 @@ export default function AgenceDeVoyagesRennes() {
               professionnalisme rare. Nous recommandons les yeux fermés ! »
             </p>
             <footer className="text-sm text-gray-500">
-              Un couple de voyageurs rennais —{" "}
+              Un couple de voyageurs rennais ·{" "}
               <Link href="/avis" className="text-primary hover:underline">
                 lire tous les avis
               </Link>

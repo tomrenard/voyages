@@ -27,7 +27,7 @@ export default function NosCoupsDeCoeur() {
         <div className="mx-auto mb-16 max-w-3xl text-center">
           <p className="text-lg leading-relaxed text-gray-600">
             Au fil des années et des voyages, certaines destinations nous ont
-            particulièrement marqués. Voici nos coups de cœur — ceux que nous
+            particulièrement marqués. Voici nos coups de cœur, ceux que nous
             prenons toujours autant de plaisir à faire découvrir.
           </p>
         </div>
@@ -77,7 +77,7 @@ export default function NosCoupsDeCoeur() {
           </h2>
           <p className="mx-auto mb-10 max-w-2xl text-center text-gray-600">
             D&apos;autres destinations que nous connaissons sur le bout des
-            doigts — et que nous préparons tout aussi volontiers sur mesure.
+            doigts, et que nous préparons tout aussi volontiers sur mesure.
           </p>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
             {autresDestinations.map((destination) => (

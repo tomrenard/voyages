@@ -61,7 +61,7 @@ export function DevisForm({
         </h3>
         <p className="max-w-md text-gray-600">
           Nous étudions votre projet et revenons vers vous très vite avec une
-          première proposition personnalisée — sans engagement.
+          première proposition personnalisée, sans engagement.
         </p>
         <Button
           variant="outline"

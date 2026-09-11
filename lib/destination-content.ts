@@ -28,7 +28,7 @@ const coupsDeCoeurContent: Record<string, DestinationContent> = {
     heroSubtitle: "La ville qui ne dort jamais, taillée à votre rythme",
     introTitle: "Pourquoi partir à New York ?",
     intro: [
-      "Première fois à Manhattan ou retour aux sources new-yorkaises : la ville se réinvente à chaque visite. Entre les classiques incontournables — Times Square, Central Park, la statue de la Liberté — et les quartiers qui montent, Brooklyn en tête, New York récompense ceux qui savent où aller.",
+      "Première fois à Manhattan ou retour aux sources new-yorkaises : la ville se réinvente à chaque visite. Entre les classiques incontournables (Times Square, Central Park, la statue de la Liberté) et les quartiers qui montent, Brooklyn en tête, New York récompense ceux qui savent où aller.",
       "Nous construisons votre séjour selon vos envies : l'hôtel au bon emplacement (le nerf de la guerre à New York), les pass qui valent vraiment le coup, les réservations à faire des semaines à l'avance et les adresses que l'on ne trouve pas dans les guides.",
     ],
     highlights: [
@@ -50,7 +50,7 @@ const coupsDeCoeurContent: Record<string, DestinationContent> = {
       },
     ],
     bestSeason:
-      "Mai-juin et septembre-octobre pour la douceur, décembre pour la magie de Noël — chaque saison a son New York.",
+      "Mai-juin et septembre-octobre pour la douceur, décembre pour la magie de Noël : chaque saison a son New York.",
     idealDuration: "5 à 8 jours",
     budgetFrom: 1400,
     faq: [
@@ -81,7 +81,7 @@ const coupsDeCoeurContent: Record<string, DestinationContent> = {
     introTitle: "Pourquoi partir en Sicile orientale ?",
     intro: [
       "De Taormine, suspendue entre mer et Etna, aux ruelles baroques de Noto et de Raguse, la Sicile orientale concentre le meilleur de l'île : des paysages spectaculaires, un patrimoine exceptionnel classé à l'UNESCO et une cuisine qui, à elle seule, justifie le voyage.",
-      "En autotour, en circuit privé avec chauffeur ou en séjour rayonnant depuis une adresse de charme, nous composons l'itinéraire qui vous ressemble — avec nos maisons d'hôtes préférées, nos tables testées et les visites qui font la différence.",
+      "En autotour, en circuit privé avec chauffeur ou en séjour rayonnant depuis une adresse de charme, nous composons l'itinéraire qui vous ressemble, avec nos maisons d'hôtes préférées, nos tables testées et les visites qui font la différence.",
     ],
     highlights: [
       {
@@ -90,7 +90,7 @@ const coupsDeCoeurContent: Record<string, DestinationContent> = {
       },
       {
         title: "L'ascension de l'Etna",
-        text: "Le plus haut volcan actif d'Europe se gravit en 4x4, à pied ou en téléphérique — une expérience lunaire inoubliable, dégustation de vins de l'Etna en prime.",
+        text: "Le plus haut volcan actif d'Europe se gravit en 4x4, à pied ou en téléphérique, une expérience lunaire inoubliable, dégustation de vins de l'Etna en prime.",
       },
       {
         title: "Syracuse et Ortigia",
@@ -138,7 +138,7 @@ const coupsDeCoeurContent: Record<string, DestinationContent> = {
     highlights: [
       {
         title: "La baie d'Halong en jonque",
-        text: "Une nuit à bord d'une jonque traditionnelle au cœur des 2 000 pitons calcaires — préférez la baie de Lan Ha ou de Bai Tu Long, plus confidentielles.",
+        text: "Une nuit à bord d'une jonque traditionnelle au cœur des 2 000 pitons calcaires : préférez la baie de Lan Ha ou de Bai Tu Long, plus confidentielles.",
       },
       {
         title: "Les rizières du Haut-Tonkin",
@@ -193,7 +193,7 @@ const coupsDeCoeurContent: Record<string, DestinationContent> = {
       },
       {
         title: "La Grande Barrière de corail",
-        text: "Depuis Cairns ou Port Douglas, plongée ou snorkeling sur le plus grand récif corallien du monde — et les forêts tropicales du Daintree juste à côté.",
+        text: "Depuis Cairns ou Port Douglas, plongée ou snorkeling sur le plus grand récif corallien du monde, avec les forêts tropicales du Daintree juste à côté.",
       },
       {
         title: "Uluru et le Centre Rouge",
@@ -205,7 +205,7 @@ const coupsDeCoeurContent: Record<string, DestinationContent> = {
       },
     ],
     bestSeason:
-      "Septembre à novembre et mars à mai pour combiner sud et nord dans de bonnes conditions — nous optimisons l'itinéraire selon vos dates.",
+      "Septembre à novembre et mars à mai pour combiner sud et nord dans de bonnes conditions : nous optimisons l'itinéraire selon vos dates.",
     idealDuration: "3 semaines et plus",
     budgetFrom: 3500,
     faq: [
@@ -301,7 +301,7 @@ const coupsDeCoeurContent: Record<string, DestinationContent> = {
       },
       {
         title: "Assouan la nubienne",
-        text: "Felouques autour de l'île Éléphantine, jardins de Kitchener, villages nubiens colorés — et l'excursion inoubliable vers Abou Simbel.",
+        text: "Felouques autour de l'île Éléphantine, jardins de Kitchener, villages nubiens colorés, sans oublier l'excursion inoubliable vers Abou Simbel.",
       },
       {
         title: "La vie à bord",
@@ -316,7 +316,7 @@ const coupsDeCoeurContent: Record<string, DestinationContent> = {
       {
         question: "Bateau de croisière ou dahabieh : que choisir ?",
         answer:
-          "Le bateau 5★ offre confort et animations à prix doux ; la dahabieh, voilier d'une dizaine de cabines, privilégie le charme et les escales confidentielles. Deux ambiances, deux budgets — nous vous aidons à trancher.",
+          "Le bateau 5★ offre confort et animations à prix doux ; la dahabieh, voilier d'une dizaine de cabines, privilégie le charme et les escales confidentielles. Deux ambiances, deux budgets : nous vous aidons à trancher.",
       },
       {
         question: "Quel budget pour une croisière sur le Nil ?",
@@ -341,8 +341,8 @@ const autresDestinationsContent: Record<string, DestinationContent> = {
     heroSubtitle: "Lagons émeraude et douceur créole : l'île de l'hospitalité",
     introTitle: "Pourquoi partir à l'île Maurice ?",
     intro: [
-      "Maurice a ce don rare de plaire à tout le monde : plages de sable blanc ourlées de filaos, lagons paisibles, montagnes spectaculaires comme le Morne Brabant, terres aux sept couleurs de Chamarel — et surtout une hospitalité créole qui donne envie de revenir avant même d'être reparti.",
-      "Chaque côte a son caractère : le nord animé et ses grands hôtels, l'est et ses plages immaculées, le sud sauvage autour de Blue Bay, l'ouest et ses couchers de soleil face au Morne. Nous choisissons avec vous la région, l'hôtel et le rythme qui correspondent à votre projet — lune de miel, vacances en famille ou pur farniente.",
+      "Maurice a ce don rare de plaire à tout le monde : plages de sable blanc ourlées de filaos, lagons paisibles, montagnes spectaculaires comme le Morne Brabant, terres aux sept couleurs de Chamarel, et surtout une hospitalité créole qui donne envie de revenir avant même d'être reparti.",
+      "Chaque côte a son caractère : le nord animé et ses grands hôtels, l'est et ses plages immaculées, le sud sauvage autour de Blue Bay, l'ouest et ses couchers de soleil face au Morne. Nous choisissons avec vous la région, l'hôtel et le rythme qui correspondent à votre projet, qu'il s'agisse d'une lune de miel, de vacances en famille ou de pur farniente.",
     ],
     highlights: [
       {
@@ -380,7 +380,7 @@ const autresDestinationsContent: Record<string, DestinationContent> = {
       {
         question: "Faut-il un visa pour l'île Maurice ?",
         answer:
-          "Non : pour les ressortissants français, un passeport valide couvrant la durée du séjour et un billet retour suffisent pour un séjour touristique. L'anglais et le français sont parlés partout — un dépaysement sans barrière de langue.",
+          "Non : pour les ressortissants français, un passeport valide couvrant la durée du séjour et un billet retour suffisent pour un séjour touristique. L'anglais et le français sont parlés partout, un dépaysement sans barrière de langue.",
       },
     ],
   },
@@ -432,7 +432,7 @@ const autresDestinationsContent: Record<string, DestinationContent> = {
       {
         question: "Quand partir aux Seychelles ?",
         answer:
-          "Les intersaisons (avril-mai, octobre-novembre) offrent les meilleures conditions : mer d'huile et chaleur douce. Notre article « Quand partir aux Seychelles ? » détaille la météo saison par saison — demandez-nous conseil selon vos dates.",
+          "Les intersaisons (avril-mai, octobre-novembre) offrent les meilleures conditions : mer d'huile et chaleur douce. Notre article « Quand partir aux Seychelles ? » détaille la météo saison par saison. Demandez-nous conseil selon vos dates.",
       },
     ],
   },
@@ -445,7 +445,7 @@ const autresDestinationsContent: Record<string, DestinationContent> = {
       "Temples dorés, sourires et plages de rêve : le royaume aux mille visages",
     introTitle: "Pourquoi partir en Thaïlande ?",
     intro: [
-      "La Thaïlande porte bien son surnom de pays du sourire : entre les temples étincelants de Bangkok, les montagnes du nord autour de Chiang Mai, les marchés flottants et les plages bordées de falaises karstiques du sud, elle offre l'un des plus beaux condensés d'Asie — accessible, accueillant et étonnamment doux pour le budget.",
+      "La Thaïlande porte bien son surnom de pays du sourire : entre les temples étincelants de Bangkok, les montagnes du nord autour de Chiang Mai, les marchés flottants et les plages bordées de falaises karstiques du sud, elle offre l'un des plus beaux condensés d'Asie, à la fois accessible, accueillant et étonnamment doux pour le budget.",
       "Circuit culturel au nord puis farniente dans les îles, ou séjour balnéaire ponctué d'escapades : nous construisons l'équilibre qui vous ressemble, avec nos guides francophones, nos hôtels testés et les étapes qui évitent les foules.",
     ],
     highlights: [
