@@ -3,6 +3,7 @@ import articleCroisiere from "@/public/images/article-croisiere.jpg";
 import articleEurope from "@/public/images/article-europe.jpg";
 import articleNoces from "@/public/images/article-noces.jpg";
 import articleSeychelles from "@/public/images/article-seychelles.jpg";
+import articleSoleilHiver from "@/public/images/article-soleil-hiver.jpg";
 import destThailande from "@/public/images/dest-thailande.jpg";
 import type { StaticImageData } from "next/image";
 
@@ -22,10 +23,108 @@ export type Article = {
   image: StaticImageData;
   imageAlt: string;
   readingTime: string;
+  /** Destination slugs (lib/destinations.ts) linked under the article. */
+  destinations?: string[];
   content: ArticleBlock[];
 };
 
 export const articles: Article[] = [
+  {
+    slug: "ou-partir-au-soleil-en-hiver",
+    title: "Où partir au soleil en hiver ? Notre guide mois par mois",
+    excerpt:
+      "Antilles, Canaries, Égypte, Thaïlande… Où trouver le soleil en décembre, en février ou en mars, à moins de cinq heures de vol ou à l'autre bout du monde. Notre sélection mois par mois.",
+    date: "2026-10-18",
+    author: siteConfig.advisor,
+    category: "Séjours",
+    image: articleSoleilHiver,
+    imageAlt:
+      "Le lagon turquoise et les cocotiers de la plage de Sainte-Anne, en Guadeloupe",
+    readingTime: "6 min",
+    destinations: [
+      "croisiere-sur-le-nil",
+      "thailande",
+      "vietnam",
+      "seychelles",
+      "ile-maurice",
+    ],
+    content: [
+      {
+        type: "p",
+        text: "Quand la Bretagne passe en mode pluie et ciel bas, l'envie de soleil devient pressante. Bonne nouvelle : de décembre à mars, il fait beau et chaud dans beaucoup d'endroits du monde. Le piège, c'est que la saison idéale change d'une destination à l'autre, et qu'un mois parfait pour la Thaïlande peut tomber en pleine saison des pluies à l'île Maurice. Voici où partir selon le temps de vol que vous êtes prêt à accepter, et les erreurs de calendrier à éviter.",
+      },
+      {
+        type: "h2",
+        text: "À moins de cinq heures de vol : les Canaries et l'Égypte",
+      },
+      {
+        type: "p",
+        text: "Les Canaries sont la valeur sûre de l'hiver européen. Comptez autour de 20 à 23 °C en journée tout l'hiver, sans décalage horaire avec la France, ou presque : une heure de moins seulement. Tenerife et Grande Canarie offrent le plus de variété, entre volcans, villages et plages ; Lanzarote et Fuerteventura séduisent par leurs paysages lunaires et leurs longues plages battues par le vent. La mer reste fraîche, autour de 19 °C : idéal pour la randonnée et le farniente, moins pour de longues baignades.",
+      },
+      {
+        type: "p",
+        text: "L'Égypte est l'autre grande option proche. L'hiver est la meilleure saison pour visiter Louxor, Assouan et la vallée des Rois : il fait autour de 23 à 26 °C le jour, loin des chaleurs écrasantes de l'été. C'est le moment parfait pour une croisière sur le Nil, que l'on peut prolonger par quelques jours au bord de la mer Rouge, où l'eau reste agréable pour le snorkeling. Prévoyez une petite laine : les nuits dans le désert sont fraîches.",
+      },
+      {
+        type: "h2",
+        text: "Les Antilles françaises : le soleil sans passeport",
+      },
+      {
+        type: "p",
+        text: "De décembre à avril, la Guadeloupe et la Martinique vivent leur saison sèche, le « carême » : 27 à 30 °C, une mer à 26 °C et des alizés qui rafraîchissent l'air. Huit heures et demie de vol depuis Paris, pas de passeport, l'euro et le français : c'est la destination soleil la plus simple pour une famille. On y combine facilement plage, randonnée dans la forêt tropicale, distilleries et îles voisines comme Marie-Galante ou les Saintes. Seul bémol, c'est la haute saison : les vols et les hébergements des vacances de février partent très tôt.",
+      },
+      {
+        type: "h2",
+        text: "Le grand départ : l'Asie en saison sèche",
+      },
+      {
+        type: "p",
+        text: "L'hiver est la meilleure période pour une grande partie de l'Asie du Sud-Est. En Thaïlande, la côte andamane (Phuket, Krabi, Koh Lanta) est au sommet de sa forme de décembre à mars, avec une mer calme et un ciel dégagé. Au Sri Lanka, c'est la saison idéale pour la côte ouest et le sud, et aux Maldives la saison sèche s'installe pour plusieurs mois.",
+      },
+      {
+        type: "p",
+        text: "Le Vietnam demande plus de finesse, car le pays s'étire sur près de 1 700 kilomètres. Le sud (Hô Chi Minh-Ville, le delta du Mékong, Phú Quốc) est chaud et sec tout l'hiver, alors que le nord est frais : Hanoï et la baie d'Halong tournent autour de 15 à 20 °C en février, souvent sous un ciel gris. Un circuit du nord au sud reste tout à fait possible, à condition de prévoir quelques couches et de finir par le soleil du sud.",
+      },
+      {
+        type: "h2",
+        text: "Océan Indien et Pacifique : attention au calendrier",
+      },
+      {
+        type: "p",
+        text: "C'est là que les mauvaises surprises arrivent. De janvier à mars, l'île Maurice, La Réunion et la Polynésie française sont en été austral : il fait très chaud, l'humidité est forte et c'est la période où le risque de cyclone est le plus élevé. On peut tout à fait y partir, mais en connaissance de cause et avec une assurance adaptée. Pour Maurice, novembre et décembre sont un bien meilleur choix que février. Aux Seychelles, plus proches de l'équateur et hors de la trajectoire des cyclones, l'hiver est chaud et ponctué d'averses souvent brèves : la destination reste très agréable, même si avril et mai sont encore plus calmes.",
+      },
+      {
+        type: "h2",
+        text: "Notre sélection mois par mois",
+      },
+      {
+        type: "ul",
+        items: [
+          "Décembre : île Maurice, Thaïlande, Égypte, Canaries. Pour les fêtes, réservez dès la fin de l'été.",
+          "Janvier : Antilles, Thaïlande, sud du Vietnam, Sri Lanka. Le mois le plus calme et souvent le plus abordable après les fêtes.",
+          "Février : Antilles, Canaries, croisière sur le Nil, Thaïlande, Maldives. Le mois le plus demandé à cause des vacances scolaires.",
+          "Mars : Antilles, Égypte, Thaïlande, Vietnam. Les prix baissent, la météo reste excellente presque partout.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Nos conseils avant de réserver",
+      },
+      {
+        type: "ul",
+        items: [
+          "Pour les vacances de février (zone B pour l'académie de Rennes), réservez dès l'automne : les meilleurs vols et les hébergements familiaux partent en premier.",
+          "Regardez la température de l'eau, pas seulement celle de l'air : 22 °C dehors aux Canaries ne veut pas dire une mer chaude.",
+          "Comparez le temps de vol et la durée du séjour : une semaine suffit pour les Canaries ou l'Égypte, comptez au moins dix jours pour les Antilles et deux semaines pour l'Asie.",
+          "Vérifiez les formalités de chaque pays (passeport, visa, validité du passeport) bien avant le départ, surtout pour les enfants.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Vous hésitez entre deux destinations ou vous ne savez pas laquelle tombe au bon moment pour vos dates ? C'est notre métier : nous partons de vos dates, de votre budget et de vos envies pour vous proposer le bon soleil, au bon endroit. Parlons-en, sans engagement.",
+      },
+    ],
+  },
   {
     slug: "quand-partir-en-thailande",
     title: "Quand partir en Thaïlande ? Le guide par saison et par région",
@@ -38,6 +137,7 @@ export const articles: Article[] = [
     imageAlt:
       "La plage de Railay et ses falaises calcaires, dans la province de Krabi, en Thaïlande",
     readingTime: "6 min",
+    destinations: ["thailande"],
     content: [
       {
         type: "p",
@@ -119,6 +219,7 @@ export const articles: Article[] = [
     imageAlt:
       "Rochers de granit, cocotiers et eaux turquoise sur une plage des Seychelles",
     readingTime: "5 min",
+    destinations: ["seychelles"],
     content: [
       {
         type: "p",

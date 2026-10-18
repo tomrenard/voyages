@@ -28,11 +28,12 @@ suffit généralement à respecter ces conditions.
 
 ## Articles & galerie
 
-| Image                                  | Usage                       | Auteur         | Licence          | Source                                                                                                         |
-| -------------------------------------- | --------------------------- | -------------- | ---------------- | -------------------------------------------------------------------------------------------------------------- |
-| `public/images/article-seychelles.jpg` | Article Seychelles          | A.Savin        | Free Art License | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:La_Digue_asv2024-10_img22_Union_Estate.jpg)        |
-| `public/images/article-croisiere.jpg`  | Article croisières          | Corey Seeman   | CC BY-SA 4.0     | [Wikimedia Commons](<https://commons.wikimedia.org/wiki/File:Icon_of_the_Seas_Puerto_Rico_2025_(cropped).jpg>) |
-| `public/images/article-noces.jpg`      | Article voyage de noces     | TomasEE        | CC BY 3.0        | [Wikimedia Commons](<https://commons.wikimedia.org/wiki/File:Oia_sunset_-_panoramio_(2).jpg>)                  |
-| `public/images/article-europe.jpg`     | Article week-ends en Europe | Moyan Brenn    | CC BY 2.0        | [Wikimedia Commons](<https://commons.wikimedia.org/wiki/File:Prague_(6365119737).jpg>)                         |
-| `public/images/galerie-safari.jpg`     | Galerie                     | Mario Falcetti | CC BY 4.0        | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Tanzania-_Serengeti_National_Park-_elefante.jpg)   |
-| `public/images/galerie-machu.jpg`      | Galerie                     | Draceane       | CC BY-SA 4.0     | [Wikimedia Commons](<https://commons.wikimedia.org/wiki/File:Machu_Picchu,_2023_(012).jpg>)                    |
+| Image                                    | Usage                       | Auteur         | Licence          | Source                                                                                                         |
+| ---------------------------------------- | --------------------------- | -------------- | ---------------- | -------------------------------------------------------------------------------------------------------------- |
+| `public/images/article-soleil-hiver.jpg` | Article soleil en hiver     | KoS            | CC BY-SA 3.0     | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Plage_Sainte_Anne.JPG)                             |
+| `public/images/article-seychelles.jpg`   | Article Seychelles          | A.Savin        | Free Art License | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:La_Digue_asv2024-10_img22_Union_Estate.jpg)        |
+| `public/images/article-croisiere.jpg`    | Article croisières          | Corey Seeman   | CC BY-SA 4.0     | [Wikimedia Commons](<https://commons.wikimedia.org/wiki/File:Icon_of_the_Seas_Puerto_Rico_2025_(cropped).jpg>) |
+| `public/images/article-noces.jpg`        | Article voyage de noces     | TomasEE        | CC BY 3.0        | [Wikimedia Commons](<https://commons.wikimedia.org/wiki/File:Oia_sunset_-_panoramio_(2).jpg>)                  |
+| `public/images/article-europe.jpg`       | Article week-ends en Europe | Moyan Brenn    | CC BY 2.0        | [Wikimedia Commons](<https://commons.wikimedia.org/wiki/File:Prague_(6365119737).jpg>)                         |
+| `public/images/galerie-safari.jpg`       | Galerie                     | Mario Falcetti | CC BY 4.0        | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Tanzania-_Serengeti_National_Park-_elefante.jpg)   |
+| `public/images/galerie-machu.jpg`        | Galerie                     | Draceane       | CC BY-SA 4.0     | [Wikimedia Commons](<https://commons.wikimedia.org/wiki/File:Machu_Picchu,_2023_(012).jpg>)                    |
