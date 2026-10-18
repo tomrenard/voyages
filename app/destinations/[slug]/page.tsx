@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { CalendarDays, Clock, Wallet, ChevronRight } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 import { Button } from "@/components/ui/button";
+import { articles } from "@/lib/articles";
 import { allDestinations } from "@/lib/destinations";
 import {
   destinationContent,
@@ -87,6 +88,10 @@ export default async function DestinationPage({ params }: Props) {
       })),
     },
   ];
+
+  const relatedArticles = articles.filter((a) =>
+    a.destinations?.includes(slug),
+  );
 
   // Deterministic rotation: each page cross-links the next three destinations.
   const idx = allDestinations.findIndex((d) => d.slug === slug);
@@ -251,6 +256,31 @@ export default async function DestinationPage({ params }: Props) {
             ))}
           </div>
         </div>
+
+        {relatedArticles.length > 0 && (
+          <div className="mx-auto mb-16 max-w-3xl">
+            <h2 className="mb-6 text-center font-serif text-2xl font-bold text-gray-900">
+              Nos articles pour préparer votre voyage
+            </h2>
+            <ul className="space-y-3">
+              {relatedArticles.map((article) => (
+                <li key={article.slug}>
+                  <Link
+                    href={`/actualites/${article.slug}`}
+                    className="hover:border-primary block rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-colors"
+                  >
+                    <span className="block font-serif text-lg font-bold text-gray-900">
+                      {article.title}
+                    </span>
+                    <span className="mt-1 block text-sm text-gray-600">
+                      {article.excerpt}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         {/* Other destinations */}
         <div>
