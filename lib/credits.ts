@@ -90,6 +90,13 @@ export const photoCredits: PhotoCredit[] = [
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Railay_Beach_5.jpg",
   },
   {
+    usage: "Article : Soleil en hiver",
+    author: "KoS",
+    license: "CC BY-SA 3.0",
+    licenseUrl: CC_BY_SA_3,
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Plage_Sainte_Anne.JPG",
+  },
+  {
     usage: "Article : Seychelles",
     author: "A.Savin",
     license: "Free Art License",

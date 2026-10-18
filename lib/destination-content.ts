@@ -154,7 +154,7 @@ const coupsDeCoeurContent: Record<string, DestinationContent> = {
       },
     ],
     bestSeason:
-      "Octobre à avril pour le sud et le centre ; septembre-novembre et mars-mai pour le nord. Nous calons l'itinéraire sur les saisons de chaque région.",
+      "Décembre à avril pour le sud ; février à août pour le centre (Hué, Hoi An), à éviter d'octobre à décembre (pluies et typhons) ; septembre-novembre et mars-mai pour le nord. Nous calons l'itinéraire sur les saisons de chaque région.",
     idealDuration: "12 à 18 jours",
     budgetFrom: 2200,
     faq: [

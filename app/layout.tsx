@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
-// Canary-only API — react/react-dom are intentionally pinned to a canary for
-// this, paired with the ::view-transition-*(crossfade) rules in globals.css.
+// Stable since React 19.3; paired with the ::view-transition-*(crossfade)
+// rules in globals.css.
 import { ViewTransition } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import cn from "clsx";

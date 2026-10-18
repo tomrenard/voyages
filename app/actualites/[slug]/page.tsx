@@ -5,6 +5,7 @@ import { Calendar, User, Clock, ArrowLeft } from "lucide-react";
 import { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { articles, getArticle, type ArticleBlock } from "@/lib/articles";
+import { allDestinations } from "@/lib/destinations";
 import { siteConfig, siteUrl } from "@/lib/site";
 
 type Params = { slug: string };
@@ -79,6 +80,12 @@ export default async function ArticlePage({
   if (!article) notFound();
 
   const formattedDate = dateFormatter.format(new Date(article.date));
+  // Throws on a mistyped slug so the static build fails instead of dropping it.
+  const related = (article.destinations ?? []).map((slug) => {
+    const destination = allDestinations.find((d) => d.slug === slug);
+    if (!destination) throw new Error(`Unknown destination slug: ${slug}`);
+    return destination;
+  });
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -187,6 +194,26 @@ export default async function ArticlePage({
               <Block key={i} block={block} />
             ))}
           </div>
+
+          {related.length > 0 && (
+            <nav aria-label="Destinations évoquées" className="mt-12">
+              <h2 className="mb-4 font-serif text-xl font-bold text-gray-900">
+                Les destinations de cet article
+              </h2>
+              <ul className="flex flex-wrap gap-3">
+                {related.map((d) => (
+                  <li key={d.slug}>
+                    <Link
+                      href={`/destinations/${d.slug}`}
+                      className="hover:border-primary hover:text-primary inline-block rounded-full border border-gray-200 px-4 py-2 text-sm text-gray-700 transition-colors"
+                    >
+                      {d.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
 
           <div className="mt-14 flex items-start gap-5 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm md:p-8">
             <div className="bg-primary/10 text-primary flex h-14 w-14 shrink-0 items-center justify-center rounded-full font-serif text-xl font-bold">
