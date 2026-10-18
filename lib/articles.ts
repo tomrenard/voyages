@@ -40,7 +40,7 @@ export const articles: Article[] = [
     image: articleSoleilHiver,
     imageAlt:
       "Le lagon turquoise et les cocotiers de la plage de Sainte-Anne, en Guadeloupe",
-    readingTime: "6 min",
+    readingTime: "4 min",
     destinations: [
       "croisiere-sur-le-nil",
       "thailande",
@@ -100,7 +100,7 @@ export const articles: Article[] = [
       {
         type: "ul",
         items: [
-          "Décembre : île Maurice, Thaïlande, Égypte, Canaries. Pour les fêtes, réservez dès la fin de l'été.",
+          "Décembre : île Maurice, Antilles, Thaïlande, Égypte, Canaries. Pour les fêtes, réservez le plus tôt possible : les places partent dès la fin de l'été.",
           "Janvier : Antilles, Thaïlande, sud du Vietnam, Sri Lanka. Le mois le plus calme et souvent le plus abordable après les fêtes.",
           "Février : Antilles, Canaries, croisière sur le Nil, Thaïlande, Maldives. Le mois le plus demandé à cause des vacances scolaires.",
           "Mars : Antilles, Égypte, Thaïlande, Vietnam. Les prix baissent, la météo reste excellente presque partout.",
