@@ -7,7 +7,7 @@ import { destinationContent } from "@/lib/destination-content";
 // Hardcoded (not `new Date()`) so every build doesn't claim everything was
 // updated today — that erodes crawl-scheduling credibility. Bump when you
 // ship a real content change to these pages.
-const CONTENT_LAST_MODIFIED = new Date("2026-07-17");
+const CONTENT_LAST_MODIFIED = new Date("2026-10-18");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = CONTENT_LAST_MODIFIED;

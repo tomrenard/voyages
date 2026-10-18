@@ -90,6 +90,22 @@ export const photoCredits: PhotoCredit[] = [
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Railay_Beach_5.jpg",
   },
   {
+    usage: "Destination : Japon",
+    author: "Martin Falbisoner",
+    license: "CC BY-SA 4.0",
+    licenseUrl: CC_BY_SA_4,
+    sourceUrl:
+      "https://commons.wikimedia.org/wiki/File:Kiyomizu-dera,_Kyoto,_November_2016_-01.jpg",
+  },
+  {
+    usage: "Destination : Grèce",
+    author: "Manfred Werner (Tsui)",
+    license: "CC BY-SA 4.0",
+    licenseUrl: CC_BY_SA_4,
+    sourceUrl:
+      "https://commons.wikimedia.org/wiki/File:Mandrakia_%CE%9C%CE%B1%CE%BD%CE%B4%CF%81%CE%AC%CE%BA%CE%B9%CE%B1_Milos_%CE%9C%CE%AE%CE%BB%CE%BF%CF%82_2021-11-12_2402.jpg",
+  },
+  {
     usage: "Article : Soleil en hiver",
     author: "KoS",
     license: "CC BY-SA 3.0",

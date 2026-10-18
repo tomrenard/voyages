@@ -4,6 +4,8 @@ import coupNil from "@/public/images/coup-nil.jpg";
 import coupPolynesie from "@/public/images/coup-polynesie.jpg";
 import coupSicile from "@/public/images/coup-sicile.jpg";
 import coupVietnam from "@/public/images/coup-vietnam.jpg";
+import destGrece from "@/public/images/dest-grece.jpg";
+import destJapon from "@/public/images/dest-japon.jpg";
 import destMaurice from "@/public/images/dest-maurice.jpg";
 import destSeychelles from "@/public/images/dest-seychelles.jpg";
 import destThailande from "@/public/images/dest-thailande.jpg";
@@ -112,6 +114,24 @@ export const autresDestinations: Destination[] = [
     image: destThailande,
     imageAlt:
       "La plage de Railay bordée de falaises karstiques, dans la province de Krabi, en Thaïlande",
+  },
+  {
+    slug: "japon",
+    title: "Japon",
+    blurb:
+      "Temples de Kyoto, néons de Tokyo, auberges traditionnelles et sources chaudes : un pays fascinant où tradition et modernité se côtoient à chaque coin de rue.",
+    image: destJapon,
+    imageAlt:
+      "Le temple Kiyomizu-dera entouré d'érables rouges en automne, à Kyoto, au Japon",
+  },
+  {
+    slug: "grece",
+    title: "Grèce",
+    blurb:
+      "Villages blancs des Cyclades, criques turquoise et sites antiques : la Grèce se vit d'île en île, entre baignades, tavernes et histoire.",
+    image: destGrece,
+    imageAlt:
+      "Les maisons de pêcheurs colorées et la crique turquoise de Mandrakia, sur l'île de Milos, en Grèce",
   },
 ];
 

@@ -488,6 +488,109 @@ const autresDestinationsContent: Record<string, DestinationContent> = {
       },
     ],
   },
+  japon: {
+    slug: "japon",
+    metaTitle: "Voyage au Japon sur Mesure",
+    metaDescription:
+      "Le Japon sur mesure avec Rêves de Voyages : Tokyo, Kyoto, Alpes japonaises, ryokans et onsen. Circuit personnalisé, devis gratuit depuis Rennes.",
+    heroSubtitle:
+      "Temples millénaires, mégapoles futuristes et art de vivre raffiné",
+    introTitle: "Pourquoi partir au Japon ?",
+    intro: [
+      "Aucun pays ne ressemble au Japon. En quelques heures de train, on passe des carrefours géants de Tokyo aux ruelles de bois de Kyoto, d'un jardin zen à une auberge de montagne où l'on dîne en yukata avant de se plonger dans une source chaude. Le pays est d'une sécurité rare, d'une propreté étonnante et d'une politesse qui marque tous les voyageurs.",
+      "Pour un premier voyage, la langue et l'organisation peuvent intimider : trains, réservations de ryokans, choix des étapes. C'est là que nous intervenons, avec un itinéraire fluide, des hébergements choisis et des guides francophones aux étapes où ils font la différence.",
+    ],
+    highlights: [
+      {
+        title: "Tokyo, la ville-monde",
+        text: "Shibuya et ses foules, le sanctuaire Meiji au cœur de la forêt, les ruelles d'Asakusa et les quartiers branchés : une capitale qui se découvre quartier par quartier.",
+      },
+      {
+        title: "Kyoto et Nara",
+        text: "Plus de 1 600 temples, le quartier des geishas de Gion, les milliers de portiques rouges du Fushimi Inari et les cerfs en liberté de Nara : le cœur historique du pays.",
+      },
+      {
+        title: "Les Alpes japonaises",
+        text: "Takayama et ses maisons de marchands, les fermes aux toits de chaume de Shirakawa-go, Kanazawa et son jardin Kenroku-en : le Japon rural et authentique.",
+      },
+      {
+        title: "Ryokans et onsen",
+        text: "Une nuit dans une auberge traditionnelle, avec tatamis, dîner kaiseki et bain dans les sources chaudes : l'expérience que nos voyageurs citent le plus souvent au retour.",
+      },
+    ],
+    bestSeason:
+      "Fin mars à mai pour les cerisiers en fleurs et la douceur du printemps ; octobre et novembre pour les couleurs d'automne. Juin et début juillet sont pluvieux, l'été est chaud et humide, et les typhons touchent surtout août et septembre.",
+    idealDuration: "14 à 18 jours",
+    budgetFrom: 3200,
+    faq: [
+      {
+        question: "Faut-il un visa pour le Japon ?",
+        answer:
+          "Les ressortissants français sont exemptés de visa pour les séjours touristiques de moins de 90 jours, avec un passeport valide pendant tout le séjour. Nous vous confirmons les formalités en vigueur au moment de la réservation.",
+      },
+      {
+        question: "Quel budget pour un voyage au Japon ?",
+        answer:
+          "À partir de 3 200 € par personne pour deux semaines (vols internationaux, trains, hôtels et une nuit en ryokan, quelques visites guidées), selon saison et prestations. Le printemps et l'automne sont les périodes les plus demandées et les plus chères.",
+      },
+      {
+        question: "Le Japan Rail Pass est-il toujours intéressant ?",
+        answer:
+          "Plus forcément, depuis la forte hausse de son prix en octobre 2023. Selon votre itinéraire, des billets à l'unité ou des pass régionaux reviennent souvent moins cher : nous faisons le calcul pour vous.",
+      },
+    ],
+  },
+  grece: {
+    slug: "grece",
+    metaTitle: "Voyage en Grèce sur Mesure",
+    metaDescription:
+      "La Grèce sur mesure avec Rêves de Voyages : Athènes, combiné d'îles des Cyclades, Péloponnèse et Météores. Séjour personnalisé, devis gratuit depuis Rennes.",
+    heroSubtitle: "Îles blanches, mer turquoise et trésors de l'Antiquité",
+    introTitle: "Pourquoi partir en Grèce ?",
+    intro: [
+      "À un peu plus de trois heures de vol de Paris, la Grèce offre ce que l'on attend d'un été réussi : des villages blanchis à la chaux, des criques aux eaux limpides, des tavernes les pieds dans l'eau et des sites antiques parmi les plus célèbres du monde. Sans passeport, avec l'euro, et pourtant le dépaysement est total.",
+      "Le vrai défi, c'est de choisir. Plus de 200 îles habitées, des ferries aux horaires qui changent selon la saison, des hébergements qui se remplissent très tôt : nous construisons votre combiné d'îles dans le bon ordre, avec des liaisons réalistes et des adresses à taille humaine.",
+    ],
+    highlights: [
+      {
+        title: "Athènes et l'Acropole",
+        text: "Le Parthénon au lever du jour, le musée de l'Acropole, les ruelles de Plaka et les toits-terrasses : deux jours pour commencer en beauté.",
+      },
+      {
+        title: "Le combiné Cyclades",
+        text: "Santorin et sa caldeira, Naxos la généreuse, Paros la charmante, Milos et ses criques sculptées : deux ou trois îles bien choisies valent mieux que cinq en courant.",
+      },
+      {
+        title: "Le Péloponnèse",
+        text: "Nauplie, la plus jolie ville de Grèce continentale, le théâtre d'Épidaure, Mycènes et Olympie : un road trip entre histoire et villages de bord de mer.",
+      },
+      {
+        title: "Les Météores",
+        text: "Des monastères perchés au sommet de pitons rocheux, au centre du pays : l'un des paysages les plus saisissants d'Europe.",
+      },
+    ],
+    bestSeason:
+      "Mai, juin et septembre : chaleur supportable et moins de monde, avec une mer encore fraîche en mai et agréable dès juin. Juillet et août sont très chauds et très fréquentés, avec le meltem qui souffle fort sur les Cyclades. De novembre à mars, beaucoup d'hôtels insulaires ferment et les liaisons en ferry sont nettement réduites.",
+    idealDuration: "10 à 15 jours",
+    budgetFrom: 1500,
+    faq: [
+      {
+        question: "Faut-il un passeport pour la Grèce ?",
+        answer:
+          "Non : la carte d'identité en cours de validité suffit pour les ressortissants français, la Grèce faisant partie de l'Union européenne et de l'espace Schengen.",
+      },
+      {
+        question: "Combien d'îles visiter en une semaine ou deux ?",
+        answer:
+          "Comptez deux îles pour une semaine et trois au maximum pour deux semaines, en restant dans le même archipel pour limiter les heures de ferry. Prévoir trois ou quatre nuits par île permet de vraiment en profiter.",
+      },
+      {
+        question: "Quel budget pour un séjour en Grèce ?",
+        answer:
+          "À partir de 1 500 € par personne pour dix jours entre Athènes et deux îles des Cyclades (vols, ferries, hôtels de charme), selon saison et prestations. Juillet et août coûtent nettement plus cher.",
+      },
+    ],
+  },
 };
 
 /** Every destination landing page, keyed by slug (coups de cœur + autres). */

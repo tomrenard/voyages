@@ -278,6 +278,7 @@ export const articles: Article[] = [
     image: articleCroisiere,
     imageAlt: "Grand navire de croisière moderne naviguant en pleine mer",
     readingTime: "6 min",
+    destinations: ["croisiere-sur-le-nil"],
     content: [
       {
         type: "p",
