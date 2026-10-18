@@ -497,7 +497,7 @@ const autresDestinationsContent: Record<string, DestinationContent> = {
       "Temples millénaires, mégapoles futuristes et art de vivre raffiné",
     introTitle: "Pourquoi partir au Japon ?",
     intro: [
-      "Aucun pays ne ressemble au Japon. En quelques heures de train, on passe des carrefours géants de Tokyo aux ruelles de bois de Kyoto, d'un jardin zen à une auberge de montagne où l'on dîne en kimono avant de se plonger dans une source chaude. Le pays est d'une sécurité rare, d'une propreté étonnante et d'une politesse qui marque tous les voyageurs.",
+      "Aucun pays ne ressemble au Japon. En quelques heures de train, on passe des carrefours géants de Tokyo aux ruelles de bois de Kyoto, d'un jardin zen à une auberge de montagne où l'on dîne en yukata avant de se plonger dans une source chaude. Le pays est d'une sécurité rare, d'une propreté étonnante et d'une politesse qui marque tous les voyageurs.",
       "Pour un premier voyage, la langue et l'organisation peuvent intimider : trains, réservations de ryokans, choix des étapes. C'est là que nous intervenons, avec un itinéraire fluide, des hébergements choisis et des guides francophones aux étapes où ils font la différence.",
     ],
     highlights: [
@@ -507,7 +507,7 @@ const autresDestinationsContent: Record<string, DestinationContent> = {
       },
       {
         title: "Kyoto et Nara",
-        text: "Plus de 1 600 temples, le quartier des geishas de Gion, les milliers de portiques rouges du Fushimi Inari et les daims en liberté de Nara : le cœur historique du pays.",
+        text: "Plus de 1 600 temples, le quartier des geishas de Gion, les milliers de portiques rouges du Fushimi Inari et les cerfs en liberté de Nara : le cœur historique du pays.",
       },
       {
         title: "Les Alpes japonaises",
@@ -536,7 +536,7 @@ const autresDestinationsContent: Record<string, DestinationContent> = {
       {
         question: "Le Japan Rail Pass est-il toujours intéressant ?",
         answer:
-          "Plus systématiquement depuis la forte hausse de son prix en 2023. Selon votre itinéraire, des billets à l'unité ou des pass régionaux reviennent souvent moins cher : nous faisons le calcul pour vous.",
+          "Plus forcément, depuis la forte hausse de son prix en octobre 2023. Selon votre itinéraire, des billets à l'unité ou des pass régionaux reviennent souvent moins cher : nous faisons le calcul pour vous.",
       },
     ],
   },
@@ -570,7 +570,7 @@ const autresDestinationsContent: Record<string, DestinationContent> = {
       },
     ],
     bestSeason:
-      "Mai, juin et septembre : mer déjà chaude, chaleur supportable et moins de monde. Juillet et août sont très chauds et très fréquentés, avec le meltem qui souffle fort sur les Cyclades. De novembre à mars, beaucoup d'hôtels insulaires ferment et les ferries sont rares.",
+      "Mai, juin et septembre : chaleur supportable et moins de monde, avec une mer encore fraîche en mai et agréable dès juin. Juillet et août sont très chauds et très fréquentés, avec le meltem qui souffle fort sur les Cyclades. De novembre à mars, beaucoup d'hôtels insulaires ferment et les liaisons en ferry sont nettement réduites.",
     idealDuration: "10 à 15 jours",
     budgetFrom: 1500,
     faq: [
