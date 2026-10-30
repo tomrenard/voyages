@@ -1,4 +1,5 @@
 import { siteConfig } from "@/lib/site";
+import articleBudget from "@/public/images/article-budget.jpg";
 import articleCroisiere from "@/public/images/article-croisiere.jpg";
 import articleEurope from "@/public/images/article-europe.jpg";
 import articleNoces from "@/public/images/article-noces.jpg";
@@ -6,6 +7,18 @@ import articleSeychelles from "@/public/images/article-seychelles.jpg";
 import articleSoleilHiver from "@/public/images/article-soleil-hiver.jpg";
 import destThailande from "@/public/images/dest-thailande.jpg";
 import type { StaticImageData } from "next/image";
+import { allDestinations } from "@/lib/destinations";
+import { getDestinationContent } from "@/lib/destination-content";
+
+// Budgets come from the destination pages, so the article never drifts from them.
+const destinationBudgets = allDestinations.flatMap((d) => {
+  const content = getDestinationContent(d.slug);
+  return content
+    ? [
+        `${d.title} : à partir de ${content.budgetFrom.toLocaleString("fr-FR")} € par personne, pour ${content.idealDuration}.`,
+      ]
+    : [];
+});
 
 export type ArticleBlock =
   | { type: "p"; text: string }
@@ -29,6 +42,88 @@ export type Article = {
 };
 
 export const articles: Article[] = [
+  {
+    slug: "combien-coute-un-voyage-sur-mesure",
+    title: "Combien coûte un voyage sur mesure ? Budgets et conseils",
+    excerpt:
+      "Vols, hébergement, saison, durée : ce qui fait le prix d'un voyage sur mesure, nos budgets indicatifs par destination et nos conseils pour partir au meilleur prix.",
+    date: "2026-10-30",
+    author: siteConfig.advisor,
+    category: "Sur-mesure",
+    image: articleBudget,
+    imageAlt:
+      "Petit-déjeuner servi sur la terrasse d'un hôtel, face aux palmiers et à l'océan",
+    readingTime: "6 min",
+    destinations: [
+      "sicile-orientale",
+      "vietnam",
+      "japon",
+      "polynesie-francaise",
+    ],
+    content: [
+      {
+        type: "p",
+        text: "C'est souvent la première question : combien coûte un voyage sur mesure ? La réponse dépend de vos envies, mais un voyage sur mesure n'est pas réservé aux gros budgets. Vous ne payez que ce qui compte pour vous, et chaque euro est placé là où il fait la différence.",
+      },
+      {
+        type: "h2",
+        text: "Ce qui fait le prix d'un voyage",
+      },
+      {
+        type: "ul",
+        items: [
+          "Les vols : la période, la classe et l'anticipation de la réservation pèsent le plus sur un long-courrier.",
+          "L'hébergement : hôtel de charme, palace, maison d'hôtes ou nuit chez l'habitant, l'écart peut aller du simple au triple.",
+          "La saison : haute saison, vacances scolaires et fêtes font monter les prix, l'intersaison les fait baisser.",
+          "La durée : plus le vol est long, plus il faut de jours sur place pour qu'il en vaille la peine.",
+          "Les prestations sur place : guide privé, chauffeur, excursions, transferts, pension.",
+          "Le nombre de voyageurs : certaines prestations privées coûtent moins cher par personne à quatre qu'à deux.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Nos budgets indicatifs par destination",
+      },
+      {
+        type: "p",
+        text: "Voici les points de départ de nos destinations, par personne. Ce sont des repères : le prix réel dépend de la saison, de la durée et des prestations que vous choisissez.",
+      },
+      {
+        type: "ul",
+        items: destinationBudgets,
+      },
+      {
+        type: "h2",
+        text: "Le sur mesure coûte-t-il plus cher qu'un circuit catalogue ?",
+      },
+      {
+        type: "p",
+        text: "Pas forcément. Un circuit catalogue inclut souvent des étapes, des repas ou des excursions qui ne vous intéressent pas. En sur mesure, nous partons de vos envies et de votre budget : vous pouvez dormir dans un hôtel simple et bien situé pour vous offrir une nuit d'exception ailleurs, ou remplacer une excursion de groupe par une journée libre.",
+      },
+      {
+        type: "h2",
+        text: "Nos conseils pour maîtriser votre budget",
+      },
+      {
+        type: "ul",
+        items: [
+          "Réservez tôt : six à neuf mois à l'avance pour un long-courrier ou les vacances scolaires.",
+          "Partez en intersaison : le climat est souvent agréable et les prix plus doux.",
+          "Choisissez la bonne durée : mieux vaut moins d'étapes, bien choisies, que trop de trajets.",
+          "Mélangez les hébergements : une belle adresse pour les moments forts, des hôtels simples pour les étapes.",
+          "Donnez-nous votre budget dès le départ : nous construisons la proposition autour, sans mauvaise surprise.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Combien coûte le devis ?",
+      },
+      {
+        type: "p",
+        text: "Rien : le devis est gratuit et sans engagement. Racontez-nous votre projet, votre période et votre budget, et nous vous envoyons une première proposition personnalisée.",
+      },
+    ],
+  },
   {
     slug: "ou-partir-au-soleil-en-hiver",
     title: "Où partir au soleil en hiver ? Notre guide mois par mois",

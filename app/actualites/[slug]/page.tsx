@@ -255,7 +255,7 @@ export default async function ArticlePage({
               size="lg"
               className="bg-primary hover:bg-primary/90 text-white"
             >
-              <Link href="/contact">Demander un devis gratuit</Link>
+              <Link href="/devis">Demander un devis gratuit</Link>
             </Button>
           </div>
         </div>

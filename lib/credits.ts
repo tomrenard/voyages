@@ -37,6 +37,13 @@ export const photoCredits: PhotoCredit[] = [
     sourceUrl: "https://unsplash.com/photos/4ozvhBh2LoY",
   },
   {
+    usage: "Article : Combien coûte un voyage sur mesure",
+    author: "Meg von Haartman",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/CUzSnBTrtwg",
+  },
+  {
     usage: "Coup de cœur : New York",
     author: "Mike Chavarri",
     license: "Licence Unsplash",
