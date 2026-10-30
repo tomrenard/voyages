@@ -23,6 +23,55 @@ const FAL = "https://artlibre.org/licence/lal/en/";
 
 export const photoCredits: PhotoCredit[] = [
   {
+    usage: "Contact et devis (clavier d'ordinateur)",
+    author: "Glenn Carstens-Peters",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/npxXWgQ33ZQ",
+  },
+  {
+    usage: "FAQ et plan du site (barque, lac de Braies)",
+    author: "Pietro De Grandi",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/6U4wogjLArk",
+  },
+  {
+    usage: "Avis clients",
+    author: "Brooke Cagle",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/g1Kr4Ozfoac",
+  },
+  {
+    usage: "Actualités (plume)",
+    author: "Aaron Burden",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/y02jEX_B0O0",
+  },
+  {
+    usage: "Croisières (navire dans la brume, Alaska)",
+    author: "Robert Thiemann",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/nyV8YOotRXI",
+  },
+  {
+    usage: "Circuits (lac de Braies, Italie)",
+    author: "Pietro De Grandi",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/T7K4aEPoGGk",
+  },
+  {
+    usage: "Week-end (Tower Bridge, Londres)",
+    author: "Benjamin Davies",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/Oja2ty_9ZLM",
+  },
+  {
     usage: "Voyage sur mesure (piscine à débordement, Péloponnèse)",
     author: "DD GR",
     license: "Licence Unsplash",
@@ -121,7 +170,7 @@ export const photoCredits: PhotoCredit[] = [
     sourceUrl: "https://unsplash.com/photos/9fqwGqGLUxc",
   },
   {
-    usage: "L'agence : boussole",
+    usage: "Accueil, section agence : boussole",
     author: "Chris Lawton",
     license: "Licence Unsplash",
     licenseUrl: UNSPLASH,

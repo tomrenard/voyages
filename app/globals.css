@@ -39,8 +39,8 @@
   --radius-xl: 2px;
   --radius-2xl: 3px;
   --radius-3xl: 4px;
-  --shadow-sm: none;
-  --shadow-md: none;
+  --shadow-sm: 0 0 #0000;
+  --shadow-md: 0 0 #0000;
   --shadow-lg: 0 24px 48px -24px rgb(33 29 24 / 0.25);
   --shadow-xl: 0 24px 48px -24px rgb(33 29 24 / 0.25);
 

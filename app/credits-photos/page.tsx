@@ -16,11 +16,12 @@ export default function CreditsPhotos() {
           Crédits photos
         </h1>
         <p className="mx-auto mb-12 max-w-2xl text-center text-gray-600">
-          Certaines photographies de ce site proviennent de Wikimedia Commons et
-          sont publiées sous licence libre (Creative Commons / Licence Art
-          Libre). Conformément à ces licences, nous en créditons les auteurs
-          ci-dessous. Ces images ont pu être redimensionnées ou recadrées pour
-          les besoins du site ; elles restent soumises à leur licence d'origine.
+          La plupart des photographies de ce site proviennent d'Unsplash
+          (licence Unsplash) ; quelques-unes viennent de Wikimedia Commons, sous
+          licence libre (Creative Commons / Licence Art Libre). Conformément à
+          ces licences, nous en créditons les auteurs ci-dessous. Ces images ont
+          pu être redimensionnées ou recadrées pour les besoins du site ; elles
+          restent soumises à leur licence d'origine.
         </p>
 
         <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm">

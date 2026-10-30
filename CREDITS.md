@@ -1,9 +1,9 @@
 # Crédits photos
 
-Les photos de l'accueil et des destinations viennent d'**Unsplash** (licence
-Unsplash : usage commercial libre, crédit non obligatoire, donné ici par
-courtoisie). Les autres viennent de Wikimedia Commons sous licence Creative
-Commons, qui **impose de créditer l'auteur** : la page `/credits-photos` le fait.
+La plupart des photos viennent d'**Unsplash** (licence Unsplash : usage
+commercial libre, crédit non obligatoire, donné ici par courtoisie). Quelques
+photos d'articles et de la galerie viennent de Wikimedia Commons, sous licences
+qui **imposent de créditer l'auteur** : la page `/credits-photos` le fait.
 
 > À remplacer idéalement par les propres photos de l'agence.
 
@@ -37,6 +37,13 @@ Commons, qui **impose de créditer l'auteur** : la page `/credits-photos` le fai
 | `public/images/gallery-2.jpg`           | Galerie (lac Moraine, Canada)                          | James Wheeler               | Unsplash | [Unsplash](https://unsplash.com/photos/AFC0XvICMgs) |
 | `public/images/gallery-3.jpg`           | Galerie (Dubaï)                                        | Nahel Hadi                  | Unsplash | [Unsplash](https://unsplash.com/photos/v06n2uxb-Fs) |
 | `public/images/gallery-4.jpg`           | Galerie (îles Perhentian, Malaisie)                    | Muhammad Syahir Othman      | Unsplash | [Unsplash](https://unsplash.com/photos/woymfMHJjuM) |
+| `public/images/hero-contact.jpg`        | Contact et devis (clavier d'ordinateur)                | Glenn Carstens-Peters       | Unsplash | [Unsplash](https://unsplash.com/photos/npxXWgQ33ZQ) |
+| `public/images/hero-bg.jpg`             | FAQ et plan du site (barque, lac de Braies)            | Pietro De Grandi            | Unsplash | [Unsplash](https://unsplash.com/photos/6U4wogjLArk) |
+| `public/images/avis.jpg`                | Avis clients                                           | Brooke Cagle                | Unsplash | [Unsplash](https://unsplash.com/photos/g1Kr4Ozfoac) |
+| `public/images/actualites.jpg`          | Actualités (plume)                                     | Aaron Burden                | Unsplash | [Unsplash](https://unsplash.com/photos/y02jEX_B0O0) |
+| `public/images/croisiere.jpg`           | Croisières (navire dans la brume, Alaska)              | Robert Thiemann             | Unsplash | [Unsplash](https://unsplash.com/photos/nyV8YOotRXI) |
+| `public/images/circuit.jpg`             | Circuits (lac de Braies, Italie)                       | Pietro De Grandi            | Unsplash | [Unsplash](https://unsplash.com/photos/T7K4aEPoGGk) |
+| `public/images/weekend.jpg`             | Week-end (Tower Bridge, Londres)                       | Benjamin Davies             | Unsplash | [Unsplash](https://unsplash.com/photos/Oja2ty_9ZLM) |
 | `public/images/dest-grece.jpg`          | Grèce (Météores)                                       | Jason Mavrommatis           | Unsplash | [Unsplash](https://unsplash.com/photos/nk3YzS10bLU) |
 
 ## Articles & galerie

@@ -22,7 +22,7 @@ const destinationBudgets = allDestinations.flatMap((d) => {
   return content
     ? [
         {
-          text: `${d.title} : à partir de ${formatEuros(content.budgetFrom)} € par personne`,
+          text: `${d.title} : à partir de ${formatEuros(content.budgetFrom)}\u00a0€ par personne`,
           href: `/destinations/${d.slug}`,
         },
       ]
@@ -182,7 +182,7 @@ export const articles: Article[] = [
       },
       {
         question: "À partir de quel budget partir en voyage sur mesure ?",
-        answer: `Sur nos destinations, les budgets de départ commencent à ${formatEuros(lowestBudget)} € par personne, vols compris.`,
+        answer: `Sur nos destinations, les budgets de départ commencent à ${formatEuros(lowestBudget)}\u00a0€ par personne, vols compris.`,
       },
     ],
   },

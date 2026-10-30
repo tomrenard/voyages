@@ -54,9 +54,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  // No title/description/url here: layout values were inherited by every page
-  // without its own openGraph, so shares showed the homepage. Without them,
-  // Facebook and X fall back to each page's <title> and meta description.
+  // No title/description/url here: they were inherited by every page without
+  // its own openGraph, so shares showed the homepage. Next now derives og: and
+  // twitter: title/description from each page's own metadata.
   openGraph: {
     type: "website",
     locale: "fr_FR",

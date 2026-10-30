@@ -12,7 +12,7 @@ import heroNew from "@/public/images/hero-new.jpg";
 export const metadata: Metadata = {
   title: "Galerie Photos",
   description:
-    "Inspirez-vous avec les photos de voyages de nos clients et de nos repérages aux quatre coins du monde.",
+    "Plages, montagnes, villes et grands sites : une galerie d'inspirations pour imaginer votre prochain voyage sur mesure.",
   alternates: { canonical: "/galerie" },
 };
 
