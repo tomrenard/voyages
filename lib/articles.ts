@@ -135,7 +135,7 @@ export const articles: Article[] = [
     category: "Circuits",
     image: destThailande,
     imageAlt:
-      "La plage de Railay et ses falaises calcaires, dans la province de Krabi, en Thaïlande",
+      "Un bateau à longue queue entre les falaises karstiques du lac Cheow Lan, parc national de Khao Sok, en Thaïlande",
     readingTime: "6 min",
     destinations: ["thailande"],
     content: [
