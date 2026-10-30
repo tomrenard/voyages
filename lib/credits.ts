@@ -23,6 +23,48 @@ const FAL = "https://artlibre.org/licence/lal/en/";
 
 export const photoCredits: PhotoCredit[] = [
   {
+    usage: "L'agence (aile d'avion au-dessus des nuages)",
+    author: "Johny Goerend",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/KB9r_hTzyeQ",
+  },
+  {
+    usage: "Nos coups de cœur (Horseshoe Bend, Arizona)",
+    author: "Fabrizio Coco",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/9H2T9Yh45RM",
+  },
+  {
+    usage: "Galerie et page Rennes (Carpates)",
+    author: "R_ INVSCIMENTO",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/Nuy4BBPz83A",
+  },
+  {
+    usage: "L'agence (Pura Ulun Danu Bratan, Bali)",
+    author: "Santhosh Mocharla",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/tMkp36b1qRk",
+  },
+  {
+    usage: "Croisières (Geirangerfjord, Norvège)",
+    author: "Bernhard",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/nOqp5DLsdcA",
+  },
+  {
+    usage: "Voyage sur mesure (Manarola, Italie)",
+    author: "Jack Ward",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/rknrvCrfS1k",
+  },
+  {
     usage: "Accueil : dunes de Port Waikato (Nouvelle-Zélande)",
     author: "Petr Vyšohlíd",
     license: "Licence Unsplash",

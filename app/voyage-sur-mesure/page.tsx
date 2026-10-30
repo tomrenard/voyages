@@ -102,7 +102,7 @@ export default function VoyageSurMesure() {
           <div className="relative h-[500px] overflow-hidden rounded-xl shadow-xl">
             <Image
               src={contentSurMesure}
-              alt="Préparation voyage"
+              alt="Le village de Manarola au coucher du soleil, dans les Cinque Terre, en Italie"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"

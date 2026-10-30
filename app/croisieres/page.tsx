@@ -65,7 +65,7 @@ export default function Croisieres() {
           <div className="relative h-[400px] overflow-hidden rounded-xl shadow-xl">
             <Image
               src={contentCroisiere}
-              alt="Navire de croisière"
+              alt="Le Geirangerfjord et la cascade des Sept Sœurs, en Norvège"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"

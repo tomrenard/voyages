@@ -52,7 +52,7 @@ export default function RevesDeVoyages() {
           <div className="relative h-[500px] overflow-hidden rounded-xl shadow-2xl">
             <Image
               src={aboutReves}
-              alt="Véronique, votre conseillère voyages"
+              alt="Le temple Pura Ulun Danu Bratan sur le lac Bratan, à Bali"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
