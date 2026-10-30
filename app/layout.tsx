@@ -22,6 +22,9 @@ const display = Cormorant_Garamond({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
+  // Not preloaded: on phones it competed with the hero photo (the LCP) for
+  // bandwidth. Headings paint in the size-matched fallback, then swap.
+  preload: false,
 });
 
 const text = Inter_Tight({
