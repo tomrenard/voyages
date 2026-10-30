@@ -1,6 +1,6 @@
 /**
- * Photo attributions. The site uses freely-licensed images from Wikimedia
- * Commons; CC-BY / CC-BY-SA / FAL licenses require visible credit, surfaced on
+ * Photo attributions. The site uses freely-licensed images from Unsplash and
+ * Wikimedia Commons; CC-BY / CC-BY-SA / FAL licenses require visible credit, surfaced on
  * the /credits-photos page.
  */
 
@@ -17,93 +17,248 @@ const CC_BY_3 = "https://creativecommons.org/licenses/by/3.0/";
 const CC_BY_4 = "https://creativecommons.org/licenses/by/4.0/";
 const CC_BY_SA_3 = "https://creativecommons.org/licenses/by-sa/3.0/";
 const CC_BY_SA_4 = "https://creativecommons.org/licenses/by-sa/4.0/";
+// Unsplash photos need no credit; listed anyway, as a courtesy.
+const UNSPLASH = "https://unsplash.com/license";
 const FAL = "https://artlibre.org/licence/lal/en/";
 
 export const photoCredits: PhotoCredit[] = [
   {
+    usage: "Contact et devis (clavier d'ordinateur)",
+    author: "Glenn Carstens-Peters",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/npxXWgQ33ZQ",
+  },
+  {
+    usage: "FAQ et plan du site (barque, lac de Braies)",
+    author: "Pietro De Grandi",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/6U4wogjLArk",
+  },
+  {
+    usage: "Avis clients",
+    author: "Brooke Cagle",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/g1Kr4Ozfoac",
+  },
+  {
+    usage: "Actualités (plume)",
+    author: "Aaron Burden",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/y02jEX_B0O0",
+  },
+  {
+    usage: "Croisières (navire dans la brume, Alaska)",
+    author: "Robert Thiemann",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/nyV8YOotRXI",
+  },
+  {
+    usage: "Circuits (lac de Braies, Italie)",
+    author: "Pietro De Grandi",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/T7K4aEPoGGk",
+  },
+  {
+    usage: "Week-end (Tower Bridge, Londres)",
+    author: "Benjamin Davies",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/Oja2ty_9ZLM",
+  },
+  {
+    usage: "Voyage sur mesure (piscine à débordement, Péloponnèse)",
+    author: "DD GR",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/q398gpsqxeY",
+  },
+  {
+    usage: "Séjours (villas sur pilotis, Maldives)",
+    author: "Upgraded Points",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/AjBzl6gdCL0",
+  },
+  {
+    usage: "Article croisières (pont d'un navire, Caraïbes)",
+    author: "AO NURA",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/-ybBN9gaERY",
+  },
+  {
+    usage: "Galerie (Oahu, Hawaï)",
+    author: "Sean Oulashin",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/KMn4VEeEPR8",
+  },
+  {
+    usage: "Galerie (lac Moraine, Canada)",
+    author: "James Wheeler",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/AFC0XvICMgs",
+  },
+  {
+    usage: "Galerie (Dubaï)",
+    author: "Nahel Hadi",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/v06n2uxb-Fs",
+  },
+  {
+    usage: "Galerie (îles Perhentian, Malaisie)",
+    author: "Muhammad Syahir Othman",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/woymfMHJjuM",
+  },
+  {
+    usage: "L'agence (aile d'avion au-dessus des nuages)",
+    author: "Johny Goerend",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/KB9r_hTzyeQ",
+  },
+  {
+    usage: "Nos coups de cœur (Horseshoe Bend, Arizona)",
+    author: "Fabrizio Coco",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/9H2T9Yh45RM",
+  },
+  {
+    usage: "Galerie et page Rennes (Carpates)",
+    author: "R_ INVSCIMENTO",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/Nuy4BBPz83A",
+  },
+  {
+    usage: "L'agence (Pura Ulun Danu Bratan, Bali)",
+    author: "Santhosh Mocharla",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/tMkp36b1qRk",
+  },
+  {
+    usage: "Croisières (Geirangerfjord, Norvège)",
+    author: "Bernhard",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/nOqp5DLsdcA",
+  },
+  {
+    usage: "Voyage sur mesure (Manarola, Italie)",
+    author: "Jack Ward",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/rknrvCrfS1k",
+  },
+  {
+    usage: "Accueil : dunes de Port Waikato (Nouvelle-Zélande)",
+    author: "Petr Vyšohlíd",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/9fqwGqGLUxc",
+  },
+  {
+    usage: "Accueil, section agence : boussole",
+    author: "Chris Lawton",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/4ozvhBh2LoY",
+  },
+  {
+    usage: "Article : Combien coûte un voyage sur mesure",
+    author: "Meg von Haartman",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/CUzSnBTrtwg",
+  },
+  {
     usage: "Coup de cœur : New York",
-    author: "Dllu",
-    license: "CC BY-SA 4.0",
-    licenseUrl: CC_BY_SA_4,
-    sourceUrl:
-      "https://commons.wikimedia.org/wiki/File:View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_(cropped).jpg",
+    author: "Mike Chavarri",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/kZokA2VTKn4",
   },
   {
     usage: "Coup de cœur : Sicile orientale",
-    author: "Carsten Steger",
-    license: "CC BY-SA 4.0",
-    licenseUrl: CC_BY_SA_4,
-    sourceUrl:
-      "https://commons.wikimedia.org/wiki/File:Aerial_image_of_the_coast_of_Taormina_(view_from_the_southeast).jpg",
+    author: "Casey Lovegrove",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/1j9tiYENp6k",
   },
   {
     usage: "Coup de cœur : Vietnam",
-    author: "Taewangkorea",
-    license: "CC BY-SA 4.0",
-    licenseUrl: CC_BY_SA_4,
-    sourceUrl:
-      "https://commons.wikimedia.org/wiki/File:Ha_Long_Bay_in_2019.jpg",
+    author: "Marina Lobato",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/kG7pOXbBfNs",
   },
   {
     usage: "Coup de cœur : Australie",
-    author: "Ek2030372672",
-    license: "CC BY-SA 4.0",
-    licenseUrl: CC_BY_SA_4,
-    sourceUrl: "https://commons.wikimedia.org/wiki/File:ULURU.jpg",
+    author: "Ondrej Machart",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/WEtXkeIlMoM",
   },
   {
     usage: "Coup de cœur : Polynésie française",
-    author: "Daniel Julie",
-    license: "CC BY 2.0",
-    licenseUrl: CC_BY_2,
-    sourceUrl:
-      "https://commons.wikimedia.org/wiki/File:DSC00042_Polyn%C3%A9sia_Moor%C3%A9a_Island_Motu_Mo%C3%A9a_Lagoon_and_transportation_Boat_(8076082190).jpg",
+    author: "Fabien Bellanger",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/pdjx5z2fpr0",
   },
   {
     usage: "Coup de cœur : Croisière sur le Nil",
-    author: "Marc Ryckaert (MJJR)",
-    license: "CC BY 3.0",
-    licenseUrl: CC_BY_3,
-    sourceUrl: "https://commons.wikimedia.org/wiki/File:Felucca_R02.jpg",
+    author: "Jean Pierre Cabáni",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/aeHTysv8kO4",
   },
   {
     usage: "Destination : Île Maurice",
-    author: "dronepicr",
-    license: "CC BY 2.0",
-    licenseUrl: CC_BY_2,
-    sourceUrl:
-      "https://commons.wikimedia.org/wiki/File:Le_Morne_Beach_with_Le_Morne_Brabant_Mountain_in_the_background,_Mauritius_(53698223315).jpg",
+    author: "Focus Photography Mauritius",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/wVuRAom5v6U",
   },
   {
     usage: "Destination : Seychelles",
-    author: "Norbert Nagel",
-    license: "CC BY-SA 4.0",
-    licenseUrl: CC_BY_SA_4,
-    sourceUrl:
-      "https://commons.wikimedia.org/wiki/File:Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_02.jpg",
+    author: "Christian Cacciamani",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/jPmurJKSL_0",
   },
   {
     usage: "Destination : Thaïlande",
-    author: "kallerna",
-    license: "CC BY-SA 3.0",
-    licenseUrl: CC_BY_SA_3,
-    sourceUrl: "https://commons.wikimedia.org/wiki/File:Railay_Beach_5.jpg",
+    author: "Robin Noguier",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/sydwCr54rf0",
   },
   {
     usage: "Destination : Japon",
-    author: "Martin Falbisoner",
-    license: "CC BY-SA 4.0",
-    licenseUrl: CC_BY_SA_4,
-    sourceUrl:
-      "https://commons.wikimedia.org/wiki/File:Kiyomizu-dera,_Kyoto,_November_2016_-01.jpg",
+    author: "Nathalie Lays",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/4Q-Rbu8Ipcg",
   },
   {
     usage: "Destination : Grèce",
-    author: "Manfred Werner (Tsui)",
-    license: "CC BY-SA 4.0",
-    licenseUrl: CC_BY_SA_4,
-    sourceUrl:
-      "https://commons.wikimedia.org/wiki/File:Mandrakia_%CE%9C%CE%B1%CE%BD%CE%B4%CF%81%CE%AC%CE%BA%CE%B9%CE%B1_Milos_%CE%9C%CE%AE%CE%BB%CE%BF%CF%82_2021-11-12_2402.jpg",
+    author: "Jason Mavrommatis",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/nk3YzS10bLU",
   },
   {
     usage: "Article : Soleil en hiver",
@@ -119,14 +274,6 @@ export const photoCredits: PhotoCredit[] = [
     licenseUrl: FAL,
     sourceUrl:
       "https://commons.wikimedia.org/wiki/File:La_Digue_asv2024-10_img22_Union_Estate.jpg",
-  },
-  {
-    usage: "Article : Croisières",
-    author: "Corey Seeman",
-    license: "CC BY-SA 4.0",
-    licenseUrl: CC_BY_SA_4,
-    sourceUrl:
-      "https://commons.wikimedia.org/wiki/File:Icon_of_the_Seas_Puerto_Rico_2025_(cropped).jpg",
   },
   {
     usage: "Article : Voyage de noces",

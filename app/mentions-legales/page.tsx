@@ -28,7 +28,10 @@ export default function MentionsLegales() {
                 En vertu de l’article 6 de la loi n° 2004-575 du 21 juin 2004
                 pour la confiance dans l’économie numérique, il est précisé aux
                 utilisateurs du site{" "}
-                <a href={siteUrl} className="text-primary hover:underline">
+                <a
+                  href={siteUrl}
+                  className="text-primary underline underline-offset-4"
+                >
                   {siteUrl}
                 </a>{" "}
                 l’identité des différents intervenants dans le cadre de sa
@@ -111,7 +114,7 @@ export default function MentionsLegales() {
                 Lemon Ave #4133, Walnut, CA 91789, États-Unis,{" "}
                 <a
                   href="https://vercel.com"
-                  className="text-primary hover:underline"
+                  className="text-primary underline underline-offset-4"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -167,7 +170,7 @@ export default function MentionsLegales() {
                 notre{" "}
                 <a
                   href="/politique-de-confidentialite"
-                  className="text-primary hover:underline"
+                  className="text-primary underline underline-offset-4"
                 >
                   politique de confidentialité
                 </a>
@@ -197,7 +200,7 @@ export default function MentionsLegales() {
                 <li>
                   <a
                     href={legal.mediator.url}
-                    className="text-primary hover:underline"
+                    className="text-primary underline underline-offset-4"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -210,7 +213,7 @@ export default function MentionsLegales() {
                 règlement en ligne des litiges :{" "}
                 <a
                   href="https://ec.europa.eu/consumers/odr/"
-                  className="text-primary hover:underline"
+                  className="text-primary underline underline-offset-4"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

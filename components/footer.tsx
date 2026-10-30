@@ -2,17 +2,18 @@ import Link from "next/link";
 import { Phone, Mail, CalendarCheck } from "lucide-react";
 import { FacebookIcon, InstagramIcon } from "@/components/social-icons";
 import { siteConfig } from "@/lib/site";
+import { FooterCta } from "@/components/footer-cta";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-800 bg-gray-900 text-gray-300">
-      <div className="container mx-auto px-4 py-12 md:px-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+    <footer className="bg-gray-950 text-gray-300">
+      <div className="container mx-auto px-4 pt-20 pb-12 md:px-8">
+        <FooterCta />
+
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">
-              Rêves de Voyages
-            </h3>
-            <p className="text-sm leading-relaxed text-gray-400">
+            <h3 className="font-serif text-xl text-white">Rêves de Voyages</h3>
+            <p className="text-sm leading-relaxed text-gray-300">
               Votre agence de voyages indépendante, spécialiste du sur-mesure
               depuis {siteConfig.foundedYear}. Un conseil personnalisé, où que
               vous soyez.
@@ -41,14 +42,14 @@ export default function Footer() {
               href={siteConfig.social.googleReviews}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block text-sm text-gray-400 underline underline-offset-4 transition-colors hover:text-[#C5A059]"
+              className="inline-block text-sm text-gray-300 underline underline-offset-4 transition-colors hover:text-[#C5A059]"
             >
               ★ Laissez-nous un avis Google
             </a>
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">Nous joindre</h3>
+            <h3 className="font-serif text-xl text-white">Nous joindre</h3>
             <div className="flex items-start space-x-3">
               <CalendarCheck className="mt-0.5 h-5 w-5 shrink-0 text-[#C5A059]" />
               <p className="text-sm">
@@ -72,7 +73,7 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">Informations</h3>
+            <h3 className="font-serif text-xl text-white">Informations</h3>
             <nav className="flex flex-col space-y-2 text-sm">
               <Link
                 href="/agence-de-voyages-rennes"
@@ -110,6 +111,12 @@ export default function Footer() {
               >
                 Crédits photos
               </Link>
+              <Link
+                href="/galerie"
+                className="transition-colors hover:text-white"
+              >
+                Galerie photos
+              </Link>
               <Link href="/faq" className="transition-colors hover:text-white">
                 Questions fréquentes
               </Link>
@@ -123,11 +130,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center gap-2 border-t border-gray-800 pt-8 text-center text-sm text-gray-500 md:flex-row md:justify-between md:text-left">
+        <div className="mt-12 flex flex-col items-center gap-2 border-t border-white/15 pt-8 text-center text-sm text-gray-400 md:flex-row md:justify-between md:text-left">
           <p>
             © {new Date().getFullYear()} Rêves de Voyages. Tous droits réservés.
           </p>
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-gray-400">
             Immatriculation Atout France {siteConfig.legal.atoutFrance} ·
             Garantie financière APST · RCP MMA
           </p>

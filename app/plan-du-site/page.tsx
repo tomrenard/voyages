@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { PageHeader } from "@/components/page-header";
 import { Metadata } from "next";
+import { allDestinations } from "@/lib/destinations";
+import { articles } from "@/lib/articles";
 import heroBg from "@/public/images/hero-bg.jpg";
 
 export const metadata: Metadata = {
@@ -53,6 +55,18 @@ export default function PlanDuSite() {
               >
                 Nos coups de cœur
               </Link>
+              <ul className="mt-2 ml-6 space-y-2 border-l-2 border-gray-100 pl-4">
+                {allDestinations.map((item) => (
+                  <li key={item.slug}>
+                    <Link
+                      href={`/destinations/${item.slug}`}
+                      className="hover:text-primary text-gray-600 transition-colors"
+                    >
+                      {item.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </li>
             <li>
               <span className="font-serif font-bold text-gray-900">
@@ -124,6 +138,18 @@ export default function PlanDuSite() {
               >
                 Actualités
               </Link>
+              <ul className="mt-2 ml-6 space-y-2 border-l-2 border-gray-100 pl-4">
+                {articles.map((item) => (
+                  <li key={item.slug}>
+                    <Link
+                      href={`/actualites/${item.slug}`}
+                      className="hover:text-primary text-gray-600 transition-colors"
+                    >
+                      {item.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </li>
             <li>
               <Link

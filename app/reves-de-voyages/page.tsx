@@ -52,7 +52,7 @@ export default function RevesDeVoyages() {
           <div className="relative h-[500px] overflow-hidden rounded-xl shadow-2xl">
             <Image
               src={aboutReves}
-              alt="Véronique, votre conseillère voyages"
+              alt="Le temple Pura Ulun Danu Bratan sur le lac Bratan, à Bali"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -144,7 +144,7 @@ export default function RevesDeVoyages() {
           </div>
         </div>
 
-        <div className="bg-primary mt-16 rounded-2xl p-10 text-center text-white md:p-14">
+        <div className="mt-16 bg-gray-950 p-10 text-center text-white md:p-14">
           <h3 className="mb-4 font-serif text-3xl font-bold">
             Et si on parlait de votre prochain voyage ?
           </h3>

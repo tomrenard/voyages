@@ -24,7 +24,10 @@ export default function PolitiqueDeConfidentialite() {
             <div className="space-y-2 leading-relaxed text-gray-600">
               <p>
                 Le responsable du traitement des données collectées sur le site{" "}
-                <a href={siteUrl} className="text-primary hover:underline">
+                <a
+                  href={siteUrl}
+                  className="text-primary underline underline-offset-4"
+                >
                   {siteUrl}
                 </a>{" "}
                 est Rêves de Voyages (EURL {siteConfig.legalName}),{" "}
@@ -154,7 +157,7 @@ export default function PolitiqueDeConfidentialite() {
                 auprès de la CNIL (
                 <a
                   href="https://www.cnil.fr"
-                  className="text-primary hover:underline"
+                  className="text-primary underline underline-offset-4"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

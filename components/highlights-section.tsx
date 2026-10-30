@@ -1,61 +1,35 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { coupsDeCoeur } from "@/lib/destinations";
+import { DestinationCard } from "@/components/destination-card";
 
 export function HighlightsSection() {
   return (
-    <section className="bg-gray-50 py-20">
+    <section className="py-24 md:py-32">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="mb-16 text-center">
-          <h2 className="font-serif text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            Nos coups de cœur
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-xl font-light text-gray-600">
-            Les destinations que nous aimons faire découvrir
-          </p>
+        <div className="mb-14 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="eyebrow">Nos coups de cœur</p>
+            <h2 className="mt-4 max-w-2xl font-serif text-5xl leading-tight text-gray-900 md:text-6xl">
+              Les destinations que nous aimons faire découvrir
+            </h2>
+          </div>
+          <Link
+            href="/nos-coups-de-coeur"
+            className="group hover:text-primary inline-flex items-center gap-2 text-sm font-medium tracking-wide text-gray-900"
+          >
+            Voir tous nos coups de cœur
+            <ArrowRight
+              className="h-4 w-4 transition-transform group-hover:translate-x-1"
+              aria-hidden="true"
+            />
+          </Link>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
           {coupsDeCoeur.map((destination) => (
-            <Link
-              key={destination.slug}
-              href={`/destinations/${destination.slug}`}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:shadow-xl"
-            >
-              <div className="relative h-52 overflow-hidden">
-                <Image
-                  src={destination.image}
-                  alt={destination.imageAlt}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </div>
-              <div className="flex flex-grow flex-col p-8">
-                <h3 className="group-hover:text-primary mb-3 font-serif text-2xl font-bold text-gray-900 transition-colors">
-                  {destination.title}
-                </h3>
-                <p className="mb-6 flex-grow leading-relaxed text-gray-600">
-                  {destination.blurb}
-                </p>
-                <span className="text-primary inline-flex items-center text-sm font-semibold">
-                  Découvrir
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </span>
-              </div>
-            </Link>
+            <DestinationCard key={destination.slug} destination={destination} />
           ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <Button asChild variant="outline" size="lg">
-            <Link href="/nos-coups-de-coeur">
-              Voir tous nos coups de cœur
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
         </div>
       </div>
     </section>

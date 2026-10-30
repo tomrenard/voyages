@@ -35,7 +35,7 @@ export const coupsDeCoeur: Destination[] = [
       "La ville qui ne dort jamais : gratte-ciel vertigineux, quartiers bouillonnants et énergie unique. L'escapade urbaine par excellence.",
     image: coupNewYork,
     imageAlt:
-      "L'Empire State Building et les gratte-ciel de New York au coucher du soleil",
+      "Les gratte-ciel de Lower Manhattan et le One World Trade Center au soleil couchant, vus depuis l'Hudson",
   },
   {
     slug: "sicile-orientale",
@@ -44,7 +44,7 @@ export const coupsDeCoeur: Destination[] = [
       "Entre l'Etna, les villages baroques de Taormine et Syracuse et une cuisine généreuse : la Méditerranée dans ce qu'elle a de plus authentique.",
     image: coupSicile,
     imageAlt:
-      "Vue aérienne de la côte de Taormine et de la mer, en Sicile orientale",
+      "Le théâtre antique de Taormine avec l'Etna enneigé en arrière-plan, en Sicile",
   },
   {
     slug: "vietnam",
@@ -53,7 +53,7 @@ export const coupsDeCoeur: Destination[] = [
       "Des rizières en terrasse à la baie d'Halong, un voyage haut en couleurs au cœur de paysages spectaculaires et d'une culture chaleureuse.",
     image: coupVietnam,
     imageAlt:
-      "Les pitons karstiques de la baie d'Halong émergeant des eaux émeraude, au Vietnam",
+      "Les îlots karstiques de la baie d'Halong vus du ciel, au Vietnam",
   },
   {
     slug: "australie",
@@ -61,7 +61,8 @@ export const coupsDeCoeur: Destination[] = [
     blurb:
       "Grands espaces, faune fascinante et villes au bord de l'océan : un voyage au long cours pour les amoureux de nature et d'aventure.",
     image: coupAustralie,
-    imageAlt: "Le monolithe d'Uluru au cœur du désert australien",
+    imageAlt:
+      "Le monolithe d'Uluru au soleil couchant, au cœur du désert australien",
   },
   {
     slug: "polynesie-francaise",
@@ -70,7 +71,7 @@ export const coupsDeCoeur: Destination[] = [
       "Lagons turquoise, bungalows sur pilotis et douceur de vivre : la destination de rêve pour un voyage de noces inoubliable.",
     image: coupPolynesie,
     imageAlt:
-      "Lagon turquoise et pirogue traditionnelle devant les montagnes de Moorea, en Polynésie française",
+      "Le lagon de Bora Bora, ses bungalows sur pilotis et le mont Otemanu, en Polynésie française",
   },
   {
     slug: "croisiere-sur-le-nil",
@@ -78,7 +79,7 @@ export const coupsDeCoeur: Destination[] = [
     blurb:
       "Remontez le fil de l'Histoire entre temples millénaires et felouques, au rythme paisible du plus célèbre fleuve d'Égypte.",
     image: coupNil,
-    imageAlt: "Felouque traditionnelle naviguant à la voile sur le Nil",
+    imageAlt: "Felouques naviguant sur le Nil au coucher du soleil, à Assouan",
   },
 ];
 
@@ -95,7 +96,7 @@ export const autresDestinations: Destination[] = [
       "Plages de sable blanc, lagons émeraude et douceur créole : l'île de l'hospitalité par excellence, idéale en séjour comme en voyage de noces.",
     image: destMaurice,
     imageAlt:
-      "La plage du Morne et la montagne du Morne Brabant, à l'île Maurice",
+      "Le Morne Brabant et sa plage dans la lumière du matin, à l'île Maurice",
   },
   {
     slug: "seychelles",
@@ -104,7 +105,7 @@ export const autresDestinations: Destination[] = [
       "Rochers de granit sculptés, eaux cristallines et nature préservée : un archipel hors du temps pour les amoureux de plages parfaites.",
     image: destSeychelles,
     imageAlt:
-      "Les blocs de granit et le sable blanc de l'Anse Source d'Argent, à La Digue, aux Seychelles",
+      "Rochers de granit, palmiers et eau turquoise à La Digue, aux Seychelles",
   },
   {
     slug: "thailande",
@@ -113,7 +114,7 @@ export const autresDestinations: Destination[] = [
       "Temples dorés, cuisine de rue légendaire et plages bordées de falaises karstiques : le pays du sourire réunit culture et farniente.",
     image: destThailande,
     imageAlt:
-      "La plage de Railay bordée de falaises karstiques, dans la province de Krabi, en Thaïlande",
+      "Un bateau à longue queue entre les falaises karstiques du lac Cheow Lan, parc national de Khao Sok, en Thaïlande",
   },
   {
     slug: "japon",
@@ -122,7 +123,7 @@ export const autresDestinations: Destination[] = [
       "Temples de Kyoto, néons de Tokyo, auberges traditionnelles et sources chaudes : un pays fascinant où tradition et modernité se côtoient à chaque coin de rue.",
     image: destJapon,
     imageAlt:
-      "Le temple Kiyomizu-dera entouré d'érables rouges en automne, à Kyoto, au Japon",
+      "La pagode du temple Kiyomizu-dera et les cerisiers en fleurs au coucher du soleil, à Kyoto",
   },
   {
     slug: "grece",
@@ -131,7 +132,7 @@ export const autresDestinations: Destination[] = [
       "Villages blancs des Cyclades, criques turquoise et sites antiques : la Grèce se vit d'île en île, entre baignades, tavernes et histoire.",
     image: destGrece,
     imageAlt:
-      "Les maisons de pêcheurs colorées et la crique turquoise de Mandrakia, sur l'île de Milos, en Grèce",
+      "Le monastère de la Sainte-Trinité perché sur un rocher des Météores, en Grèce",
   },
 ];
 

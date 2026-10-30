@@ -22,15 +22,13 @@
     "@vercel/speed-insights": "^2.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "framer-motion": "^14.6.0",
     "lucide-react": "^1.61.0",
     "next": "^16.4.3",
     "react": "19.3.1",
     "react-dom": "19.3.1",
     "remark-gfm": "^4.0.1",
     "resend": "^6.34.1",
-    "sharp": "^0.35.5",
-    "simplex-noise": "^4.0.3"
+    "sharp": "^0.35.5"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",

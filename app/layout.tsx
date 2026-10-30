@@ -5,26 +5,28 @@ import { Analytics } from "@vercel/analytics/next";
 import { ViewTransition } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import cn from "clsx";
-import { Playfair_Display, Lato } from "next/font/google";
+import { Cormorant_Garamond, Inter_Tight } from "next/font/google";
 import { Navbar } from "@/components/navbar";
 import Footer from "@/components/footer";
+import { MobileCtaBar } from "@/components/mobile-cta-bar";
 import JsonLd from "@/components/json-ld";
 import { siteConfig, siteUrl } from "@/lib/site";
 import "./globals.css";
 
-const playfair = Playfair_Display({
+// Display serif for headings, one grotesk for everything else. Inter Tight is
+// variable; Cormorant is one upright file, preloaded. Italic (a 2nd file)
+// and no preload both measured slower on mobile (FCP/LCP medians, PR #9).
+const display = Cormorant_Garamond({
+  weight: ["400", "500", "600"],
+  style: ["normal"],
   subsets: ["latin"],
-  variable: "--font-serif",
+  variable: "--font-display",
   display: "swap",
 });
 
-const lato = Lato({
-  // 900 was loaded but never used (no font-black anywhere), costing an extra
-  // ~14 KB preloaded at High priority on the critical path. 300/400/700 cover
-  // every weight the UI actually asks for.
-  weight: ["300", "400", "700"],
+const text = Inter_Tight({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-text",
   display: "swap",
 });
 
@@ -52,20 +54,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  // No title/description/url here: they were inherited by every page without
+  // its own openGraph, so shares showed the homepage. Next now derives og: and
+  // twitter: title/description from each page's own metadata.
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: siteUrl,
     siteName: siteConfig.name,
-    title: "Rêves de Voyages | Agence de voyages sur mesure près de Rennes",
-    description:
-      "Créez le voyage de vos rêves avec Rêves de Voyages. Agence indépendante spécialiste du sur-mesure, sur rendez-vous, par téléphone ou en visio.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rêves de Voyages | Agence de voyages sur mesure près de Rennes",
-    description:
-      "Créez le voyage de vos rêves avec Rêves de Voyages. Agence indépendante spécialiste du sur-mesure, sur rendez-vous, par téléphone ou en visio.",
   },
   robots: {
     index: true,
@@ -80,7 +78,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: "only light",
-  themeColor: "#fcfcfc",
+  themeColor: "#faf7f2",
 };
 
 export default function RootLayout({
@@ -91,7 +89,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`touch-manipulation overflow-x-hidden ${playfair.variable} ${lato.variable}`}
+      className={`touch-manipulation overflow-x-hidden ${display.variable} ${text.variable}`}
     >
       <body
         className={cn(
@@ -101,11 +99,18 @@ export default function RootLayout({
       >
         <JsonLd />
         <div className="relative flex min-h-screen flex-col">
+          <a
+            href="#contenu"
+            className="bg-primary text-primary-foreground sr-only z-[60] px-4 py-2 focus:not-sr-only focus:fixed focus:top-2 focus:left-2"
+          >
+            Aller au contenu
+          </a>
           <Navbar />
-          <main className="flex-1">
+          <main id="contenu" className="flex-1">
             <ViewTransition name="crossfade">{children}</ViewTransition>
           </main>
           <Footer />
+          <MobileCtaBar />
         </div>
         <Analytics />
         <SpeedInsights />

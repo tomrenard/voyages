@@ -5,6 +5,7 @@ import { Calendar, User, Clock, ArrowLeft } from "lucide-react";
 import { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { articles, getArticle, type ArticleBlock } from "@/lib/articles";
+import { FaqList } from "@/components/faq-list";
 import { allDestinations } from "@/lib/destinations";
 import { siteConfig, siteUrl } from "@/lib/site";
 
@@ -55,9 +56,20 @@ function Block({ block }: { block: ArticleBlock }) {
       );
     case "ul":
       return (
-        <ul className="my-6 list-disc space-y-2 pl-6 leading-relaxed text-gray-700">
+        <ul className="my-6 list-disc space-y-2 pl-6 text-lg leading-relaxed text-gray-700">
           {block.items.map((item, i) => (
-            <li key={i}>{item}</li>
+            <li key={i}>
+              {typeof item === "string" ? (
+                item
+              ) : (
+                <Link
+                  href={item.href}
+                  className="text-primary underline underline-offset-4"
+                >
+                  {item.text}
+                </Link>
+              )}
+            </li>
           ))}
         </ul>
       );
@@ -65,6 +77,18 @@ function Block({ block }: { block: ArticleBlock }) {
       return (
         <p className="mt-6 text-lg leading-relaxed text-gray-700">
           {block.text}
+          {block.link && (
+            <>
+              {" "}
+              <Link
+                href={block.link.href}
+                className="text-primary underline underline-offset-4"
+              >
+                {block.link.label}
+              </Link>
+              {/[.?!]$/.test(block.link.label) ? "" : "."}
+            </>
+          )}
         </p>
       );
   }
@@ -113,6 +137,16 @@ export default async function ArticlePage({
     mainEntityOfPage: `${siteUrl}/actualites/${article.slug}`,
   };
 
+  const faqJsonLd = article.faq?.length && {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: article.faq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
+
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -138,7 +172,9 @@ export default async function ArticlePage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([jsonLd, breadcrumbJsonLd]),
+          __html: JSON.stringify(
+            [jsonLd, breadcrumbJsonLd, faqJsonLd].filter(Boolean),
+          ),
         }}
       />
 
@@ -174,7 +210,7 @@ export default async function ArticlePage({
             Retour aux actualités
           </Link>
 
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 border-b border-gray-100 pb-6 text-sm text-gray-400">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 border-b border-gray-100 pb-6 text-sm text-gray-500">
             <span className="flex items-center gap-1.5">
               <Calendar className="h-4 w-4" />
               <time dateTime={article.date}>{formattedDate}</time>
@@ -194,6 +230,15 @@ export default async function ArticlePage({
               <Block key={i} block={block} />
             ))}
           </div>
+
+          {article.faq?.length ? (
+            <section className="mt-16">
+              <h2 className="mb-6 font-serif text-3xl text-gray-900">
+                Questions fréquentes
+              </h2>
+              <FaqList items={article.faq} />
+            </section>
+          ) : null}
 
           {related.length > 0 && (
             <nav aria-label="Destinations évoquées" className="mt-12">
@@ -220,7 +265,7 @@ export default async function ArticlePage({
               V
             </div>
             <div>
-              <p className="mb-1 text-sm font-semibold tracking-wide text-gray-400 uppercase">
+              <p className="mb-1 text-sm font-semibold tracking-wide text-gray-500 uppercase">
                 À propos de l&apos;auteure
               </p>
               <h2 className="mb-2 font-serif text-lg font-bold text-gray-900">
@@ -233,7 +278,7 @@ export default async function ArticlePage({
                 terrain et de celle de ses voyageurs.{" "}
                 <Link
                   href="/reves-de-voyages"
-                  className="text-primary hover:underline"
+                  className="text-primary underline underline-offset-4"
                 >
                   En savoir plus sur l&apos;agence
                 </Link>
@@ -255,7 +300,7 @@ export default async function ArticlePage({
               size="lg"
               className="bg-primary hover:bg-primary/90 text-white"
             >
-              <Link href="/contact">Demander un devis gratuit</Link>
+              <Link href="/devis">Demander un devis gratuit</Link>
             </Button>
           </div>
         </div>

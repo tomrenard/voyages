@@ -12,7 +12,7 @@ import heroNew from "@/public/images/hero-new.jpg";
 export const metadata: Metadata = {
   title: "Galerie Photos",
   description:
-    "Inspirez-vous avec les photos de voyages de nos clients et de nos repérages aux quatre coins du monde.",
+    "Plages, montagnes, villes et grands sites : une galerie d'inspirations pour imaginer votre prochain voyage sur mesure.",
   alternates: { canonical: "/galerie" },
 };
 
@@ -20,11 +20,11 @@ export default function Galerie() {
   const images = [
     {
       src: gallery1,
-      alt: "Plage tropicale aux eaux turquoise au coucher du soleil",
+      alt: "Plage aux eaux turquoise au coucher du soleil, sur la côte nord d'Oahu, à Hawaï",
     },
     {
       src: gallery2,
-      alt: "Lac de montagne aux eaux turquoise dans les Rocheuses",
+      alt: "Le lac Moraine au lever du soleil, dans les Rocheuses canadiennes",
     },
     {
       src: gallery3,
@@ -32,7 +32,7 @@ export default function Galerie() {
     },
     {
       src: gallery4,
-      alt: "Vue aérienne d'une plage et de barques colorées sur un lagon turquoise",
+      alt: "Vue aérienne de bateaux sur le lagon turquoise des îles Perhentian, en Malaisie",
     },
     {
       src: galerieSafari,

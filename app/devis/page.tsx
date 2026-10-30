@@ -12,10 +12,16 @@ export const metadata: Metadata = {
   alternates: { canonical: "/devis" },
 };
 
-type Props = { searchParams: Promise<{ destination?: string }> };
+type Props = {
+  searchParams: Promise<{
+    destination?: string;
+    period?: string;
+    adults?: string;
+  }>;
+};
 
 export default async function Devis({ searchParams }: Props) {
-  const { destination } = await searchParams;
+  const { destination, period, adults } = await searchParams;
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -58,7 +64,11 @@ export default async function Devis({ searchParams }: Props) {
         </div>
 
         <div className="mx-auto max-w-3xl rounded-2xl border border-gray-100 bg-white p-8 shadow-sm md:p-12">
-          <DevisForm defaultDestination={destination ?? ""} />
+          <DevisForm
+            defaultDestination={destination ?? ""}
+            defaultPeriod={period ?? ""}
+            defaultAdults={adults ?? ""}
+          />
         </div>
 
         <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-gray-500">

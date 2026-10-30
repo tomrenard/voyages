@@ -181,7 +181,10 @@ export default function AgenceDeVoyagesRennes() {
             </p>
             <footer className="text-sm text-gray-500">
               Un couple de voyageurs rennais ·{" "}
-              <Link href="/avis" className="text-primary hover:underline">
+              <Link
+                href="/avis"
+                className="text-primary underline underline-offset-4"
+              >
                 lire tous les avis
               </Link>
             </footer>
@@ -209,7 +212,7 @@ export default function AgenceDeVoyagesRennes() {
         </div>
 
         {/* Final CTA */}
-        <div className="bg-primary rounded-2xl p-10 text-center text-white md:p-16">
+        <div className="bg-gray-950 p-10 text-center text-white md:p-16">
           <h2 className="mb-4 font-serif text-3xl font-bold">
             Votre prochain voyage commence ici
           </h2>
