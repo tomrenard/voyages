@@ -11,7 +11,7 @@ export function AboutSection() {
         <div className="relative aspect-[4/5] overflow-hidden bg-gray-100 lg:col-span-5">
           <Image
             src={aboutImg}
-            alt="Carnet, carte et appareil photo préparés pour un voyage"
+            alt="Une boussole de poche en laiton ouverte sur une table en bois"
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 40vw"

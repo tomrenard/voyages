@@ -71,8 +71,6 @@
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
 
-  --color-ink: var(--foreground);
-  --color-ivory: var(--background);
   --color-sand: var(--color-gray-50);
 }
 
@@ -98,7 +96,7 @@
   --destructive-foreground: #ffffff;
 
   --border: #ddd4c5;
-  --input: #c9bfae;
+  --input: #8c8172; /* 3.8:1 on white: field edges pass WCAG 1.4.11 */
   --ring: #7a6228;
 
   --radius: 2px;
@@ -108,6 +106,17 @@
 
   --popover: #faf7f2;
   --popover-foreground: #211d18;
+}
+
+/* Keep focused elements and anchor targets clear of the sticky header and,
+   below xl, the fixed call/devis bar (WCAG 2.4.11). */
+html {
+  scroll-padding-top: 6rem;
+}
+@media (max-width: 79.99rem) {
+  html {
+    scroll-padding-bottom: 5rem;
+  }
 }
 
 body {

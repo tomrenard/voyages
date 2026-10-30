@@ -36,7 +36,7 @@ export function FooterCta() {
             name="destination"
             type="text"
             placeholder="Japon, à définir…"
-            className="h-12 w-full border border-white/30 bg-white/5 px-3.5 text-base text-white placeholder:text-gray-400"
+            className="h-12 w-full border border-white/50 bg-white/5 px-3.5 text-base text-white placeholder:text-gray-400"
           />
         </label>
         <label className="flex flex-col gap-2 text-sm text-gray-300">
@@ -45,7 +45,7 @@ export function FooterCta() {
             name="period"
             type="text"
             placeholder="Printemps 2027"
-            className="h-12 w-full border border-white/30 bg-white/5 px-3.5 text-base text-white placeholder:text-gray-400"
+            className="h-12 w-full border border-white/50 bg-white/5 px-3.5 text-base text-white placeholder:text-gray-400"
           />
         </label>
         <label className="flex flex-col gap-2 text-sm text-gray-300">
@@ -56,7 +56,7 @@ export function FooterCta() {
             min={1}
             max={20}
             defaultValue={2}
-            className="h-12 w-full border border-white/30 bg-white/5 px-3.5 text-base text-white placeholder:text-gray-400"
+            className="h-12 w-full border border-white/50 bg-white/5 px-3.5 text-base text-white placeholder:text-gray-400"
           />
         </label>
         <button

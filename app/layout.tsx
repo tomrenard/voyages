@@ -14,8 +14,8 @@ import { siteConfig, siteUrl } from "@/lib/site";
 import "./globals.css";
 
 // Display serif for headings, one grotesk for everything else. Inter Tight is
-// variable (one file for all weights); Cormorant only needs its light/regular
-// cuts plus italic for the editorial accents in titles.
+// variable (one file for all weights); Cormorant loads 400-600 plus italic for
+// the editorial accents in titles.
 const display = Cormorant_Garamond({
   weight: ["400", "500", "600"],
   style: ["normal", "italic"],

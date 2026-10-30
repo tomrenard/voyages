@@ -14,13 +14,12 @@ export function HeroSection() {
         alt=""
         fill
         preload
-        quality={75}
         sizes="100vw"
         className="object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/5" />
 
-      <div className="relative container mx-auto px-4 pb-24 md:px-8 md:pb-20">
+      <div className="relative container mx-auto px-4 pb-24 md:px-8 xl:pb-20">
         <p className="eyebrow !text-white/85">
           Agence de voyages sur mesure · Près de Rennes
         </p>

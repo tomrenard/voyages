@@ -5,13 +5,7 @@ import { getDestinationContent } from "@/lib/destination-content";
 
 const euros = new Intl.NumberFormat("fr-FR");
 
-export function DestinationCard({
-  destination,
-  sizes = "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw",
-}: {
-  destination: Destination;
-  sizes?: string;
-}) {
+export function DestinationCard({ destination }: { destination: Destination }) {
   const content = getDestinationContent(destination.slug);
 
   return (
@@ -25,7 +19,7 @@ export function DestinationCard({
           alt={destination.imageAlt}
           fill
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-          sizes={sizes}
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
       </div>
       <div className="mt-5 flex items-baseline justify-between gap-4">
