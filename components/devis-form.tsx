@@ -3,9 +3,10 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Loader2 } from "lucide-react";
+import { siteConfig } from "@/lib/site";
 
 const inputClass =
-  "flex h-11 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50";
+  "flex h-12 w-full rounded-md border border-input bg-white px-3.5 py-2 text-base placeholder:text-gray-500 disabled:cursor-not-allowed disabled:opacity-50";
 
 const selectClass = `${inputClass} appearance-none`;
 
@@ -13,8 +14,12 @@ type Status = "idle" | "loading" | "success" | "error";
 
 export function DevisForm({
   defaultDestination = "",
+  defaultPeriod = "",
+  defaultAdults = "",
 }: {
   defaultDestination?: string;
+  defaultPeriod?: string;
+  defaultAdults?: string;
 }) {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -54,14 +59,25 @@ export function DevisForm({
 
   if (status === "success") {
     return (
-      <div className="border-primary/20 bg-accent/40 flex min-h-[420px] flex-col items-center justify-center rounded-2xl border p-10 text-center">
+      <div
+        className="bg-sand flex min-h-[420px] flex-col items-center justify-center p-10 text-center"
+        role="status"
+      >
         <CheckCircle2 className="text-primary mb-4 h-14 w-14" />
         <h3 className="mb-2 font-serif text-2xl font-bold text-gray-900">
           Demande de devis envoyée, merci !
         </h3>
         <p className="max-w-md text-gray-600">
           Nous étudions votre projet et revenons vers vous très vite avec une
-          première proposition personnalisée, sans engagement.
+          première proposition personnalisée, sans engagement. Une question
+          d'ici là ? Appelez le{" "}
+          <a
+            href={`tel:${siteConfig.phoneE164}`}
+            className="text-primary font-medium underline underline-offset-4"
+          >
+            {siteConfig.phone}
+          </a>
+          .
         </p>
         <Button
           variant="outline"
@@ -75,12 +91,16 @@ export function DevisForm({
   }
 
   return (
-    <form className="space-y-6" onSubmit={handleSubmit} noValidate>
+    <form className="space-y-12" onSubmit={handleSubmit}>
       {/* Voyage */}
       <fieldset className="space-y-6">
-        <legend className="font-serif text-xl font-bold text-gray-900">
-          Votre projet de voyage
+        <legend className="font-serif text-3xl text-gray-900">
+          <span className="text-primary mr-3">1</span>Votre projet de voyage
         </legend>
+        <p className="text-sm text-gray-600">
+          Seuls les champs marqués d'un * sont obligatoires. Plus vous nous en
+          dites, plus la première proposition sera juste.
+        </p>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <div className="space-y-2">
@@ -133,7 +153,8 @@ export function DevisForm({
               name="period"
               type="text"
               className={inputClass}
-              placeholder="Ex. : septembre 2026, flexible…"
+              placeholder="Ex. : septembre 2027, flexible…"
+              defaultValue={defaultPeriod}
             />
           </div>
           <div className="space-y-2">
@@ -168,7 +189,7 @@ export function DevisForm({
               type="number"
               min={1}
               max={20}
-              defaultValue={2}
+              defaultValue={defaultAdults || 2}
               className={inputClass}
             />
           </div>
@@ -218,7 +239,7 @@ export function DevisForm({
           <textarea
             id="message"
             name="message"
-            className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex min-h-[120px] w-full rounded-md border px-3 py-2 text-sm focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+            className="border-input flex min-h-[140px] w-full rounded-md border bg-white px-3.5 py-3 text-base placeholder:text-gray-500 disabled:cursor-not-allowed disabled:opacity-50"
             placeholder="Plage ou aventure ? Hôtels de charme ? Occasions à fêter ? Dites-nous tout…"
           ></textarea>
         </div>
@@ -226,8 +247,8 @@ export function DevisForm({
 
       {/* Coordonnées */}
       <fieldset className="space-y-6">
-        <legend className="font-serif text-xl font-bold text-gray-900">
-          Vos coordonnées
+        <legend className="font-serif text-3xl text-gray-900">
+          <span className="text-primary mr-3">2</span>Vos coordonnées
         </legend>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -342,7 +363,7 @@ export function DevisForm({
         type="submit"
         size="lg"
         disabled={status === "loading"}
-        className="bg-primary hover:bg-primary/90 w-full text-white"
+        className="w-full"
       >
         {status === "loading" ? (
           <>
@@ -354,7 +375,7 @@ export function DevisForm({
         )}
       </Button>
 
-      <p className="text-xs text-gray-400">
+      <p className="text-xs text-gray-600">
         Devis gratuit et sans engagement. En envoyant ce formulaire, vous
         acceptez que vos données soient utilisées pour traiter votre demande,
         conformément à notre{" "}

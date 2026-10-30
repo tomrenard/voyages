@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle2, Loader2 } from "lucide-react";
 
 const inputClass =
-  "flex h-11 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50";
+  "flex h-12 w-full rounded-md border border-input bg-white px-3.5 py-2 text-base placeholder:text-gray-500 disabled:cursor-not-allowed disabled:opacity-50";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -48,7 +48,10 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="border-primary/20 bg-accent/40 flex min-h-[420px] flex-col items-center justify-center rounded-2xl border p-10 text-center">
+      <div
+        className="bg-sand flex min-h-[420px] flex-col items-center justify-center p-10 text-center"
+        role="status"
+      >
         <CheckCircle2 className="text-primary mb-4 h-14 w-14" />
         <h3 className="mb-2 font-serif text-2xl font-bold text-gray-900">
           Message envoyé, merci !
@@ -69,7 +72,7 @@ export function ContactForm() {
   }
 
   return (
-    <form className="space-y-6" onSubmit={handleSubmit} noValidate>
+    <form className="space-y-6" onSubmit={handleSubmit}>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <div className="space-y-2">
           <label
@@ -163,7 +166,7 @@ export function ContactForm() {
         <textarea
           id="message"
           name="message"
-          className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex min-h-[140px] w-full rounded-md border px-3 py-2 text-sm focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+          className="border-input flex min-h-[140px] w-full rounded-md border bg-white px-3.5 py-3 text-base placeholder:text-gray-500 disabled:cursor-not-allowed disabled:opacity-50"
           placeholder="Décrivez vos envies, destinations, dates, nombre de voyageurs, budget…"
           required
         ></textarea>
@@ -191,7 +194,7 @@ export function ContactForm() {
         type="submit"
         size="lg"
         disabled={status === "loading"}
-        className="bg-primary hover:bg-primary/90 w-full text-white"
+        className="w-full"
       >
         {status === "loading" ? (
           <>
@@ -203,7 +206,7 @@ export function ContactForm() {
         )}
       </Button>
 
-      <p className="text-xs text-gray-400">
+      <p className="text-xs text-gray-600">
         En envoyant ce formulaire, vous acceptez que vos données soient
         utilisées pour traiter votre demande, conformément à notre{" "}
         <a
