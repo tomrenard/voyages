@@ -25,6 +25,7 @@ export function PageHeader({
           // `preload` supersedes `priority`, which 16.3 marks deprecated.
           // Unconditional as before — this is the page's above-fold hero.
           preload
+          fetchPriority="high"
         />
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-black/10" />

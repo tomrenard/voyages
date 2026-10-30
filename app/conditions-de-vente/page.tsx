@@ -263,7 +263,7 @@ export default function ConditionsDeVente() {
                 également les recommandations officielles sur{" "}
                 <a
                   href="https://www.diplomatie.gouv.fr/fr/conseils-aux-voyageurs/"
-                  className="text-primary hover:underline"
+                  className="text-primary underline underline-offset-4"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -333,7 +333,7 @@ export default function ConditionsDeVente() {
                 {legal.mediator.address},{" "}
                 <a
                   href={legal.mediator.url}
-                  className="text-primary hover:underline"
+                  className="text-primary underline underline-offset-4"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -353,7 +353,7 @@ export default function ConditionsDeVente() {
                 Le traitement des données personnelles est décrit dans notre{" "}
                 <a
                   href="/politique-de-confidentialite"
-                  className="text-primary hover:underline"
+                  className="text-primary underline underline-offset-4"
                 >
                   politique de confidentialité
                 </a>
@@ -365,7 +365,7 @@ export default function ConditionsDeVente() {
                 intégral est consultable sur{" "}
                 <a
                   href="https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074073/LEGISCTA000006158517/"
-                  className="text-primary hover:underline"
+                  className="text-primary underline underline-offset-4"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

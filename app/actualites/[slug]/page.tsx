@@ -233,7 +233,7 @@ export default async function ArticlePage({
                 terrain et de celle de ses voyageurs.{" "}
                 <Link
                   href="/reves-de-voyages"
-                  className="text-primary hover:underline"
+                  className="text-primary underline underline-offset-4"
                 >
                   En savoir plus sur l&apos;agence
                 </Link>

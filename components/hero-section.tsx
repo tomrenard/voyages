@@ -14,6 +14,7 @@ export function HeroSection() {
         alt=""
         fill
         preload
+        fetchPriority="high"
         sizes="100vw"
         className="object-cover"
       />
@@ -24,7 +25,7 @@ export function HeroSection() {
           Agence de voyages sur mesure · Près de Rennes
         </p>
         <h1 className="mt-5 max-w-4xl font-serif text-[clamp(2.75rem,7vw,6rem)] leading-[0.98]">
-          Des voyages sur mesure, <em>imaginés pour vous.</em>
+          Des voyages sur mesure, imaginés pour vous.
         </h1>
         <p className="mt-6 max-w-xl text-white/90 md:text-xl">
           Depuis {siteConfig.foundedYear}, {siteConfig.advisor} conçoit des

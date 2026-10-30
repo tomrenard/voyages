@@ -38,7 +38,7 @@ export default function CreditsPhotos() {
                       href={credit.licenseUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary hover:underline"
+                      className="text-primary underline underline-offset-4"
                     >
                       {credit.license}
                     </a>

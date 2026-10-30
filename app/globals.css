@@ -153,6 +153,11 @@ p {
   text-wrap: pretty;
 }
 
+button:not(:disabled),
+summary {
+  cursor: pointer;
+}
+
 ::selection {
   background: #e8dcc0;
 }

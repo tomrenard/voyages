@@ -181,7 +181,10 @@ export default function AgenceDeVoyagesRennes() {
             </p>
             <footer className="text-sm text-gray-500">
               Un couple de voyageurs rennais ·{" "}
-              <Link href="/avis" className="text-primary hover:underline">
+              <Link
+                href="/avis"
+                className="text-primary underline underline-offset-4"
+              >
                 lire tous les avis
               </Link>
             </footer>

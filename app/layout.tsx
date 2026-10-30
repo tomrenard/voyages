@@ -14,17 +14,14 @@ import { siteConfig, siteUrl } from "@/lib/site";
 import "./globals.css";
 
 // Display serif for headings, one grotesk for everything else. Inter Tight is
-// variable (one file for all weights); Cormorant loads 400-600 plus italic for
-// the editorial accents in titles.
+// variable; Cormorant is one upright file, preloaded. Italic (a 2nd file)
+// and no preload both measured slower on mobile (FCP/LCP medians, PR #9).
 const display = Cormorant_Garamond({
   weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
+  style: ["normal"],
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
-  // Not preloaded: on phones it competed with the hero photo (the LCP) for
-  // bandwidth. Headings paint in the size-matched fallback, then swap.
-  preload: false,
 });
 
 const text = Inter_Tight({

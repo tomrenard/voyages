@@ -20,8 +20,7 @@ export function AboutSection() {
         <div className="lg:col-span-7">
           <p className="eyebrow">L'agence</p>
           <h2 className="mt-4 font-serif text-4xl leading-tight text-gray-900 md:text-5xl">
-            Rêves de Voyages, votre agence de voyages à Bruz,{" "}
-            <em>près de Rennes</em>
+            Rêves de Voyages, votre agence de voyages à Bruz, près de Rennes
           </h2>
           <p className="mt-8 font-serif text-2xl leading-snug text-gray-800 md:text-3xl">
             Chaque voyage commence par une conversation : nous vous écoutons,
