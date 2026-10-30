@@ -11,19 +11,27 @@ import { allDestinations } from "@/lib/destinations";
 import { getDestinationContent } from "@/lib/destination-content";
 
 // Budgets come from the destination pages, so the article never drifts from them.
+const lowestBudget = Math.min(
+  ...allDestinations.map(
+    (d) => getDestinationContent(d.slug)?.budgetFrom ?? Infinity,
+  ),
+);
 const destinationBudgets = allDestinations.flatMap((d) => {
   const content = getDestinationContent(d.slug);
   return content
     ? [
-        `${d.title} : à partir de ${content.budgetFrom.toLocaleString("fr-FR")} € par personne, pour ${content.idealDuration}.`,
+        {
+          text: `${d.title} : à partir de ${content.budgetFrom.toLocaleString("fr-FR")} € par personne`,
+          href: `/destinations/${d.slug}`,
+        },
       ]
     : [];
 });
 
 export type ArticleBlock =
-  | { type: "p"; text: string }
+  | { type: "p"; text: string; link?: { href: string; label: string } }
   | { type: "h2"; text: string }
-  | { type: "ul"; items: string[] };
+  | { type: "ul"; items: (string | { text: string; href: string })[] };
 
 export type Article = {
   slug: string;
@@ -39,21 +47,23 @@ export type Article = {
   /** Destination slugs (lib/destinations.ts) linked under the article. */
   destinations?: string[];
   content: ArticleBlock[];
+  /** Shown under the article and emitted as FAQPage JSON-LD. */
+  faq?: { question: string; answer: string }[];
 };
 
 export const articles: Article[] = [
   {
     slug: "combien-coute-un-voyage-sur-mesure",
-    title: "Combien coûte un voyage sur mesure ? Budgets et conseils",
+    title: "Combien coûte un voyage sur mesure ? Prix par destination",
     excerpt:
-      "Vols, hébergement, saison, durée : ce qui fait le prix d'un voyage sur mesure, nos budgets indicatifs par destination et nos conseils pour partir au meilleur prix.",
+      "Vols, hébergement, saison : ce qui fait le prix d'un voyage sur mesure, nos budgets de départ par destination et nos conseils pour maîtriser votre budget.",
     date: "2026-10-30",
     author: siteConfig.advisor,
     category: "Sur-mesure",
     image: articleBudget,
     imageAlt:
       "Petit-déjeuner servi sur la terrasse d'un hôtel, face aux palmiers et à l'océan",
-    readingTime: "6 min",
+    readingTime: "4 min",
     destinations: [
       "sicile-orientale",
       "vietnam",
@@ -63,7 +73,7 @@ export const articles: Article[] = [
     content: [
       {
         type: "p",
-        text: "C'est souvent la première question : combien coûte un voyage sur mesure ? La réponse dépend de vos envies, mais un voyage sur mesure n'est pas réservé aux gros budgets. Vous ne payez que ce qui compte pour vous, et chaque euro est placé là où il fait la différence.",
+        text: "C'est souvent la première question : combien coûte un voyage sur mesure ? La réponse dépend de vos envies, de la saison et de la durée. Voici ce qui fait le prix d'un voyage, nos budgets de départ par destination et ce qu'ils ne comprennent pas.",
       },
       {
         type: "h2",
@@ -72,21 +82,21 @@ export const articles: Article[] = [
       {
         type: "ul",
         items: [
-          "Les vols : la période, la classe et l'anticipation de la réservation pèsent le plus sur un long-courrier.",
-          "L'hébergement : hôtel de charme, palace, maison d'hôtes ou nuit chez l'habitant, l'écart peut aller du simple au triple.",
+          "Les vols : la période, la classe et la date de réservation pèsent le plus sur un long-courrier.",
+          "L'hébergement : d'une chambre chez l'habitant à un palace, c'est souvent le poste qui varie le plus.",
           "La saison : haute saison, vacances scolaires et fêtes font monter les prix, l'intersaison les fait baisser.",
-          "La durée : plus le vol est long, plus il faut de jours sur place pour qu'il en vaille la peine.",
+          "La durée : chaque nuit et chaque étape en plus s'ajoutent au budget, mais un long vol demande assez de jours sur place.",
           "Les prestations sur place : guide privé, chauffeur, excursions, transferts, pension.",
           "Le nombre de voyageurs : certaines prestations privées coûtent moins cher par personne à quatre qu'à deux.",
         ],
       },
       {
         type: "h2",
-        text: "Nos budgets indicatifs par destination",
+        text: "Nos budgets de départ par destination",
       },
       {
         type: "p",
-        text: "Voici les points de départ de nos destinations, par personne. Ce sont des repères : le prix réel dépend de la saison, de la durée et des prestations que vous choisissez.",
+        text: "Ces budgets sont indicatifs, par personne, vols compris. Chaque page destination précise la formule de départ (durée, hébergement, prestations). Le prix réel dépend de la saison et de vos choix.",
       },
       {
         type: "ul",
@@ -94,11 +104,37 @@ export const articles: Article[] = [
       },
       {
         type: "h2",
-        text: "Le sur mesure coûte-t-il plus cher qu'un circuit catalogue ?",
+        text: "Ce que les budgets ne comprennent pas",
       },
       {
         type: "p",
-        text: "Pas forcément. Un circuit catalogue inclut souvent des étapes, des repas ou des excursions qui ne vous intéressent pas. En sur mesure, nous partons de vos envies et de votre budget : vous pouvez dormir dans un hôtel simple et bien situé pour vous offrir une nuit d'exception ailleurs, ou remplacer une excursion de groupe par une journée libre.",
+        text: "Sauf mention contraire, nos prix ne comprennent pas :",
+      },
+      {
+        type: "ul",
+        items: [
+          "les frais de formalités (passeport, visas, vaccins) ;",
+          "les assurances facultatives ;",
+          "les dépenses personnelles et les pourboires ;",
+          "les excursions non prévues au programme.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Les éventuels frais de dossier figurent sur le devis et dans nos",
+        link: { href: "/conditions-de-vente", label: "conditions de vente" },
+      },
+      {
+        type: "h2",
+        text: "Le sur-mesure coûte-t-il plus cher qu'un circuit catalogue ?",
+      },
+      {
+        type: "p",
+        text: "Cela dépend. Un circuit catalogue partage certains coûts entre de nombreux voyageurs. En sur-mesure, vous choisissez chaque étape : vous pouvez dormir dans un hôtel simple et bien situé pour vous offrir une nuit d'exception ailleurs, ou remplacer une excursion de groupe par une journée libre. Découvrez",
+        link: {
+          href: "/voyage-sur-mesure",
+          label: "notre approche du voyage sur mesure",
+        },
       },
       {
         type: "h2",
@@ -107,20 +143,45 @@ export const articles: Article[] = [
       {
         type: "ul",
         items: [
-          "Réservez tôt : six à neuf mois à l'avance pour un long-courrier ou les vacances scolaires.",
+          "Réservez tôt : plusieurs mois à l'avance pour un long-courrier ou les vacances scolaires.",
           "Partez en intersaison : le climat est souvent agréable et les prix plus doux.",
           "Choisissez la bonne durée : mieux vaut moins d'étapes, bien choisies, que trop de trajets.",
           "Mélangez les hébergements : une belle adresse pour les moments forts, des hôtels simples pour les étapes.",
-          "Donnez-nous votre budget dès le départ : nous construisons la proposition autour, sans mauvaise surprise.",
+          "Donnez-nous votre budget dès le départ : nous construisons la proposition en fonction de ce budget.",
         ],
       },
       {
         type: "h2",
-        text: "Combien coûte le devis ?",
+        text: "Obtenir le prix exact de votre voyage",
       },
       {
         type: "p",
-        text: "Rien : le devis est gratuit et sans engagement. Racontez-nous votre projet, votre période et votre budget, et nous vous envoyons une première proposition personnalisée.",
+        text: "Le devis est gratuit et sans engagement. Indiquez votre destination, votre période et votre budget, et nous vous envoyons une première proposition personnalisée :",
+        link: { href: "/devis", label: "demander votre devis gratuit" },
+      },
+      {
+        type: "p",
+        text: "Vous habitez Rennes ou la Bretagne ? Nous vous recevons sur rendez-vous, et restons joignables par téléphone ou en visio. Découvrez",
+        link: {
+          href: "/agence-de-voyages-rennes",
+          label: "votre agence de voyages près de Rennes",
+        },
+      },
+    ],
+    faq: [
+      {
+        question: "Le prix comprend-il les vols ?",
+        answer:
+          "Oui. Nos budgets de départ comprennent les vols internationaux. Chaque page destination détaille ce que comprend la formule.",
+      },
+      {
+        question: "Qu'est-ce qui n'est pas compris dans le prix ?",
+        answer:
+          "Sauf mention contraire : les frais de formalités (passeport, visas, vaccins), les assurances facultatives, les dépenses personnelles, les pourboires et les excursions non prévues au programme.",
+      },
+      {
+        question: "À partir de quel budget partir en voyage sur mesure ?",
+        answer: `Sur nos destinations, les budgets de départ commencent à ${lowestBudget.toLocaleString("fr-FR")} € par personne, vols compris.`,
       },
     ],
   },

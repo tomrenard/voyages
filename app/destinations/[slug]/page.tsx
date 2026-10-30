@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight, ChevronRight, Phone } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 import { DestinationCard } from "@/components/destination-card";
+import { FaqList } from "@/components/faq-list";
 import { Button } from "@/components/ui/button";
 import { articles } from "@/lib/articles";
 import { allDestinations } from "@/lib/destinations";
@@ -171,29 +172,7 @@ export default async function DestinationPage({ params }: Props) {
             <h2 className="mt-20 mb-8 font-serif text-4xl text-gray-900">
               Vos questions sur {card.title}
             </h2>
-            {/* Native disclosure: answers stay in the HTML for search engines. */}
-            <div className="border-b border-gray-300">
-              {content.faq.map((item, idx) => (
-                <details
-                  key={idx}
-                  className="group border-t border-gray-300 py-6"
-                  open={idx === 0}
-                >
-                  <summary className="flex cursor-pointer list-none items-start justify-between gap-6 font-serif text-xl text-gray-900 [&::-webkit-details-marker]:hidden">
-                    <h3>{item.question}</h3>
-                    <span
-                      aria-hidden
-                      className="text-primary mt-0.5 text-2xl leading-none transition-transform group-open:rotate-45"
-                    >
-                      +
-                    </span>
-                  </summary>
-                  <p className="mt-4 leading-relaxed text-gray-600">
-                    {item.answer}
-                  </p>
-                </details>
-              ))}
-            </div>
+            <FaqList items={content.faq} />
           </div>
 
           <aside className="lg:col-span-4 lg:col-start-9">
