@@ -66,7 +66,7 @@ export default function Avis() {
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
-                      className="h-5 w-5 fill-yellow-400 text-yellow-400"
+                      className="fill-primary text-primary h-4 w-4"
                     />
                   ))}
                 </div>
@@ -81,7 +81,7 @@ export default function Avis() {
                 <p className="font-serif text-lg font-bold text-gray-900">
                   {testimonial.name}
                 </p>
-                <p className="text-sm text-gray-400">{testimonial.date}</p>
+                <p className="text-sm text-gray-500">{testimonial.date}</p>
               </div>
             </div>
           ))}

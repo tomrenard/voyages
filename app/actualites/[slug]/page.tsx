@@ -174,7 +174,7 @@ export default async function ArticlePage({
             Retour aux actualités
           </Link>
 
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 border-b border-gray-100 pb-6 text-sm text-gray-400">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 border-b border-gray-100 pb-6 text-sm text-gray-500">
             <span className="flex items-center gap-1.5">
               <Calendar className="h-4 w-4" />
               <time dateTime={article.date}>{formattedDate}</time>
@@ -220,7 +220,7 @@ export default async function ArticlePage({
               V
             </div>
             <div>
-              <p className="mb-1 text-sm font-semibold tracking-wide text-gray-400 uppercase">
+              <p className="mb-1 text-sm font-semibold tracking-wide text-gray-500 uppercase">
                 À propos de l&apos;auteure
               </p>
               <h2 className="mb-2 font-serif text-lg font-bold text-gray-900">

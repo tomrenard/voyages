@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Compass, Heart, Globe } from "lucide-react";
 import Image from "next/image";
+import { processSteps } from "@/components/process-steps";
 import { Metadata } from "next";
 import contentSurMesure from "@/public/images/content-sur-mesure.jpg";
 import surMesure from "@/public/images/sur-mesure.jpg";
@@ -83,34 +84,15 @@ export default function VoyageSurMesure() {
               Comment ça marche ?
             </h3>
             <div className="space-y-6">
-              {[
-                {
-                  step: "01",
-                  title: "Rencontre & Échange",
-                  text: "Nous discutons de vos envies, de votre rythme et de votre budget.",
-                },
-                {
-                  step: "02",
-                  title: "Création",
-                  text: "Nous élaborons une première proposition détaillée et sur-mesure.",
-                },
-                {
-                  step: "03",
-                  title: "Ajustements",
-                  text: "Nous affinons ensemble le projet jusqu'à ce qu'il soit parfait.",
-                },
-                {
-                  step: "04",
-                  title: "Voyage",
-                  text: "Partez l'esprit tranquille avec notre carnet de voyage et notre assistance.",
-                },
-              ].map((step) => (
+              {processSteps.map((step) => (
                 <div key={step.step} className="flex gap-4">
-                  <span className="text-primary/30 font-serif text-2xl font-bold">
+                  <span className="text-primary font-serif text-3xl">
                     {step.step}
                   </span>
                   <div>
-                    <h4 className="font-bold text-gray-900">{step.title}</h4>
+                    <h4 className="font-serif text-xl text-gray-900">
+                      {step.title}
+                    </h4>
                     <p className="text-gray-600">{step.text}</p>
                   </div>
                 </div>

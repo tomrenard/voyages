@@ -144,7 +144,7 @@ export default function RevesDeVoyages() {
           </div>
         </div>
 
-        <div className="bg-primary mt-16 rounded-2xl p-10 text-center text-white md:p-14">
+        <div className="mt-16 bg-gray-950 p-10 text-center text-white md:p-14">
           <h3 className="mb-4 font-serif text-3xl font-bold">
             Et si on parlait de votre prochain voyage ?
           </h3>

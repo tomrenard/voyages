@@ -52,7 +52,7 @@ export default function Actualites() {
                 </span>
               </Link>
               <div className="flex flex-grow flex-col p-8">
-                <div className="mb-4 flex items-center gap-4 text-sm text-gray-400">
+                <div className="mb-4 flex items-center gap-4 text-sm text-gray-500">
                   <div className="flex items-center gap-1">
                     <Calendar className="h-4 w-4" />
                     <time dateTime={post.date}>

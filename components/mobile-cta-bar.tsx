@@ -6,7 +6,7 @@ import { Phone } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 
 // Hidden where the page itself is the form.
-const hiddenOn = ["/devis", "/contact"];
+export const hiddenOn = ["/devis", "/contact"];
 
 export function MobileCtaBar() {
   const pathname = usePathname();

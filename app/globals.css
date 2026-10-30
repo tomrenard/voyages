@@ -179,8 +179,6 @@ blockquote + blockquote {
 
 main {
   hanging-punctuation: first allow-end last;
-  hyphens: auto;
-  hyphenate-limit-chars: 10 6 6;
 }
 
 pre {
