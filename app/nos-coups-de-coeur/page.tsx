@@ -27,7 +27,7 @@ export default function NosCoupsDeCoeur() {
           prenons toujours autant de plaisir à faire découvrir.
         </p>
 
-        <h2 className="sr-only">Nos six coups de cœur</h2>
+        <h2 className="sr-only">Notre sélection</h2>
         <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
           {coupsDeCoeur.map((destination) => (
             <DestinationCard key={destination.slug} destination={destination} />

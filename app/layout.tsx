@@ -54,20 +54,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  // No title/description/url here: layout values were inherited by every page
+  // without its own openGraph, so shares showed the homepage. Without them,
+  // Facebook and X fall back to each page's <title> and meta description.
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: siteUrl,
     siteName: siteConfig.name,
-    title: "Rêves de Voyages | Agence de voyages sur mesure près de Rennes",
-    description:
-      "Créez le voyage de vos rêves avec Rêves de Voyages. Agence indépendante spécialiste du sur-mesure, sur rendez-vous, par téléphone ou en visio.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rêves de Voyages | Agence de voyages sur mesure près de Rennes",
-    description:
-      "Créez le voyage de vos rêves avec Rêves de Voyages. Agence indépendante spécialiste du sur-mesure, sur rendez-vous, par téléphone ou en visio.",
   },
   robots: {
     index: true,
