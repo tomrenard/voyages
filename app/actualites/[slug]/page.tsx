@@ -56,7 +56,7 @@ function Block({ block }: { block: ArticleBlock }) {
       );
     case "ul":
       return (
-        <ul className="my-6 list-disc space-y-2 pl-6 leading-relaxed text-gray-700">
+        <ul className="my-6 list-disc space-y-2 pl-6 text-lg leading-relaxed text-gray-700">
           {block.items.map((item, i) => (
             <li key={i}>
               {typeof item === "string" ? (

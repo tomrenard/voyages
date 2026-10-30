@@ -8,6 +8,7 @@ import articleSoleilHiver from "@/public/images/article-soleil-hiver.jpg";
 import destThailande from "@/public/images/dest-thailande.jpg";
 import type { StaticImageData } from "next/image";
 import { allDestinations } from "@/lib/destinations";
+import { formatEuros } from "@/lib/utils";
 import { getDestinationContent } from "@/lib/destination-content";
 
 // Budgets come from the destination pages, so the article never drifts from them.
@@ -21,7 +22,7 @@ const destinationBudgets = allDestinations.flatMap((d) => {
   return content
     ? [
         {
-          text: `${d.title} : à partir de ${content.budgetFrom.toLocaleString("fr-FR")} € par personne`,
+          text: `${d.title} : à partir de ${formatEuros(content.budgetFrom)} € par personne`,
           href: `/destinations/${d.slug}`,
         },
       ]
@@ -181,7 +182,7 @@ export const articles: Article[] = [
       },
       {
         question: "À partir de quel budget partir en voyage sur mesure ?",
-        answer: `Sur nos destinations, les budgets de départ commencent à ${lowestBudget.toLocaleString("fr-FR")} € par personne, vols compris.`,
+        answer: `Sur nos destinations, les budgets de départ commencent à ${formatEuros(lowestBudget)} € par personne, vols compris.`,
       },
     ],
   },

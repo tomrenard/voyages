@@ -12,6 +12,7 @@ import {
   destinationContent,
   getDestinationContent,
 } from "@/lib/destination-content";
+import { formatEuros } from "@/lib/utils";
 import { siteConfig, siteUrl } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -184,8 +185,7 @@ export default async function DestinationPage({ params }: Props) {
                     Budget indicatif
                   </dt>
                   <dd className="mt-1 font-serif text-2xl text-gray-900">
-                    À partir de {content.budgetFrom.toLocaleString("fr-FR")} € /
-                    pers.
+                    À partir de {formatEuros(content.budgetFrom)} € / pers.
                   </dd>
                 </div>
                 <div className="py-4">

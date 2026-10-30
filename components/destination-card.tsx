@@ -2,8 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Destination } from "@/lib/destinations";
 import { getDestinationContent } from "@/lib/destination-content";
-
-const euros = new Intl.NumberFormat("fr-FR");
+import { formatEuros } from "@/lib/utils";
 
 export function DestinationCard({ destination }: { destination: Destination }) {
   const content = getDestinationContent(destination.slug);
@@ -28,7 +27,7 @@ export function DestinationCard({ destination }: { destination: Destination }) {
         </h3>
         {content && (
           <p className="shrink-0 text-sm text-gray-600">
-            dès {euros.format(content.budgetFrom)} € / pers.
+            dès {formatEuros(content.budgetFrom)} € / pers.
           </p>
         )}
       </div>
