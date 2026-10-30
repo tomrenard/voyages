@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Menu, Phone, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import {
@@ -15,6 +16,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/lib/site";
 import logoImg from "@/public/images/logo.png";
 import {
   ComponentPropsWithoutRef,
@@ -46,210 +48,160 @@ const tripTypes: { title: string; href: string; description: string }[] = [
   },
 ];
 
+// "Nos voyages" (the dropdown) sits after the first two entries.
+const linksBefore = [
+  { title: "L'agence", href: "/reves-de-voyages" },
+  { title: "Nos coups de cœur", href: "/nos-coups-de-coeur" },
+];
+const linksAfter = [
+  { title: "Voyage sur mesure", href: "/voyage-sur-mesure" },
+  { title: "Avis", href: "/avis" },
+  { title: "Actualités", href: "/actualites" },
+  { title: "Contact", href: "/contact" },
+];
+
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const current = (href: string) =>
+    pathname === href || pathname.startsWith(`${href}/`) ? "page" : undefined;
+
+  const desktopLink = (link: { title: string; href: string }) => (
+    <NavigationMenuItem key={link.href}>
+      <NavigationMenuLink asChild>
+        <Link
+          href={link.href}
+          aria-current={current(link.href)}
+          className={navigationMenuTriggerStyle()}
+        >
+          {link.title}
+        </Link>
+      </NavigationMenuLink>
+    </NavigationMenuItem>
+  );
+
+  const mobileLink = (link: { title: string; href: string }) => (
+    <Link
+      key={link.href}
+      href={link.href}
+      aria-current={current(link.href)}
+      className="aria-[current=page]:text-primary border-b border-gray-200 py-3 font-serif text-2xl"
+      onClick={() => setIsOpen(false)}
+    >
+      {link.title}
+    </Link>
+  );
 
   return (
-    <header className="bg-background relative z-50 w-full border-b">
-      <div className="container mx-auto flex h-20 items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2">
+    <header className="bg-background/90 sticky top-0 z-50 w-full border-b border-gray-200 backdrop-blur-md">
+      <div className="container mx-auto flex h-20 items-center justify-between gap-6 px-4 md:px-8">
+        <Link href="/" className="flex shrink-0 items-center">
           <Image
             src={logoImg}
-            alt="Rêves de Voyages"
+            alt="Rêves de Voyages, retour à l'accueil"
             width={180}
             height={80}
-            className="h-16 w-auto object-contain"
+            className="h-14 w-auto object-contain"
             priority
           />
         </Link>
 
-        <button
-          className="p-2 text-gray-600 xl:hidden"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Ouvrir ou fermer le menu"
-          aria-expanded={isOpen}
-        >
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
-
         <div className="hidden xl:flex">
           <NavigationMenu>
             <NavigationMenuList>
+              {linksBefore.map(desktopLink)}
               <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="/reves-de-voyages"
-                    className={navigationMenuTriggerStyle()}
-                  >
-                    Rêves de voyages
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="/nos-coups-de-coeur"
-                    className={navigationMenuTriggerStyle()}
-                  >
-                    Nos coups de cœur
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Nos voyages</NavigationMenuTrigger>
+                <NavigationMenuTrigger
+                  className={
+                    tripTypes.some((t) => current(t.href)) ? "text-primary" : ""
+                  }
+                >
+                  Nos voyages
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
-                    {tripTypes.map((component) => (
+                  <ul className="grid w-[500px] grid-cols-2 gap-1 p-3">
+                    {tripTypes.map((trip) => (
                       <ListItem
-                        key={component.title}
-                        title={component.title}
-                        href={component.href}
+                        key={trip.title}
+                        title={trip.title}
+                        href={trip.href}
+                        aria-current={current(trip.href)}
                       >
-                        {component.description}
+                        {trip.description}
                       </ListItem>
                     ))}
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="/voyage-sur-mesure"
-                    className={navigationMenuTriggerStyle()}
-                  >
-                    Voyage sur mesure
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="/galerie"
-                    className={navigationMenuTriggerStyle()}
-                  >
-                    Galerie
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link href="/avis" className={navigationMenuTriggerStyle()}>
-                    Avis
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="/actualites"
-                    className={navigationMenuTriggerStyle()}
-                  >
-                    Actualités
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="/contact"
-                    className={navigationMenuTriggerStyle()}
-                  >
-                    Contact
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+              {linksAfter.map(desktopLink)}
             </NavigationMenuList>
           </NavigationMenu>
         </div>
 
-        <div className="hidden items-center gap-4 xl:flex">
-          <Button variant="default" size="sm" asChild>
+        <div className="hidden items-center gap-5 xl:flex">
+          <a
+            href={`tel:${siteConfig.phoneE164}`}
+            className="hover:text-primary flex items-center gap-2 text-sm whitespace-nowrap text-gray-700 transition-colors"
+          >
+            <Phone className="h-4 w-4" aria-hidden="true" />
+            {siteConfig.phone}
+          </a>
+          <Button asChild>
             <Link href="/devis">Devis gratuit</Link>
           </Button>
         </div>
+
+        <button
+          className="-mr-2 p-2 text-gray-800 xl:hidden"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
+        >
+          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
       </div>
 
       {isOpen && (
-        <div className="absolute top-20 left-0 flex w-full flex-col space-y-4 border-b bg-white px-4 py-4 shadow-lg xl:hidden">
-          <Link
-            href="/reves-de-voyages"
-            className="border-b border-gray-100 py-2 text-lg font-medium"
-            onClick={() => setIsOpen(false)}
-          >
-            Rêves de voyages
-          </Link>
-          <Link
-            href="/nos-coups-de-coeur"
-            className="border-b border-gray-100 py-2 text-lg font-medium"
-            onClick={() => setIsOpen(false)}
-          >
-            Nos coups de cœur
-          </Link>
-          <div className="space-y-2">
-            <p className="text-lg font-medium text-gray-900">Nos voyages</p>
-            <div className="flex flex-col space-y-2 border-l-2 border-gray-100 pl-4">
-              {tripTypes.map((item) => (
+        <nav
+          id="mobile-menu"
+          aria-label="Menu principal"
+          className="bg-background absolute top-20 left-0 flex h-[calc(100dvh-5rem)] w-full flex-col overflow-y-auto px-4 pt-2 pb-10 xl:hidden"
+        >
+          {linksBefore.map(mobileLink)}
+          <div className="border-b border-gray-200 py-3">
+            <p className="eyebrow mb-2">Nos voyages</p>
+            <div className="grid grid-cols-2 gap-x-4">
+              {tripTypes.map((trip) => (
                 <Link
-                  key={item.title}
-                  href={item.href}
-                  className="block py-1 text-gray-600"
+                  key={trip.href}
+                  href={trip.href}
+                  aria-current={current(trip.href)}
+                  className="aria-[current=page]:text-primary py-2 text-lg text-gray-700"
                   onClick={() => setIsOpen(false)}
                 >
-                  {item.title}
+                  {trip.title}
                 </Link>
               ))}
             </div>
           </div>
-          <Link
-            href="/voyage-sur-mesure"
-            className="border-b border-gray-100 py-2 text-lg font-medium"
-            onClick={() => setIsOpen(false)}
-          >
-            Voyage sur mesure
-          </Link>
-          <Link
-            href="/galerie"
-            className="border-b border-gray-100 py-2 text-lg font-medium"
-            onClick={() => setIsOpen(false)}
-          >
-            Galerie
-          </Link>
-          <Link
-            href="/avis"
-            className="border-b border-gray-100 py-2 text-lg font-medium"
-            onClick={() => setIsOpen(false)}
-          >
-            Avis
-          </Link>
-          <Link
-            href="/actualites"
-            className="border-b border-gray-100 py-2 text-lg font-medium"
-            onClick={() => setIsOpen(false)}
-          >
-            Actualités
-          </Link>
-          <Link
-            href="/contact"
-            className="border-b border-gray-100 py-2 text-lg font-medium"
-            onClick={() => setIsOpen(false)}
-          >
-            Contact
-          </Link>
+          {linksAfter.map(mobileLink)}
           <Button
-            className="mt-4 w-full"
+            size="lg"
+            className="mt-8 w-full"
             asChild
             onClick={() => setIsOpen(false)}
           >
-            <Link href="/devis">Devis gratuit</Link>
+            <Link href="/devis">Demander un devis gratuit</Link>
           </Button>
-        </div>
+          <a
+            href={`tel:${siteConfig.phoneE164}`}
+            className="mt-4 flex items-center justify-center gap-2 py-2 text-gray-700"
+          >
+            <Phone className="h-4 w-4" aria-hidden="true" />
+            {siteConfig.phone}
+          </a>
+        </nav>
       )}
     </header>
   );
@@ -263,13 +215,13 @@ const ListItem = forwardRef<ElementRef<"a">, ComponentPropsWithoutRef<"a">>(
           <a
             ref={ref}
             className={cn(
-              "hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none",
+              "block space-y-1 p-3 leading-none no-underline transition-colors select-none hover:bg-gray-50 aria-[current=page]:bg-gray-50",
               className,
             )}
             {...props}
           >
-            <div className="text-sm leading-none font-medium">{title}</div>
-            <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
+            <div className="font-serif text-lg leading-none">{title}</div>
+            <p className="line-clamp-2 text-sm leading-snug text-gray-600">
               {children}
             </p>
           </a>

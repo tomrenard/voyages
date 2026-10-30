@@ -13,30 +13,28 @@ export function PageHeader({
   backgroundImage,
 }: PageHeaderProps) {
   return (
-    <div className="relative flex h-[300px] w-full items-center justify-center overflow-hidden text-center text-white md:h-[400px]">
-      <div className="absolute inset-0 z-10 bg-black/40" />
+    <div className="relative flex min-h-[340px] w-full items-end overflow-hidden bg-gray-900 text-white md:h-[58vh] md:max-h-[640px]">
       {backgroundImage && (
-        <div className="absolute inset-0 -z-0">
-          <Image
-            src={backgroundImage}
-            alt={title}
-            fill
-            className="object-cover"
-            // `preload` supersedes `priority`, which 16.3 marks deprecated.
-            // Unconditional as before — this is the page's above-fold hero.
-            preload
-          />
-        </div>
+        <Image
+          src={backgroundImage}
+          // Decorative: the title right below says what the page is.
+          alt=""
+          fill
+          className="object-cover"
+          sizes="100vw"
+          // `preload` supersedes `priority`, which 16.3 marks deprecated.
+          // Unconditional as before — this is the page's above-fold hero.
+          preload
+        />
       )}
-      {/* Fallback pattern if no image */}
-      {!backgroundImage && <div className="bg-primary absolute inset-0 -z-0" />}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-black/10" />
 
-      <div className="relative z-20 container mx-auto px-4">
-        <h1 className="mb-4 font-serif text-4xl font-bold md:text-6xl">
+      <div className="relative container mx-auto px-4 pt-24 pb-12 md:px-8 md:pb-16">
+        <h1 className="max-w-4xl font-serif text-5xl leading-[1.02] md:text-7xl">
           {title}
         </h1>
         {subtitle && (
-          <p className="mx-auto max-w-2xl text-lg font-light text-gray-100 md:text-xl">
+          <p className="mt-5 max-w-2xl text-lg text-white/90 md:text-xl">
             {subtitle}
           </p>
         )}
