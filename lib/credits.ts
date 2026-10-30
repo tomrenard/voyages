@@ -23,6 +23,55 @@ const FAL = "https://artlibre.org/licence/lal/en/";
 
 export const photoCredits: PhotoCredit[] = [
   {
+    usage: "Voyage sur mesure (piscine à débordement, Péloponnèse)",
+    author: "DD GR",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/q398gpsqxeY",
+  },
+  {
+    usage: "Séjours (villas sur pilotis, Maldives)",
+    author: "Upgraded Points",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/AjBzl6gdCL0",
+  },
+  {
+    usage: "Article croisières (pont d'un navire, Caraïbes)",
+    author: "AO NURA",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/-ybBN9gaERY",
+  },
+  {
+    usage: "Galerie (Oahu, Hawaï)",
+    author: "Sean Oulashin",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/KMn4VEeEPR8",
+  },
+  {
+    usage: "Galerie (lac Moraine, Canada)",
+    author: "James Wheeler",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/AFC0XvICMgs",
+  },
+  {
+    usage: "Galerie (Dubaï)",
+    author: "Nahel Hadi",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/v06n2uxb-Fs",
+  },
+  {
+    usage: "Galerie (îles Perhentian, Malaisie)",
+    author: "Muhammad Syahir Othman",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/woymfMHJjuM",
+  },
+  {
     usage: "L'agence (aile d'avion au-dessus des nuages)",
     author: "Johny Goerend",
     license: "Licence Unsplash",
@@ -176,14 +225,6 @@ export const photoCredits: PhotoCredit[] = [
     licenseUrl: FAL,
     sourceUrl:
       "https://commons.wikimedia.org/wiki/File:La_Digue_asv2024-10_img22_Union_Estate.jpg",
-  },
-  {
-    usage: "Article : Croisières",
-    author: "Corey Seeman",
-    license: "CC BY-SA 4.0",
-    licenseUrl: CC_BY_SA_4,
-    sourceUrl:
-      "https://commons.wikimedia.org/wiki/File:Icon_of_the_Seas_Puerto_Rico_2025_(cropped).jpg",
   },
   {
     usage: "Article : Voyage de noces",

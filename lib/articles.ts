@@ -433,7 +433,7 @@ export const articles: Article[] = [
     author: siteConfig.advisor,
     category: "Croisières",
     image: articleCroisiere,
-    imageAlt: "Grand navire de croisière moderne naviguant en pleine mer",
+    imageAlt: "La proue d'un navire de croisière face à la mer des Caraïbes",
     readingTime: "6 min",
     destinations: ["croisiere-sur-le-nil"],
     content: [
