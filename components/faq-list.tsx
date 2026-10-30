@@ -21,7 +21,9 @@ export function FaqList({
               +
             </span>
           </summary>
-          <p className="mt-4 leading-relaxed text-gray-600">{item.answer}</p>
+          <p className="mt-4 text-lg leading-relaxed text-gray-600">
+            {item.answer}
+          </p>
         </details>
       ))}
     </div>
