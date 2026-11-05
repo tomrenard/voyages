@@ -169,7 +169,7 @@ const jsonLd = [
             price: trip.priceFrom,
             priceCurrency: "EUR",
             description:
-              "Prix indicatif par personne, selon dates et prestations",
+              "Prix de départ indicatif TTC par personne, en chambre ou cabine double, selon dates et prestations",
             url: `${siteUrl}${path}`,
           },
         }),

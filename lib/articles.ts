@@ -118,10 +118,10 @@ export const articles: Article[] = [
       },
       {
         type: "p",
-        text: "Durées, prix de départ et contenu de chaque voyage :",
+        text: "Retrouvez la durée, le prix de départ et le contenu de chaque voyage sur la page",
         link: {
           href: "/nos-voyages/voyages-en-train",
-          label: "nos circuits en train",
+          label: "de nos circuits en train",
         },
       },
     ],

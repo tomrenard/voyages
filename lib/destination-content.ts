@@ -531,7 +531,7 @@ const autresDestinationsContent: Record<string, DestinationContent> = {
       {
         question: "Quel budget pour un voyage au Japon ?",
         answer:
-          "À partir de 3 790 € par personne pour 14 jours (vols internationaux, trains entre les étapes, 11 nuits d'hôtel avec petits déjeuners dont une nuit en ryokan à Hakone, assistance 7j/7), selon saison. Les visites sont en supplément. Le printemps et l'automne sont les périodes les plus demandées et les plus chères.",
+          "À partir de 3 790 € par personne en chambre double, pour 14 jours (vols internationaux, trains entre les étapes, 11 nuits d'hôtel avec petits déjeuners dont une nuit en ryokan à Hakone, assistance 7j/7), selon saison. Les visites sont en supplément. Le printemps et l'automne sont les périodes les plus demandées et les plus chères.",
       },
       {
         question: "Le Japan Rail Pass est-il toujours intéressant ?",

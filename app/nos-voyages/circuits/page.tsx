@@ -33,7 +33,7 @@ export default function Circuits() {
             l’Indonésie, Cuba…
           </p>
           <p className="mt-4 text-lg leading-relaxed text-gray-600">
-            Envie de voyager sans avion ? Découvrez nos{" "}
+            Envie de prendre le temps entre les étapes ? Découvrez nos{" "}
             <Link
               href="/nos-voyages/voyages-en-train"
               className="text-primary underline underline-offset-4"
