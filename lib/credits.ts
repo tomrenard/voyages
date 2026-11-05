@@ -51,6 +51,27 @@ export const photoCredits: PhotoCredit[] = [
     sourceUrl: "https://unsplash.com/photos/y02jEX_B0O0",
   },
   {
+    usage: "Voyages en train (viaduc de Landwasser, Suisse)",
+    author: "Pascal Debrunner",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/KbosFAsVh1k",
+  },
+  {
+    usage: "Voyages en train (pont sur le Rhin, Suisse)",
+    author: "Fabian Kleiser",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/oBgpcawL_WI",
+  },
+  {
+    usage: "Article voyages en train (ligne de l'Albula, Suisse)",
+    author: "Xavier von Erlach",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/Y_wE4T13uYg",
+  },
+  {
     usage: "Croisières (navire dans la brume, Alaska)",
     author: "Robert Thiemann",
     license: "Licence Unsplash",

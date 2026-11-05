@@ -17,11 +17,12 @@ type Props = {
     destination?: string;
     period?: string;
     adults?: string;
+    type?: string;
   }>;
 };
 
 export default async function Devis({ searchParams }: Props) {
-  const { destination, period, adults } = await searchParams;
+  const { destination, period, adults, type } = await searchParams;
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -68,6 +69,7 @@ export default async function Devis({ searchParams }: Props) {
             defaultDestination={destination ?? ""}
             defaultPeriod={period ?? ""}
             defaultAdults={adults ?? ""}
+            defaultTripType={type ?? ""}
           />
         </div>
 

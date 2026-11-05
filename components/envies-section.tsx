@@ -25,6 +25,11 @@ const envies = [
     href: "/croisieres",
   },
   {
+    title: "Voyages en train",
+    text: "Le paysage qui défile, et le trajet fait partie du voyage.",
+    href: "/nos-voyages/voyages-en-train",
+  },
+  {
     title: "Week-ends en Europe",
     text: "Une capitale, deux ou trois jours, l'esprit léger.",
     href: "/nos-voyages/week-end",

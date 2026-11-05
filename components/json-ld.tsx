@@ -40,6 +40,7 @@ export default function JsonLd() {
       "Croisières",
       "Séjours",
       "Circuits",
+      "Voyages en train",
       "Week-ends en Europe",
     ],
     sameAs: [siteConfig.social.facebook, siteConfig.social.instagram],

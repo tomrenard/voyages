@@ -16,10 +16,12 @@ export function DevisForm({
   defaultDestination = "",
   defaultPeriod = "",
   defaultAdults = "",
+  defaultTripType = "",
 }: {
   defaultDestination?: string;
   defaultPeriod?: string;
   defaultAdults?: string;
+  defaultTripType?: string;
 }) {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -127,12 +129,18 @@ export function DevisForm({
             >
               Type de voyage
             </label>
-            <select id="tripType" name="tripType" className={selectClass}>
+            <select
+              id="tripType"
+              name="tripType"
+              defaultValue={defaultTripType}
+              className={selectClass}
+            >
               <option value="">Sélectionnez…</option>
               <option>Voyage sur mesure</option>
               <option>Séjour</option>
               <option>Circuit</option>
               <option>Croisière</option>
+              <option>Voyage en train</option>
               <option>Voyage de noces</option>
               <option>Week-end</option>
               <option>Autre</option>

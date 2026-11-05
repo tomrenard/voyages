@@ -54,6 +54,7 @@ const linksBefore = [
   { title: "Nos coups de cœur", href: "/nos-coups-de-coeur" },
 ];
 const linksAfter = [
+  { title: "Voyages en train", href: "/nos-voyages/voyages-en-train" },
   { title: "Voyage sur mesure", href: "/voyage-sur-mesure" },
   { title: "Avis", href: "/avis" },
   { title: "Actualités", href: "/actualites" },
@@ -141,10 +142,11 @@ export function Navbar() {
         <div className="hidden items-center gap-5 xl:flex">
           <a
             href={`tel:${siteConfig.phoneE164}`}
-            className="hover:text-primary flex items-center gap-2 text-sm whitespace-nowrap text-gray-700 transition-colors"
+            className="hover:text-primary flex items-center gap-2 p-1 text-sm whitespace-nowrap text-gray-700 transition-colors"
           >
             <Phone className="h-4 w-4" aria-hidden="true" />
-            {siteConfig.phone}
+            {/* Number shown from 2xl: the 8-link nav leaves no room at xl. */}
+            <span className="sr-only 2xl:not-sr-only">{siteConfig.phone}</span>
           </a>
           <Button asChild>
             <Link href="/devis">Devis gratuit</Link>
