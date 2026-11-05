@@ -521,7 +521,7 @@ const autresDestinationsContent: Record<string, DestinationContent> = {
     bestSeason:
       "Fin mars à mai pour les cerisiers en fleurs et la douceur du printemps ; octobre et novembre pour les couleurs d'automne. Juin et début juillet sont pluvieux, l'été est chaud et humide, et les typhons touchent surtout août et septembre.",
     idealDuration: "14 à 18 jours",
-    budgetFrom: 3200,
+    budgetFrom: 3790,
     faq: [
       {
         question: "Faut-il un visa pour le Japon ?",
@@ -531,7 +531,7 @@ const autresDestinationsContent: Record<string, DestinationContent> = {
       {
         question: "Quel budget pour un voyage au Japon ?",
         answer:
-          "À partir de 3 200 € par personne pour deux semaines (vols internationaux, trains, hôtels et une nuit en ryokan, quelques visites guidées), selon saison et prestations. Le printemps et l'automne sont les périodes les plus demandées et les plus chères.",
+          "À partir de 3 790 € par personne pour 14 jours (vols internationaux, trains entre les étapes, 11 nuits d'hôtel avec petits déjeuners dont une nuit en ryokan à Hakone, assistance 7j/7), selon saison. Les visites sont en supplément. Le printemps et l'automne sont les périodes les plus demandées et les plus chères.",
       },
       {
         question: "Le Japan Rail Pass est-il toujours intéressant ?",
