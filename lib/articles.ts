@@ -5,6 +5,7 @@ import articleEurope from "@/public/images/article-europe.jpg";
 import articleNoces from "@/public/images/article-noces.jpg";
 import articleSeychelles from "@/public/images/article-seychelles.jpg";
 import articleSoleilHiver from "@/public/images/article-soleil-hiver.jpg";
+import articleTrain from "@/public/images/article-train.jpg";
 import destThailande from "@/public/images/dest-thailande.jpg";
 import type { StaticImageData } from "next/image";
 import { allDestinations } from "@/lib/destinations";
@@ -53,6 +54,90 @@ export type Article = {
 };
 
 export const articles: Article[] = [
+  {
+    slug: "plus-beaux-voyages-en-train",
+    title: "Les plus beaux voyages en train : 6 itinéraires",
+    excerpt:
+      "Orient-Express, Suisse panoramique, boucle scandinave, Italie, Est canadien, Japon : nos voyages en train préférés et nos conseils pour les préparer.",
+    date: "2026-11-05",
+    author: siteConfig.advisor,
+    category: "Circuits",
+    image: articleTrain,
+    imageAlt:
+      "Train rouge sur la ligne de l'Albula, dans les Grisons, en Suisse",
+    readingTime: "5 min",
+    destinations: ["japon"],
+    content: [
+      {
+        type: "p",
+        text: "De plus en plus de voyageurs choisissent le train : pour éviter l'avion, pour le plaisir de regarder le paysage, ou pour faire du trajet un moment du voyage. Voici six itinéraires que nous organisons, du train de légende au grand voyage dont chaque étape se fait sur les rails.",
+      },
+      {
+        type: "h2",
+        text: "1. Le Venice Simplon-Orient-Express, de Paris à Venise",
+      },
+      {
+        type: "p",
+        text: "Le plus célèbre des trains de légende. On embarque à Paris, on dîne en voiture-restaurant en tenue habillée, on dort dans une cabine boisée et on arrive à Venise le lendemain. Nous le combinons avec des nuits à Venise et un vol pour le retour, ou pour l'aller.",
+      },
+      { type: "h2", text: "2. La Suisse en train panoramique" },
+      {
+        type: "p",
+        text: "Le Glacier Express et le Bernina Express traversent les Alpes par des viaducs et des tunnels spectaculaires, avec de grandes vitres pour ne rien manquer. Les lignes de l'Albula et de la Bernina sont inscrites au patrimoine mondial de l'Unesco. Un voyage idéal en été comme en hiver, sous la neige.",
+      },
+      { type: "h2", text: "3. La boucle scandinave, sans avion" },
+      {
+        type: "p",
+        text: "Au départ de Paris : Hambourg, puis un train de nuit jusqu'à Stockholm, le train à grande vitesse vers Oslo, une nuit en ferry jusqu'à Copenhague et le retour par Hambourg. Neuf jours, quatre pays et aucun vol.",
+      },
+      { type: "h2", text: "4. L'Italie en train" },
+      {
+        type: "p",
+        text: "Les trains rapides italiens relient Venise, Florence, Rome et Naples en quelques heures, de centre-ville à centre-ville. On peut combiner deux ou trois villes, ou prendre son temps entre la Toscane et les Cinque Terre, ou de Rome à la baie de Naples.",
+      },
+      { type: "h2", text: "5. L'Est canadien de train en train" },
+      {
+        type: "p",
+        text: "Toronto, Ottawa, Montréal puis Québec : quatre villes très différentes, reliées en quelques heures de train. Le rythme est doux et l'on arrive chaque fois au cœur de la ville.",
+      },
+      { type: "h2", text: "6. Le Japon en train" },
+      {
+        type: "p",
+        text: "Le Japon est le pays du train. Au-delà du Shinkansen, certaines lignes sont des expériences à part entière : le Spacia X vers Nikko, le Sagano Romantic Train dans les gorges de Kyoto, ou un train à vapeur dans les plantations de thé de Shizuoka.",
+        link: { href: "/destinations/japon", label: "Voir notre page Japon" },
+      },
+      { type: "h2", text: "Nos conseils pour un voyage en train réussi" },
+      {
+        type: "ul",
+        items: [
+          "Réservez tôt : les trains de légende et les trains panoramiques en été partent souvent complets plusieurs mois à l'avance.",
+          "Voyagez léger : dans les trains de nuit et à bord de l'Orient-Express, la place pour les bagages en cabine est limitée.",
+          "Prévoyez une nuit près de la gare quand une correspondance est serrée.",
+          "Depuis Rennes, comptez environ 1 h 30 de TGV jusqu'à Paris, d'où partent la plupart des trains vers l'Europe.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Durées, prix de départ et contenu de chaque voyage :",
+        link: {
+          href: "/nos-voyages/voyages-en-train",
+          label: "nos circuits en train",
+        },
+      },
+    ],
+    faq: [
+      {
+        question: "Quel est le plus beau voyage en train en Europe ?",
+        answer:
+          "Pour l'expérience, le Venice Simplon-Orient-Express entre Paris et Venise. Pour les paysages, le Glacier Express et le Bernina Express en Suisse. Pour un grand voyage sans avion, la boucle scandinave au départ de Paris.",
+      },
+      {
+        question: "Vendez-vous des billets de train seuls ?",
+        answer:
+          "Non. Le train fait toujours partie d'un voyage complet, avec les hôtels et, selon le voyage, les vols, les transferts ou les visites.",
+      },
+    ],
+  },
   {
     slug: "combien-coute-un-voyage-sur-mesure",
     title: "Combien coûte un voyage sur mesure ? Prix par destination",

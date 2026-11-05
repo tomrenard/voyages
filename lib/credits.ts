@@ -65,6 +65,13 @@ export const photoCredits: PhotoCredit[] = [
     sourceUrl: "https://unsplash.com/photos/oBgpcawL_WI",
   },
   {
+    usage: "Article voyages en train (ligne de l'Albula, Suisse)",
+    author: "Xavier von Erlach",
+    license: "Licence Unsplash",
+    licenseUrl: UNSPLASH,
+    sourceUrl: "https://unsplash.com/photos/Y_wE4T13uYg",
+  },
+  {
     usage: "Croisières (navire dans la brume, Alaska)",
     author: "Robert Thiemann",
     license: "Licence Unsplash",
