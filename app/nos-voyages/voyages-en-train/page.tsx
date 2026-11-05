@@ -19,7 +19,11 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: path },
+  // A page openGraph replaces the layout one, so repeat its base fields.
   openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    siteName: siteConfig.name,
     title,
     description,
     images: [
@@ -31,8 +35,7 @@ export const metadata: Metadata = {
   },
 };
 
-// No prices on purpose: show "à partir de" amounts only once Véronique has a
-// supplier quote for a package she sells (same rule as destination-content.ts).
+// No prices until Véronique confirms them from a supplier quote.
 const ideas: {
   title: string;
   text: string;
