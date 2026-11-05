@@ -32,6 +32,16 @@ export default function Circuits() {
             proposons un éventail de circuits, tels que : les USA, le Sri Lanka,
             l’Indonésie, Cuba…
           </p>
+          <p className="mt-4 text-lg leading-relaxed text-gray-600">
+            Envie de voyager sans avion ? Découvrez nos{" "}
+            <Link
+              href="/nos-voyages/voyages-en-train"
+              className="text-primary underline underline-offset-4"
+            >
+              circuits en train
+            </Link>
+            .
+          </p>
         </div>
 
         <div className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-2">

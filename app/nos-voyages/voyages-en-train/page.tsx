@@ -11,9 +11,9 @@ import trainImg from "@/public/images/train.jpg";
 import contentTrain from "@/public/images/content-train.jpg";
 
 const path = "/nos-voyages/voyages-en-train";
-const title = "Voyages en train : Orient-Express, Scandinavie, Canada, Japon";
+const title = "Voyages et circuits en train sur mesure";
 const description =
-  "Voyages en train sur mesure : Orient-Express, boucle scandinave, Italie, Suisse panoramique, Est canadien et Japon. Train, hôtels et transferts dans un seul devis.";
+  "Voyages et circuits en train : Orient-Express, Scandinavie, Italie, Suisse, Est canadien, Japon. Trains et hôtels dans un seul devis gratuit.";
 const tripType = "Voyage en train";
 const devisHref = (destination?: string) =>
   `/devis?type=${encodeURIComponent(tripType)}${
@@ -56,9 +56,9 @@ const trips: {
     route: "Paris, Venise",
     duration: "4 jours / 3 nuits",
     priceFrom: 5760,
-    text: "Une nuit à bord du train de légende entre Paris et Venise : cabine boisée, dîner en voiture-restaurant, tenue habillée de rigueur. Puis deux nuits à Venise, et le retour en avion (ou l'inverse).",
+    text: "Une nuit à bord du train de légende entre Paris et Venise : cabine boisée, dîner en voiture-restaurant, tenue habillée de rigueur. Puis deux nuits à Venise, et le retour en avion, ou l'inverse.",
     included:
-      "le train en cabine historique double en pension complète, le vol retour, les transferts à Venise, 2 nuits d'hôtel 4* avec petits déjeuners.",
+      "le train en cabine historique double en pension complète, le vol retour (ou aller), les transferts à Venise, 2 nuits d'hôtel 4* avec petits déjeuners.",
   },
   {
     title: "La boucle scandinave",
@@ -72,7 +72,6 @@ const trips: {
   {
     title: "L'Italie en train",
     route: "Venise, Florence, Rome, Naples, Cinque Terre",
-    duration: "8 à 12 jours",
     text: "Deux ou trois villes reliées en train rapide, ou un itinéraire plus libre de la Toscane à la Ligurie, de Bologne à Venise, de Rome à la baie de Naples. L'aller peut se faire à bord de l'Orient-Express.",
   },
   {
@@ -94,7 +93,7 @@ const trips: {
     route: "Tokyo, Nikko, Shizuoka, Kyoto, Ise, Osaka",
     duration: "19 jours / 16 nuits",
     priceFrom: 4890,
-    text: "Un itinéraire où chaque trajet est une expérience : le Spacia X vers Nikko, un train à vapeur dans les plantations de thé, le Sagano Romantic Train à Kyoto, le Shimakaze vers Ise.",
+    text: "Un itinéraire où chaque trajet est une expérience : le Spacia X vers Nikko, un train à vapeur dans les plantations de thé (selon disponibilité), le Sagano Romantic Train à Kyoto, le Shimakaze vers Ise.",
     included:
       "les vols, les pass et billets de train, 16 nuits d'hôtel avec petits déjeuners, une cérémonie du thé, quelques repas, une assistance 7j/7.",
     link: { href: "/destinations/japon", label: "Voir notre page Japon" },
@@ -109,12 +108,12 @@ const faq = [
   {
     question: "Vendez-vous des billets de train seuls ?",
     answer:
-      "Non. Le train fait toujours partie d'un voyage complet, avec les hôtels, les transferts et parfois les vols ou les visites. C'est ce qui nous permet de tout organiser et de vous accompagner du départ au retour.",
+      "Non. Le train fait toujours partie d'un voyage complet, avec les hôtels et, selon le voyage, les vols, les transferts ou les visites. C'est ce qui nous permet de tout organiser et de vous accompagner du départ au retour.",
   },
   {
     question: "Combien coûte un voyage en train ?",
     answer:
-      "Comptez à partir de 1 710 € par personne pour la boucle scandinave (9 jours) et à partir de 5 760 € pour l'Orient-Express (4 jours). Le prix dépend des dates, de la classe et des hôtels : nous vous envoyons un devis gratuit et détaillé.",
+      "Comptez à partir de 1 710 € par personne pour la boucle scandinave (9 jours) et à partir de 5 760 € par personne pour l'Orient-Express (4 jours). Le prix dépend des dates, de la classe et des hôtels : nous vous envoyons un devis gratuit et détaillé.",
   },
   {
     question: "Combien de temps à l'avance faut-il réserver ?",
@@ -149,6 +148,32 @@ const jsonLd = [
       "@type": "Question",
       name: item.question,
       acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Nos circuits en train",
+    itemListElement: trips.map((trip, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      item: {
+        "@type": "TouristTrip",
+        name: trip.title,
+        description: trip.text,
+        touristType: "Voyage en train",
+        provider: { "@id": `${siteUrl}/#travelagency` },
+        ...(trip.priceFrom && {
+          offers: {
+            "@type": "Offer",
+            price: trip.priceFrom,
+            priceCurrency: "EUR",
+            description:
+              "Prix indicatif par personne, selon dates et prestations",
+            url: `${siteUrl}${path}`,
+          },
+        }),
+      },
     })),
   },
 ];
@@ -191,14 +216,15 @@ export default function VoyagesEnTrain() {
                 En train, on ne saute pas d&apos;un aéroport à l&apos;autre : on
                 traverse les paysages, on arrive en plein centre-ville, et le
                 trajet devient un moment du voyage. Une belle façon de partir si
-                vous préférez éviter l&apos;avion, voyager plus léger pour la
-                planète ou simplement prendre votre temps.
+                vous préférez éviter l&apos;avion, ou simplement prendre votre
+                temps.
               </p>
               <p>
-                {siteConfig.advisor} organise des voyages où le train tient le
-                premier rôle : trains de légende, trains panoramiques, grands
-                circuits dont les étapes se font en train. Trains, hôtels et
-                transferts : tout est réuni dans un seul devis.
+                {siteConfig.advisor} organise des voyages et des circuits en
+                train sur mesure : trains de légende, trains panoramiques,
+                grands voyages dont les étapes se font en train. Les trains et
+                les hôtels sont réunis dans un seul devis, avec les transferts
+                si besoin.
               </p>
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -225,7 +251,7 @@ export default function VoyagesEnTrain() {
         </div>
 
         <h2 className="mb-8 font-serif text-4xl text-gray-900">
-          Nos voyages en train
+          Nos circuits en train
         </h2>
         <ol className="border-b border-gray-300">
           {trips.map((trip, idx) => (
