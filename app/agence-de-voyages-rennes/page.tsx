@@ -24,7 +24,7 @@ const faq = [
   {
     question: "Quels types de voyages organisez-vous depuis Rennes ?",
     answer:
-      "Voyages sur mesure, séjours balnéaires, circuits accompagnés ou en liberté, croisières maritimes et fluviales, voyages de noces et week-ends en Europe. Chaque projet est construit individuellement selon vos envies et votre budget.",
+      "Voyages sur mesure, séjours balnéaires, circuits accompagnés ou en liberté, croisières maritimes et fluviales, voyages en train, voyages de noces et week-ends en Europe. Chaque projet est construit individuellement selon vos envies et votre budget.",
   },
   {
     question: "Quelles garanties offre votre agence ?",

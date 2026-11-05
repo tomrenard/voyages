@@ -41,6 +41,8 @@ qui **imposent de créditer l'auteur** : la page `/credits-photos` le fait.
 | `public/images/hero-bg.jpg`             | FAQ et plan du site (barque, lac de Braies)            | Pietro De Grandi            | Unsplash | [Unsplash](https://unsplash.com/photos/6U4wogjLArk) |
 | `public/images/avis.jpg`                | Avis clients                                           | Brooke Cagle                | Unsplash | [Unsplash](https://unsplash.com/photos/g1Kr4Ozfoac) |
 | `public/images/actualites.jpg`          | Actualités (plume)                                     | Aaron Burden                | Unsplash | [Unsplash](https://unsplash.com/photos/y02jEX_B0O0) |
+| `public/images/train.jpg`               | Voyages en train (viaduc de Landwasser, Suisse)        | Pascal Debrunner            | Unsplash | [Unsplash](https://unsplash.com/photos/KbosFAsVh1k) |
+| `public/images/content-train.jpg`       | Voyages en train (pont sur le Rhin, Suisse)            | Fabian Kleiser              | Unsplash | [Unsplash](https://unsplash.com/photos/oBgpcawL_WI) |
 | `public/images/croisiere.jpg`           | Croisières (navire dans la brume, Alaska)              | Robert Thiemann             | Unsplash | [Unsplash](https://unsplash.com/photos/nyV8YOotRXI) |
 | `public/images/circuit.jpg`             | Circuits (lac de Braies, Italie)                       | Pietro De Grandi            | Unsplash | [Unsplash](https://unsplash.com/photos/T7K4aEPoGGk) |
 | `public/images/weekend.jpg`             | Week-end (Tower Bridge, Londres)                       | Benjamin Davies             | Unsplash | [Unsplash](https://unsplash.com/photos/Oja2ty_9ZLM) |

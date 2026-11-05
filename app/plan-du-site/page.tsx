@@ -99,6 +99,14 @@ export default function PlanDuSite() {
                 </li>
                 <li>
                   <Link
+                    href="/nos-voyages/voyages-en-train"
+                    className="hover:text-primary text-gray-600 transition-colors"
+                  >
+                    Voyages en train
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/nos-voyages/week-end"
                     className="hover:text-primary text-gray-600 transition-colors"
                   >

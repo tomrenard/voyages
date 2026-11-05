@@ -42,6 +42,11 @@ const tripTypes: { title: string; href: string; description: string }[] = [
     description: "Naviguez sur les plus belles mers du monde.",
   },
   {
+    title: "Voyages en train",
+    href: "/nos-voyages/voyages-en-train",
+    description: "Trains panoramiques, de légende et de nuit.",
+  },
+  {
     title: "Week-end",
     href: "/nos-voyages/week-end",
     description: "Évadez-vous le temps d'un week-end inoubliable.",
