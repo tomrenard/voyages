@@ -83,6 +83,12 @@ export default function PolitiqueDeConfidentialite() {
                   cookie d’identification et ne collecte pas de données
                   personnelles directement identifiantes.
                 </p>
+                <p className="mt-2 leading-relaxed text-gray-600">
+                  Nous mesurons aussi les performances techniques du site (temps
+                  de chargement, réactivité des pages) avec Vercel Speed
+                  Insights. Cet outil ne dépose pas de cookie et ne collecte pas
+                  de données personnelles directement identifiantes.
+                </p>
               </div>
             </div>
           </section>
